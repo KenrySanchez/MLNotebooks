@@ -1,0 +1,196 @@
+createdAt: "2018-08-11T18:58:55.750Z"
+updatedAt: "2019-11-03T18:12:16.911Z"
+type: "MARKDOWN_NOTE"
+folder: "a41d44d96fbd153c28c9"
+title: "Modelacion sin KErnel"
+content: '''
+  ## Modelacion sin KErnel
+  
+  Algoritmos para resolver problemas habituales:
+  
+  - Ordenacion de listas
+  - busquedas sobre un indice
+  - calculos matematicos
+  
+  El modelado consiste en obtener los patrones (analisis descriptivo), identificar tendencias (analitica predictiva) o incluso valorar el impacto de nuestras acciones (analitica prescriptiva). **Un modelado es la relacion que existe entre ciertos parametros y el resultado final que queremos obtener**
+  
+  ---- 
+  
+  #### Como preparar el metodo estadistico
+  
+  - **Nota**: cuando se trata de aplicar el metodo cientifico a un problema por lo general hay dos maneras, un metodo inductivo y otro deductivo. Para el primer caso, los patrones se definen en base a las observaciones (como un causa y efecto). Para el segundo caso usamos un razonamiento deductivo, es decir, se parte desde una premisa general y apartir de ella se tratan de generar conclusiones logicas en base a la funcion de la premisa. Podríamos decir por ejemplo, que una tormenta es un fenómeno natural, y por tanto todos sus elementos, nubes,rayos, truenos, agua, etc también lo son.
+  
+  El metodo estadistico combina las 2 formas de razonamiento y lo sintetiza en 4 fases:
+  
+  - Planteamiento del problema
+  - Recoleccion de la informacion
+  - Organizacion y clasificacion de los datos obtenidos
+  - Analisis e interpretacion de los resultados
+  
+  ----
+  
+  **(SE puede hacer enfasis a los informes de fases del dato, Convertir los datos en Información y la información en Conocimiento y Lugares de recogida de datos)**
+  
+  #### Planteamiento del problema
+  
+  Pasos para realizar un planteamiento del problema:
+  
+  - Enunciar el problema
+  - Ser precisos y identificar todas las variables que conocemos de nuestro problema y asegurarnos que tenemos metricas para relacionar esa variable con el problema que queremos medir.
+  
+  **Ejemplos en la nota tecnica de la semana**
+  
+  La idea significativa es crear la mayor cantidad de preguntas que puedan generar una medicion de nuestro problema
+  
+  ----
+  
+  #### Recoleccion de la informacion
+  
+  Luego de conocer el problema, es el momento de recopilar la informacion que necesitamos que nos permita encontrar la relacion que buscamos. Si queremos que nuestro sistema sea lo mas automatico posible, buscaremos informacion que sea generada por nosotros, o bien generada por fuentes que podamos ingestar. **(Tecnologicamente, usar APIS de nosotros, terceros, analizar informacion a traves de metodos tecnologicos, revisar la guia de Fases del dato, Gestion del cliente de principio a fin, Dta management)**
+  
+  Buscar las fuentes y en la medida de lo posible automatizar la recoleccion de datos
+  
+  **LA manera de pasar de una fase a otra de un modelo automatizado sera a traves del almacenamiento**
+  
+  En esta fase se puede obtener el dato en bruto y luego lo iremos refinando hasta obtener el dato que utilizaremos finalmente.
+  
+  ----
+  
+  #### Organizacion y clasificacion de los datos obtenidos
+  
+  Una vez que tengamos los datos debemos comprobar que es lo que tenemos. Por lo general, cuando agregamos fuentes heterogeneas la calidad del dato esta organizado de maneras distintas.  pongamos como ejemplo que unos nos den la información con el sistema métrico decimal y otros con el sistema inglés. Debemos armonizar los datos para que todos tengan las mismas unidades.
+  
+  **Revisar notas tecnicas de Data management y Cadena del big data**
+  
+  Debemos preparar nuestro modelo para aquellos casos donde la fuente desde donde estamos obteniendo datos no este disponible. Debemos preparar nuestro modelo para este caso ya que sucede con frencuencia y tenemos que estar previstos a estos incidentes.
+  
+  Al momento de realizar estas funciones la idea es generar dos procesos simultaneos:
+  
+  - Procesos transformadores que iran adecuando la informacion para su consumo, de forma que esta sea lo mas homogenea posible.
+  - Procesos validadores, que iran descartando datos que se consideren erroneos o nulos. Este descarte podria ser definitivo, aunque lo mejor seria analizarlos de manera manual, de modo que una persona pueda definir si es mejor rellenar estos datos y procesarlos para adaptarlos a los sets existentes o si se eliminarian de forma completa. por ejemplo que una fuente ha cambiado el formato en las que nos ofrece la información y ahora pasamos a descartar toda su información, lo que la convierte en inútil. Gracias a este paso manual, podríamos decidir si adaptamos el formato al nuevo, o si por el contrario decidimos descartar la fuente
+  
+  Lo que queda:
+  
+  - catalogar todos los datos.
+  - organizarlos segun lo que nos interese para extraer la informacion que buscamos.
+  - Eliminar los datos que no necesitemos para nuestro modelo, a su vez tratar de no almacenar informacion de manera excesiva, aveces perjudica en vez de ayudar, por ende debemos recordar ser lo mas precisos posibles al momento de la recogida **(recordar nota tecnica de recogida de datos y conocimiento e informacion)**
+  
+  Debemos recordar tener un back up de los datos en bruto, por si en el futuro necesitamos generar otra vez el proceso con nuevas variables y funciones.
+  
+  ----
+  
+  #### Analisis e interpretacion de los resultados
+  
+  En esta fase:
+  
+  - Se analiza toda la informacion recogida y clasificada para poder identificar los patrones que existen en nuestros datos.
+  - Estos patrones nos permitiran responder las preguntas formuladas en el punto inicial y nos permite ajustar el modelo hasta obtener la precision deseadas.
+  
+  Durante esta fase el cientifico de datos y el analista de negocio cooperan para obtener la informacion que necesitan.
+  
+  ----
+  
+  #### Tecnicas aplicables al modelado analitico
+  
+  Para automatizar la creacion de modelos analiticos, usamos machine learning como metodo de analisis de datos. Dentro de la disciplina tenemos diferentes algoritmos que podemos usar segun el caso pero que inicialmente se dividen en 3 categorias en base a su manera de aprendisaje:
+  
+  - aprendisaje supervisado
+  - aprendisaje no supervisado
+  - aprendisaje por esfuerzo
+  
+  **Aprenisaje supervisado**
+  
+  Se usan ejemplos de la **muestra** que buscamos. Tendremos un conjunto de entrenamientos del que ya sabemos su resultado y lo utilizaremos para entrenar nuestro modelo, una vez que haya recibido el entrenamiento, pasaremos a la fase de validacion y evaluaremos que tal se comporta (Ejemplos reales puestos en practica).
+  
+  Es un modelo donde se usan los datps historicos (Ejemplos de muestra) para predecir un futuro, por lo tanto los que utilizaremos en los modelos predictivos.
+  
+  Tecnicas:
+  
+  - Tenicas de regresion, lineal y logisticas
+  - SVM
+  - KNN
+  
+  ## Estudiar las tecnicas
+  
+  [Chapter 2 : SVM (Support Vector Machine) — Theory – Machine Learning 101 – Medium](https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72)
+  [KNN Classification using Scikit-learn (article) - DataCamp](https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn)
+  [A Quick Introduction to K-Nearest Neighbors Algorithm](https://medium.com/@adi.bronshtein/a-quick-introduction-to-k-nearest-neighbors-algorithm-62214cea29c7)
+  **Aprendisaje no supervisado**
+  
+  Es un conjunto de datos del cual no tenemos conocimiento previo y queremos agruparlos de alguna manera en base a las caracteristicas que estos presenntan. Estos algoritmos permiten identificar patrones en los datos.
+  
+  Tenicas:
+  
+  - K-means clustering
+  
+  [Introduction to K-means Clustering](https://www.datascience.com/blog/k-means-clustering)
+  
+  **Aprendisaje por refuerzo**
+  
+  Usado para entrenar robots o en IA para abordar problemas. En ellos se definen 3 elementos principales:
+  
+  - Un agente, la entidad que quiere aprender
+  - Conjunto de estadis finitos, definen el estado del entorno
+  - Conjunto de acciones, establecen las posibilidades que puede realizar el agente
+  
+  El agente ira realizando acciones y luego evaluara el entorno para saber si el nuevo entorno es mas favorable o menos que el entorno previo a la accion, de modo tal saber si la accion fue positiva o no. De esta forma sera cada vez mas inteligente. Es como aprender en base a *"ensayo y error"*.
+  
+  (https://www.youtube.com/channel/UCP7jMXSY2xbc3KCAE0MHQ-A/videos)
+  
+  ----
+  
+  ## Algoritmos de ML
+  
+  Principales algoritmos segun sus clases:
+  
+  Regresion: - Regresion lineal
+  Clasificacion: - KNN
+  Arboles de decision
+  Clustering: - K-means
+  
+  **Regresion Lineal**
+  
+  Se parte a traves de un historico del cual conocemos su resultado y con esa informacion poder predecir el futuro para muestras las cuales no hayamos visto todavia. Se trata de la aproximacion mas sencilla de los modelos de regresion. Utilizaremos esta regresion cuando queramos una prediccion numerica sobre nuestra salida, buscamos un **numero**. Obviamente, para ello nuestras muestras tambien deben ser numeros.
+  
+  **Ejemplos en la nota tecnica**
+  
+  **KNN**
+  
+  Este clasificador lo que hace es computar las distancias de una muestra nuevo con el resto de la muestra que ya se encuentra etiquetada. Una vez ya realizada ese computo se ordenan de menor a mayor y se evalua el K que se haya elegido (determina el numero de vecinos que se deben tener en cuenta). El metodo determina que la muestra pertenece al grupo que tenga los k vecinos mas proximos.
+  
+  
+  
+  **Ejemplos en la nota tecnica**
+  
+  **Arboles de decision**
+  
+  Se crea un arbol de decision a partir de los distintos atributos de la muestra para determinar el valor que estamos buscando. Sera un valor concreto, una etiqueta, elegida entre un conjunto. Algoritmo de clasificacion.
+  
+  **Ejemplos en la nota tecnica**
+  
+  **K-Means**
+  
+  Aprendisaje no supervisado. Se usa para buscar grupos a partir de los datos. Se puede usar para adecuar la campaña de marketing segun los grupos donde quedan encuadrados. Util en sistemas OCR para distinguir tipos de documentos. En un banco podriamos identificar documentos de identidad, tarjetas bancarias, libretas, talones, etc.
+  
+  **Ejemplos en la nota tecnica**
+  
+  **Validacion cruzada, sesgo y varianza**
+  
+  El sesgo se refiere al error que cometemos por aproximar los datos reales a una funcion. Y la varianza/dispersion, a cuanto se alejan cada uno de los puntos los unos de los otros.
+  
+  Los modelos mas flexibles van a conseguir reducir el sesgo porque se van a ir ajustando mejor a los cambios, pero podieramos correr el riesgo de que terminen funcionando solo con lo sets de prueba y al momento de probar data real no funcione correctamente. A esto se denomina overfitting.
+  
+  Para prevenir esto podemos:
+  
+  - validacion cruzada: se divide el set en 5 partes. Se entrena con el N.4 y se valida con el N.5. luego se mide el error. Luego se cambia uno de los conjuntos por el de test y se vuelve a medir. asi hasta realizarlo con todos los grupos. Se escoge el modelo que se vaya comportando mejor a la medida.
+  
+  ----
+  
+  El modelo de Machine Learning dentro de la arquitectura de sistema se realiza en el master dataset para la arquitectura lambda.. dicernir en base a este conocimiento, donde colocar en la arquitectura kappa.
+'''
+tags: [
+  "BIG_DATA_MODELATION"
+  "Machine_Learning"
+]
+isStarred: false
+isTrashed: false

@@ -1,0 +1,40 @@
+createdAt: "2019-12-12T02:53:45.666Z"
+updatedAt: "2020-03-26T06:25:01.315Z"
+type: "MARKDOWN_NOTE"
+folder: "2e56bbd9db6601e3e30a"
+title: "MPP and Cloud Distribution"
+content: '''
+  ## MPP and Cloud Distribution
+  
+  ![Screen Shot 2019-12-11 at 10.00.12 PM.png](:storage/72613687-5456-435e-afa0-458db85d15e8/4826f62b.png)
+  
+  ![Screen Shot 2019-12-11 at 10.03.10 PM.png](:storage/72613687-5456-435e-afa0-458db85d15e8/1fb69b66.png)
+  
+  ### Introduction to Parallelism
+  
+  `divide-and-conquet` technique improves the proccesing task.
+  
+  The basic types of parallelism used in parallel computing are:
+  
+  - instruction - Level Parallelism.
+  - Data - Level Parallelism.
+  - Thread - Level Parallelism.
+  
+  **Techniques for Parallelism**
+  
+  __The superscalar technique__: supports execution of multiple instructions concurrently. it uses complex hardware infrastructure to issue, execute and complete large numbers of instructions at the same time.
+  
+  __Very long instructions words tecnique__: VLIW is a parallel proccesing that allows grouping of instructions as a simple, long instruction word.
+  
+  ### Distributed Systems
+  
+  Distributed System is a collection of machines that communicate through a computer network and interact with each other to achive a common goal.
+  
+  - Coordination: Ac act that multiple nodes must perform together.
+  - Examples of coordination: Group membership, Locking, Pub/Sub, Leader Election, Synchronization.
+  
+  We can use `zookeper`. Zookeper allows distributed processes
+'''
+tags: []
+isStarred: false
+isTrashed: false

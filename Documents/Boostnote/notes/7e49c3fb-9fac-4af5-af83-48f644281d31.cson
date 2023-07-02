@@ -1,0 +1,523 @@
+createdAt: "2020-03-30T20:08:36.959Z"
+updatedAt: "2020-11-15T19:40:55.918Z"
+type: "MARKDOWN_NOTE"
+folder: "7b6dd385ab806689b09e"
+title: "Analytics Theory"
+content: '''
+  ## Analytics Theory
+  
+  `Analysis and reporting both have several similarities and both can be used for decision making`. However, one major difference between is that while `reports helps organization understand what is happening, analysis helps organizations understand why it is happeningand what possible action can organizations take about it`.
+  
+  **Reporting**
+  
+  A  reporting  environment  is  also  often  called  a  `business  intelligence(bI)environment`. Such an environment `is where users go to select the reports they want to run, get the reports executed, and view the results`. The reports may contain  tables,  graphs,  and  charts  in  any  combination.
+  
+    Key factors are:
+  
+  - Providing the user the data that was asked for.
+  - Providing data in a standardized, predifined format.
+  - Showing the user what had happened in the past, to avoid inferences and help to get a feel of the data.
+  - Permitting the analyst to describe many pieces of data with a few indices.
+  
+  It is far better to `produce a handful of reports that are exactly what end users want than it is to create an all-encompassing suite of 500 reports`. It is not the number of reports, but the relevance of the reports, that matters.
+  
+  `The first question that you need to ask yourself before you dive into analysis is, what problem are you trying to solve?`
+  
+  **Analysis**
+  
+  An analysis is an interactive process of a person tackling a problem, finding the data required to get an answer, analyzing that data, and interpreting the results to provide a recommendation for action.
+  
+  The key points that define an analysis are:
+  
+  - Providing answers to the questions being asked.
+  - Taking steps needed to get the answers to those questions.
+  - Customizing to the specific questions being addressed.
+  - Involving a person who guides the process.
+  
+  When it comes to Big Data, `one thing to keep in mind as an organization` is that a great analysis can be created by simply piecing together information you already have in different ways for a new purpose. The job of an analyst is to get the data ready for their analysis and often doing a lot of simplistic computations as a starting point.
+  
+  ***The point of analysis is to not make a problem more difficult than it needs to be. Sometimes, a  simple  analysis  will  do  the  trick  and  provide  all  the  answers  needed.  Just  looking  at  data  differently can often yield powerful insights. If there is no need to get fancy, then there is no point in investing effort and time into complex analytics.***
+  
+  ![Screen Shot 2020-03-30 at 8.42.07 PM.png](:storage/7e49c3fb-9fac-4af5-af83-48f644281d31/898934a3.png)
+  
+  ### Basic and Advanced Analytics
+  
+  **Basic analytics** is often used `when you have large amounts of disparate data`. The `basic analytics process investigates what happened, when it happened, and what the impact was`.
+  
+  Some examples of basic analysis include:
+  
+  - Slicing and Dicing: Refers to the breaking down of data into smaller sets of data that are easy to explore.
+  - basic  Monitoring:  Monitoring  large  volumes  of  data  in  real  time.  For  example,  you  may  be  interested in monitoring the buzz associated with your product every minute when you launch an ad campaign.
+  - Anomaly Identification:  Identifying  anomalies,  such  as  an  event  when  the  actual  observation  differs from what you expected in your data because that may clue you in that something is going wrong with your organization, or operations, and so on.
+  
+  **Advanced analytics** goes beyond `what happened, when it happened, and what the impact was. It also tries to identify what caused it to happen and what can be done about it in the future`. Advanced analytics `provides algorithms for complex analysis of either structured or unstructured data`.
+  
+  Some examples of advanced analysis include: 
+  
+  - predictive modeling.
+  - text analytics.
+  - forecasting,  optimization, cluster analysis for segmentation, and affinity analysis.
+  
+  ### Characteristics of Big Data Analysis
+  
+  - it can be programmatic.
+  - it can be data driven.
+  - it can be use a lot of attributes.
+  - it can be iterative: new  applications  designed  to  address analysis.
+  
+  **Data Minning**
+  
+  Data mining involves exploring and analyzing large amounts of data to find patterns in the data. The goal of data mining is either classification or prediction.
+  
+  ### Data Cleaning and Pre processing
+  
+  **Graphical methods for indetifying outliers**
+  
+  - Histogram.
+  - two dimensional scatter plot, scatter plots can help to reveal outliers in more than one variable.
+  
+  **Transformations to Achieve Normality**
+  
+  Some  data  mining  algorithms  and  statistical  methods  require  that  the  variables  be  **normally  distributed**.
+  
+  The normal distribution is a continuous probability distribution commonly known as the **bell curve**, which is symmetric. It is centered at mean μ (“mew”) and has its spread determined by SD σ (sigma). Figure 9 showsthe normal distribution that has mean μ = 0 and SD σ  = 1, known as the standard normal distribution Z.
+  
+  It  is  a  common  misconception that  variables  that  have  had  the  Z-score standardization applied to them follow the standard normal Z distribution. This is not correct! It is true that the Z-standardized data will have mean  0  and  SD  =  1  but  the  distribution  may  still  be  skewed.
+  
+  For  right-skewed  data,  the  mean  is  greater  than  the  median,  and  thus  the  skewness  will  be  positive (Figure 12), while for left-skewed data, the mean is smaller than the median, generating negative values for skewness (Figure 13). For perfectly symmetric (and unimodal) data (Figure 9) of course, the mean, median, and mode are all equal, and so the skewness equals zero.
+  
+  ![Screen Shot 2020-04-12 at 7.47.38 PM.png](:storage/7e49c3fb-9fac-4af5-af83-48f644281d31/5b54fa71.png)
+  
+  To make our data “more normally distributed,” we must first make it symmetric, which means eliminating the skewness. To eliminate skewness, we apply a transformation to the data. Common transformations are the natural  log  transformation  ln(weight),  the  square  root  transformation  √weight,  and  the  inverse  square  roottransformation 1∕√weight. Application of the square root transformation (Figure 15)  somewhat reduces theskewness, while applying the ln transformation (Figure 16) reduces skewness even further.
+  
+  ![Screen Shot 2020-04-12 at 7.56.41 PM.png](:storage/7e49c3fb-9fac-4af5-af83-48f644281d31/a7f1cb46.png)
+  
+  Finally, we try the inverse square root transformation 1/Sq. Rt of weight, which gives us the distribution in Figure 18. The statistics in Figure 2.19 give us.
+  
+  ![Screen Shot 2020-04-12 at 7.58.22 PM.png](:storage/7e49c3fb-9fac-4af5-af83-48f644281d31/dac0e8d4.png)
+  
+  To  check  for  normality,  we  construct a normal probability plot, which plots the quantiles of a particular distribution against the quantiles of the standard normal distribution.
+  
+  In  a  normal  probability  plot,  if  the  distribution  is  normal,  the  bulk  of  the  points  in  the  plot  should  fall  on  a  straight  line;  systematic  deviations  from  linearity  in  this  plot  indicate  nonnormality.  Note  from  Figure  18  that the distribution is not a good fit for the normal distribution curve shown. Thus, we would not expect our normal probability plot to exhibit normality. As expected, the normal probability plot of inverse_sqrt(weight) in Figure  20  shows  systematic  deviations  from  linearity,  indicating  nonnormality.
+  
+  **Numerical Methods for Identifying Outliers**
+  
+  The Z-score method for identifying outliers states that a data value is an outlier if it has a Z-score that is either less than −3 or greater than 3. Variable values with Z-scores much beyond this range may bear further investigation,  in  order  to  verify  that  they  do  not  represent  data  entry  errors  or  other  issues.  However,  one  should not automatically omit outliers from analysis.
+  
+  Unfortunately, the mean and SD, which are both part of the formula for the Z-score standardization, are both rather sensitiveto the presence of outliers. That is, if an outlier is added to (or deleted from) a data set, then the values of mean and SD will both be unduly affected by the presence (or absence) of this new data value. Therefore, when choosing a method for evaluating outliers, it may not seem appropriate to use measures that are themselves sensitive to their presence.
+  
+  Therefore, data analysts have developed more **robust statistical methods** for outlier detection, which are less  sensitive  to  the  presence  of  the outliers  themselves.  One  elementary  robust  method  is  to  use  the  IQR.
+  The **quartiles** of a data set divide the data set into the following four parts, each containing 25% of the data:
+  
+  - The first quartile (Q1) is the 25th percentile.
+  - The second quartile (Q2) is the 50th percentile, that is, the median.
+  - The third quartile (Q3) is the 75th percentile.
+  
+  Then, the **iQR** is a measure of variability, much more robust than the SD. The iQr is calculated as IQR = Q3 − Q1, and may be interpreted to represent the spread of the middle 50% of the data.
+  
+  A robust measure of outlier detection is therefore defined as follows. A data value is an outlier if
+  
+  1. it is located 1.5(IQR) or more below Q1, or
+  2. it is located 1.5(IQR) or more above Q3.
+  
+  **Flag Variables**
+  
+  A flag variable (or dummy variable, or indicator variable) is a categorical variable taking only two values, 0 and 1. For example, the categorical predictor sex, taking values for female and male, could be recoded into the flagvariable sex_flag as follows:
+  
+  ```
+  If sex = female = then sex_flag = 0; if sex = male then sex_flag = 1.
+  ```
+  
+  When a categorical predictor takes k≥ 3 possible values, then define k − 1 dummy variables, and use the unassigned category as the reference category. For example, if a categorical predictor region has k = 4 possible categories, {north, east, south, west}, then the analyst could define the following k − 1 = 3 flag variables.
+  
+  ```
+  north_flag: If region = north then north_flag = 1; otherwise north_flag = 0.
+  
+  east_flag: If region = east then east_flag = 1; otherwise east_flag = 0.
+  
+  south_flag: If region = south then south_flag = 1; otherwise south_flag = 0.
+  ```
+  
+  The flag variable for the west is not needed, as region = west is already uniquely identified by zero values for each of the three existing flag variables. Instead, the unassigned category becomes the reference category, meaning that, the interpretation of the value of north_flag is region = north compared to region = west.
+  
+  **Removing Variables that are Not Useful**
+  
+  Such variables include:
+  
+  - unary variables.
+  - variables that are very nearly unary.
+  
+  **Unary variables** take on only a single value, so a unary variable is not so much a variable as a constant. For example, data collection on a `sample of students at an all-girls private school would find that the sex variable would be unary, as every subject would be female. As sex is constant across all observations, it cannot have any effect on any data mining algorithm or statistical tool`. The variable should be removed.
+  
+  Sometimes a variable can be very nearly unary. For example, suppose that 99.95% of the players in a field hockey league are female, with the remaining 0.05% male. The variable sex is therefore very nearly, but not quite, unary. While it may be useful to investigate the male players, some algorithms will tend to treat the variable as essentially unary. For example, a classification algorithm can be better than 99.9% confident that a given player is female. So, the data analyst needs to weigh how close to unary a given variable is, and whether such a variable should be retained or removed.
+  
+  **Variables that Should Probably Not be Removed**
+  
+  It is (unfortunately) a common – although questionable – practice to remove from analysis the following types of variables:
+  
+  - Variables for which 90% or more of the values are missing.
+  - Variables that are strongly correlated.
+  
+  Before you remove a variable because it has 90% or more missing values, consider that **there may be a pattern in  the  missingness**,  and  therefore  useful  information,  that  you  may  be  jettisoning.  Variables  that  contain  90% missing values present a challenge to any strategy for imputation of missing data. For example, are the remaining 10% of the cases truly representative of the missing data, or are the missing values occurring due to some systematic but unobserved phenomenon? For example, suppose we have a field called **donation_dollars** in a self-reported survey database. Conceivably, those who donate a lot would be inclined to report their donations, while those who do not donate much may be inclined to skip this survey question. Thus, the 10% who report are not representative of the whole. In this case, it may be preferable to construct a flag variable, donation_flag, as there is a pattern in the missingness which may turn out to have predictive power.
+  
+  However, if the data analyst has reason to believe that the 10% are representative, then he or she may choose to proceed with the imputation of the missing 90%. It is strongly recommended that the imputation be based on the regression or decision tree methods. Regardless of whether the 10% are representative of the whole or not, the data analyst may decide that it is wise to construct a flag variable for the non-missing values, as they may very well be useful for prediction or classification. Also, there is nothing special about the 90% figure; the data analyst may use any large proportion he or she considers warranted. bottom line: One should avoid removing variables just because they have lots of missing values.
+  
+  ### Text mining
+  
+  **How text mining works**
+  
+  Text mining works by employing concepts taken from different fields such as linguistics and statistics, as well as concepts used in Information and Communication Technologies (ICT). Statistical pattern learning is generally used to construct patterns from the extracted text. These patterns are analyzed to get high-value information.
+  
+  The  process  of  text  mining  involves  information  retrieval,  lexical  analysis,  pattern  recognition,  tagging,  information extraction, data mining techniques, and predictive analytics.
+  
+  In a way, we can summarize text mining as:
+  
+  ```
+  Text mining = Lexicometry + Data mining
+  ```
+  
+  With the help of pattern identified entities, e-mails, telephone numbers, and other quantities are identified. After  that,  sentiment  analysis  is  performed  to  understand  the  underlying  attitude.  Finally,  quantitative  text  analysis is conducted to determine the psychological profiling.
+  
+  The ultimate goal of text mining analytics is to convert unstructured text into data so that it can be analyzed for different purposes such as research, investigation, exploratory data analysis, biomedical applications, and business intelligence.
+  
+  **Text Analysis Process**
+  
+  Text mining is a challenging process because data on **social media** is enormous and highly unstructured. The key steps for any text mining process are as follows:
+  
+  1. extracting the keyword: Selecting the relevant and precise keywords for specific queries is the firstimportant step in the text analysis process. The content as well as the linkage patterns are then takeninto account for keyword search as content related to the same keywords is often linked to each other.The keywords act as social network nodes and are useful while clustering the text.
+  2. classifying and clustering the text: Different algorithms are used to classify text from the content.The nodes are first associated with labels and then classified. The classified text is then clustered on thebasis of  in. The linkage structure plays an important role in the way text is classified and clustered.Node labeling and content-based classification are important techniques for getting accurate results.
+  3. identifying  Patterns: Trend  analysis  is  based  on  the  principle  that  clusters  collected  at  differenttimes may have different concept distribution even if the content is same. Therefore, the concepts arecompared and accordingly classified in the same or different subcollections.
+  
+  ***Stemming  programs  are  also  known  as  stemmers  or  stemming  algorithms.  Among  the  popular  stemmers are Brute Force algorithms and Suffix stripping algorithms***
+  
+  - document representation: The basic document representation schemes are words and terms.
+  - Document retrieval: Document  retrieval  is  retrieving  documents  on  the  basis  of  query.  Text  indexing and measure of accuracy are used to generate accurate results. **Lucene** is a Java Library that adds text indexing and searching capabilities to an application.
+  - document  clustering: Document  clustering  and  categorization  is  the  grouping  together  of  conceptually related documents for fast retrieval. From the well-clustered documents, it is easier to search the terms for a given query.
+  
+  The clustering techniques are as follows:
+  
+  - Hierarchical clustering.
+  - One-pass clustering.
+  - Buckshot clustering.
+  
+  ![Screen Shot 2020-04-15 at 1.58.16 AM.png](:storage/7e49c3fb-9fac-4af5-af83-48f644281d31/83a2c3d8.png)
+  
+  ### Sentiment Analysis
+  
+  Sentiment analysis is the most important component of text mining. Also known as opinion mining, it is the study of analyzing people’s opinions, sentiments, attitudes, appraisals, and evaluations. It is done by examining large volumes of unstructured data on the Internet on the basis of positive, negative, or neutral view of the end user.
+  
+  Example of sentences that are analyzed in sentiment analysis:
+  
+  - Facts: Product X is better than product Y.
+  - Opinions:  I don’t like X. I feel Y is better in terms of durability.
+  
+  Sentiment analysis ranks are able to determine whether the content expresses opinion on the topic, and whether the opinion is positive or negative. Ranking in Web analysis is largely based on the frequency of the keywords, whereas in sentiment analysis it is based on the polarity of the attitude.
+  
+  **Methods Used in Sentiment Analysis**
+  
+  The words are tagged using Part of speech (POS) tagging, such as subject, verb phrase, verb, noun, noun phrase, determiner, prepositions, etc. Defined patterns are extracted to look out for the sentiment orientation of the patterns; for example, “Beautiful rooms” has an adjective followed by noun. The adjective “beautiful” clearly indicates positivity about the noun “rooms.” At this stage, emotionality in the phrase is also assessed. The  average  sentiment  orientation  of  all  the  phrases  is  then  computed  to  conclude  whether  the  product  is  recommended by the user.
+  
+  The process of sentiment analysis involves classification of given text on the basis of the following parameters:
+  
+  - Polarity, which can be positive, negative, or neutral.
+  - Emotional states, which can be sad, angry, or happy.
+  - Scaling system or numeric values.
+  - Subjectivity/objectivity.
+  - Features based on key entities such as durability of the furniture, screen size of the cell phone, lens quality of a camera, etc.
+  
+  
+  ### Mobile Analytics
+  
+  **What is Mobile Analytics**
+  
+  Mobile analytics is the process of analyzing the behavior of mobile users and is often used as a means of efficient CRM analytics. The primary goal  of  mobile  analytics  is  to  understand  the  marketing  aspects,  such  as  mobile  advertising,  search  marketing,  and  desktop  promotion  of  mobile  sites.
+  
+  mobile analytics is the study of data collected to:
+  
+  - Track sales.
+  - Keep the customers engaged.
+  - Convert potential buyers into buyers.
+  - Analyze screen flow.
+  
+  The key factors that differentiate mobile analytics from Web analytics are as follows:
+  
+  - Mobile  analytic  is  applied  for  location-based  segmentation,  whereas,  Web  analytics  is  applied  globally.
+  - Mobile analytics uses more complex code and programming languages compared to Web analytics, which uses easier codes.
+  - Mobile analytics is difficult to measure because mobile applications run offline.
+  - Mobile analytics makes sentiment analysis challenging as mobile phones have different operating systems that do not allow access to every Website.
+  - Mobile analytics deals with the challenge of limited data access support for mobile applications.
+  
+  **Mobile Analytics and Business Value**
+  
+  Mobile analytics offers most of the benefits of Web analytics and social analytics. It can provide insights related to CRM details such as demographics and behavior of visitors. The value of information related to consumer preferences is even more important for mobile marketing campaigns because mobile screen is small and users have limited attention span.
+  
+  Organizations usually opt for mobile advertising only **if their products are largely well suited to the needs and lifestyle of a group of users**, who are tech savvy enough to make enhanced and constant use of mobile phones and various kinds of mobile applications.
+  
+  Mobile  analytics  can  help  organizations  understand  the  preferences,  trends,  and  interests  of  mobile  users  because they use lots of social media sites such as Twitter and Facebook and other applications on their mobile devices.
+  
+  **Types of Results from Mobile Analytics**
+  
+  Mobile  analytics  can  effectively  collect  and  interpret  data  from  various  data  sources  to  provide  useful  information, including the following:
+  
+  - Number of unique visitors and total visitors.
+  - Click paths and the pages viewed by the visitor.
+  - Time spent on a page.
+  - Type of mobile device used and the mobile network operator.
+  - Screen resolution of the mobile phone used.
+  - Visitors’ downloading history.
+  - Visitors’ location.
+  
+  **Types of Applications Made for Mobile Analytics**
+  
+  Mobile  analytics  typically  consider  mobile  sites  and  mobile  applications  as  two  different  constructs  to  understand the mobile behavior.
+  
+  Hence, before delving into mobile analytics, an organization needs to consider some questions such as:
+  
+  - What does it want to analyze—mobile Website or mobile application?.
+  - Does it want to measure the metrics similar to Web analytics?.
+  - Can it reuse the organization’s existing analytical tools or applications?.
+  - Does it have the required skills in terms of human resources to handle mobile analytics?.
+  - Does it have the clarity of an ultimate business goal?.
+  - Does it have clarity about the expected outcome of the mobile marketing campaign?.
+  
+  **Mobile Analytics Tools**
+  
+  On the basis of configuration, you can classify mobile analytics tools as internal mobile measurement tools and external mobile measurement tools.
+  
+  **internal tools** are deployed by the installed software, and maintained by the IT department or SaaS vendor, for example, **localytics**.
+  
+  **external tools** are provided by the third-party data vendors, for example, **Ground thruth**.
+  
+  On the basis of utility, mobile analytics tools can be classified as:
+  
+  - Location-Based tracking tools.
+  - Real-Time analytics tools.
+  - User Behavior tracking tools.
+  
+  __Location-Based Tracking Tools__
+  
+  Knowing the geographic location of the visitors helps an organization to optimize the Website or application accordingly. It is not easy to locate the visitors, because it is not always based on the GPS signal but rather on the IP address of the gateway.
+  
+  Following are some of the excellent tools that can analyze geodata:
+  
+  - Placed (powered by foursquare).
+  
+  __User Behavior Tracking Tools__
+  
+  Mobile marketing campaigns are meaningful only if an organization is able to track its consumers’ behavior. Mobile  analytics  can  help  organizations  in  understanding  how  the  consumers  are  engaging  and  interacting  with their sites on mobile.
+  
+  Some of the user behavior tracking tools are as follows:
+  
+  - TestFlight.
+  - MobileApptracking.
+  
+  **Performing Mobile Analytics**
+  
+  Following are some of the critical key steps for successful integration of mobile analytics in the business processes:
+  
+  - Understand the mobile device and its operating environment.
+  - Create clear goal for the data analysis project.
+  - Create a dataset of target audience.
+  
+  **Data Collection through Mobile Applications**
+  
+  Collects  data  on  mobile  devices and sends it to the server for further processing. Data can be collected in multiple formats. Some data collection may require Internet connection; however, there are several applications that run on spreadsheet and do not require Internet connection. In this way, mobile applications can collect data online as well as offline.
+  
+  The benefits of mobile data collection application are as follows:
+  
+  - Data  collection  through  mobile  devices  increases  productivity  by  giving  the  analyst  an  opportunityto collect and analyze data in real time. It is particularly beneficial for the field executives.
+  - Data redundancy can be minimized because the data collected on mobile devices can be shared with the entire team or stakeholders within seconds.
+  - Mobile applications also reduce unnecessary paper works. An analyst can process data in the form ofpredesigned or customized reports or forms to sign up new customers instantly. Even photographs andsignatures can be uploaded on mobile devices.
+  
+  Following are some commonly used data collection applications:
+  
+  - Numbers.
+  - HanDBase.
+  - QuickTapSurvey.
+  - SurveyDeck.
+  
+  **Data Collection into servers**
+  
+  The data collected on mobile devices is transferred to a centrally located server. The server provides a secure environment to store data as well as a reporting suite for the analysis.
+  
+  **App Analytics Reports**
+  
+  - Calculating the number of installations for an app.
+  - Identifying the devices and networks used for an app.
+  - Determining geographic locations of app users and their languages.
+  - Calculating total app purchase.
+  - Tracking content such as video and images.
+  - Identifying number of screens per visit.
+  
+  The reports generated by the app analytics can be categorized as:
+  
+  - Audience reports are generated to understand the demographics of the peoplewho are using a particular application.
+  - Acquisition  reports  present  the  details  of  downloads  and  installation  of  themobile application. It is useful in understanding the efficiency of marketing campaign.
+  - Behavior  reports  include  the  users’  interaction  with  the  mobile  application.It presents the details related to likes and dislikes of a particular screen or button. It helps inmodifying the application.
+  - Conversion  reports  give  details  about  the  actual  sign-ups  and  sale  of  theapplication.
+  
+  **Challenges of Mobile Analytics**
+  
+  __Network Issues__
+  
+  Network operators are not able to completely understand the business processes occurring outside the carrier’s own firewall. Real-time analysis of data is not possible with the traditional tools because operators are dealing with Big Data.
+  
+  Spotting  and  diagnosing  the  network  issues  on  time  can  reduce  the  number  of  complaints  and  thus customer dissatisfaction. Real-time data in combination with historical data can also streamline and optimize network operations.
+  
+  __Security Issues and Government Protocol__
+  
+  Digital analytics, including mobile analytics, are driven by compliance laws and regulations. Personal details, financial details, medical reports, government intelligence data, and other important information that can hamper  a  user's  interest  should  be  protected.  Analysts  should  consider  past  records  to  avoid  unnecessary  security issues.
+  
+  **deep Packet inspection (DPI)** and **deep Packet capture (DPC)** can examine and extract data at a desired level of specificity. The data captured from devices or application logs certainly increases security threats. To meet such security threats, business organizations should be able to secure data in a way that can be intelligently monitored for real-time alerts. Data should not be made accessible to everyone.
+  
+  DPI is the process of filtering data packets over a network. This process examines the following information about a data packet:
+  
+  - Protocols.
+  - Virus.
+  - Intrusions.
+  
+  Then, the DPI process decides whether the packet should be passed or blocked, or passed to a different recipient.
+  
+  DPC refers to a computer program or a hardware that is used to divert and log traffic of a network.
+  
+  Companies are now investing in security analytics, which minimizes the security threat by combining the data analytics with traditional threat detection and monitoring system.
+  
+  ## Big Data Visualizations
+  
+  Visualization is an excellent medium to analyze, comprehend, and share information. Let us see why:
+  
+  - Visualization influences the human visual system to transmit huge amount of information into the brain.
+  - Visual images help in entablishing relationships and distinction between different patterns.
+  - Visualizations are specially good in understanding trends and outliers.
+  
+  **Visualization techniques**
+  
+  - isosurfaces: representation of an isoline in 3D form.
+  
+  ***Isoline refers to a graphical representation of a function with two variables using a straight line along with a curve***
+  
+  - Direct Volume Rendering: 2D projection of a 3D Dataset.
+  - Streamlines: its a field line that results from velocity vector field description of the flow.
+  - Maps: visual representation of an area.
+  - Parallel Coordinates: visualization technique for multi-dimensional data.
+  - Venn Diagram: represent logical relations between fine collections of sets.
+  - Timeline.
+  - Euler Diagram: representation of relations between sets.
+  - Ordinogram: used for the analysis of any set of multivariate objects.
+  
+  **Types of visualizations**
+  
+  - 1D/Linear -- Generally not in use.
+  - 2D/Planar -- GeoCommons, Google fusion Tables, Polymaps, Tableu Public.
+  - 3D/Volumetric -- AC3D, AutoQ3D, TrueSpace.
+  - Temporal -- timeline js, timeplot .
+  - Multi-Dimensional -- PieChart, histogram, bubble cloud, bar chart, scatter plot.
+  - Nwtwork -- matrix, node link diagram, hive plot and tube map.
+  - Tree/Hierarchical -- Dendogram (used to ilustrate clustering), Radial Tree (show a tree as radial).
+  
+  ### Importance of Big Data Visualization
+  
+  The benefits of social media are enormous, but the greatest challenge is proper data governance.
+  
+  Data visualization is a great way to reduce the turn-around time is consumed in interpreting Big Data. Only a few of companies are capable of providing open-source BI Software.
+  
+  **Shortcomings of Traditional information visualization**
+  
+  Traditional visualizations techniques are not able to interpret videos, audios and complex sentences. 60% of content generated on social media is in the form of text. the challengue here is to handle the huge amount of data and its speed.
+  
+  Data comming from diverse sources and data streaming, are also a challenging part of the visualization process.
+  
+  Performance is another critical issue where traditional tools falter. The real-time analysis of data generated by social media sites is very important for the success of any business organization. Generating reports from the traditional tools is a too long process. Traditional tools are difficult to use technical expertise methods.
+  
+  **Business Value of Big Data Visualization**
+  
+  Big Data generated from social media sites is a valuable source of information to understand consumer sentiments and demographics. Timely analysis and communication to stakeholders can bring dramatic success to the organization.
+  
+  If a IT department is not able to harness the quality information, this is because:
+  
+  - Most of the data is in unstructured form.
+  - Data is not analyzed in real time.
+  - The amount of data generated is huge.
+  - There is a lack of efficient tools and techniques.
+  
+  **Turning of Data into Information with Visualization**
+  
+  **Data reduction** and **abstraction** are generally followed during data mining to get valuable information.
+  
+  Visual data mining has the same principle as simple data mining. Howewer, visualization of data produces clustered images that are filtered with the help of **clutter-reduction techniques**.
+  
+  **Uniform sampling** and **dimension reduction** are two commonly used clutter-reduction techniques.
+  
+  Visual data reduction process involve automated data analysis to measure density, outliers, and density differences. These mesuares are then used as quality metrics to evaluate data reduction activity.
+  
+  A data visualization tool includes following techniques:
+  
+  - Representation technology: Histograms, clustering and discrete wavelet transforms.
+  - Data quality technology: Entablishing links, restoring missing data, and poblishing the data.
+  
+  ##### Big Data Visualization tools
+  
+  Big data visualization tools should be able to:
+  
+  - create predictive models.
+  - combine different analytics techniques and models.
+  - provide real time accessibility of data and results.
+  - use algorithm rather than codes.
+  
+  Beneficts of open source library:
+  
+  - It provides multichannel analytics for modeling.
+  - It can compress the complexity of data.
+  - It can create automated and dynamic solution.
+  - It provides customized business solutions that can be altered with the changing business requirements.
+  - It is easy to use.
+  - It is Web-accessible and wireless enabled.
+  - It is excellent in quality of performance.
+  
+  Some excellent open-source data visualization software are as follows:
+  
+  - VTK.
+  - IBM OpenDX.
+  - Vis5D.
+  - Gephi.
+  - Cave5D.
+  
+  **Techniques used in Big Data Visualization**
+  
+  __Analytical Techniques__
+  
+  - Regression Analysis.
+  - Grouping methods: Discriminant analysis is one of the most commonly used types of grouping methods.
+  - Multiple Equation models:  It is used to analyze the casual pathways from independent variables to dependent variables.
+  
+  ### Tableu Products
+  
+  - Tableu Desktop: Analytic tool for desktop.
+  - Tableu Server: Data management and web app application.
+  - Tableu Reader: Desktop app for share visualizations and dashboards on the desktop.
+  - Tableu Public: create and public interactive visualizations and dasboards.
+  
+  **Data types**
+  
+  Following are some data types:
+  
+  - Text values.
+  - Date values.
+  - Date and time values.
+  - Numerical values.
+  - Geographical values.
+  - Boolean values.
+  
+  ### How complicated can be labeled data?
+  
+  The difficulty of a data labeling task can depend on a few things, such as:
+  
+  - What kind of data. We label images, videos, and even objects represented by points in 3D space.
+  - How many labels. Sometimes, we are looking to label a specific object. Other times, we are labeling every item in an image.
+  - How complex the labels are. Sometimes the label can change under specific conditions. Sometimes the rules are very strict.
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

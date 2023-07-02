@@ -1,0 +1,92 @@
+createdAt: "2019-01-29T03:22:16.222Z"
+updatedAt: "2020-01-31T05:33:51.109Z"
+type: "MARKDOWN_NOTE"
+folder: "2e56bbd9db6601e3e30a"
+title: "Data Modeling and file formats"
+content: '''
+  ## Data Modeling and file formats
+  
+  **Data Model**: a way you think about your data elements, what they are, what domain they come from, how different elements related to each other, what they are composed of.
+  
+  - abstract model
+  - explicity defines the structured of data.
+  
+  ***In a graph data model..***
+  
+  vertices : entidades.
+  Edges : relations.
+  
+  **sequence file**
+  
+  Firts binary format implemented in hadoop, stores sequence key-value pairs, Java-Specific serialization/deseralization.
+  
+  **avro**
+  
+  Avro is a data serialization system based on RPC (Remote Procede Call). it uses json to serialize data and made it persisten in its own data structure.
+  
+  Core Features:
+  
+  - Avro supports a rich format structure to define simple and complex data.
+  - it provides a compact data format for information exchange in binary format.
+  - it allows users to store persisten data in container format.
+  - it supports RPC.
+  - Avro supports multi language programming.
+  - it has Avro IDL (interface description language), it cam be used to interactive programs with diferents language.
+  
+  Data Types:
+  
+  There are 2 data types by default:
+  
+  - Primitive types: null, int, double, etc. (commons)
+  - Complex types: records (allows partioning, sorting and grouping data in map and reduce functions), enums, arrays, maps (allow to store data in key value format), unons (allow to store json format), fixes (allow to store data value in fixed memory).
+  
+  Avro Schema
+  
+  `Schema is define by using json`. When data is write in avro, it defines its own schema for modifications. Use of schema writing files also makes serialization simple and fast because no pre-value overheads are required.
+  
+  **How can you save input and output operations?**
+  
+  by not reading the data neccesary for the processing and using superior compresion schemas
+  
+  **why columnar?**. This term also stands for our relational data model. First, databases were storing data row by row, linearly. They would completely serialize one row before continuing to the other. That means that, if you need to read the values from just one particular column, you still need to read the whole table.
+  
+  **RCFile**
+  
+  Columnar data format. Is one of the most popular storage formats for data warehouses. Conceptually, RCFile performs horizontal, vertical data partitioning to layout data. First, rows are split into row groups. And within each row group, values are encoded column by column. 
+  
+  **Parquet**
+  
+  - The most sophisticated columnar format in hadoop.
+  - Collaborative effort by twittter and cloudera.
+  - Supports nested and repeated data.
+  - Exploits many columnar optimizations. (segment pruning, an ability to skip an entire segment of data if it is known that no row satisfies filter and predicate, is crucial).
+  - - Optimizes write path.
+  
+  For general-purpose data storage and manipulations, you can use SequenceFiles or Avro files. They're efficient and flexible. SequenceFiles are a good choice for Java users. And Avro, boldly speaking, is a binary alternative to JSON.
+  
+  For analytical purposes like data warehousing, it is advisable to use columnar formats like RCFile or Parquet.
+  
+  ### Compression
+  
+  Kinds of compression...
+  
+  - Block-Level compression: used in sequenceFile, RCFiles, Parquet. Applied within a block of data.
+  - File-Level compression: applied to the file as a whole. hinders an ability to navigate through file.
+  
+  when to use compression??
+  R: Codec performance vary depending on data, many options available.
+  
+  When I/O bound, can benefit from compression.
+  When CPU Bound, compression may increase completion time.
+  
+  
+  Why are columnar file formats used in data warehousing?
+  
+  - Columnar stores allow more efficient slicing of data (both horizontal and vertical).
+  - Columnar stores occupy less disk space due to compression.
+'''
+tags: [
+  "Data_Eng"
+]
+isStarred: false
+isTrashed: false

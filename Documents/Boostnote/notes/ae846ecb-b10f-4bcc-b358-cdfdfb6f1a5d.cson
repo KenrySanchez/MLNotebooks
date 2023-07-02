@@ -1,0 +1,61 @@
+createdAt: "2018-09-22T20:34:27.495Z"
+updatedAt: "2018-09-22T23:36:55.019Z"
+type: "MARKDOWN_NOTE"
+folder: "48fbce2016d43f0faffa"
+title: "BD NoSQL y SQL"
+content: '''
+  ## BD NoSQL y SQL
+  
+  En los productos para Big Data, lo ideal es que tengan como pilares ser: escalables, disponibles y fiables.
+  
+  Las bases de datos estructuradas pueden generar problemas de cuello de botella. Los productos que debemos escoger para las soluciones de big data deben ser: escalables, disponibles y fiables.
+  
+  Las bases de datos relacionales solo deben usarse en el caso de que tengamos un modelo de datos fuertemente interrelacionado. Las BD relacionales son las bases de datos de la mayoria de las aplicaciones para cliente que estan en el mercado, por lo que las convierten en usualmente el origen de los datos a analizar.
+  
+  Las bases de datos no relacionales nos da la ventaja de que son 100% acoplables al escalado horizontal de los servidores. Las ventajas segun los tipos de datos NoSql son:
+  
+  - **documentales**: nos da atomicidad sobre un documento, lo que nos permite traernos toda su informacion. podremos validar los documentos que tenemos o no, segun lo requiera el caso.
+  - **clave-valor**: son versatiles. Estas BD estan pensadas para guardar informacion similar a como es en un arreglo o diccionario, por lo que para hacer consultas se necesita saber su llave.
+  - **columnares o por columna**: Estas BD guardan informacion por columna.
+  - **grafos**: Estan orientadas a consultas sobre soluciones.
+  
+  ***Facebook creo Cassandra. Las compañias van generando las soluciones a medida como las necesidades vayan apareciendo**.
+  
+  Al igual que dijimos con HDFS para conseguir que estas bases de datos distribuidas tengan alta disponibilidad, sean tolerante a particiones y una escalabilidad envidiable utilizan los mecanismos de particionado y replicación.
+  
+  ----
+  
+  #### Particionado
+  
+  Es el procedimiento por el cual se distribuye la carga en los nodos. Consiste en definir una clave en el conjunto de datos intentando que la informavion este lo mas uniformemente distribuida. De esta manera se consigue q todos los nodos tengan una carga de datos similar. Una vez que ya tengamos la clave, se le asigna un rango de esa clave a cada nodo, y a partir de ese momento ya sabemos donde reside la informacion a partir del valor de su clave.
+  
+  Cuando se modifica el tamaño del clúster se realiza un rebalanceado, de forma que se vuelvan a distribuir uniformemente las claves entre todos los nodos.
+  
+  **Ejemplo en nota tecnica**
+  
+  -----
+  
+  #### Replicacion
+  
+  La idea de replicar informacion es poder prevenir fallos o indisponibilidad del sistema. es replicar cada uno de los movimientos en más de un nodo. De esta forma, en caso de que un nodo se caiga, siempre tendremos otra copia disponible. Podremos decidir cómo va a actuar el producto en las escrituras. En ocasiones tomaremos como válida la escritura cuando quede físicamente apuntada en el nodo, pero en otros casos que requiera de mayor seguridad, configuraremos el sistema para que solo valide una escritura si esta ha sido anotada en x nodos.
+  
+  ----
+  
+  #### Teorema de CAP
+  
+  Este teorema nos dice que en un sistema de almacenamiento de datos distribuido no se puede garantizar a la vez la consistencia, la disponibilidad y la tolerancia a particiones para un producto.
+  
+  [Visual Guide to NoSQL Systems - Nathan Hurst's Blog](http://blog.nahurst.com/visual-guide-to-nosql-systems)
+  
+  El teorema CAP es importante para definir la prioridad al momento de ejecutar procesos de almacenamiento distribuido. Segun lo que queramos dejar, algunos BD son mejores que otros. **OJO CON ESTO**.
+  
+  
+  
+  
+'''
+tags: [
+  "Build_Big_Data_Project"
+  "big_data_theory"
+]
+isStarred: false
+isTrashed: false

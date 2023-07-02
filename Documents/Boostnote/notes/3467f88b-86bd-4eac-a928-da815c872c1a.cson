@@ -1,0 +1,40 @@
+createdAt: "2018-09-18T03:22:54.584Z"
+updatedAt: "2021-07-05T19:21:38.730Z"
+type: "MARKDOWN_NOTE"
+folder: "0fe456c2fe3ab010875c"
+title: "Casos practicos para Big Data en base a compañias"
+content: '''
+  ## Casos practicos para Big Data en base a compañias
+  
+  #### Netflix
+  
+  Yet even with this determined focus on design, most **digital experiences** fall short of user expectations. Of the 700 million websites that exist, 72% fail to consistently engage users or drive conversions. Of the 1.6 million apps available, just 200 account for 70% of all usage, and three out of four apps aren’t even used beyond the initial download.
+  
+  La experiencia digital de los usuarios puede ser mejorada usando Big Data a traves del analisis de comportamiento. **Mapa de Empatia**.
+  
+  Netflix is an example of a company that pays attention to user experience. **Early on Netflix chose not to charge late fees, like Blockbuster did, in order to help build its subscription DVD business. Netflix soon put Blockbuster out of business, but also came under threat from other online video streaming businesses like Sling and Roku. Fortunately, Netflix was able to use its viewing analytics to create personalized content recommendations, and even create its own shows geared toward viewer interests, such as House of Cards and Orange is the New Black.**
+  
+  For Netflix, the user experience was the price of entry, and the viewing data they gathered and analyzed became the strategic advantage of the business. Because of their approach, we don’t order special TV/Movie packages anymore. Instead, thanks to Netflix analytics, we have our viewing experience tailored to who we are. This is one example of a new breed of data-driven user experiences created by companies like Amazon, Pandora, Sephora, Nike, Progressive and Disney.
+  
+  ####  Target
+  
+  - Articulo sobre un padre que recibe anuncios y notificaciones de productos para el embarazo dando a entender que su hija esta embarazada.
+  - Target cada vez que compra una persona relaciona toda la informacion de la persona a un id cliente. Target es capaz de usar la informacion de estos clientes para poder formular anuncions y avisos en cuanto a productos que sean del interes del usuario.
+  - En el caso de la industria de productos para el bebe, Target revisa alrededor de 25 productos donde puede relacionar tales productos con las compras de los clientes, de ese modo, generar una puntacion de prediccion de embarazo.
+  - Target nota que las mujeres en los primeros trimestres de embarazo tienden a comprar calcio, magnesion o zinc como complementos asi como algunas lociones.
+  -  A traves de esa pequena pieza de informacion, Target puede revisar otras compras de modo que pueda generar otras predicciones, tales como la fecha actual de embarazo y a su vez la fecha en la que dara a luz.
+  -  Target also realizes that sending baby ads to expectant mothers who have not announced their pregnancies can be intrusive. They often mix in random ads for other products to make the pregnancy ads less noticeable. 
+  -  This practice has helped Target earn over $67 billion in retail sales in 2010 at a time when many stores were going bankrupt, proving that other businesses could benefit from this type of data collection.
+  
+  #### Implementaciones y anexos
+  
+  ![Screen Shot 2020-03-02 at 8.55.14 PM.png](:storage/3467f88b-86bd-4eac-a928-da815c872c1a/681fbf9c.png)
+  
+  ![Screen Shot 2020-03-02 at 8.48.06 PM.png](:storage/3467f88b-86bd-4eac-a928-da815c872c1a/234e01ec.png)
+'''
+tags: [
+  "casos_big_data"
+  "BD_-_Research"
+]
+isStarred: false
+isTrashed: false

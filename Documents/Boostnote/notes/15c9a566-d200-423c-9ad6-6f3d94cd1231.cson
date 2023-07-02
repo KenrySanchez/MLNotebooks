@@ -1,0 +1,81 @@
+createdAt: "2018-09-30T22:36:26.544Z"
+updatedAt: "2019-11-03T17:47:50.613Z"
+type: "MARKDOWN_NOTE"
+folder: "a41d44d96fbd153c28c9"
+title: "ML Algorithmos"
+content: '''
+  ## ML Algorithmos
+  
+  ***Usar el cheat-sheet de scikit-learn para ayudar a definir el algoritmo de ml a utilizar***
+  
+  #### Lineal Regression Algorithmo
+  
+  ```
+  Y = mX + b
+  ```
+  
+  - Y: Es el resultado (variable escalar)
+  - m: Es la pendiente
+  - X: Es el nuevo valor de entrada (variables explicativas)
+  - b: Es el corte con eje y en la grafica (cuando x=0)
+  
+  1. Metodos de Regresion lineal simple
+  2. Metodos de Regresion Lineal Multiple
+  
+  - En la practica, los coeficientes son las tangentes en la recta.
+  - La intercepcion es el lugar donde corta el eje x con el eje y.
+  
+  Formula **Mean Squared Error** para valores de prediccion
+  
+  ```
+  mseFull = np.mean((Y - predict(x)) ** 2)
+  ```
+  The Mean Squared Error (MSE) is a measure of how close a fitted line is to data points. For every data point, you take the distance vertically from the point to the corresponding y value on the curve fit (the error), and square the value. Then you add up all those values for all data points, and, in the case of a fit with two parameters such as a linear fit, divide by the number of points minus two.** The squaring is done so negative values do not cancel positive values. The smaller the Mean Squared Error, the closer the fit is to the data. The MSE has the units squared of whatever is plotted on the vertical axis.
+  
+  **How to do train-test split**
+  
+  ```python
+  from sklearn.model_selection import train_test_split
+  X_train, X_test, y_train, y_test = train_test_split(X, y, {test_size=??})
+  
+  ## Y must be just DataSet
+  ## X must be just DataFrame
+  ```
+  
+  **Residual plot**
+  
+  Residual plots are a good way to visualize the errors in your data.  If you have done a good job then your data should be randomly scattered around line zero. If you see structure in your data, that means your model is not capturing some thing. Maye be there is a interaction between 2 variables that you are not considering, or may be you are measuring time dependent data. If you get some structure in your data, you should go back to your model and check whether you are doing a good job with your parameters.
+  
+  ------
+  
+  
+  #### Perceptron
+  
+  El perceptron simula "una neurona" por el hecho de que puede tener varias entradas(X) con pesos(W) que pueden formar a su vez una funcion. El cuerpo del perceptron disparara la funcion segun los pesos W, que combinados con X, pueden ir variando en funcion del aprendisaje.
+  
+  [What the Hell is Perceptron? – Towards Data Science](https://towardsdatascience.com/what-the-hell-is-perceptron-626217814f53)
+  
+  ---------
+  
+  #### Decision Trees
+  
+  - Decision trees are built using recursive partitioning to classify the data.
+  - When partitioning the data, decision trees use **the most predictive feature** to split the data.
+  - **predictiviness** is based on decrease in entropy - gain information, or impurity.
+  
+  A tree stops growing at a node when:
+  - pure or nearly pure.
+  - No remaining variables on which to further subset the data.
+  - The tree has grown to a preselected size limit.
+  
+  <img src="https://ibm.box.com/shared/static/05mkemi191f6hbhw6f3ewrusckkgu861.png" width=800>
+  
+  
+  
+'''
+tags: [
+  "BIG_DATA_MODELATION"
+  "Machine_Learning"
+]
+isStarred: false
+isTrashed: true

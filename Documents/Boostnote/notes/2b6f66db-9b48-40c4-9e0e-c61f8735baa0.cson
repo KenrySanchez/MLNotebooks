@@ -1,0 +1,31 @@
+createdAt: "2019-12-09T03:48:41.727Z"
+updatedAt: "2019-12-09T03:59:37.922Z"
+type: "MARKDOWN_NOTE"
+folder: "6ef4a199ec2ea1601e84"
+title: "Core Concepts"
+content: '''
+  ## Core Concepts
+  
+  It's a real time distributed-computation framework similar to hadoop. it offers capabilities for batch processing and real-time computation. Storm uses the concept pf topologies similar to MapReduce Jobs. It makes use of topologies to process data at high speeds.
+  
+  Storm uses `Thrift Framework` to be able to submit `topologies` in any programming language.
+  
+  The key features that Storm supports for real time dara processing are the following:
+  
+  - Fast, Storm is a extremely fast data processing that is capable to process 1 million, 100-byte messages per second at every node in a cluster.
+  - Scalable, it supports  scapability that allows parallel computation on different nodes accros a cluster.
+  - Fault tolerant, it has robust fault tolerance mechanism that restart a worker on a secondary node if it stops on a primary node.
+  - Reliable, it has a reliable computation framework that ensures each unit of data is processed at least one time.
+  - Simple, it has an easy configuration that allows Storm to be deployed in a single day.
+  
+  Key of abstractions supported by Storm:
+  
+  - Tuples, refer to an ordered set of elements.
+  - Streams, refer to an unrestrained tuples sequence.
+  - Spouts, refer to sources of streams while performing a computation task.
+  - Bolts, refer to processing units that process input streams and generate output streams.
+  - Topologies, refer to visual representation of Spouts and Bolts in the form of a network.
+'''
+tags: []
+isStarred: false
+isTrashed: false

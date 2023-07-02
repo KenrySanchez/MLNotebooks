@@ -1,0 +1,70 @@
+createdAt: "2019-10-09T03:33:54.776Z"
+updatedAt: "2020-10-02T07:09:44.880Z"
+type: "MARKDOWN_NOTE"
+folder: "8af9713f3b0695b046b9"
+title: "ETL Processing on GCP Using Dataflow and BigQuery"
+content: '''
+  ## ETL Processing on GCP Using Dataflow and BigQuery
+  
+  **Data Storage and ETL options on GCP**
+  
+  ***The method you use to load data dependends on how much transformation is needed***
+  
+  - ETL: That's usually what you pick when this transformation is essential or if the transformation greatly reduces the data size.
+  - ELT: a very common example inside a big query you could use SQL to transform that raw data that's loaded into bigquery and just simply write it to a new table.
+  
+  **Cloud Storage explanation**
+  
+  **Technical letters**
+  
+  Download Starter Code for examples
+  
+  [professional-services/README.md at master · GoogleCloudPlatform/professional-services · GitHub](https://github.com/GoogleCloudPlatform/professional-services/blob/master/examples/dataflow-python-examples/README.md)
+  
+  ```
+  git clone https://github.com/GoogleCloudPlatform/professional-services.git
+  ```
+  
+  Create Bucket Storage with Command Line
+  
+  ```
+  gsutil mb -c regional -l us-central1 gs://$PROJECT
+  ```
+  
+  ```
+  You can check its status with the bq tool: "bq show -j --project_id=qwiklabs-gcp-bc7eadf3d414ac39 dataflow_job_7600062867212231912".
+  ```
+  
+  Create the BigQuery Dataset
+  
+  ```
+  bq mk lake
+  ```
+  
+  Setup Requeriments Components
+  
+  Run the following to set up the python environment:
+  
+  ```
+  sudo pip install --upgrade virtualenv
+  
+  #Dataflow requires python 2.7
+  virtualenv -p `which python 2.7` dataflow-env
+  
+  source dataflow-env/bin/activate
+  pip install apache-beam[gcp]
+  ```
+  
+  The following will spin up the workers required, and shut them down when complete:
+  
+  ```
+  python dataflow_python_examples/data_ingestion.py --project=$PROJECT --runner=DataflowRunner --staging_location=gs://$PROJECT/test --temp_location gs://$PROJECT/test --input gs://$PROJECT/data_files/head_usa_names.csv --save_main_session
+  ```
+  
+  This, ingest data from the Google Cloud Storage to a BigQuery Table. The Setup information has written into the python file which make the dataFlow pipeline.
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

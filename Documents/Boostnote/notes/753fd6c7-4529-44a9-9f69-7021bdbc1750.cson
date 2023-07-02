@@ -1,0 +1,443 @@
+createdAt: "2019-09-27T01:13:22.624Z"
+updatedAt: "2019-10-01T04:59:46.457Z"
+type: "MARKDOWN_NOTE"
+folder: "8af9713f3b0695b046b9"
+title: "GCP Essentials"
+content: '''
+  ### GCP Essentials
+  
+  **Google Cloud Platform**
+  
+  The web console and central development hub for GCP. As you start working in GCP, `you will be doing the majority of your work from this interface`. All of the GCP Qwiklabs use the console in some form or another.
+  
+  `A GCP Project` is an organizing entity for your Google Cloud resources. It often times contains resources and services—for example, it may hold a pool of virtual machines, a set of databases, and a network that connects them with one another. Projects also contain settings and permissions, which specify security rules and who has access to what resources.
+  
+  It's common for large enterprises or experienced users of GCP to have dozens to thousands of GCP projects. Organizations use GCP in different ways, so projects are a good way to separate cloud-computing services (by team or product for example.)
+  
+  The navigation menu is an important component of the GCP console—it offers quick access to the platform's services and also outlines its offerings. If you scroll through the menu, you will see that there are seven categories of GCP services:
+  
+  - Compute: houses a variety of machine types that support any type of workload. The different computing options let you decide how involved you want to be with operational details and infrastructure amongst other things.
+  - Storage: data storage and database options for structured or unstructured, relational or non relational data.
+  - Networking: services that balance application traffic and provision security rules amongst other things.
+  - Stackdriver: a suite of cross-cloud logging, monitoring, trace, and other service reliability tools.
+  - Tools: services for developers managing deployments and application build pipelines.
+  - Big Data: services that allow you to process and analyze large datasets.
+  - Artificial Intelligence: a suite of APIs that run specific artificial intelligence and machine learning tasks on the Google Cloud platform.
+  
+  **Roles and Permissions**
+  
+  We can use the `Cloud Identity and Access Management (IAM) service` to inspect and modify such roles and permissions.
+  
+  Role `Editor` is one of three primitive roles offered by GCP. Primitive roles set project-level permissions and unless otherwise specified, they control access and management to all GCP services.
+  
+  [Understanding roles  |  Cloud IAM Documentation  |  Google Cloud](https://cloud.google.com/iam/docs/understanding-roles#primitive_roles)
+  
+  So as an editor you will be able to create, modify, and delete GCP resources. However, you won't be able to add or delete members from GCP projects.
+  
+  **Cloud Shell**
+  
+  Cloud Shell is an in-browser command prompt execution environment that allows you to enter commands at a terminal prompt to manage resources and services in your GCP project.
+  
+  ## Creating Virtual Machine
+  
+  Google Cloud Shell is a virtual machine that is loaded with development tools. It offers a persistent 5GB home directory and runs on the Google Cloud. Google Cloud Shell provides command-line access to your GCP resources.
+  
+  You can list the active account name with this command:
+  
+  ```
+  gcloud auth list
+  ```
+  
+  [gcloud command-line tool overview  |  Cloud SDK Documentation  |  Google Cloud](https://cloud.google.com/sdk/gcloud)
+  
+  **Understanding Regions and Zones**
+  
+  Certain Compute Engine resources live in regions or zones. A region is a specific geographical location where you can run your resources. Each region has one or more zones. For example, the us-central1 region denotes a region in the Central United States that has zones us-central1-a, us-central1-b, us-central1-c, and us-central1-f.
+  
+  Resources that live in a zone are referred to as zonal resources. Virtual machine Instances and persistent disks live in a zone. To attach a persistent disk to a virtual machine instance, both resources must be in the same zone. Similarly, if you want to assign a static IP address to an instance, the instance must be in the same region as the static IP.
+  
+  [Regions and Zones  |  Compute Engine Documentation  |  Google Cloud](https://cloud.google.com/compute/docs/regions-zones/)
+  
+  Default regions and zones are set by using the following values:
+  
+  - google-compute-default-zone
+  - google-compute-default-region
+  
+  To see what your default region and zone settings are, use the following command:
+  
+  ```
+  gcloud compute project-info describe --project <your_project_id>
+  ```
+  
+  Look for the default zone and region metadata values in the response. if the `google-compute-default-zone` and `google-compute-default-region` keys and values are missing from the response, that means no default zone and region are set.
+  
+  **Example of parameters to fill to create instance**
+  
+  name: gcelab / name for the vm instance
+  region: us-central1 / [Regions and Zones  |  Compute Engine Documentation  |  Google Cloud](https://cloud.google.com/compute/docs/zones)
+  zone: us-central1-c
+  machine-type: n1-standart-2/ a new project has a default [Resource quotas  |  Compute Engine Documentation  |  Google Cloud](https://cloud.google.com/compute/docs/resource-quotas), which may limit the number of cpu cores. You can request more when you work om projects outside of this lab
+  book-disk: New 10gb standart persisten disk / There are a number of images to choose from, including: debian, ubuntu, etc.
+  Firewall: Check `Allow http traffic`, check this option so to access a webserver that you'll install later / This will automatically create firewall rile to allow http trafic on port 80.
+  
+  INSTALL A NGINX WEB SERVER
+  
+  - sudo su
+  - apt-get update
+  - apt-get install nginx -y
+  - ps auwx | grep nginx
+  
+  **Initializing gcloud sdk**
+  
+  The gcloud CLI is a part of the Google Cloud SDK. You need to download and install the SDK on your own system and initialize it (by running `gcloud init`) before you can use the gcloud command-line tool.
+  
+  **Create a new instance with gcloud**
+  
+  [gcloud command-line tool overview  |  Cloud SDK Documentation  |  Google Cloud](https://cloud.google.com/sdk/gcloud/)
+  
+  COMMANDS
+  
+  ```
+  gcloud compute instance create <name_instance> --machine-type <machine_type> --zone <your_zone>
+  ```
+  
+  INIT SSH INSTANCE
+  
+  ```
+  gcloud compute ssh <name_instance> --zone <your_zone>
+  ```
+  
+  **Setting environment variables**
+  
+  Environment variables are variables that define your environment. define your own variables and save yourself time when writing scripts that contain APIs or executables.
+  
+  ```
+  export PROJECT_ID=<your_project_ID>
+  export ZONE=<your_zone>
+  
+  echo $PROJECT_ID
+  echo $ZONE
+  ```
+  
+  **Create a virtual machine with gcloud**
+  
+  `gcloud compute` which enables you to easily manage your Google Compute Engine resources in a friendlier format than using the Compute Engine API.
+  
+  ```
+  gcloud compute instances create gcelab2 --machine-type n1-standard-2 --zone $ZONE
+  ```
+  
+  If you omit the `--zone` flag, gcloud can infer your desired zone based on your `default properties`. Other required instance settings, like machine type and image, if not specified in the create command, are set to default values.
+  
+  see default values
+  
+  ```
+  gcloud compute instances create --help
+  ```
+  
+  **Using gcloud commands**
+  
+  gcloud offers simple usage guidelines that are available by adding the -h flag (for help) onto the end of any gcloud invocation.
+  
+  ```
+  gcloud -h
+  ```
+  
+  More verbose help can be obtained by appending --help flag, or executing gcloud help command. Run the following in Cloud Shell:
+  
+  ```
+  gcloud config --help || gcloud help config
+  ```
+  
+  [gcloud  |  Cloud SDK  |  Google Cloud](https://cloud.google.com/sdk/gcloud/reference/), govern the behavior of commands on a per-invocation level. Flags override any values set in SDK properites.
+  
+  View the list of configurations in your environment:
+  
+  ```
+  gcloud config list
+  ```
+  
+  To check how other properties are set, see all properties by calling:
+  
+  ```
+  gcloud config list --all
+  ```
+  
+  List your componets:
+  
+  ```
+  gcloud components list
+  ```
+  
+  Here you will see what components are ready for you to use in this lab.
+  
+  **Auto-completion**
+  
+  `gcloud interactive` has auto prompting for commands and flags, and displays inline help snippets in the lower section as the command is typed.
+  
+  Static information, like command and sub-command names, and flag names and enumerated flag values, are auto-completed using dropdown menus.
+  
+  install the beta components
+  
+  ```
+  gcloud components install beta
+  ```
+  
+  Enter the gcloud interactive mode:
+  
+  ```
+  gcloud beta interactive
+  ```
+  
+  Test: Three basic ways to interact with the GCP services and resources..
+  
+  - gcloud.
+  - command-line interface.
+  - Client Libraries.
+  
+  ### Kubernetes Engine
+  
+  Google Kubernetes Engine (GKE) provides a managed environment for deploying, managing, and scaling your containerized applications using Google infrastructure. The Kubernetes Engine environment consists of multiple machines (specifically Google Compute Engine instances) grouped together to form a container cluster.
+  
+  **Cluster orchestration with Kubernetes Engine**
+  
+  Kubernetes Engine clusters are powered by the Kubernetes open source cluster management system. Kubernetes provides the mechanisms through which you interact with your container cluster. You use Kubernetes commands and resources to deploy and manage your applications, perform administration tasks and set policies, and monitor the health of your deployed workloads.
+  
+  Kubernetes draws on the same design principles that run popular Google services and provides the same benefits: automatic management, monitoring and liveness probes for application containers, automatic scaling, rolling updates, and more.
+  
+  **Kubernetes on Google Cloud Platform**
+  
+  When you run a Kubernetes Engine cluster, you also gain the benefit of advanced cluster management features that Google Cloud Platform provides. These include:
+  
+  - [Load balancing and scaling  |  Compute Engine Documentation  |  Google Cloud](https://cloud.google.com/compute/docs/load-balancing-and-autoscaling) for Compute Engine instances.
+  - [Node pools  |  Kubernetes Engine Documentation  |  Google Cloud](https://cloud.google.com/kubernetes-engine/docs/node-pools) to designate subsets of nodes within a cluster for additional flexibility.
+  - [Cluster autoscaler  |  Kubernetes Engine Documentation  |  Google Cloud](https://cloud.google.com/kubernetes-engine/docs/cluster-autoscaler) of your cluster's node instance count.
+  - [Auto-upgrading nodes  |  Kubernetes Engine Documentation  |  Google Cloud](https://cloud.google.com/kubernetes-engine/docs/node-auto-upgrade) for your cluster's node software.
+  - [Auto-repairing nodes  |  Kubernetes Engine Documentation  |  Google Cloud](https://cloud.google.com/kubernetes-engine/docs/node-auto-repair) to maintain node health and availability.
+  - [Overview of Stackdriver support for GKE  |  Stackdriver Monitoring  |  Google Cloud](https://cloud.google.com/kubernetes-engine/docs/how-to/logging) with Stackdriver for visibility into your cluster.
+  
+  **Setting a default compute zone**
+  
+  Your compute zone is an approximate regional location in which your clusters and their resources live. For example, us-central1-a is a zone in the us-central1 region.
+  
+  ```
+  gcloud config set compute/zone us-central1-a
+  ```
+  
+  **Creating a Kubernetes Engine cluster**
+  
+  A cluster consists of at least one cluster master machine and multiple worker machines called nodes. Nodes are Compute Engine virtual machine (VM) instances that run the Kubernetes processes necessary to make them part of the cluster.
+  
+  To create a cluster, run the following command, replacing [CLUSTER-NAME] with the name you choose for the cluster (for example my-cluster). Cluster names must start with a letter, end with an alphanumeric, and cannot be longer than 40 characters.
+  
+  ```
+  gcloud container clusters create [CLUSTER-NAME]
+  ```
+  
+  **Get authentication credentials for the cluster**
+  
+  After creating your cluster, you need to get authentication credentials to interact with the cluster.
+  
+  To authenticate the cluster run the following command, replacing [CLUSTER-NAME] with the name of your cluster:
+  
+  ```
+  gcloud container clusters get-credentials [CLUSTER-NAME]
+  ```
+  
+  **Deploying an application to the cluster**
+  
+  Kubernetes Engine uses Kubernetes `objects` to create and manage your cluster's resources. Kubernetes provides the `Deployment object` for deploying stateless applications like web servers. `Service objects` define rules and load balancing for accessing your application from the Internet.
+  
+  ```
+  kubectl run hello-server --image=gcr.io/google-samples/hello-app:1.0 --port 8080
+  ```
+  
+  This Kubernetes command creates a Deployment object that represents hello-app. In this command:
+  
+  - image: specifies a container image to deploy. In this case, the command pulls the example image from a Google Container Registry bucket. gcr.io/google-samples/hello-app:1.0 indicates the specific image version to pull. If a version is not specified, the latest version is used.
+  - port: specifies the port that the container exposes.
+  
+  Kubernetes Service, is a Kubernetes resource that lets you expose your application to external traffic, by running the following `kubectl expose command`:
+  
+  ```
+  kubectl expose deployment hello-server --type="LoadBalancer"
+  ```
+  
+  Passing in `type="LoadBalancer"` creates a Compute Engine load balancer for your container.
+  
+  Inspect the hello-server Service by running kubectl get:
+  
+  ```
+  kubectl get service hello-server
+  ```
+  
+  **Note**: It might take a minute for an `external IP address` to be generated. Run the above command again if the `EXTERNAL-IP column is in "pending" status`.
+  
+  **Clean Up**
+  
+  ```
+  gcloud container clusters delete [CLUSTER-NAME]
+  ```
+  
+  ### Set Up Network and HTTP Load Balancers
+  
+  [Overview of Load Balancing  |  Load Balancing  |  Google Cloud](https://cloud.google.com/load-balancing/docs/load-balancing-overview#a_closer_look_at_cloud_load_balancers)
+  
+  [Network Load Balancing Concepts  |  Load Balancing  |  Google Cloud](https://cloud.google.com/compute/docs/load-balancing/network/)
+  
+  [HTTP(S) Load Balancing Concepts  |  Load Balancing  |  Google Cloud](https://cloud.google.com/compute/docs/load-balancing/http/)
+  
+  In Cloud Shell, set the default zone and region:
+  
+  ```
+  gcloud config set compute/zone us-central1-a
+  gcloud config set compute/region us-central1
+  ```
+  
+  Note: When you run gcloud on your own machine, the config settings persist across sessions. In Cloud Shell you need to set this for every new session or reconnection.
+  
+  To simulate serving from a cluster of machines, create a simple cluster of Nginx web servers to serve static content using Instance Templates and Managed Instance Groups. `Instance Templates` define the look of every virtual machine in the cluster (disk, CPUs, memory, etc). `Managed Instance Groups` instantiate a number of virtual machine instances using the Instance Template.
+  
+  To create the Nginx web server clusters, create the following:
+  
+  - A startup script to be used by every virtual machine instance to setup Nginx server upon startup.
+  - An instance template to use the startup script.
+  - A target pool.
+  - A managed instance group using the instance template.
+  
+  Still in Cloud Shell, create a startup script to be used by every virtual machine instance. This script sets up the Nginx server upon startup:
+  
+  ```
+  cat << EOF > startup.sh
+  #! /bin/bash
+  apt-get update
+  apt-get install -y nginx
+  service nginx start
+  sed -i -- 's/nginx/Google Cloud Platform - '"\\$HOSTNAME"'/' /var/www/html/index.nginx-debian.html
+  EOF
+  ```
+  
+  Create an instance template, which uses the startup script:
+  
+  ```
+  gcloud compute instance-templates create nginx-template \\
+           --metadata-from-file startup-script=startup.sh
+  ```
+  
+  `Create a target pool`. A target pool allows a single access point to all the instances in a group and is necessary for load balancing in the future steps.
+  
+  ```
+  gcloud compute target-pools create nginx-pool
+  ```
+  
+  Create a managed instance group using the instance template:
+  
+  ```
+  gcloud compute instance-groups managed create nginx-group \\
+           --base-instance-name nginx \\
+           --size 2 \\
+           --template nginx-template \\
+           --target-pool nginx-pool
+  ```
+  
+  This creates 2 virtual machine instances with names that are prefixed with `nginx-`. This may take a couple of minutes.
+  
+  List the compute engine instances and you should see all of the instances created:
+  
+  ```
+  gcloud compute instances list
+  ```
+  
+  Now configure a firewall so that you can connect to the machines on port 80 via the EXTERNAL_IP addresses:
+  
+  ```
+  gcloud compute firewall-rules create www-firewall --allow tcp:80
+  ```
+  
+  **Create a Network Load Balancer**
+  
+  Network load balancing allows you to balance the load of your systems based on incoming IP protocol data, such as address, port, and protocol type. You also get some options that are not available, with HTTP(S) load balancing. For example, you can load balance additional TCP/UDP-based protocols such as SMTP traffic. And if your application is interested in TCP-connection-related characteristics, network load balancing allows your app to inspect the packets, where HTTP(S) load balancing does not.
+  
+  [Network Load Balancing Concepts  |  Load Balancing  |  Google Cloud](https://cloud.google.com/compute/docs/load-balancing/network/)
+  
+  Create an L3 network load balancer targeting your instance group:
+  
+  ```
+  gcloud compute forwarding-rules create nginx-lb \\
+           --region us-central1 \\
+           --ports=80 \\
+           --target-pool nginx-pool
+  ```
+  
+  List all Google Compute Engine forwarding rules in your project.
+  
+  ```
+  gcloud compute forwarding-rules list
+  ```
+  
+  **Create a HTTP(s) Load Balancer**
+  
+  HTTP(S) load balancing provides global load balancing for HTTP(S) requests destined for your instances. You can configure URL rules that route some URLs to one set of instances and route other URLs to other instances. Requests are always routed to the instance group that is closest to the user, provided that group has enough capacity and is appropriate for the request. If the closest group does not have enough capacity, the request is sent to the closest group that does have capacity.
+  
+  [HTTP(S) Load Balancing Concepts  |  Load Balancing  |  Google Cloud](https://cloud.google.com/compute/docs/load-balancing/http/)
+  
+  First, create a [Creating Health Checks  |  Load Balancing  |  Google Cloud](https://cloud.google.com/compute/docs/load-balancing/health-checks). Health checks verify that the instance is responding to HTTP or HTTPS traffic:
+  
+  ```
+  gcloud compute http-health-checks create http-basic-check
+  ```
+  
+  Define an HTTP service and map a port name to the relevant port for the instance group. Now the load balancing service can forward traffic to the named port:
+  
+  ```
+  gcloud compute instance-groups managed \\
+         set-named-ports nginx-group \\
+         --named-ports http:80
+  ```
+  
+  Create a [REST Resource: backendServices  |  Compute Engine  |  Google Cloud](https://cloud.google.com/compute/docs/reference/latest/backendServices)
+  
+  ```
+  gcloud compute backend-services create nginx-backend \\
+        --protocol HTTP --http-health-checks http-basic-check --global
+  ```
+  
+  Add the instance group into the backend service:
+  
+  ```
+  gcloud compute backend-services add-backend nginx-backend \\
+      --instance-group nginx-group \\
+      --instance-group-zone us-central1-a \\
+      --global
+  ```
+  
+  Create a default URL map that directs all incoming requests to all your instances:
+  
+  ```
+  gcloud compute url-maps create web-map \\
+      --default-service nginx-backend
+  ```
+  
+  To direct traffic to different instances based on the URL being requested, see [Creating an HTTPS load balancer  |  Load Balancing  |  Google Cloud](https://cloud.google.com/compute/docs/load-balancing/http/content-based-example)
+  
+  Create a target HTTP proxy to route requests to your URL map:
+  
+  ```
+  gcloud compute target-http-proxies create http-lb-proxy \\
+      --url-map web-map
+  ```
+  
+  Create a global forwarding rule to handle and route incoming requests. A forwarding rule sends traffic to a specific target HTTP or HTTPS proxy depending on the IP address, IP protocol, and port specified. The global forwarding rule does not support multiple ports.
+  
+  ```
+  gcloud compute forwarding-rules create http-content-rule \\
+          --global \\
+          --target-http-proxy http-lb-proxy \\
+          --ports 80
+          
+  gcloud compute forwarding-rules list
+  ```
+'''
+tags: []
+isStarred: false
+isTrashed: false

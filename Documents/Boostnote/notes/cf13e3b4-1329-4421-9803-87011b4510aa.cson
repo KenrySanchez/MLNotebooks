@@ -1,0 +1,86 @@
+createdAt: "2018-08-15T00:17:14.425Z"
+updatedAt: "2018-10-09T07:41:39.104Z"
+type: "MARKDOWN_NOTE"
+folder: "24cb38cf2bc84305c3de"
+title: "Gestion del Cliente a traves de los datos - Hacer negocios con clientes en base a datos"
+content: '''
+  ## Gestion del Cliente a traves de los datos - Hacer negocios con clientes en base a datos
+  
+  ### Cuando estes en clases, piensa y revisa las preguntas dadas por el profesor en la nota tecnica. Revisa la nota tecnica.
+  
+  #### Embudo de conversion
+  
+  - Fase 1: Definicion del buyer persona
+  - Fase 2: deteccion de los datos de los intereses de los usuarios
+  - Fase 3: Gestion de los prospects, una vez que me hayan dado algun dato o lead
+  - Fase 4: Gestion de los clientes una vez haya comprado, afiliado.
+  
+  **que se pueden hacer con los datos de la fase 2**
+  LA idea es entender al cliente (estudiar sus sentidos en base al mapa de empatia) y en base a ello poder ofrecerle al cliente no solo la solucion a un producto, sino que tambien a traves de sus gustos, ofrecerle la solucion de la manera mas acercada o familiar a ellos. Ellos deben sentir la solucion como si ya tuvieran una relacion de anos. Entender al usuario, ofrecer solucion en base a sus gustos.
+  
+  Todos los usuarios pueden ser analizados a traves del mapa de empatia.
+  
+  `Entender esto nos dara una vision precisa de cual es el valor real de un producto en la calle. Mas alla de innovarlo y construirlo`
+  
+  De que nos sirve el mapa de empatia:
+  
+  - Segmentar: Identificar quienes son los clientes, agruparlos en atributos comunes (demograficos, MH: Agruparlos por ideas, sentimientos, zonas de vision de comunes.)
+  - Humanizar: Entender a las personas y tomar en cuenta sus caracteristicas o pecularidades.
+  - Empatizar: Conocer mejor al cliente, haciendonos preguntas sobre el.
+  - Validar: La hipotesis que hayamos hechp. Se puede validar con ML al hacer predicciones.
+  
+  LA idea es realizar un mejor ajuste en nuestros productos o servicios en base a los intereses de los usuarios. (Ayuda a cambiar la logica de los data products).
+  
+  **El cubo noriso**
+  
+  En el cubo noriso tenemos 3 ejes, novedad-riesgo-social. Es muy usado en las estrategias de customer centric.
+  
+  Lo intersante del cubo noriso es que los 3 ejes estan interconectados entre si, y lo hacen a traves de puntos cardinales que definen "la personalidad en base a eso, gustos" de los clientes. Esto sumado a que cada eje define un contexto donde aplique el ideal y pensamiento del cliente, nos puede generar una idea de como se desenvuelve el cliente en base a esos 3 contextos.
+  
+  - Novedad: Generadores de tendencias, posicionamiento en lo nuevo.
+  - Riesgo: el riesgo percibido que poseen ciertos públicos (atributos como la superación, el concepto record, excitación...).
+  - Social: Muy actual, desde las redes sociales, por ejemplo, la recompensa social. En contraposición con un perfil más independiente.
+  
+  **Ejercicio para la empresa**
+  
+  Se puede crear un mapa de posicionamiento, donde se representa un eje de coordenadas a mi empresa con la de la competencia. Descubrir espacios libres donde orientar o atacar.
+  
+  ----
+  
+  #### Buyer persona
+  
+  Tu cliente ideal. Entender quien es el buyer persona nos ayudara a entender su labor e interaccion en el mundo. En que sitios por lo general esta este usuario y como captar su informacion.
+  
+  Para un contenido unico y de calidad, deberemos trabajar:
+  
+  - Las palabras claves que me posicionan.
+  - La gestion de CTA (Calls to Action), para el buscador o mis creatividades.
+  - Creacion de landing pages.
+  
+  ----
+  
+  #### Customer Journey
+  
+  Así establecemos el contacto con el usuario en todas las fases de compra, desde la necesidad, la búsqueda, la comparación, la consideración y la compra, o incluso más allá, en la fidelización de ese usuario.
+  
+  ***(Rellenar con nota tecnica)***
+  
+  ----
+  
+  Hay empresas que tienen datos limpios y listos para usar y aun asi no realizan ninguna conversion. Es asi por que en el marketing no tienen gestores que puedan crear campañas y ofertas en base a los datos.
+  
+  - Se debe implementar un software que ayude a gestionar los perfiles para poder crear las ofertas y campañas exitosas en base a los datos recogidos.
+  
+  
+  
+'''
+tags: [
+  "Gestion_del_cliente_Big_Data"
+  "casos_big_data"
+  "marketing"
+  "OMNICANALIDAD"
+  "Datos_y_Funnel"
+]
+isStarred: false
+isTrashed: false
+isPinned: false

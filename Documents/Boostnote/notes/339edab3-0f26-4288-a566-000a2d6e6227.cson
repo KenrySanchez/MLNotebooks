@@ -1,0 +1,48 @@
+createdAt: "2018-06-21T02:39:53.869Z"
+updatedAt: "2018-09-30T20:02:53.463Z"
+type: "MARKDOWN_NOTE"
+folder: "d464926e49d183704d56"
+title: "Customer Relationship Management"
+content: '''
+  ## Customer Relationship Management
+  
+  -  Desarrollar una sola base de datos que obtenga los de toda la cadena de valor y de los distintos canales desde donde se gestionen las relaciones y experiencias de los clientes *(omnicanalidad: estar consciente de que los sistemas omnicanales no solo ayudan a entregar informacion al cliente, tambien ayudan a recibir el resultado del estimulo producido por el cliente a traves de cualquiera de los canales - inteligencia de gestion)*.
+  -  Integrar todos los canales para una gestión programada en base a los momentos de la verdad y a la demanda de comunicación del cliente
+  -  mplementar una inteligencia de gestión, obteniendo modelos descriptivos y predictivos según objetivos planteados y como soporte a las acciones directas con el cliente, tanto en clave de adquisición y fidelizacion
+  
+  Desarrollado el modelo de gestión en base a estos puntos, el cambio debe **venir a nivel organizativo y de actitud de la cadena de mando, son los directivos los que deben de estar realmente convencidos de los beneficios que obtendrá al implementar un CRM en su empresa, teniendo claro que con ello conseguirá un binomio perfecto compuesto por el ROI, y por la Calidad (como consecuencia de una satisfacción rentable para la empresa)**
+  
+  Es labor de los que lideran el proyecto el concienciar a todo el personal, desde la alta dirección hasta el operativo de que la implementación del CRM implica un cambio de cultura organizacional orientada al cliente en la que debe de predominar el espíritu de servicio y colaboración mutua.
+  
+  **Análisis y planificación de una estrategia de gestión de la relación con el cliente**
+  
+  - **PRocesos dentro de una empresa:** Es el conjunto de actividades que relacionadas entre si, mediante una logica organizativa, permiten lograr un resultado empresarial en clave rentabilidad y de calidad
+  - **Mapa de procesos**: Es el conjunto de todos los procesos. Los procesos que aportan valor al cliente es lo que se denomina como la **cadena de valor**
+  
+  El CRM como cambio cultural, no puede sugerir una transformación de la empresa por la imposición de una herramienta tecnológica. Además de crear palancas de implementación de la cultura dentro de la organización, es necesario plantear un cambio en los procesos de la empresa.
+  
+  **¿Cómo nos relacionamos con nuestro cliente?**
+  
+  - CRM Operacional, lo integran las funciones relacionadas con el servicio al Cliente, la gestión de pedidos, el sistema de facturación, y la gestión, así como la automatización del marketing y la fuerza de ventas.
+  - CRM Analítico. Herramientas necesarias para la explotación y el análisis de los clientes. Las bases de datos que concentran toda la información de los clientes se ubican en esta parte del CRM.
+   - CRM Cooperativo. Conjunto más sensible de la relación con el cliente pues engloba las herramientas y medios de comunicación que permiten trabajar más estrechamente con los clientes, ofreciéndoles servicios de valor añadido aprovechando las nuevas tecnologías en el mundo de los negocios.
+  
+  
+  - **Datamining**: conjunto de técnicas encaminadas a la extracción de "conocimiento" procesable implícito en el DataWareHouse del CRM. Su base se encuentra en la inteligencia artificial y en el análisis estadístico, mediante los cuales se aborda la solución a problemas de predicción, clasificación y segmentación.
+  - **CRM DataWareHouse:** Almacén de datos central integrado, no volátil y variable en el tiempo, diseñado para favorecer el análisis y la divulgación eficientes de datos.
+  
+  **Ejemplo**:
+  
+  - sacar a relucir ejemplo de farmatodo y su sistema de fidelizacion de clientes, personalizacion de la experiencia del cliente y sus beneficios (a nivel tecnologico, tactico y de servicio al cliente)
+  
+  ------------
+  
+  
+'''
+tags: [
+  "CRM"
+  "OMNICANALIDAD"
+  "Data_orientada_a_negocio"
+]
+isStarred: false
+isTrashed: false

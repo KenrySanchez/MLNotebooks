@@ -1,0 +1,331 @@
+createdAt: "2019-01-31T03:59:56.032Z"
+updatedAt: "2021-03-09T03:27:43.990Z"
+type: "MARKDOWN_NOTE"
+folder: "2e56bbd9db6601e3e30a"
+title: "MapReduce, Process and how to build realible systems"
+content: '''
+  ## MapReduce, Process and how to build realible systems
+  
+  **Characteristics of MapReduce**
+  
+  - Scheduling: Jobs are Broken into pieces for the `map` process and just only all the `map` tasks are finalize is when the `reduce` process start.
+  - Synchronization: As in a distributed computation can be many job task, something has to handle the data until the `reduce` process. Between `map` and `reduce` is a process call `sort and shuffle` which is the indicate to carry all the data to the `reduce function`.
+  - Code/Data co-location: It represents the `map process`. All the data must be put in just one same machine  or node to ensure effective processing.
+  - FAult and error handling: So many MapReduce programs handle exception to handle all the possible errors.
+  
+  **I.E. MapReduce Runtime**
+  
+  Job Task -> Multiple Task Trackers -> Map Task (I.E. Task Tracker 1) -> Reduce task (Task tracker 2).
+  
+  They are three types of node failures:
+  
+  1. Fail-Stop.
+  2. Fail-Recovery.
+  3. Byzantine Failure.
+  
+  Link Failures:
+  
+  1. Perfect Link. Receive the message without any modification and in the same order.
+  2. Fail-Loss Link. Some pieces of the message can arrive with lost of information.
+  3. Byzantine.
+  
+  **Synchronous Systems**
+  
+  - Every message between node is delivered within limited time.
+  - Clock drift is limited.
+  - Each CPU instruction execution is also limited in time.
+  
+  Examples System Failures.
+  
+  - the type of failure when a server in a cluster gets out of service because of the power supply has burnt out: ***Fail-Stop***.
+  - the type of failure when a server in a cluster reboots because of a momentary power failure : ***Fail Recovery***.
+  - the type of failure when a server in a cluster qs unexpected results of the calculations: ***Byzantine Failure***.
+  - the type of failure when some packets are lost regardless the contents of the message: ****Fair-Loss Link**.
+  - the type of failure when some packets are modified during the transmission: ***Byzantine-Link***.
+  - the failure types specific for distributed computing, for example for Hadoop stack products: ***Fail-Recovery, Fair-Loss Link and Asynchronous model***
+  
+  **Distributed shell on MapReduce**
+  
+  distributed grep: (map = grep) + (reduce = none)
+  distributed head: (map = none) + (reduce = none)
+  distributed wc: (map = wc) + (reduce = operator.add*)
+  
+  Map --> Shuffle & Sort --> Reduce
+  
+  **Run MapReduce Job on Terminal cluster interface**
+  
+  ```bash
+  yarn jar $HADOOP_JAR_LOCATION \\ -mapper <task> \\ -reducer <task> \\ -numReduceTasks <number> \\ -input <location input> \\ -output <location output>
+  
+  ```
+  
+  Also for the reducer you can create a .sh batch file, put it with the `reducer task function */location*` and add the -file operation with the name of the file
+    
+  *Responsibility for MapReduce Streaming task*
+  - define input format
+  - agregated sorted data by key
+  - process data
+  - define output format
+  
+  *Structure of a metadata file in ls command*
+    
+  `permissions \\ number_of_replicas\\ userid \\ groupid \\ filesize \\ modifications_date \\ modification_time \\ filename`
+    
+  **wordCount in python**
+  
+  To define key. value pairs to input and output values, you have to define `<key> / <value>`
+    
+  ```python
+  
+  from _future_ import print_fuction
+  import sys
+  import re // regular expression module
+    
+  for line in sys.stdin:
+    article_id, content = line.split("\\t", 1)
+    words = content.split()
+    
+    for word in words:
+      print(word, 1, sep="\\t")
+  
+  ```
+  **Environment, Counters**
+    
+  ```python
+  
+    print("input_file: {}, start: {}, size: {}").format(
+      os.environ["mapreduce_map_input_file"],
+      os.environ["mapreduce_map_input_start"],
+      os.environ["mapreduce_map_input_length"]
+    )
+    
+    #you can use the -D function to process a regular expression - on the   #run command process
+    
+    #yarn jar $hadoop_streaming_jar -D word_pattern = "\\w+\\d+" \\
+    #-files mapper.py \\ -mapper 'python mapper.py' \\ -reducer 'python #reducer.py' \\ -input /data/wiki/en_articles \\ -output word_count
+  
+  ```
+  
+  **Questions**
+    
+  What do you need to define for processing data with Hadoop Streaming on the Map phase:
+    
+  1. Input records format.
+  2. Input record processor.
+  3. Output records format.
+  
+  What you have to define for processing data with Hadoop Streaming on the Reduce phase:
+    
+  1. Input records format.
+  2. Aggregation records by key.
+  3. Processor of values with the same key.
+  4. Output records format.
+  
+  In Hadoop Streaming a mapper and a reducer are run on:
+  
+  1. Stream of input records.
+  
+  How can the Reduce phase in Hadoop Streaming be omitted?:
+  
+  1. Set the number of reducers to 0.
+  
+  What is a Distributed Cache in Hadoop used for?
+    
+  1. To deliver the required files to the nodes.
+  
+  ## Hadoop MapReduce Application Tuning: Job Configuration, Comparator, Combiner, Partitioner
+    
+  There are three operations between map and reduce process:
+    1. comparator.
+    2. combiner.
+    3. partitioner.
+  
+  **Combiner**
+  
+  After running the `map` function. If there are many key-value pairs with the same key, Hadoop has to move all those values to the reduce function. To optimize such scenario, Hadoop support `combiner`. If provided, Hadoop will call the combiner from the same node as the map node before invoking the reducer and after running the mapper. This can significantly reduce the amount of data transferred to the reduce step. Combiner must have the same interface as the reduce function. For the `WordCount sample`, we will reuse the reduce function as the combiner.
+  
+  Combiners only works with `commutative and associative functions`.
+    
+  [MapReduce Combiners](https://www.tutorialspoint.com/map_reduce/map_reduce_combiners.htm)
+    [MapReduce Partitioner](https://www.tutorialspoint.com/map_reduce/map_reduce_partitioner.htm)
+  
+    **Stroller**: Machine that takes an unusually long time to complete one of the last few tasks in the computation. There can be problems with hard drive, operation system configurations, swap space uses network connections or CPU overutilization and whatnot. The solution for this problem was provided by the authors of MapReduce in the original article. They call it Backup Tasks. Due to the deterministic behavior of the Mapper and Reducer, you can easily re-execute straggler body of work on other note.
+    
+    All the other concurrent executions will be killed. Of course, the MapReduce framework is not going to have a copy for each running task. It is only used when a MapReducer application is close to completion. So, you usually pay less than a percent of access CPU time in return of faster job completion. This chart, which is taken from the original article, shows that MapReduce sort applications was faster by 30-40%. Speculative Execution is set by default to true. *See more configuration options in mapred-default.xml*.
+    
+  ```python
+    
+    ##code snippet
+  
+    #!/usr/bin/env python
+  
+  import sys
+  import re
+  
+  reload(sys)
+  sys.setdefaultencoding('utf-8')
+  
+  for line in sys.stdin:
+      try:
+          article_id, text = unicode(line.strip()).split('\\t', 1)
+      except ValueError as e:
+          continue
+      text = re.sub("^\\W+|\\W+$", "", text, flags=re.UNICODE)
+      words = re.split("\\W*\\s+\\W*", text, flags=re.UNICODE)
+  
+      # your code goes here
+  
+  ```
+  - English Wikipedia contains a lot of characters from other languages. So, you should parse Unicode correctly.
+  - you need to remove punctuation marks and transform words to lowercase, to get correct quantities.
+  
+  -------
+  
+  ### Topics from MapReduce (DASCA)
+  
+  - Reduce phase doesnt has `data locality` due to its input data source is from the map phase and not from the machine locality.
+  
+  - the yarn form of the commands to launch jobs in MapReduce is the yarn script.
+  - In case you are coding using the new MR API, and have the I/O Format classes or using counters, then you possible need to recompile some jars to work with MR2.
+  - to work with uber jobs, you must able `mapreduce.jobs.ubertask.enable=true`
+  
+  - When MR Applications, as line is `record separator` in a file, a image or audio file fully is the `record separator`.
+  
+  - split locations are a hint for scheduler to decide where to place a split execution.
+  
+  - in compute intensive aplication, the notion of locality must be rethought. Othewise, i can overheilming number of datanodes.
+  
+  
+  **Working with combiner and partioner**
+  
+  To compare the use of combiner, we can follow `disk i/o reduce` and `network i/o reduce`.
+  
+  To see this metrics, we can follow:
+  
+  - disk i/o --> spilled records conter.
+  - network i/o --> reduce shuffle bytes.
+  - CPU time spent.
+  - Total time spent by all maps in occupied slots.
+  - Total time spent by all reduces in occupied slots.
+  
+  Default partioner --> `hash partioner`. MR Framework uses `extend Partioner Class` for custom partioner. Using a custom partioner, we can control the way keys are directed to reducer.
+  
+  Partioner works in Mapper Phase, so the use of this is `define the way data is going to be out from the mapper phase`.
+  
+  **Types of output/Input Format**
+  
+  - text format. -> `default`.
+  - db format.
+  - stream format.
+  - table file format.
+  - Map File format
+  - Sequence file format.
+  
+  **Working with custom applications**
+  
+  For herency, when you extends `inputSplit`, the method `getSplit()` calculate the number of splits for the format.
+  
+  When you're going to create customs Key and Value class, you must implement `WritableComparable Interface`. The reason of this, is because of the `sort` phase of MapReduce after the `map phase`.
+  
+  requeriments:
+  
+  - defafult constructor + parametized constructor.
+  - implementation of readFields method.
+  - implementation of write method.
+  - overriding the compareTo method.
+  
+  Customized `RecordReader` when extends `RecordReader` class. You must specified your `key/value pair classes` and a private attribute `Line RecordReader = new LineRecordReader()`.
+  
+  requeriments:
+  
+  - override `close, getCurrentKey, getCurrentValue, getProgress, initialize` methods.
+  - provide implementation `netKeyValue() { Text line = LineRecordReader.getCurrentValue() }` method.
+  
+  Customized `FileInputFormat`, extends base class `FileInputFormat` or `InputFormat`. Then overrides the method `RecordReader<K, V> createRecordReader()`
+  
+  Customized `Multiple InputFormarts` is used for when you want to handle `multiple types of datasets`. You can handle (create) multiple datasets from a single file input. thats when you are going to use a `MultipleInputs`
+  
+  ```java
+  
+  //example
+  
+  MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, 
+                              //<dataset class which is a static class Mapper>. this is your mapper
+                              CustsMapper.class);
+    
+  MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, 
+                              //<dataset class which is a static class Mapper>. this is your mapper
+                              TxnsMapper.class);
+  
+  ```
+  
+  if you dont define the values `job.setMapOuputKey and job.setMapOutputValue`, for default, it would uses the properties of `job.setOutputKey and job.setOutputValue`
+  
+  **Worker Driver Load Balancing**
+  
+  Create a queue to handle a list of execution. The queue can be build using `hbase`.
+  
+  ### MapReduce Testing
+  
+  Apache MRUnit
+  
+  testing library for map reduce, developed by cloudera. Easy integration between junit and mapreduce.
+  
+  The location of logs files of MapReduce is controlled by the hadoop config files. By default, these logs are stored in the logs subdirectory of the hadoop version directory.
+  
+  Log Objects: TaskTracker logs.
+  Job counters deliver metrics about the execution of MapReduce.
+  
+  The standart MapReduce Maven pom file must be extended by adding MRUnit dependency for implementing a MRUnit.
+  
+  The limitation of MapDriver class is that it provides a single input/output pair per test.
+  
+  The MapDriver object must be used to specify multiple inputs.
+  
+  ReduceDriver has the same limitiation as MapDriver class of not accepting more than one input/output pair.
+  
+  MapReduceDriver class enable the test of map and reduce phase together.
+  
+  I/O for Mapper and Reducer must be parametized. At the end, we got three types pf parameters.
+  
+  Logs can be seen in the url `localhost:8088/logs`.
+  
+  1. Declare the steps driver (MapDriver, ReduceDriver, MapReduceDriver).
+  
+  ```JAVA
+  public MapDriver<KEY, VALUE, KEY, VALUE> mapDriver;
+  ```
+  
+  2. Declare `@Before` method.
+  
+  - instantiate the driver.
+  - instatiate method to be tested.
+  - Associate the class instances with the driver methods.
+  
+  ```JAVA
+  @Before
+  public void setup() {
+  // here put code to instiate.
+    
+    MapClass map = new MapClass();
+    
+    mapDriver = new MapDriver<KEY, VALUE, KEY, VALUE>();
+    mapDriver.setMap(map);
+  }
+  ```
+  
+  3 - Declare `@Test` method.
+  
+  **Create custom counters**
+  
+  1. Create enum object to represent the counters constant.
+  2. Write the business logic of using the counter in the mapper/reduce method.
+  3. In the driver code, `get the counters from the job and display them appropiately`.
+  
+  add file `mrunit-0.9.0-incubating`
+'''
+tags: [
+  "Data_Eng"
+]
+isStarred: false
+isTrashed: false

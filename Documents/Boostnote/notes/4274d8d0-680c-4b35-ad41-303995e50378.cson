@@ -1,0 +1,58 @@
+createdAt: "2019-07-09T04:38:42.363Z"
+updatedAt: "2020-09-18T05:54:22.175Z"
+type: "MARKDOWN_NOTE"
+folder: "2e56bbd9db6601e3e30a"
+title: "Preparing data for analyze in Hadoop"
+content: '''
+  ## Preparing data for analyze in Hadoop
+  
+  **Preparing data**
+  
+  In Hadoop, and generally in data warehousing, raw data is initially copied to a staging area (temporary view) and then some spark jobs or map reduce jobs can be run on them to clean the data and republish the data into hdfs.
+  
+  **Formatting data**
+  
+  From the perspective of the data form we must compress the data before it can be dumped into hdfs. There is no restriction though on the type of data that can be stored in Hadoop.
+  
+  Howewer, for applications in production we normally prefer data in some compressed format for example avro or parquet format. The reason being that the compressed data will take less space and it would need less network bandwith for data transfer.
+  
+  **Storing data**
+  
+  While storing the data in HAdoop you might have to check how you partition data as this is a very important step and it guides the performance of an application running on top of this data. For example, if you are storing data dumps from various dates then you can partition the data on date, that is, you can store it as:
+  
+  ```
+  <HDFS_DIR>/data_ingestion_date=<DATE_Value>
+  ```
+  
+  This helps to partition the data by date and the advantage of partitioning is simple powerful.
+  
+  ### Introducing Zebra Library
+  
+  Application to read-write data in the form of columns/rows.
+  
+  Zebra uses `TableStore` and `TableLoad` classes for writing and reading data to and from HDFS. It supports client applications streaming. Zebra only allows you to work with `Zebra tables`.
+  
+  After install zebra library, you must do the following steps:
+  
+  **1. Reviving Requirements**
+  
+  Before installing `zebra`, you must ensure you have the following components:
+  
+  1. pig (0.7.0 or higher).
+  2. hadoop (0.2.0 or higher).
+  3. jdk 1.6.
+  4. ant 1.7.1
+  
+  You also need to ensure that the `pig.jar` file is available within the class path of zebra library.
+  
+  **2. Compiling Zebra Library**
+  
+  **DAta types**
+  
+  Zebra implement the majority of basic data types and also add `record` which is a zebra custom data type to store other zebra data types in the form of an ordered list.
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

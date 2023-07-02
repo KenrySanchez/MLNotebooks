@@ -1,0 +1,28 @@
+createdAt: "2018-10-11T11:02:56.097Z"
+updatedAt: "2018-10-11T11:38:29.926Z"
+type: "MARKDOWN_NOTE"
+folder: "684eca6ee5c27e941bf4"
+title: "Aspectos importantes en la proteccion de datos"
+content: '''
+  ## Aspectos importantes en la proteccion de datos
+  
+  Todas las empresas deben aplicar el GDPR **ESTRICTOS**
+  
+  5 Retos:
+  
+  1. Gobernanza: La estrategia por la compañia para poder cumplir todos los estatus de las empresas
+  2. Personas y comunicaciones: Se cubren roles y responsabilidades. Cuando un cliente se comunica con nosotros debemos informarle de los datos con los que vamos a jugar.
+  3. Los procesos: Comprenden las actividades (sea cual sea) con los datos
+  4. Datos: Descubrimiento de los datos de los usuarios/personas que van relacionados a las identidades.
+  5. Seguridad y Privacidad:
+  
+  -----
+  
+  Para poder informar al usuario sobre los retos y disposiciones que vamos a realizar con sus datos, debemos ejecutar los metodos mas faciles para la comunicacion de las acciones.
+  
+'''
+tags: [
+  "big_data_theory"
+]
+isStarred: false
+isTrashed: false

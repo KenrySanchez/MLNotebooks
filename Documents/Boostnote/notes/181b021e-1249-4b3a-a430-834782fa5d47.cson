@@ -1,0 +1,211 @@
+createdAt: "2019-04-13T22:42:10.313Z"
+updatedAt: "2021-07-14T15:22:44.093Z"
+type: "MARKDOWN_NOTE"
+folder: "7b6dd385ab806689b09e"
+title: "Python - Stadistics in Data Science"
+content: '''
+  ## Python - Stadistics in Data Science
+  
+  ### Descriptive statistics
+  
+  - Describe basic features of data
+  - Giving short summaries about the sample and measures of data
+  
+  ```python
+  ## describe method
+  df.describe()
+  
+  ## summarize the categorical data is by using the value_counts() method
+  count_drive = df["drive"].value_counts()
+  ```
+  
+  ### Box plots
+  
+  They are great way to visualize numeric data, since you can visualize the various distributions of the data.
+  
+  - The main features of the box plot shows are the median of the data which represents where the middle data point is.
+  - The upper quartile shows where the 75th percentile is.
+  - The lower quartile shows where the 25th percentile is.
+  - The data between the upper and lower quartile represents the interquartile range.
+  - Next, you have the lower and upper extremes. These are calculated as 1.5 times the interquartilre range above the 75th percentile and as 1.5 times the IQR below the 25th percentile.
+  - Finally, box plots also display outliers as individual dots that occur outside the upper and lower extremes. With box plots, you can easily spot outliers and also see the distribution and skewness of the data. Box plots make it easy to compare between groups.
+  
+  ![1*2c21SkzJMf3frPXPAR_gZA.png](https://cdn-images-1.medium.com/max/1600/1*2c21SkzJMf3frPXPAR_gZA.png)
+  
+  ```python
+  sns.box(x= "label x" y = "label y", data = df)
+  ```
+  
+  Quantiles essentially refer to the mathematical expressions of the borderlines of each segment within the dataset. The nomenclature is fairly common and easy to understand, with percentile referring to a 100, decile referring to 10 and quartile referring to 4. Quantiles, in this case, refer to n where n is the number of segments in the dataset.
+  
+  As a natural consequence, the interquartile range of the dataset would ideally follow a breakup point of 25%.
+  
+  With that understood, the IQR usually identifies outliers with their deviations when expressed in a box plot. Observations below Q1- 1.5 IQR, or those above Q3 + 1.5IQR (note that the sum of the IQR is always 4) are defined as outliers.
+  
+  So, if you want to delete Outliers, you can do the following for pandas library:
+  
+  ```PYTHON
+  def remove_outlier(df):
+  	    low = .05
+  	    high = .95
+  	    quant_df = df.quantile([low, high])
+  	    for name in list(df.columns):
+  	      if is_numeric_dtype(df[name]):
+  	         df = df[(df[name] > quant_df.loc[low, name]) 
+                 & (df[name] < quant_df.loc[high, name])]
+  	    return df
+  ```
+  
+  [Identifying and Removing Outliers Using Python Packages](https://www.dasca.org/world-of-big-data/article/identifying-and-removing-outliers-using-python-packages)
+  [Ways to Detect and Remove the Outliers - Towards Data Science](https://towardsdatascience.com/ways-to-detect-and-remove-the-outliers-404d16608dba)
+  
+  ### Scatter Plot
+  
+  In our dataset price and engine size are continuous variables. What if we want to understand the relationship between engine size and price. Could engine size possibly predict the price of a car? One good way to visualize this is using a scatter plot. Each observation in the scatter plot is represented as a point
+  
+  - Each observation represented as a point.
+  - Scatter plot show the relationship between two variables
+  
+  ```python
+  y = df["engine-size"]
+  x = df["price"]
+  
+  plt.scatter(x, y)
+  plt.title("this is the title")
+  plt.xlabel("label x name")
+  plt.ylabel("y label name")
+  ```
+  
+  ### Grouping Data
+  
+  is there any relationship between the different types of drive system, forward, rear, and four-wheel drive, and the price of the vehicles? If so, which type of drive system adds the most value to a vehicle? It would be nice if we could group all the data by the different types of drive wheels and compare the results of these different drive wheels against each other. 
+  
+    Use Panda `dataframe.GroupBy()` method:
+  - can be applied on categorical variables
+  - group data into categories
+  - single or multiple variables
+  
+  ```python
+  df_test = df[["drive", "name", "price"]]
+  df_grp = df_test.groupBy(["drive", "name"], as_index=False).mean()
+  ```
+  
+  **Pandas - Pivot**
+  
+  One variable displayed along the columns and the other variable displayed along the rows
+  
+  ```python
+  df_pivot = df_grp.pivot(index = "drive", columns="name")
+  ```
+  
+  **HeatMap**
+  
+  Heat map takes a rectangular grid of data and assigns a color intensity based on the data value at the grid points. It is a great way to plot the target variable over multiple variables and through this get visual clues with the relationship between these variables and the target
+  
+  ```python
+  
+  plt.pcolor(df_pivot, cmap="RdBu")
+  plt.colorBar()
+  plt.show()
+  ```
+  
+  ### Correlation
+  
+  Linear regresion for correlation
+  
+  ```python
+  sns.regplot(x = "engine-size", y="prices", data =df)
+  plt.ylim(0,)
+  ```
+  
+  **Pearson correlation**
+  
+  Measure the strength of the correlation between two features
+  - correlation coefficient
+  - P-value
+  
+  Correlation Coefficient
+  - close +1: Large Positive relationship
+  - close -1: Large Negative relationship
+  - close to 0: no relationship
+  
+  P-value
+  - p-value < 0.001 Stronge certainty in the result
+  - 0.001 > p-value < 0.05 moderate certainty in the result
+  - 0.05 > p-value < 0.1 weak certainty in the result
+  - p-value > 0.1 no certainty in the result
+  
+  ***Stronge correlation: coefficient close to +1 or -1 and p-value < 0.001***
+  
+  Pearson correlations are suitable only for metric variables.
+  
+  For ordinal variables, use the `Spearman correlation` or `Kendall’s tau` and for nominal variables, use `Cramér’s V.`
+  
+  ```python
+  pearson_coff, p-value = stats.pearsonr(df["housepower"], df["price"])
+  ```
+  
+  ### ANOVA (Analysis of variance)
+  
+  statistical comparasion of groups.
+  
+  Why do we perform ANOVA?
+  - finding correlation between different groups of a categorical variable (3 or more groups).
+  
+  What we obtain from ANOVA?
+  - F-test score: variation between sample group means divided by variation within sample group.
+  - p-value: confidence degree.
+  
+  Scales:
+  - Large F imply strong correlation between variable categories and target variable
+  - Small F: imply poor correlation between variable categories and target variable
+  
+  [ANOVA Test: Definition, Types, Examples - Statistics How To](https://www.statisticshowto.datasciencecentral.com/probability-and-statistics/hypothesis-testing/anova/)
+  
+  ```python
+  df_anova = df[["make", "price"]]
+  grouped_anova = df_anova.groupedBy(["make"])
+  
+  anova_results_1 = stats.f_oneway(grouped_anova.get_group("honda")["price"], grouped_anova.get_group("jaguar")["price"])
+  ```
+  
+  ### Chi Square
+  
+  When both the feature and the response are categorical then the `chi-square` method for feature selection can be used it. It's a statical test applied to the groups of categorical features to evaluate the likelihood of correlation or association between them using their frequency distribution. Using this method is simple, we calculate the `chi-square` distribution between each feature and the response and figure out if the response is independent of the feature or not. If the response is related to the feature then we keep it or else we discard it.
+  
+  The chi-square statistical test is used to determine whether there’s a significant difference between an expected distribution and an actual distribution. It’s typically used with categorical data such as educational attainment, colors, or gender.
+  
+  [A Gentle Introduction to the Chi-Squared Test for Machine Learning](https://machinelearningmastery.com/chi-squared-test-for-machine-learning/)
+  
+  [Gentle Introduction to Chi-Square Test for Independence](https://towardsdatascience.com/gentle-introduction-to-chi-square-test-for-independence-7182a7414a95)
+  
+  [Chi-Square Test for Feature Selection in Machine learning](https://towardsdatascience.com/chi-square-test-for-feature-selection-in-machine-learning-206b1f0b8223#:~:text=to%20normal%20distribution.-,Chi%2DSquare%20Test%20for%20Feature%20Selection,O%20and%20expected%20count%20E.&text=In%20feature%20selection%2C%20we%20aim,highly%20dependent%20on%20the%20response.)
+  
+  __NOTE__: There is a big difference about use `chi2` for found correlation betweent groups (use `chi2_contingency`. At least you want to test each feature as a group, this will for `selection`) and other for `feature selection` (use `chi2` from `sklearn`).
+  
+  ### Naive Bayes
+  
+  It's a simple algorithm, the idea is all the features in a dataset are 'naive', which means, they are all independent from each other and are not correlated.
+  
+  **The bayes theorem** is based on the concept of learning from experience, that is, using a sequence of steps to come to a prediction. It's the calculation of probability based on prior knowledge of occurrences that might have led to the event.
+  
+  ```
+  P(A|B) = [P(B|A)*P(A)]/P(B)
+  ```
+  
+  ***I.E, from our childhood we have seen a red ball but a red cat or a red bat is very unlikely to our eyes.***.
+  
+  **Advantages**
+  
+  - it's simple and fast to train. It can be trained on smaller sets of data. Hence, if you're looking for something very fast to train naive bayes is a good choice.
+  - It can make both binary and multi-class classification.
+  
+  **Disadvantages**
+  
+  - Naive bayes assumes that the features in the dataset are completely independent of each other. This goes well in some datasets where the features are relatively independent, but in datasets where the features are tighly coupled or related, it can give bad performance in terms of prediction.
+  - If categorical variable has a category (in test data set), which was not observed in training data set, then model will assign a 0 (zero) probability and will be unable to make a prediction. This is often known as Zero Frequency. To solve this, we can use the smoothing technique. One of the simplest smoothing techniques is called **Laplace estimation**.
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

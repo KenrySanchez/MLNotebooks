@@ -1,0 +1,23 @@
+createdAt: "2018-09-17T02:38:23.642Z"
+updatedAt: "2020-07-30T07:35:28.010Z"
+type: "MARKDOWN_NOTE"
+folder: "4a17dc80ccbb28b98a68"
+title: "Datos Abiertos"
+content: '''
+  ## Datos Abiertos
+  
+  Los datos abiertos son datos que pueden ser utilizados, reutilizados y redistribuidos libremente por cualquier persona, y que se encuentran sujetos, cuando mas, al requerimiento de atribucion y de compartirse de la misma manera en como se encuentran.
+  
+  Los datos abiertos son:
+  
+  - Disponibles para todo el mundo y debe estar disponible en una forma conveniente y modificable
+  - los datos pueden ser integrados con otros funcionamientos
+  - Los datos deben poder ser utilizados por cualquier persona o grupo, sin tener restricciones o condiciones de uso.
+  
+  
+'''
+tags: [
+  "Gestion_del_cliente_Big_Data"
+]
+isStarred: false
+isTrashed: false

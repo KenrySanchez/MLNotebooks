@@ -1,0 +1,51 @@
+createdAt: "2019-12-10T00:15:19.889Z"
+updatedAt: "2020-01-23T20:15:19.928Z"
+type: "MARKDOWN_NOTE"
+folder: "24cb38cf2bc84305c3de"
+title: "Big Data and Fraud Management"
+content: '''
+  ## Big Data and Fraud Management
+  
+  Common Frauds in Online Retail Industry
+  
+  - Credit Card Fraud.
+  - Exchange or Return Policy Fraud.
+  - Personal Information Fraud.
+  
+  to preventing frauds, it must observe and analyze customer actions and flags about trends of fraud, but this problem becomes very big with huge data.
+  
+  **Data Sources for controlling frauds**
+  
+  - A data base of all existing frauds.
+  - Recognized potential fraud patterns.
+  - Modeled behaviors of hackers.
+  - System and network generated data which can highlight irregularity patterns.
+  
+  **Big Data to detect real time frauds**
+  
+  - Comparing live transactions.
+  - Authenticate online transactions.
+  - Identify new ways of fraud and add them to fraud prevention checks (model ml).
+  
+  **Visualize fraud with Big Data**
+  
+  - Create maps and graphs to make comparasions.
+  - Create effective systems to block fraud.
+  - Reflect comparasions between products and regions alerting retailers and allowing them to mitigate risk accordingly.
+  
+  **Step by Step SNA method in Frauds**
+  
+  1. The analytics Team uses data from various sources, scores the risk of fraud and ranks the likelihood of fraud.
+  2. Depending of the score of the particular network, an alert is generated.
+  3. Issues of frauds that are identified are added into the case System.
+  4. The investigators can then lerevage this information and begin researching more on the fraudulent claim.
+  
+  Three innovative fraud detection methods include SNA, Predictive Analytics and CRM Management.
+  
+  ![Screen Shot 2019-12-11 at 9.25.17 PM.png](:storage/c6ad9b6d-0308-4cad-adc1-fb22d3bfff5c/75c36886.png)
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

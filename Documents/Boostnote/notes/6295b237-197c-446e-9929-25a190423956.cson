@@ -1,0 +1,52 @@
+createdAt: "2019-02-13T02:49:00.664Z"
+updatedAt: "2019-07-09T04:17:37.894Z"
+type: "MARKDOWN_NOTE"
+folder: "a431d02702033fa18596"
+title: "Prepare Practice"
+content: '''
+  ## Prepare Practice
+  
+  An RDD in Spark is just a collection split into partitions (at least one). Each partition lives on an executor which process it. With sc.parallelize(), your collection is split in partitions assigned to executors, so for example you could have [1,2] on an executor, [3] on another, [4,5] on another one. In this way executors process the partitions in parallel. With broadcast as GwydionFR said, the passed parameter is copied to each executor.
+  
+  ```python
+  
+  sc.parallelize(...) spread the data amongst all executors
+  sc.broadcast(...) copy the data in the jvm of each executor
+  
+  ```
+  
+  **Working with text files**
+  
+  ```python
+   raw_data = sc.textFile("nasdaq.csv")
+  ```
+  
+  ### Best Practices
+  
+  For real-world applications, your data would either reside in HDFS or in databases such as HIVE/HBASE for big data.
+  
+  **Collecting and printing results**
+  
+  When you fire a collect on an RDD at that instant the data from the distributed nodes is pulled and brought into the main node or drive nodes memory. Once the data is available, you can iterate over it and print it on the screen. As the entire data is brought in memory `this method is not sutiable for pulling a heavy amount of data as that data might not fit in the driver memory and an out of memory error might be thrown`. If the amount  of data is large and you want to peek into the elements of data then you can save your RDD in external storage in parquet or text format and later analyze it using analytic tools like impala or spark sql.
+  
+  **Executing spark programs on Hadoop**
+  
+  Using `spark-submit script`, you can submit ypur program as a job to the cluster manager (such as YARN) of spark and it would run this program.
+  
+  **Spark ML Pipeline**
+  
+  Plain data is usually in an extremely raw format and this data usually goes trought a cycle or workflow where it gets cleaned, mutated, and transformed before it's used for consumption and training ml models. With Pipelines in Spark Ml, we can maintaining large code bases of ml stacks, so if later on you want to switch some piece of code, you can separately change it and then hook it into the pipeline and this would work cleanly without changing or impacting any other area of code.
+  
+  **Compressing data**
+  
+  Hadoop can sopport input compression like: gzip, bzip, snappy, etc. We must understand that compressing your data will be always beneficial, providing few main advantage as follows:
+  
+  - If the data is compressed, the data transfer bandwith needed is less and as such the data would transfer fast.
+  - Also, the amount of storage needed for compression data is much less.
+  - Haddop ships with a set of compression formats that easy distributability across a cluster of machines. Se even if the compressed files are chuncked and distributed a cross a cluster of machines, you would be able to run your programs on them without any information or important data.
+'''
+tags: [
+  "Data_Eng"
+]
+isStarred: false
+isTrashed: false

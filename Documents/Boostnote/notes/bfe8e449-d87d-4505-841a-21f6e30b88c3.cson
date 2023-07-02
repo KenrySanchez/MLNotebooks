@@ -1,0 +1,23 @@
+createdAt: "2018-09-28T04:42:52.500Z"
+updatedAt: "2020-06-12T03:19:10.893Z"
+type: "MARKDOWN_NOTE"
+folder: "a41d44d96fbd153c28c9"
+title: "Glosario de conceptos en Analisis"
+content: '''
+  ## Glosario de conceptos en Analisis
+  
+  **Correlacion**
+  
+  La fuerza con la que dos variables lineales estan relacionadas
+  
+  **Diferencia entre ML algoritmo y Business Analytics**
+  
+  Los sistemas que aprenden no parten de un modeLo histórico, parten de Los datos; deben inferir un modeLo a partir de Los datos existentes, variados, con formatos dispares y con gran variabiLidad. De modo que un algoritmo que aprenda tiene dos diferencias esenciales con respecto al business analytics.
+  
+  los siste- mas analíticos permitían confirmar de manera deductiva los datos proceden- tes de los sistemas de gestión de la actividad empresarial. Los mayores avances se produjeron por su capaci- dad de integrar y normalizar datos de diversos sistemas; presentarlos de for- ma atractiva (“visualización”); y añadir una capa de aprendizaje cuando algu- no de los datos se convertía en una ex- cepción al modelo estadístico existen- te.
+  
+  Los sistemas que aprenden (1) no parten de un modelo histórico, parten de los datos; (2) deben inferir un modelo a partir de los datos existentes, variados, con formatos dispares y con gran variabilidad. Su principio matemático reside más en la “probabilidad” que en la estadística. Y, por ello, este tipo de sistemas requieren una gran escala de datos (Big Data) y gran capacidad de proceso para que los cálculos probabilísticos que realizan sinteticen una solucion viable a nivel empresarial.
+'''
+tags: []
+isStarred: false
+isTrashed: true

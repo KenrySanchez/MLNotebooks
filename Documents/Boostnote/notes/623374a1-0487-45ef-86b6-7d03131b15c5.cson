@@ -1,0 +1,41 @@
+createdAt: "2019-02-04T00:07:24.247Z"
+updatedAt: "2020-01-15T03:24:16.959Z"
+type: "MARKDOWN_NOTE"
+folder: "2e56bbd9db6601e3e30a"
+title: "Solving Problems with MapReduce"
+content: '''
+  ## Solving Problems with MapReduce
+  
+  **Hints to debug hadoop straming applications**
+  
+  Hadoop streaming may give non-informative exceptions when mappers’ or reducers’ scripts work incorrectly:
+  
+  `Error: java.lang.RuntimeException: PipeMapRed.waitOutputThreads():`
+  
+  - subprocess failed with code 1
+  
+  You can spend a lot of time by iterating on:
+  
+  1. write code / prepare notebook.
+  2. submit notebook to a cluster and wait for the result
+  3. investigate logs, if unsuccessful go to step 1.
+  
+  You can safe a lot of time, by debugging your applications locally. You can easily do it by emulating Hadoop’s workflow using bash.
+  
+  CongraYou already know that every Hadoop job has 3 stages:
+  
+  1. mapper
+  2. shuffle and sort.
+  3. reducer.
+  
+  Since you already have mapper's and reducer's code you can emulate Hadoop's behavior using a simple bash:
+  
+  cat my_data | python ./mapper.py | sort | python ./reducer.py.
+  
+  It helps you to understand if your code is working at all.
+'''
+tags: [
+  "Data_Eng"
+]
+isStarred: false
+isTrashed: true

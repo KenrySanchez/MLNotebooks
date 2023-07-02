@@ -1,0 +1,15 @@
+createdAt: "2020-01-11T22:01:52.339Z"
+updatedAt: "2020-01-11T22:07:13.073Z"
+type: "MARKDOWN_NOTE"
+folder: "2e56bbd9db6601e3e30a"
+title: "Configuration Hadoop"
+content: '''
+  ## Configuration Hadoop
+  
+   Starting namenode and datanode.. use the page [Introduction to haddop](https://cwiki.apache.org/confluence/display/HADOOP2/GettingStartedWithHadoop).
+   
+   - use the `start-dfs.sh` file from `$HADOOP_INSTALL/hadoop/bin`.
+'''
+tags: []
+isStarred: false
+isTrashed: false

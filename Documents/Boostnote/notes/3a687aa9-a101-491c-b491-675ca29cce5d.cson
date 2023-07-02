@@ -1,0 +1,138 @@
+createdAt: "2019-02-09T18:54:20.823Z"
+updatedAt: "2020-08-21T04:52:33.094Z"
+type: "MARKDOWN_NOTE"
+folder: "a431d02702033fa18596"
+title: "Review Concepts and Abstractions"
+content: '''
+  ## Review Concepts and Abstractions
+  
+  `lineage graph`
+  
+  ### RDD
+  
+  issues with map reduce process computation:
+  
+  1. Relation between process and machine is not throght and API, so you can not optimize the basic process on MapReduce.
+  
+  2. MapReduce can not avdanced operations
+  
+  The Main Problem is that framework has to guarantee durability of the result and hence read and write the dataset on every interation. Persisting datasets over and over again requires a lot of time I/O, which is costly.
+  
+  RDD: Resilent Distributed DataSet.
+  
+  - Resilente: Able to withstand failures
+  - Distributed: Spanning across multiple machines.
+  
+  To adhiere to RDD, a dataset must implemented to the RDD interface.
+  
+  dataset ---->
+  - partions() -> Array[partition]
+  - RDD Typed! --> RDD[T], a dataset of items of type `T` which means anytime (string, int, long, Boolea, etc.).
+  
+  For gain Parallell process on Spark, you must `slide` the chunk of blocks ('partionts') in RDD.
+  
+  ### Transformations
+  
+  Tranformations allow to work with a dataset already created and convert it to a new format dataset.For example, you can filter records (RDD) and group them by a key.
+  
+  The transformation creates a new RDD every time.
+  
+  That implies that the transformed RDD depends on the source RDD to be useful.
+  
+  `MapReduce can be expressed with a couple of transformations`.
+  
+  Spark uses Lazy Transformations, which means, the operations are going to access and use memory only in the access time. Not before and finish when the last item has been process.
+  
+  ***keyen RDD***: An RDD of key-value pairs.
+  
+  How to compute an `inner join` from the result of cogroup? R: That is, all triples (k, x, y) where (k, x) is in x and (k, y) is in y.
+  
+  - narrow dependencies: At most one child partion for every parent partition.
+  - wide dependencies: More that one child partition for every parent partition.
+  
+  ### Actions
+  
+  It's the operation that triggers the computation and process the dataset. `It's very important to understand that until transformation, everything that happens on an RDD is in lazy mode only`; that is, to say that the underlying data remains untouched until that point. it's only when we invoke ac action on an RDD that the underlying data gets touched and an operation is performed.
+  
+  **Driver and Executors**
+  
+  - Driver program runs your Spark application.
+  - Driver delegates tasks to executors to use cluster resources.
+  - In local mode, executors are collocated with the driver.
+  - In cluster mode, executors are located on ther machines.
+  
+  Spark: Triggers data to be materialized and processed on the executos and then passes the outcome to the driver.
+  
+  Example: Actions are used to collect, print and save data.
+  
+  ### Resilent
+  
+  - Same two key aspects.
+  - Determinism: every invocation of the function results in the same returned value.
+  - Freedom of side-effects: an invocation of the function does not change in the external world.
+  - Lineage: a dependency graph for all partions of all RDDs involved in a computation up to the data source.
+  
+  Actions are side-effects in spark, which means it are used to communicate with external services like age deffice. Due to restarts, spark cannot guaraante that an action would be execute exactly once, because its execution may fail in between.
+  
+  Summary:
+  
+  Resiliency is implemented by:
+  - tracking lineage
+  - assuming deterministc and side efect free execution of transformations.
+  - assuming idempotency for actions
+  
+  ### Questions
+  
+  Mark all the transformations with wide dependencies. Try to do this without sneaking into the documentation.
+  
+  - reduceByKey
+  - cartesian
+  - distinct
+  - repartition
+  - join
+  
+  Is it possible to access a MySQL database from within the predicate in the 'filter' transformation?
+  
+  R: Yes, but one need to create a database handle within the closure and close it upon returning from the predicate. However, that is not an efficient solution. A better way would be to use the 'mapPartition' transformation which would allow you to reuse the handle between the predicate calls.
+  
+  True or false? Mark only the correct statements about the 'filter' transform.
+  
+  - There is the same number of partitions in the transformed RDD as in the source RDD.
+  - There is a single dependency on an input partition for every output partition.
+  - There is the same number of partitions in the transformed RDD as in the source RDD.
+  
+  True or false? Mark only the incorrect statements.
+  
+  - You cannot do a map-side join or a reduce-side join in Spark. R: Every MapReduce computation could be expressed in Spark terms. Therefore, map-side joins and reduce-side joins could be expressed in Spark as well. But nobody does this in practice.
+  - There is a native join transformation in Spark, and its type signature is: RDD , RDD => RDD . oin keys must be explicit in the RDD items.
+  - Spark natively supports only inner joins. There are outer joins as well.
+  
+  Imagine you would like to print your dataset on the display. Which code is correct (in Python)?
+  
+  ```python
+  myRDD.collect().map(print)
+  ```
+  
+  Imagine you would like to count items in your dataset. Which code is correct (in Python)?
+  
+  ```python
+  def sum_func(a, x):
+    a += 1
+    return a
+  myRDD.fold(0, sum_func)
+  
+  ##  The 'fold' transformation updates an accumulator (which is zero initially) by calling the given function (which increments the value).
+  
+  ```
+  
+  ### Recommendations
+  
+  - When the Rdd is small, you can use `collect()` to recover the elements from a RDD. Otherwise, you can save data as intermidiate data storing it on HDFS, S3, Hbase, etc. You can use `saveAsTextFile()` or `saveAsSequenceFile()`.
+  
+  
+'''
+tags: [
+  "Data_Eng"
+]
+isStarred: false
+isTrashed: true

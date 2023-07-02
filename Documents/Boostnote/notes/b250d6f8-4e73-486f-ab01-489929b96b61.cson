@@ -1,0 +1,189 @@
+createdAt: "2018-10-02T20:22:51.774Z"
+updatedAt: "2021-07-05T19:20:47.885Z"
+type: "MARKDOWN_NOTE"
+folder: "24cb38cf2bc84305c3de"
+title: "3 Key Steps to a Data-Driven Business by Gartner"
+content: '''
+  ## 3 Key Steps to a Data-Driven Business by Gartner
+  [Three Key Steps to a Data-Driven Business](https://www.gartner.com/smarterwithgartner/3-key-steps-to-a-data-driven-business/)
+  
+  For chief data officers, establishing a data-driven culture is more a matter of influence than control.
+  
+  As the person at the forefront of an organization’s shift to data-driven business, the chief data officer (CDO) is expected to influence its culture — to make it more data-driven in its decision making, in its operations, and in the behavior of its people.
+  
+  To further a shift to a  data-driven business culture, the CDO must show leadership in three key areas of influence: business value, cultural change and ethics.
+  
+  **Identify and Communicate the Business Value of Data**
+  
+  Typically, a business’s demand for data is communicated far more clearly than are the business outcomes that result from analysis of that data. This represents a substantial opportunity for CDOs to identify and communicate the business value of data.
+  
+  CDOs should set investment objectives based on the improved business outcomes that derive from increased customer engagement and the use of optimized analytics and expanded business models and ecosystems.
+  
+  To identify and communicate the business value of data, CDOs can:
+  
+  - Measure the value of information assets.
+  - Establish and maintain an information catalog.
+  - Act as a catalyst for changes to the business model.
+  
+  **Address the Cultural Change Impacts of a Data-Driven Approach**
+  
+  A business’s culture is founded on its people’s deep-seated beliefs and emotions, so CDOs cannot simply demand that workers “change their culture.” Instead, CDOs must persuade them that cultural change is necessary, and help them construct and internalize an alternative belief system that produces a new set of behaviors.
+  
+  CDOs can influence cultural change by taking the following actions to facilitate development of this shared language:
+  
+  - Be explicit about how data influences different styles of decision making.
+  - Be clear about how stakeholders engage with data.
+  - Articulate the measurable business outcomes of data and analytics initiatives.
+  - Communicate how data influences working practices.
+  
+  **Manage the Ethical Implications of Data and Analytics**
+  
+  Business decision making can have far-reaching implications, including highly detrimental consequences. CDOs must take the lead in ensuring any ethical considerations regarding data and analytics are addressed.
+  
+  - Establish a code of conduct for data and  analytics.
+  - Balance business benefits with potential privacy risks.
+  - Design analytics with trust in mind.
+  
+  -----
+  
+  #### Data Driven Marketing
+  
+  Indentificar aquellos datos que sean servibles para poder generar valor a las personas/clientes a traves del servicio/productos. Por lo que lo importante es captar el smart data que nos de un valor correcto de la impresion de los clientes.
+  
+  ***La creatividad se multiplica cuando se implementa datos para obtener conocimiento***
+  
+  Es mucho mas importante tener datos que ya sepamos que podea generar valor al servicio que obtener muchos datos que no puedan darme algun beneficio al implementar la solucion.
+  
+  ***Hay que se atrevidos al momento de generar Cuadro de Mando, de modo que pueda visualizar de una manera muy grafica la historia relevante de la solucion a integrar***
+  
+  ##### BigData para Marketing
+  
+  - Conocimiento de cliente
+  - MEjora de segmentaciones
+  - Mejorar la categorizacion de tu BD de clientes
+  - Personalizacion dinamica de contenidos
+  - Geoposicionacion de clientes
+  - Analitica Predictiva:
+  
+       1. Scoring de contratacion alta
+       2. Ejemplos......
+  
+  Entre mayor conexiones/fuentes posea del usuario, mayor enriquecimiento y conocimiento poseo del usuario, de modo que podamos conocerle mas y poder definir mejor que tipo de servicios o productos ofrecerle a traves de las oportunidades (personalizacion y experiencia).
+  
+  KPI's debe valernos para poder medir los objetivos de nuestras estrategias. Definir un marco y enfoque de nuestra estrategias.
+  
+  Master Data:
+   - Data operacionales de negocio
+   - Datos transaccionales
+  
+  -----
+  
+  ##### Validacion en Gobiernos de datos
+  
+  Se debe generar una propuesta de valor para que los consumidores puedan dejar sus datos. El 83% de los consumidores estan dispuesto a dejar sus datos personales para poder mejorar la experiencia de usuario y volverla personalizada.
+  
+  Para validar el correo electrico se debe validar los medios de comunicacion a traves del correo electronico:
+  
+  - no-validity
+  - one-check (ya registrado)
+  - double-check (aun no registrado, necesito el double check)
+  
+  Web scrapping es permitido siempre que los datos sean datos abiertos, de modo que no entre dentro de la legislacion de proteccion de datos, de modo que no sea censurado.
+  
+  Toda la tecnologia implementada sirve luego ser valorado en negocio.
+  
+  Estimacion de valor y tiempo de vida en cada cluster de segmento. En teoria, luego de definir el buyer persona se debe segmentar el grupo de clientes para poder generar un estimado de cuanto vale tu cliente ($$$$) para tu empresa.
+  
+  **La importancia estrategica del Test**
+  
+  - Siempre que sea posible se debe hacer test contra un grupo de control, que sera una muestra de nuestro fichero que parmenecera invariable y no afectado.
+  - Los grupos de control son individuos que van a recibir el mismo tipo de comunicacion que tradicionalmente recibian.
+  
+  -----
+  
+  ##### Como segmentamos
+  
+  LA idea es administrar la cartera de clientes por distintas variables de modo que se pueda segmentar en grupos y tener ideas de clientes como en grupos.
+  
+  La Segmentacion ayuda a potenciar la campaña por x6.
+  
+  - Segmentacion Natural
+  - Investigacion de Mercado
+  - Clustering (ML)
+  - Analisis clientes actuales
+  
+  Atacar a los cluster que tengan mayor valor como clientes que otros (validar entre los demas cluster).
+  
+  **Generacion Insights**
+  
+  Lo que ya segmentaste lo relacionan a lo que ya estan haciendo.
+  
+  Es relacionar el Defonante del comportamiento vs Comportamiento
+  (revisar grafico de nota tecnica).
+  
+  **Visualizacion y insights**
+  
+  A traves de esto se conectan los puntos y podemos visualizar relaciones y patrones. Ayuda muchisimo a compartir historias y poder dar un contexto sobre lo que se esta haciendo.
+  
+  Tipos:
+  
+  - Cuadro de mandos.
+  - Componentes Geograficos (como en variables cartografica).
+  
+  ----
+  
+  #### Analisis de costes asociados
+  
+  SE debe calcular el Margen Bruto para analizar una accion frente a otra.
+  
+  Cuesta 5 veces mas captar clientes nuevos que retenerlos.
+  
+  Calcular el churm = clientes perdidos en un periodo / clientes al inicio de ese periodo.
+  
+  CLTV = BEneficio neto medio por pedido x Numero de pedidos estimados a lo largo del proceso de vida del cliente.
+  
+  ARPU (Average revenue per client) = Ingresos totales en periodo / Numero total de clientes en ese periodo
+  
+  Para evaluar la recomendacion de los clientes usar **Net Promoter Score** (El nivel de recomendaciones es standart).
+  
+  NET = % prometers - % detractors
+  
+  CRR (Radio de retencion de clientes)
+  
+  No olvidarse del retorno de inversion por la campaña (ROI)
+  
+  Estudiar tambien el ROI Incremental, de modo que podamos identificar aquellas acciones que nos puedan aumentar nuestros ingresos por ROI.
+  
+  -----
+  
+  #### Fases del Test
+  
+  - Definir el objetivo
+  - Formular Hipotesis (Estudiar con herramienta R)
+  - Definir un control
+  - Lanzar el Test
+  - Medicion
+  - Concluye y comparte datos
+  
+  
+  Tamano de la muestra:
+  
+  - No sesgar
+  - Devbemos tener una idea del nivel de respuesta que esperamos
+  - Niveles de confianza. Tipico 95% a 99%
+  - Margen de error. Tipico de 3% a 5%
+  
+  Tipo de test. Test multivariante.
+  
+  A la final se obtiene un tipo de control con todas las pruebas de modo que se pueda visualizar quien genera mas conversiones.
+  
+  correo profesor: graido@datacentric.es
+  Gerardo Raido.
+'''
+tags: [
+  "Gestion_del_cliente_Big_Data"
+  "Build_Big_Data_Project"
+  "Data_orientada_a_negocio"
+]
+isStarred: false
+isTrashed: false

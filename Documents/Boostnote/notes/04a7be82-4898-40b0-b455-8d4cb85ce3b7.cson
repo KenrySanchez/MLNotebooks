@@ -1,0 +1,207 @@
+createdAt: "2020-11-26T04:21:28.592Z"
+updatedAt: "2020-11-30T21:16:13.266Z"
+type: "MARKDOWN_NOTE"
+folder: "d95c9bc9473d8dba8318"
+title: "AI in Production"
+content: '''
+  ## AI in Production
+  
+  A critical part of the Design Thinking Process is getting your work in front of customers and stakeholders and receiving their feedback. This occurs throughout the process but especially in the Prototype and Test phases and requires moving your model off the small, controlled environment where it was developed and into the real world. Any time you move code from one environment to another, there is a risk of something breaking. Files may be missing, the names of directories might be different, settings of firewalls or proxy servers might prevent access to critical resources. In addition, there might be other factors, such as security and scalability that you haven’t needed to address yet.
+  
+  As a Data Scientist, you will ultimately be responsible for the operation  of your models. The more of these tasks you can handle on your own, in a streamlined, automated way, the more quickly you will be able to get  your models into production and receive feedback from users.
+  
+  An organized, automated, repeatable process of deployment is key to iterating quickly, receiving feedback and advancing the project. It also sets a stage for systematic checks for model improvement via feedback loops
+  
+  ### FeedBack Oops
+  
+  A reusable deployment process, with `Docker images as templates`, will save you, and those who work closely with you, a lot of time. `Feedback loops represent all of the possible ways you can return` to an earlier stage in the AI enterprise workflow.
+  
+  __Common feedback loops to keep in mind__
+  
+  Production –> Business Opportunity  
+  
+  * If a model has less of an impact on the business than originally anticipated this is often the first feedback loop that you will visit. It is a place to discuss the other potentially relevant feedback loops. Once all of the least time-consuming feedback loops have been explored this is also the place where you discuss the opportunity cost of continued workflow iteration.
+  
+  Production –> Data Collection
+  
+  * This is a very common feedback loop especially when using deep-learning models. Because of their flexibility, neural networks can overfit a model. You may plot `learning curves to help guide the decision` to obtain more data. In some cases, obtaining more data means labeling more data which can be costly so ensure that you engage in discussions to determine the best course of action.
+  
+  Production –> EDA
+  
+  * This is an important and often overlooked feedback loop. Once a model has been in production for some time, `it becomes necessary to investigate the relationship between model performance and the business metric`. This can be thought of as an extension of EDA, where  visualization and hypothesis testing are the most important tools.
+  
+  Production –> Model Selection and Development 
+  
+  * If a model performs poorly in production, `perhaps due to latency issues or because there is an over-fitting issue`, it is reasonable to return to try a different model. If it is an overfitting scenario and obtaining more data is not an option, `choosing a model with lower complexity (e.g. SGDClassifier)` is a reasonable next step. `Spark ML models tend to have more latency than deployed scikit-learn models. Latency is the effective runtime for a prediction`. You can run simulations to test different models, which can help optimize for latency. Another reason to return to the models stage from production is if we observe performance drift.
+  
+  There are other feedback loops such as trying different data transformations to improve a model’s performance or optimizing the way data are collected to reduce the number of transformations that are necessary to run a machine learning model. The most important aspect of all feedback loops is that they end with a return to a previous stage of the workflow. This is the only way to ensure that your entire workflow does not contain a weak link, and also the best way to keep track of each stage of the workflow.
+  
+  ### Unit test
+  
+  Importantly, the unit tests `are usually organized as a suite and return objective evidence, in the form of a boolean value`, which is a key element that enables workflow automation. Ideally every portion of the code would be tested under every conceivable combination of conditions, however this is clearly not possible in the real world.  The `amount of source code that is actually tested when compared to the total amount of testable code is known as test coverage`. [coverage](https://pypi.org/project/coverage/) estimates the total coverage of your tests.
+  
+  There is an important trade-off in data science between the amount of test coverage and prioritizing other tasks. In many ways this trade-off is the same as the one that software engineers face, except data science has a sizable component of experimentation. This means that many models that get created never see production and many models that see production never come to fruition. There are many reasons for this and the AI workflow presented here is designed to minimize this risk, but nonetheless many modeling efforts are shelved. Because of this, we present as part of the overall workflow a way to properly include unit tests, but we do so in a way that includes only a minimum number of tests along with the scaffolding to expand once a model or service proves its worth.
+  
+  It is important to think about opportunity cost when determining the appropriate amount of test coverage. `We will refer to the unit testing approach presented here as a test harness, because it is implemented as an automated test framework`. Much like data ingestion, the idea is to have the necessary components of a task bundled under a single script.
+  
+  __TIP__: In software testing, a `test harness or automated tes` framework is a collection of software and test data configured to test a program unit by running it under varying conditions and monitoring its behavior and outputs. It has two main parts: the test execution engine and the test script repository.
+  
+  One of the reasons to create unit tests is to ensure that iterative improvements to code do not break the functionality of the model or API. This is known as `regression testing`, because when the code does not perform as expected it is a regression. Including regression testing, here is a summary of the principal reasons to package unit tests with your deployed machine learning model:
+  
+  - Regression Testing: Ensure that previously developed and tested software still performs after a change.
+  - Code Quality: Promote the use of well-written code along with well-conceived designs.
+  - Documentation: Unit tests are a form of documentation that can help you and members of your team understand the details of how the software works, unit-by-unit.
+  - Automatic Performance Monitoring: Having a suite of unit tests that are kicked off when training is performed can help monitor for performance drift in an automated way.
+  
+  Unit tests also helps ensure that when software fails, it `fails gracefully. This means it stops execution without causing additional errors and takes any steps`, such as closing open connections or saving data to a file that may be necessary for recovery.
+  
+  ### Unit Testing in Python
+  
+  [pytest: helps you write better programs — pytest documentation](https://docs.pytest.org/en/latest/)
+  
+  [Testing with nose — nose 1.3.7 documentation](https://nose.readthedocs.io/en/latest/testing.html)
+  
+  [26.4. unittest — Unit testing framework — Python 3.5.10 documentation](https://docs.python.org/3.5/library/unittest.html)
+  
+  To run the script with `unittest` we need to execute:
+  
+  ```python
+  python -m unittest test-example.py
+  ```
+  
+  One way to further polish your code would be to use the `closest matching exception class or to write your own class, inheriting from Exception`.
+  
+  There are several types of testing that can be used and the smaller, faster ones should be the most numerous, with the more comprehensive ones being fewer. The number of tests are often illustrated as a `test pyramid`.
+  
+  ![ffd6546eebda47889d0100e958672d6a_PracticalTestPyramid.jpg](https://higherlogicdownload.s3.amazonaws.com/IMWUC/DevCenterMigration/ffd6546eebda47889d0100e958672d6a_PracticalTestPyramid.jpg)
+  
+  ----------
+  
+  ## Performance Monitoring and Business Metrics
+  
+  fundamental concepts: `performance drift, load, latency, and average runtime`.
+  
+  It is important to be able to use log files that have been standardized across the team to answer questions about business value as well as performance monitoring. 
+  
+  Data for performance monitoring is generally collected using `log files`.
+  
+  __TIP__: Ensure that your data are collected at the most granular level possible. This means each data point should represent one user making one action or one event.
+  
+  Naturally, collecting very granular data will result in very large data sets. If there is a need, you can always summarize the data after it has been collected. Summary level data may mask important patterns and generally it is not possible to go from summary data to granular data. Log files with several million entries can be analyzed on a single node or on a personal machine with little overhead.
+  
+  ### Minimal Requirements for Log Files
+  
+  These are data that are minimally required for performance monitoring for most model deployment projects. There are other features that fall into this category that are situation dependent, like user_id in a recommendation system, so do not view this list as comprehensive, simply keep it as a reference starting point.
+  
+  - runtime: The total amount of time required to process the request.
+  - timestamp: Timestamps are needed to evaluate how well the system handles load and concurrency. Additionally, timestamps are useful when connecting predictions to labels that are acquired afterwards. Finally, they are needed for the investigation of events that might affect the relationship between the performance and business metrics.
+  - prediction: The prediction is, of course, the primary output of a predition model. It is necessary to track the prediction for comparison to feedback to determine the quality of the predictions. Generally, predictions are returned as a list to accommodate multi-label classification.
+  - input_data_summary: Summarizing information about the input data itself. For the predict endpoint this is the shape of the input feature matrix, but for the training endpoint the features and targets should be summarized.
+  - model_version_number: The model version number is used to better understand the influence of model improvements (or bugs) on performance.
+  
+  __Additional features that can be optionally logged__
+  
+  These are the features that are considered nice to have, but they are not always relevant to the circumstances or sometimes there can be practical limitations (e.g. disk space or computational resources) that limit the ability to save these features.
+  
+  - request_unique_id:  Each request that has been made should correspond to an entry in the log file. It is possible that a request corresponds to more than one entry in the log file for example if more than one model is called. This is also known as correlation_id.
+  - data:  Saving the input features that were provided at the time of a predict request makes it much easier to debug broken requests. Saving the features and target at the time of training makes it easier to debug broken model training.
+  - request_type: Relevant attributes about the request (e.g. webapp request, browser request).
+  - probability: Probability associated with a prediction (if applicable).
+  
+  For training, the archiving of all the data is often unnecessary, because there is a system in place, like a centralized database, that can re-create the training data for a given point in time. One option is to archive only the previous iteration of training data.
+  
+  If very granular levels of performance monitoring are needed, we could model the distribution of each feature in the training data matrix and determine if new batches of data fall outside the normal range. We could also use one of the models we have discussed for novelty detection, but insight would be at the level of observations across all features rather than at the feature level. For most models the latter option is sufficient.
+  
+  __Warning__: If you decide to log the data, be aware of disk space and read/write bottlenecks. It is also important to ensure compliance with company policies or regulations such as HIPAA, or GDPR concerning personally identifiable or sensitive information, depending on jurisdiction.
+  
+  ### Model Performance Drift
+  
+  With a system for logging in place, the overall goal is to keep the performance of a model high over time, and ideally to see continuous improvement. The log files are key to identifying when a change has occurred, but it helps to know what kind of performance drift to expect. When we monitor model performance, `we look for any significant changes` in model performance, in order to both identify issues early and capitalize on changes that result in performance improvements.
+  
+  * Performance drift: Any appreciable change in model performance between null and test data sets.
+  
+  - null datasets: it could be all historical data, it could be all of the previous year's data, it could be just the data from the most recent training batch.
+  
+  Note: `Software decay` or software rot occurs when there is any decrease in model performance.
+  
+  Common forms of performance drift or software decay include:
+  
+  __Concept drift__
+  
+  Concept drift, is `when the statistical distribution of a target variable changes over time`.
+  
+  __Sampling bias and selection bias changes__
+  
+  After a model is deployed, any newly introduced sampling bias. could result in subgroups of the data being under or over represented and the model would not generalize well to new data, which would decrease model performance.  Any newly encountered selection bias is also likely to affect model performance.
+  
+  For example, imagine a model was built to diagnose a specific medical  condition from a chest X-ray.  Perhaps the standards and technology have changed the way the radiologist makes a diagnosis,  implying that the way the labels were initially generated is different today than it was in the past.  Supervised learning in its  current form requires accurate and consistent labeling of targets.  If the process for labeling data has changed, it will  likely affect model performance.  We often observe the change in model performance through a detected outlier, but  it requires some investigation before the reason for performance drift can be confidently identified.
+  
+  __Software changes__
+  
+  Another cause of performance drift can come from changes in the the model and container software.  This is why we explicitly use a model version, used in conjunction with version control.  If a library dependency, code optimization, or feature addition were to blame for the performance drift it should be easy to track based on the model version.
+  
+  For example, imagine you have just converted a neural network into the newest version of TensorFlow or another deep-learning package.  This change should be tied to a specific model version.  You can create releases in GitHub or you may directly add tags to your docker image.  Additionally, there are many features in GitHub that help you track, review and ready version changes for code for deployment.  There are [version control strategies specific to AI applications](https://medium.com/ibm-watson/a-version-control-strategy-for-ai-applications-f421d5b91934) as well.
+  
+  __Data changes__
+  
+  It is worth noting that performance drift can arise from changes in  the data itself, and it can be anticipated by directly monitoring the features in the data.  There are several methods that can be used to  compare an established distribution to a new one, e.g., from a new batch of training data.  It is also possible that for a  given use case there is a specific feature or two that are of critical importance and checks on those features should be  implemented as a step for quality assurance.  Two commonly used methods to compare distributions are:
+  
+  - [Kullback–Leibler divergence - Wikipedia](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence)
+  - [Wasserstein metric - Wikipedia](https://en.wikipedia.org/wiki/Wasserstein_metric)
+  
+  ### Security and Machine Learning Models
+  
+  Adversarial attacks of machine learning systems have become an indisputable threat. Attackers can compromise the training of machine learning models by injecting malicious data into the training set (poisoning attacks), or by crafting adversarial samples that exploit the blind spots of machine learning models at test time (evasion attacks).
+  
+  Defending machine learning models involves certifying and verifying model robustness and model hardening with approaches such as:
+  
+  - pre-proccesing inputs.
+  - augmenting training data with adversarial examples.
+  - leveraging runtime detection methods to flag any inputs that might have been modified by an adversary.
+  
+  [machine learning adversarial attacks, defenses, and consequences](https://nvlpubs.nist.gov/nistpubs/ir/2019/NIST.IR.8269-draft.pdf)  
+  [ART - IBM Research](https://art-demo.mybluemix.net/)
+  
+  [Closing the Back Door in AI Security | IBM Research blog](https://www.ibm.com/blogs/research/2018/08/art-v030-backdoor/?_ga=2.227009757.1788436369.1579187259-1143734727.1579187259&cm_mc_uid=26619462104415791872588&cm_mc_sid_50200000=10465811579187258809&cm_mc_sid_52640000=16506091579187258814)
+  
+  [GitHub - Trusted-AI/adversarial-robustness-toolbox: Adversarial Robustness Toolbox (ART) - Python Library for Machine Learning Security - Evasion, Poisoning, Extraction, Inference](https://github.com/IBM/adversarial-robustness-toolbox)
+  
+  -----
+  
+  ### Watson OpenScale
+  
+  A conscientious data scientist will remain alert for inadvertent bias in the outcomes of their models. IBM Watson OpenScale is a suite of tools that seeks to provide three main functions for deployed machine learning models: `Explainability, Traceability and Transparency`.
+  
+  In the Prototype phase of Design Thinking, Data Scientists generally build simple models that deliver expected results under controlled conditions. While this can be effective for rapidly demonstrating feasibility and moving a project forwards, it is at this point in the process where data may be scarce and time-saving assumptions or approximations can introduce unintentional bias. When moving to the test phase, new and larger data sets are introduced which may evolve or drift over time. Continuing to monitor the performance of the model, and identifying and addressing sources of drift, is an important responsibility, and the data scientist will likely be presenting reports of model performance during playbacks.
+  
+  ### Kubernets and AI
+  
+  [GitHub - IBM/monitor-custom-ml-engine-with-watson-openscale: Deploy a Custom Machine Learning engine and Monitor Payload Logging and Fairness using AI OpenScale](https://github.com/IBM/monitor-custom-ml-engine-with-watson-openscale)
+  
+  Kubernetes is a container orchestration platform for managing, scheduling and automating the deployment of Docker containers. Orchestration in the sense of containers deals with their automated configuration, coordination, and management.
+  
+  There are many advantages of the Docker workflow-template approach, These advantages include but are not limited to:
+  
+  - Reduced time to deployment.
+  - Reusable code.
+  - Easy of model iteration.
+  - Work naturally with container orchestration systems like Kubernetes.
+  
+  One disadvantage of cloud native applications is that they create the necessity of managing many small pieces. This is where orchestration and Kubernetes come into play.
+  
+  __HINT__: The decoupling of a data visualization suite and the underlying model into two separate services promotes code re-usability.
+  
+  If two containers are often run together, it is worth considering the use of Docker Compose, a tool for running multi-container Docker applications. Docker Compose uses a single YAML file to connect and configure the different containers in your application. Then, with a single command, you can launch all of the services. The convenience of Docker Compose, sometimes just called Compose, is very real and if your application needs more than one container, which is often the case, you should be using Docker Compose.
+  
+  __Kubernetes terminology__
+  
+  - kubectl CLI: Kubectl is a command line interface for running commands that communicate with a Kubernetes cluster.
+  - Minikube: A tool that makes it easy to run Kubernetes locally. It runs a single-node cluster inside of a virtual machine. It is an important environment for learning the essentials and it serves as a sandbox to try out ideas.
+  - Kubelet:  The primary ‘node agent’ on each node. It is the lowest level component in Kubernetes and it is responsible for the processes running on an individual machine.
+  - Pod: Pods are the smallest deployable units of computing that can be managed by Kuberntes. Pods are made up of one or more containers (usually Docker), with shared storage/network, and a specification for how to run the containers.
+  
+  What is Port Forwarding in Docker? R: Allowing data to be passed in and out of a docker container and controlling which applications can do this.
+'''
+tags: []
+isStarred: false
+isTrashed: false

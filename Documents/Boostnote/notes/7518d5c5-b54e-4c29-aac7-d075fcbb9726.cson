@@ -1,0 +1,230 @@
+createdAt: "2018-09-29T19:05:45.079Z"
+updatedAt: "2020-06-30T03:54:17.438Z"
+type: "MARKDOWN_NOTE"
+folder: "a41d44d96fbd153c28c9"
+title: "Cognitive Compute"
+content: '''
+  ## Cognitive Compute
+  
+  El objetivo de la IA es lograr que las maquinas tuvieran una capacidad de:
+  
+  - Realizar operaciones de movimiento (Robotica).
+  - Entender nuestro lenguaje.
+  - Aprender por si mismas.
+  
+  La IA ha ayudado y contribuido en los siguientes campos:
+  
+  - Massive Data-Drive IA, explotar la posibilidad de acceder a cantidades masivas de datos y procesarlos para usarlos en las tareas de data analysis.
+  - Poder realizar predicciones y simulaciones en los sectores industriales, reduciendo el coste de los mismos. Esto tendrá una relevancia espectacular en los sectores, por ejemplo, el farmacéutico, invirtiendo en investigación de medicamentos para enfermedades raras, incluso llegar a desarrollar fármacos específicos según nuestro genoma.
+  - Robotizar tareas de todo tipo, como la atención y cuidado de personas en hoteles o en centros sanitarios, la automoción controlada por sistemas que eviten accidentes o que conduzcan los vehículos de forma automática.
+  
+  ----
+  
+  #### Data Science vs Analitica de datos (BI)
+  
+  | Analitica de datos (BI)       | Data Science
+  | ------------- |:-------------:|
+  |  Archivo de datos limpios     | Los datos suelen estar desordenados  |
+  | informa lo que dicen los datos     | analiza los datos para ver la informacion qu contienen      |
+  | conjunto de datos manejables |grande conjunto de datos que es un desafio administrar     |
+  |  Sus hallazgos miden el rendimiento del pasado    | Los hallazgos impulsan decisiones sobre operaciones y productos
+  
+  Midiendo los valores sobre lo que se quiere lograr, podemos definir mejor
+  
+  | **Aspectos**       | Analitica de datos | Data Science
+  | ------------- |:-------------:|:--------------:|
+  |  Filosofia     | Saber  | Entender |
+  | Modelos Generados     | Descriptivos, Diagnosticos      | Predictivos, Prescriptivos |
+  | Nivel de comprension | Aprendisaje Sencillo     | Aprendisaje Profundo |
+  |  Resultados    | Operacionales y tacticos | Estrategicos que generan valor |
+  | Carga de trabajo | Repetitivo y Sistematico | Experimental y Particular |
+  | Ambito de estudio | Limitado y Especifico | Amplio y General |
+  | Variedad de Datos | Datasets limitados y coherentes | ilimitados, formados flexiblemente |
+  | Veracidad de los datos | Calidad y certeza controlada | Calidad y certeza desconocida |
+  
+  ------
+  
+  #### Data Scientist
+  
+  Los cientificos de datos son personas con habilidades matematicas, estadisticas, computacionales y de visualizacion de datos que lo llevan a encontrar los patrones que le serviran a las empresas o instituciones para capitalizar la informacion.
+  
+  Los cientificos de datos deben tener 3 aspectos o caracteristicas esenciales:
+  
+  - Conocimientos en matematicas
+  - Conocimientos estadisticos (clasica y bayesiana)
+  - Conocimientos computaciones (LEnguajes de programacion)
+  
+  Los cuales se reparten en las siguientes areas:
+  
+  - DAta Engineering
+  - Scientific Method
+  - Math
+  - Statistics
+  - Advanced Computing
+  - Visulization
+  - Hacker Mindset
+  - Domain Expertise
+  
+  **Procesos que maneja un data scientist**
+  
+  Existen varias metodologias donde se pueden manejar proyectos para data scientist. Sin embargo antes de manejarlas, se debe tomar en cuenta que **se necesitan un conocimiento profundo del negocio a manejar**
+  
+  - **CRISP-DM**, Cross industry standart process for data mining. Creada y impulsada por un proyecto de la union europea. Incluye un modelo y una guia estructurada en seis fases. En si es una estructura de procesos que deberian seguir todos los expertos en mineria de datos.
+  - **TDSP**, Team Data Science Process. Es una metodologia agil y iterativa impulsada por Microsoft que sirve como marco para proporcionar soluciones de analisis predictivo y aplicaciones inteligentes de manera eficiente.
+  
+  Consta de los siguientes componentes:
+  
+  - Una definicion de ciclo de vida.
+  - Una estructura de proyecto estandarizada.
+  - Infraestructura y recursos para proyectos de ciencia de datos.
+  - Herramientas y utilidades para la ejecucion de proyectos.
+  
+  Esto ayuda a mejorar la colaboracion de equipos y el aprendisaje.
+  
+  El ciclo de vida describe las fases principales por las que pasan normalmente los proyectos, a menudo de forma iterativa:
+  
+  - Conocimiento del negocio
+  - Adquisicion y compresion de los datos
+  - Modelado
+  - Implementacion
+  - Aceptacion del cliente
+  
+  
+  - **KDD**, Knowledge Discovery in Databases. Se refiere al proceso no-trivial de descubrir relaciones e informacion potencialmente util dentro de los datos de las BD. Es un proceso iterativo que exhaustamente explora volumenes muy grandes de datos para determinar relaciones.
+  
+  **ver mas en la nota tecnica**
+  
+  En Resumen:
+  
+  1. Establecer los objetivos del proyecto. Sirve como marco referencial.
+  2. Recuperar los datos tanto internos como externos para la investigacion.
+  3. Preparar los datos, cuando los datos provienen de apps requieren una etapa de procesamiento y transformacion, de modo que podamos estructurarlos.
+  4. Analizar los datos con herramientas de computacion.
+  5. Modelar los datos
+  6. Presentar y comunicar los datos
+  
+  -----
+  
+  #### IA
+  
+  La IA es la parte de la ciencia que se ocupa del diseño de sistemas de computacion inteligentes, es decir, caracteristicas que asociamos a la inteligencia del comportamiento humano:
+  
+  - Comprension del lenguaje.
+  - Aprendisaje.
+  - Razonamiento.
+  - Resolucion de problemas.
+  - Etc.
+  
+  En ciencias de la computacion, una maquina "inteligente" es un agente racional flexible que percibe su entorno y usa el contexto para poder percebir sus oportunidades de exito tomando las mejores decisiones posibles.
+  
+  #### Ramas de la IA
+  
+  **Robotica**
+  
+  Es una ciencia o rama de la ciencia que se encarga de estudiar el diseño y construccion de maquinas que son capaces de realizar tareas comunes del ser humano o que requieran del uso de razonamiento.
+  
+  inteligencia artificial para mejorar su relación con situaciones o eventos externos mediante programación o sensores especializados.
+  
+  Tipos:
+  
+  - Robots Play-back o industriales, los cuales regeneran una secuencia de instrucciones grabadas, como un robot utilizado en la industria de fabricación de vehículos. Se añaden sensores para mejorar su comportamiento ante eventos de su entorno. Robots que dan soporte a los médicos en las intervenciones quirúrgicas, como es el robot Da Vinci.
+  - Robots de servicio, diseñados para en confort y ayudar al ser humano, pueden ser robots con la capacidad del movimiento y de realización de una determinada tarea como la limpieza del hogar.
+  - También existen robots en el ámbito de las prótesis, permitiendo recuperar el movimiento.
+  - Robots Humanoides: Obtienen su nombre de la semejanza con el ser humano. Son construidos con rasgos físicos parecidos a los nuestros. Contiene la capacidad de poder interactuar con las personas y guarda la información recogida del entorno o de la persona con la que interactúa. Realiza estas acciones mediante diferentes sensores a lo largo de su estructura (ASIMO, de Honda). (La Robot Sophia es una de las mas famosas).
+  
+  [Sophia, la primera robot humanoide, visita España | EL MUNDO FINANCIERO](https://www.elmundofinanciero.com/noticia/75192/empresas/sophia-la-primera-robot-humanoide-visita-espana.html)
+  
+  ***La Robotica es una revolucion industrial***
+  
+  **Sistema de Reconocimiento de imagenes**
+  
+  Se refiere al desarrollo de equiposy software que permiten a las computadoras capturar, almacenar y manipular imagenes visuales y fotografia.
+  
+  Aplicaciones de estos sistemas.
+  
+  ***Revisar nota tecnica***
+  
+  **Procesado de lenguaje natural**
+  
+  El PLN es un campo de la IA que estudia las interacciones entre las maquinas y la compresion de los lenguajes.
+  
+  EL PLN se ocupa de la formacion e investigacion de mecanismos eficaces para la comunicacion entre personas y maquinas por medio de lenguajes naturales. No lo hace de forma abstracta, sino que lo hace a traves de programas que sean capaces de reconocer el dialecto y la syntaxis.
+  
+  Ejemplos:
+  
+  - Asistentes virtuales.
+  - Eliminar la necesidad de aprender lenguajes de programacion.
+  - Traductores en tiempo real.
+  - Chatbots para mejorar la calidad del servicio y aprender de las preguntas de los clientes.
+  - Soporte a la decisión médica a través de la interpretación del lenguaje médico, proporcionando información relevante sobre la patología en tiempo real.
+  
+  ----
+  
+  #### Redes Neuronales
+  
+  Las redes neuronales se basan en una estructura de red en la cual los nodos o neurones son procesos numericos/funciones que involucran estados de otror nodos segun sus uniones (Parecido a MapReduce).
+  
+  pueden utilizarse para extraer patrones y detectar tramas que son muy difíciles de apreciar por humanos u otras técnicas computacionales.
+  
+  ***Principales caracteristicas (Ver nota tecnica)***
+  
+  Pero los sistemas neuronales no están exentos de ciertos inconvenientes. Uno importante es que habitualmente realizan un complejo procesamiento que supone millones de operaciones, por lo que no es posible seguir paso a paso el razonamiento que les ha llevado a extraer sus conclusiones. Sin embargo, en redes pequeñas, mediante simulación o por el estudio de los pesos sinápticos sí es posible saber, al menos, qué variables de las introducidas han sido relevantes para tomar la decisión.
+  
+  -----
+  
+  #### ML o Aprendizaje Automatico
+  
+  se basa en la idea de que podemos construir máquinas capaces de acceder a los datos, procesarlos y aprender por sí mismas, con algoritmos que consiguen que las máquinas sean progresivamente más inteligentes, sin necesitar de la supervisión humana de forma constante.
+  
+  Ellas utilizan tecnicas de identificacion de patrones o tendencias que se "esconden" en los datos.
+  
+  Antes de empezar cualquier proyecto de ML es importante responder dos preguntas:
+  
+  **¿Ques es lo que quiero hacer?**
+  
+  Ejemplos:
+  
+  - Clasificacion. Ejemplo, Detectar correo basura en nuestro servidor de correo.
+  - Custering. Ejemplo, querer hacer un ecommerce y recomendar productos.
+  - Regresion. Ejemplo, predecir cuando un cliente va a comprar o pedir un servicio.
+  
+  **Que informacion tengo para conseguir mi objetivo**
+  
+  Decidir si la “estrategia de ataque” será supervisada o no supervisada.
+  
+  **Aprendizaje Supervisado**
+  
+  Los algoritmos trabajan con datos etiquetados intentando encontrar una funcion que, dadas las variables de entrada, les asigne la etiqueta corresponiente. El algoritmo se entrena con un historico y de esta manera "predice" un valor.
+  
+  El aprendizaje supervisado se suele usar en problemas de clasificación, como identificación de dígitos, diagnósticos, o detección de fraude de identidad. También se usa en problemas de regresión, como predicciones meteorológicas, de expectativa de vida, de crecimiento etc.
+  
+  **Árboles de decisió**: Un árbol de decisiones es una herramienta de apoyo a la decisión que utiliza un gráfico o un modelo similar a un árbol de decisiones y sus posibles consecuencias, incluidos los resultados de eventos fortuitos, los costos de recursos y la utilidad. 
+  
+  **Clasificación**: La clasificación es una forma de aprendizaje supervisado. Clasificar es la tarea de predecir el valor de una variable categórica a partir de las variables de entrada (características o predictores). La clasificación trata de construir modelos que separan datos en clases distintas a partir de conjuntos de datos de entrenamiento.
+  
+  **Regresión lineal** consiste en describir la relación entre variables mediante una recta. Es utilizada por ejemplo para calcular tendencias o calcular errores en toma de datos.
+  
+  **La regresión logística** es una poderosa manera estadística de modelar un resultado binomial con una o más variables explicativas. Mide la relación entre la variable dependiente categórica y una o más variables independientes estimando las probabilidades utilizando una función logística, que es la distribución logística acumulativa.
+  
+  **Support Vector Machines**: SVM es un algoritmo de clasificación binario. Dado un conjunto de puntos de 2 tipos en el lugar N dimensional, SVM genera un hiperlano (N – 1) dimensional para separar esos puntos en 2 grupos. Digamos que usted tiene algunos puntos de 2 tipos en un papel que son linealmente separables. SVM encontrará una línea recta que separa esos puntos en 2 tipos y situados lo más lejos posible de todos esos puntos.
+  
+  **Métodos Ensemble**:Los métodos Ensemble son algoritmos de aprendizaje que construyen un conjunto de clasificadores y luego clasifican nuevos puntos de datos tomando un voto ponderado de sus predicciones. El método de conjunto original es Bayesian promediando, pero los algoritmos más recientes incluyen error de corrección de salida de codificación.
+  
+  **Aprendizaje no Supervisado**
+  
+  El aprendizaje no supervisado tiene lugar cuando no se dispone de datos “etiquetados” para el entrenamiento. Sólo conocemos los datos de entrada, pero no existen datos de salida que correspondan a un determinado input. Por tanto, sólo podemos describir la estructura de los datos, para intentar encontrar algún tipo de organización que simplifique el análisis. Por ello, tienen un carácter exploratorio.
+  
+  El aprendizaje no supervisado se suele usar en problemas de clustering, agrupamientos de co- ocurrencia y profiling. Si embargo, los problemas que implican tareas de encontrar similitud, predicción de enlaces o reducción de datos, pueden ser supervisados o no.
+  
+  Los tipos de algoritmo más habituales en aprendizaje no supervisado son:
+  
+  1. Algoritmos de clustering
+  2. Análisis de componentes principales
+  3. Descomposición en valores singulares (singular value decomposition)
+  4. Análisis de componentes independientes (Independent Component Analysis)
+'''
+tags: [
+  "Machine_Learning"
+]
+isStarred: false
+isTrashed: true

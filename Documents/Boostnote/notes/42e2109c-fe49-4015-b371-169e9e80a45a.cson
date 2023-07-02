@@ -1,0 +1,138 @@
+createdAt: "2019-02-17T18:13:29.042Z"
+updatedAt: "2021-05-08T20:52:55.649Z"
+type: "MARKDOWN_NOTE"
+folder: "2e56bbd9db6601e3e30a"
+title: "Applications on DataSet and Proccesing"
+content: '''
+  ## Applications on DataSet and Proccesing
+  
+  ### Working with samples
+  
+  To get a approximately sample of the data for make good analysis, we should shuffle the rows.
+  
+  In hadoop, we need to `cat <name data_set> | gsuf -n <number of rows>`.
+  
+  Another mix solucion could be:
+  
+  1. Firts, make `head -n 1 <origin_data> > <destination_data>`.
+  2. `Tal -n +2 <origin> | gshuf -n 100 | sed 's/''//g' >> <destination_data>`
+  
+  **Estimating Proportions (Pn)**
+  
+  The proportion of a data set is equal to the binary feature {0, 1} between all the values of the set.
+  
+  I.e: `is_tipped = data.property > 0, is_tipped.mean() => Estimating Proportion`.
+  
+  The one that estimates the value of the unknown parameter with just one number is called a point estimate.
+  
+  How accurate is the estimate?
+  
+  - Sample needs to be random.
+  - Precision of `Pn` grows with n. Bigger sample, better precisition.
+  
+  How to quantify the precision?
+  
+  1. Calculate standart desviation, it is a measure of the spread of the values your estimate could take on all possible samples across its mean value.
+  
+  2. Confidence interval. allow us to explicitly quantify the degree of your uncertainty in the estimate
+  
+  Tip: Means is very sensite to outliers.
+  
+  ***Median***: A level which a feature falls below and about 50% of the time. It's less sensite to outliers.
+  
+  **Bootstrap Confidence Interval**
+  
+  It help to get a better sample of confidence interval throught bootstrap samples and the delete a 2.5% of the smallest and the biggest. In that way, you have the range of the remaining values are boundaries of the 95% confidence interval.
+  
+  ### Telecommunications Analytics
+  
+  **MapSide-Join**: which means the distributed cached lot, `small data into memory`.
+  
+  Imagine that your telecommunication company has grown, and you have to aggregate that over thousands of cities. You also have a bad equipment to locate grids. So your spacial data is more granular and not small anymore. You need to find a way to join several big datasets. As you could have guessed, if you have a Map-Side Join, then there should be a Reduce-Side Join.
+  
+  During the map phase, you do nothing except parsing data into key value pairs. Then during the shuffle and sort phase, data is distributed by keys in a way that allows to perform the join during the reduce phase.
+  
+  how do you differentiate between two datasets in the reducer script?
+  R: You know the input block location during the map phase, so you can tag into record appropriately. Here, I read the environment variable, maproduce map read input file, and tag into record of spacial data by the word, grid. Or other records, I tag by the word, logs.
+  
+  MapReduce, you can only reduce data by keys. You need to be careful here to make no mistakes. Your key is complex, and consists of two strings separated by the tab corrector. Square ID and label. You partition data only by square ID as in the previous examples, but you sort data by both of them. This technique is called Secondary Sort. Just as a reminder, if you need to sort your data in a different order, then you can use a key field based comparator available in the streaming jar.
+  
+  If you have a small dataset, then you can build from a Map-Side Join with the help of distributed cache.
+  
+  If you have several big datasets, then you can perform a Reduce-Side Join.
+  
+  You can use and configure Secondary Sort to reduce the memory footprints. In this case, you should take into consideration the number of records in different datasets for each key.
+  
+  **KeyFieldSelection and Tabular Data**
+  
+  Field selection MapReduce has a similar functionality to the cli utility called cut. You can choose which columns from a record should be considered as the key, and which columns from the record should be considered as the value.
+  
+  `-D mapreduce.fieldsel.map.output.key.value.fields.spec = set indexes as keys and value\\ --mapper org.apache.hadoop.mapred.lib.FieldSelectionMapReduce`
+  
+  - Job chaining: consist of several steps of jobs.
+  
+  Good Practice: Has small pieces of funcionality.
+  
+  Until one job has been finished, you can not call the new one, you must wait. Java and Python packages such as Danboard, PYDOOP, HADOOPY or MrJob frameworks will provide that job change in functionality for your convenience.
+  
+  If you'd like to mimic this behavior in bar script, then first you should find out the application ID. You can do it with yarn application - least common. As soon as you get the application ID, you can get the status of it with the Yarn application -status.
+  
+  `yarn application -status <application-id>`.
+  
+  validate status of `success file`. this file is only generated after job finished.
+  
+  `hdfs dfs -test -e <path>/field-selection/_SUCCESS`
+  
+  - Way to use Aggregate package: you need to prefix each key by the type of values such as long, double, or string, and also prefix keys by action.
+  
+  Look at this url: `stackoverflow.com/a/11205414`
+  
+  **Data Skew, Salting**
+  
+  Instead of trying to process all the data for each key on one machine, you should distribute this work of a different note. If you process a part of the work for a note key on one machine, and a part of the work for another machine, then you balance the load over the worker nodes.
+  
+   So you only need to add another one map produced stage during which you accumulate the aggregated data for different pieces of null keys. And this approach will become feasible because you reduced the size of data by a factor of magnitude.
+   
+   You either need to change the partitioner or the target key. We did not cover the topic of writing your own partitioner on Java, that is why I have chosen the second option.
+   
+   **Questions Map/Reduce Side Join Appraoches**
+   
+   There are two datasets: A is the large one, B is small enough to fit in the memory of the cluster node. What type of join do you choose to make their intersection A&B?
+  
+  - Map
+  
+  There are two datasets: A is the large one, B is small enough to fit in the memory of the cluster node. What type of join do you choose to make the difference A\\B (records from A not found in B)?
+  
+  - Map
+  
+  There are two datasets: A is the large one, B is small enough to fit in the memory of the cluster node. What type of join do you choose to make the difference B\\A (records from B not found in A)?
+  
+  - Reduce
+  
+  There are two datasets: A is the large one, B is small enough to fit in the memory of the cluster node. What type of join do you choose to make the union A U B (records from A or from B or from the both datasets)?
+  
+  - Reduce
+  
+  How do you distinguish records of two datasets on the Reduce phase?
+  
+  - By a some tag added to the records on the Map phase; tags are selected by the filename from the environment
+  - By format of the values
+  
+  What parameters do you specify in the Hadoop Streaming command to perform Secondary sort (i.e. sort by two fields of the key, partition by the first field)?
+  
+  - -D stream.num.map.output.key.fields=2.  this is required to distinguish keys from values.
+  - -D mapred.output.key.comparator.class=org.apache.hadoop.mapred.lib.KeyFieldBasedComparator. this comparator is required to split records and sort by the fields.
+  - -D mapred.text.key.comparator.options=-k1,2. this comparator sorts records by the first two fields
+  - -D mapred.text.key.partitioner.options=-k1,1. the partitioner distributes record by the first field of the key.
+  - -partitioner org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner. this partitioner is required to calculate the partition by the specified fields of the records
+  
+  When is Secondary Sort really useful?
+  
+  - When you join two datasets with a Reduce-side join and one of them has many records with repeating keys
+  - When you want to avoid containers in memory on the reducers and therefore decrease the memory required by your tasks.
+'''
+tags: [
+  "Data_Eng"
+]
+isStarred: false
+isTrashed: false

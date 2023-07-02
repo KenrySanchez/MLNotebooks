@@ -1,0 +1,20 @@
+createdAt: "2020-07-25T20:04:53.593Z"
+updatedAt: "2020-07-25T20:16:39.292Z"
+type: "MARKDOWN_NOTE"
+folder: "6ce8e9fa5ab8d660e1a1"
+title: "ESDEN Big Data Description"
+content: '''
+  ESDEN Big Data Description
+  
+   Build a Data-Driven strategy from Big Data Perspective.
+   Analyze information from Omnichannel System and improve CUX (Customer User Experience) using data.
+   Process Massive data large in MPP.
+   Mastering Hadoop Ecosystem (Hadoop, Spark, Pig, and Hive).
+   Mastering Lambda and Kappa Architecture using differents components (SparkStreaming, HBase, Yarn, Oozie, Storm, etc.).
+   Make Data Analysis using CRISP-DM Methodology, TDSP (Microsoft), or any methodology for data mining Framework.
+   Knowledge using Python and R for descriptive, predictive, and prescriptive analysis.
+   Knowledge working with both Hue and Ambari to Handle YARN Cluster.
+'''
+tags: []
+isStarred: false
+isTrashed: true

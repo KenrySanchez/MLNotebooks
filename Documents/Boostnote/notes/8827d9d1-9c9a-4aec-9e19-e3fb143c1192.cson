@@ -1,0 +1,389 @@
+createdAt: "2020-10-13T06:19:40.801Z"
+updatedAt: "2020-11-30T04:50:13.765Z"
+type: "MARKDOWN_NOTE"
+folder: "d95c9bc9473d8dba8318"
+title: "Data analysis and Hypothesis testing"
+content: '''
+  ## Data analysis and Hypothesis testing
+  
+  The goal of this part of process vary with the given data and bs opportunity. But in general, the porpuses are:
+  
+  - Provide summary level insight into a data set.
+  - Uncover underlying patterns and structure in the data.
+  - Identify outliers, missing data and class balance issues.
+  - Carry out quality contol checks.
+  
+  The time spent on a project is a part of the investment a company makes to pursue a business opportunity. `EDA serves to maximize the efficiency of your overall time spent on a project`. Communicating your findings is a step that is just as important as the EDA itself.
+  
+  One challengue of the road to profiency is the many options in how data can be visualized and similarly how results can be communicated.
+  
+  __Example EDA Process__
+  
+  - Load data into Pandas, Numpy or another similar tool and `summarize the data`.
+  - Use tables, text and visualizations to `tell the story` that relates the bs opportunity to the data.
+  - Identify a strategy to `deal with missing values`.
+  - `Investigate` the data and underlying business scenario with visualizations and hypothesis testing
+  - `Communicate your findings`.
+  
+  The AI enterprise workflow does not end here because communication is not an endpoint. Instead, it is a milestone in the overall workflow, the first of many such milestones. Keeping stakeholders informed as the workflow proceeds is a critical component for overall project success and the end of EDA is a natural time to communicate progress
+  
+  __Best practices using Data Visualization__
+  
+  Keep in mind that data visualization must be carried out in a reproducible way and the end products are generally packaged into a deliverable that will be communicated to bs stakeholders.
+  
+  - pivot and group by are used to make `aggregations` from pandas df. You can have more than one index.
+  
+  1. Keep your code-base separated from your notebooks. Executable scripts, modules, packages.
+  2. Keep a notebook or record of plots and plot manipulations. Use galleries and create your own.
+  3. Use your plots as a quality assurance tool. Take a moment to predict what the plot should look like.
+  4. store code in text file to version control.
+  5. It is possible that both a table and a plot might be needed to communicate the findings and one common practice is to include an appendix in the deliverable.
+  6. Another related practice when it comes to EDA is that the communication of your findings, usually via deliverable, is done in a clean and polished way.If using a notebook as a communication tool take the time to remove unnecessary code blocks and other elements as they can distract from the principal takeaways.
+  
+  There are three important points to communicate to your stakeholders:
+  
+  - What you have done.
+  - What you're doing.
+  - What you plan to do.
+  
+  __Summarizing pivor tables with simple plots__
+  
+  ```Python
+  
+  ## plot pivot table summary data
+  
+  f, axes = plt.subplots(1, 2, sharey=False, figsize=(14, 6), dpi=100, facecolor="white")
+  
+  ##create pivot
+  table1 = pd.pivot_table(df, index="region", columns="year", values="happiness").plot(kind="bar", ax=axes[0])
+  table2 = pd.pivot_table(df, index="region", columns="year", values="health").plot(kind="bar", ax=axes[1])
+  
+  ## customize more values
+  ```
+  
+  ------------
+  
+  ### Missing Data: Best Practices
+  
+  The best way for dealing with missing data will always be preventing the occurrence in the first place.
+  
+  __Complete case analysis__
+  
+    The opposite strategy from tracking all your missing values is to delete either rows (observations) or columns (features), from your training data. In the case of `deleting rows, this is called complete case analysis`, and is quite common.
+  
+  Complete case analysis can lead to undesirable results, but the `degree to which it does depends on the category of missingness`.
+  
+  The three categories of missing data are:
+  
+  **Missing completely at random or MCAR**
+  
+  When data are MCAR, `missing cases are, on average, identical to non-missing cases, with respect to the feature matrix`. Complete case analysis will reduce the power of the analysis, but will not affect bias.
+  
+  **Missing at random or MAR**
+  
+  When data are MAR `the missing data often have some dependence on measured values, and models can be used to help impute what the likely data would be`. For example, in a Major League Baseball (MLB) survey, there might be a disproportionate number of male respondents completing all of the questions as compared to females, since males comprise most of the MLB's viewership.
+  
+  **Missing not at random or MNAR**
+  
+  In this case the missing data `depend on unmeasured or unknown variables`. There is no information available to account for the missingness.
+  
+  Of these three categories, the best case scenario is that the data are MCAR. It should be noted that imputing values under the other two types of missingness can result in an increase in bias.
+  
+  __Simple Imputation__
+  
+  ```Python
+  from sklearn.impute import SimpleImputer
+  
+  features = ["price", "inventory"]
+  imp = SimpleImputer()
+  
+  # Use .values attribute bc sklearn works with arrays rather than DataFrames
+  imp.fit(df[features].values)
+  
+  print(imp.transform(df[features].values))
+  
+  [[ 1.95  17.5  ]
+   [ 3.    12.   ]
+   [ 2.475 23.   ]]
+  ```
+  
+  __Multiple Imputation__
+  
+  Try a range of different values for imputation and measure how the results vary between the different datasets.
+  
+  `scikit-learn` has an `IterativeImputer` that can be used to carry out multiple imputations.
+  
+  ```Python
+  
+  from sklearn.preprocessing import OneHotEncoder
+  
+  ## one hot encoder the subscriber feature
+  oneh1 = OneHotEncoder()
+  column = df["subscriber"].values.reshape(-1, 1)
+  oneh1.fit(column)
+  labels1 = oneh1.categories_[0].tolist()
+  X1 = oneh1.transform(column).toarray()
+  
+  ## one hot encoder the country feature
+  oneh2 = OneHotEncoder()
+  column = df["country"].values.reshape(-1, 1)
+  oneh2.fit(column)
+  labels2 = oneh2.categories_[0].tolist()
+  X2 = oneh2.transform(column).toarray()
+  ```
+  
+  ```Python
+  
+  ## Compute missing values using LogisticRegression
+  
+  from sklearn.metrics import classification_report
+  from sklearn.linear_model import LogisticRegression
+  from sklearn import preproccessing
+  
+  ## variables
+  impute_col = 0
+  C = 0.01
+  
+  ## identify the values that can be used as features
+  y_impute = X[:, impute_col].copy()
+  X_impute = X[:, np.setdiff1d(np.arange(X.shape[1]), impute_col)].copy()
+  missing = np.isnan(y_impute)
+  
+  ## scale
+  scaler = preprocessing.StandardScaler().fit(X_impute)
+  X_impute = scaler.transform(X_impute)
+  
+  mod1 = LogisticRegression(C=C)
+  mod1.fit(X_impute[~missing], y_impute[~missing])
+  predicted_missing = mod1.predict(X_impute[missing])
+  slide_print(classification_report(Known_missing, predicted_missing, target_names=["inactive", "subscriber"]))
+  ```
+  
+  __TIP__: There is also `Bayesian Imputation`.
+  
+  __TIP__: Your visualizations should tell the story of the data and investigative process. The story should begin with descriptions of the data along with a summary of the business problem, and it will eventually lead to your findings. After you have discussed your findings, it is typical that you would include some suggestions for next steps in order to stimulate discussion on how the company might proceed.
+  
+  ----
+  
+  ### Hipothesis testing
+  
+  `GOAl`: Using Hypothesis test during the EDA portion.
+  
+  __TIP__: Misapplication of p-values are: multiple testing and p-value hacking.
+  
+  __Overview__
+  
+  [Random variables | Statistics and probability | Math | Khan Academy](https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library)
+  
+  Scientists use `statistical models to make general statements about real-world observations`. Many types of data collected from many different sources often follow recognizable patterns.
+  
+  When data are observed to follow probability distributions, and the data were collected in a way that maximizes the chances that they are representative of the larger population from which they were taken, it is possible to make estimates about the properties of that population.
+  
+  Making inferences about some population by matching a sample of data with a probability distribution and estimating its parameters requires that the sample meet certain criteria. Specifically, you should have reason to believe that:
+  
+  - the data follow the chosen type of distribution, and.
+  - each point is independent and identically distributed (IID).
+  
+  Assuming you have a dataset that can be reasonably parameterized with a probability distribution, the process of estimating those parameters, also known as [Statistical inference](https://en.wikipedia.org/wiki/Statistical_inference) is relatively straightforward.
+  
+  __Hypothesis testing__
+  
+  ***Estimation with probability distributions, and simple hypothesis tests in the context of EDA (making probability statements)***.
+  
+  [Jupyter Notebook Viewer](https://nbviewer.jupyter.org/github/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter6_Priorities/Ch6_Priors_PyMC3.ipynb)
+  
+  used for:
+  - connection between business and data.
+  - understand trend.
+  - pattern in the data.
+  
+  `Random Sampling`: Techniques to ensure that our sample is a good representation of the population.
+  
+  Applications of statical inference based on types of questions (investigate analysis):
+  
+  - Hypothesis testing: How well does the data match some assumed (null) distribution?.
+  - Point Estimation: What instance of some distributional class does it match well?.
+  - Uncertainty Estimation: How can we quantify our degree of unccertainty about our estimates?.
+  - Sensitivity Analysis: Do our results rely heavily on our distributional assumptions?.
+  
+  Numerical optimization:
+  
+  - Maximum Likelihood.
+  - Expectation Maximization.
+  
+  Simulation (flexible alternative to more classical approaches):
+  
+  - Bootstrapping (quantify the uncertainty around a parameter estimate).
+  - Permutation Testing.
+  - Monte carlo methods
+  
+  Estimation of Posterior Distributions:
+  
+  - Markov chain Monte Carlo.
+  - Variational methods.
+  
+  Nonparametric Estimation:
+  
+  - Bayesian non-parametric.
+  
+  __TIP__: Bayesian methods bring to the table a number of way to think differently about hypothesis testing. They generally require more time to implement, but the quantification of uncertainty can be useful when making important business decisions.
+  
+  __TIP__: Don't make business decisions based on a one p-value.
+  
+  __How to formalize your hypothesis__
+  
+  1. Pose your question. IE: Is it faster, on average, to process streams for viewing on a cloud service compared to our locally hosted servers?.
+  2. Find the relevant population. IE: The population consists of all possible streams.
+  3. Specify a null hypothesis. There is no difference, on average, between local and hosted services for stream processing times location after I submit my ride request.
+  4. Select the test and the significance level, two sample independient t-test with alfa=0.05.
+  
+  Two-sample independent t-test
+  
+  ```Python
+  local_arrivals = np.array([3.99, 4.15, 6.88, 4.53, 5.65, 6.75, 7.13, 2.79, 6.20,
+                             3.72, 7.28, 5.23, 4.72, 1.04, 4.25, 4.71, 2.16, 3.46,
+                             3.41, 7.98, 0.75, 3.64, 6.25, 6.86, 4.71])
+  hosted_arrivals = np.array([5.82, 4.83, 7.19, 6.98, 5.82, 5.25, 5.71, 5.59, 
+                              7.93, 7.09, 6.37, 6.31, 6.28, 3.12, 6.02, 4.84, 
+                              4.16, 6.72, 7.44, 6.28, 7.37, 4.27, 6.15, 4.88, 
+                              7.78])
+  
+  test_statistic, pvalue = stats.ttest_ind(local_arrivals, hosted_arrivals)
+  print("p-value: {}".format(round(pvalue,5)))
+  
+  ```
+  Unequal variances t-test
+  
+    The use of a `Student’s t-distribution`, accounts for a specific bias that the Gaussian distribution does not, because it has heavier tails.
+    
+  The `t-distribution` always has mean 0 and variance 1, and has one parameter, the degrees of freedom. `Smaller degrees of freedom have heavier tails`, with the distribution becoming more and more normal as the degrees of freedom gets larger.
+  
+  The default version of a `Student’s t-test assumes` that the sample sizes and variances of your two samples are equal. In the case of our arrival times example above we cannot state that the variances of the two samples are suppose to be the same. `The unequal variances t-test`, also called `Welch’s t-test` is a more appropriate variant of the t-test for this example.
+  
+  ```python
+  test_statistic, pvalue = stats.ttest_ind(local_arrivals, hosted_arrivals, equal_var = False)
+  print("p-value: {}".format(round(pvalue,5)))
+  ```
+  
+  The t-test is a simple way to care out 1 or 2 sample hypothesis tests. There are a number of variants on the t-test, but the `unequal variances t-test` is commonly used.
+  
+  
+  Variants of t-test on scipy:
+  
+  - ttest_1samp: Calculate the t-test for the mean of ONE group of scores.
+  - ttest_ind: Calculate the t-test for the means of two independent samples of scores.
+  - ttest_ind_from_stats: t-test for means of two independent samples from descriptive statistics.
+  - ttest_rel: calculate the t-test on two related samples of scores, a and b. (paired t-test).
+  
+  [FAQ: What are the differences between one-tailed and two-tailed tests?](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faq-what-are-the-differences-between-one-tailed-and-two-tailed-tests/)
+  
+  __ANOVA Example__
+  
+  ```Python
+  import numpy as np
+  from scipy import stats
+  
+  local_arrivals = np.array([3.99, 4.15, 7.88, 4.53, 5.65, 6.75, 7.13, 3.79, 6.20,
+                             3.72, 7.28, 5.23, 4.72, 2.04, 4.25, 4.71, 3.16, 3.46,
+                             3.41, 7.98, 0.75, 3.64, 6.25, 6.86, 4.71])
+  cloud1_arrivals = np.array([5.82, 4.83, 7.19, 6.98, 5.82, 5.25, 5.71, 5.59, 6.93,
+                              7.09, 6.37, 6.31, 6.28, 3.12, 6.02, 4.84, 4.16, 6.72,
+                              7.44, 6.28, 6.37, 4.27, 6.15, 4.88, 6.78])
+  cloud2_arrivals = np.array([5.73, 4.95, 6.96, 6.12, 5.85, 6.74, 5.19, 7.24,
+                              6.08, 6.11, 6.11, 7.68, 4.66, 6.12, 5.04, 4.19, 6.46,
+                              7.02, 7.28, 6.19, 4.67, 7.15, 4.58, 6.01])
+  
+  all_arrivals = [local_arrivals, cloud1_arrivals, cloud2_arrivals]
+  global_mean = np.hstack(all_arrivals).mean()
+  
+  print("The global mean arrival time is: %s"%np.round(global_mean, decimals=2))
+  
+  for name, arrivals in zip(["local", "cloud1", "cloud2"], all_arrivals):
+      print("Mean arrival time for {} is {}".format(name, np.round(arrivals.mean(), decimals=2)))
+  ```
+  When comparing across three or more groups (in this case types of promotions) an appropriate test is a one-way ANOVA, which compares between group variation and within group variation. The relevant probability distribution if the F distribution, and that is the name used in the relevant method in Scipy:
+  
+  ```Python
+  test_statistic, pvalue = stats.f_oneway(*all_arrivals)
+  print(np.round(pvalue,decimals=4))
+  ```
+  
+  In this example, it seems likely that there is at least one difference between the groups. When digging deeper to determine which type of compute environment is best, one needs to be mindful of the [Multiple comparisons problem](https://en.wikipedia.org/wiki/Multiple_comparisons_problem).
+  
+  __TIP__: `NHST` is a more specific term for hypothesis testing as we have presented it. Hypothesis testing is the overall framework to carry statistical inference, but it is not a method to determine or compute estimates. Determining whether or not to reject a null hypothesis is a form of statistical inference, but the question specifically refers to estimation so NHST is not an appropriate answer.
+  
+  __P-Value limitations__
+  
+  A p-value is the probability of finding the observed, or more extreme, results when the null hypothesis (H-zero) of a study question is true, it is a tool to quantify the evidence against the null hypothesis.
+  
+  It turns out there are many ways to modify the data get the value under the threshold (used to verify the null hypothesis):
+  
+  - If we re-run the experiment multiple times changing the features until we arrive at the best p-value.
+  - If we go back and collect a few more samples to get the p-value just over the threshold.
+  - If we remove one or more outliers to ensure that the p-value is smaller.
+  - If we set the level of alpha after the hypothesis has been tested.
+  
+  p-values should be used as an investigative tool, not as specific number to base decisions on or draw conclusions from.
+  
+  Viable alternatives to p-values exist through the use of `Bayes Factors and Posterior Predictive Checks`.
+  
+  `Bayesian framework` can give you more confidence in your conclusions for a given experiment, but whether it is Bayesian or frequentist treatment of the experiment the study still needs to be repeated with newly collected data to ensure reproducibility.
+  
+  __Multiple testing__
+  
+  [statsmodels.stats.multitest.multipletests — statsmodels](https://www.statsmodels.org/dev/generated/statsmodels.stats.multitest.multipletests.html)
+  
+  it was mentioned in the p-value limitations unit that running more than one test at a time, on the same data is an example of p-value hacking. This is because there is an expected false positive rate for running one test, and if we run multiple tests say using different combinations of features this expected rate should be higher.
+  
+  __Bonferroni Correction__
+  
+  The Bonferroni Correction is a simple way to rectify the over testing issue.
+  
+  The Bonferroni correction is commonly used to mitigate the multiple comparisons problem, but it is generally too conservative for large data sets. Today when the number of tests can scale into the hundreds or thousands the method has become less widely used when compared to other methods.
+  
+  __Other methods to correct for multiple tests__
+  
+  The Bonferroni Correction is probably the simplest way to avoid increasing your false positive rate when running several tests at once. You simply divide your threshold by the number of tests you are running. This conservative method does penalize potentially significant results, so there is an increase in false negatives. This may necessitate considering alternative ways of dealing with multiple tests.
+  
+  The Benjamini/Hochberg correction that is based on the `false discovery rate`.
+  
+  Permutation experiments are offer an additional method to correct for multiple comparisons that `require fewer assumptions`.
+  
+  __TIP__: If we have a data set with 1000 observations and we repeat a t-test for each observation then (with α=0.05) we can expect 50 observation to be found significant purely by random chance.
+  
+  - bonferroni : one-step correction
+  - sidak : one-step correction
+  - holm-sidak : step down method using Sidak adjustments
+  - holm : step-down method using Bonferroni adjustments
+  - simes-hochberg : step-up method (independent)
+  - hommel : closed method based on Simes tests (non-negative)
+  - fdr_bh : Benjamini/Hochberg (non-negative)
+  - fdr_by : Benjamini/Yekutieli (negative)
+  - fdr_tsbh : two stage fdr correction (non-negative)
+  - fdr_tsbky : two stage fdr correction (non-negative)
+  
+  These methods are reasonable for many types of data, but they still have some limitations. One major assumption is that the p-values follow a certain distribution, but in practice this is known to be invalid for certain types of data like genomics.
+  
+  ```Python
+  
+  import numpy as np
+  from statsmodels.stats.multitest import multipletests
+  
+  pvals = np.random.uniform(0.001, 0.06, 12)
+  _results = multipletests(pvals, alpha=0.05, method='bonferroni', is_sorted=False, returnsorted=False)
+  rejected_bonferroni, adjusted_bonferroni = _results[0], _results[1]
+  # adjusted_bonferroni is the adjusted p_value
+  
+  _results = multipletests(pvals, alpha=0.05, method='fdr_bh', is_sorted=False, returnsorted=False)
+  rejected_bh, adjusted_bh = _results[0], _results[1]
+  # adjusted_bh is the adjusted alpha
+  
+  for p,pval in enumerate(pvals):
+       print(round(pval,3), round(adjusted_bonferroni[p],3), round(adjusted_bh[p],3))
+  
+  ```
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

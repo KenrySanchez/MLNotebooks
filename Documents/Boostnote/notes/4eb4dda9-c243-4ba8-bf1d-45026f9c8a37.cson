@@ -1,0 +1,171 @@
+createdAt: "2020-05-10T05:12:52.575Z"
+updatedAt: "2020-11-01T23:06:01.059Z"
+type: "MARKDOWN_NOTE"
+folder: "d95c9bc9473d8dba8318"
+title: "Business Priorities and Data Ingestion - Emphatize Phase"
+content: '''
+  ## Business Priorities and Data Ingestion - Emphatize Phase
+  
+  **Design Thinking and IBM Watson**
+  
+  [Enterprise Desing Thinking](https://www.ibm.com/garage/method/practices/think/enterprise-design-thinking)
+  [Design thinking courses and certifications - Enterprise Design Thinking](https://www.ibm.com/design/thinking)
+  
+  Design thinking is the framework we will use to understand the process of designing and implementing AI solutions for business.
+  
+  Enterprise Design Thinking adds three core practices to traditional approaches: hills, playbacks, and sponsor users.
+  
+  ### Workflow Overview: Data Science Process Models and Desing Thinking
+  
+  For Data Scienctis, Desing Thinking is interisting because of they tend to gather data, put our heads down, and then build and solve until there's something to show.
+  
+  The first stage in design thinking is the `empathize stage`. We will call it the `data collection stage`. This is where you talk with the people closest to the data. If there is a product, then these discussions should include consumers because you want to emulate their experience. Do not forget to take notes and reflect.
+  
+  Then, keeping with the communication theme, use what you have learned to identify the business opportunity, refine it, and prioritize it. This is where you bake in factors like **feasibility, cost, timeline, and ROI to help drive decisions**. Once you have articulated the business opportunity and looked at it through a scientific lens, you then proceed to gather the data.
+  
+  The business opportunity should be stated in a way that minimizes the presence of [confounding factors](https://en.wikipedia.org/wiki/Confounding).
+  
+  The next stage is the `design stage`, which corresponds to `exploratory data analysis`, or EDA. Data visualization and hypothesis testing are the principal tasks in this stage. Here, you will also resolve a strategy for dealing with missing values.
+  
+  The next part of the workflow is the `ideate stage` or, if translated into the data science workflow, `the transformation stage`. Here is where you transform the data into a form that is consumable by models. There are many possibilities in this stage and it encompasses entire subject areas, like unsupervised learning and feature engineering. We will cover other data manipulations, like feature standardization and using the lasso or PCA to reduce dimensionality. then, the next step is `modeling`.
+  
+  At the end, to wrap up the process, there is a `testing phase` where we criticize our choices in the other stages. And we make room for additional considerations, like deployment, load balancing, scalability, and more. Importantly, in this stage we decide how it is best to loop back into the process and improve.
+  
+  **Advantages and disadvantages of process models**
+  
+  Before you think about model-specific questions like should I use a frequentist or Bayesian paradigm? or is there enough data for a neural network? you should take time to identify and clarify the business problem. This is always the first step to take in any process model, including design thinking.
+  
+  The major disadvantage to using process models is the fact that `there are several to choose from`, and it is possible that none of the existing models are an ideal fit for you or your team. Another disadvantage of process models is that `strict adherence to a particular model could promote a tendency to follow recipes in a rote fashion, which could stifle creative new ways to address business opportunities`.
+  
+  `Design Thinking` has being applied in a cross-disciplinary way—that is outside of data science. Historically, learning from other disciplines has been a hallmark of scientific achievement.
+  
+  **Data science process models**
+  
+  OSEMN (Awesome)
+  
+  According to the OSEMN framework, the elements of data science are:
+  
+  - Obtaining data.
+  - Scrubbing data.
+  - Exploring data.
+  - Modeling data.
+  - Interpreting data.
+  
+  [5 Steps of a Data Science Project Lifecycle - Towards Data Science](https://towardsdatascience.com/5-steps-of-a-data-science-project-lifecycle-26c50372b492)
+  
+  CRISP-DM
+  
+  [Cognitive Compute](:note:7518d5c5-b54e-4c29-aac7-d075fcbb9726)
+  [Data Science Methodology](:note:24fe37d5-2db3-49f8-bcc9-412303aa9483)
+  [Four Problems in Using CRISP-DM and How To Fix Them](https://www.kdnuggets.com/2017/01/four-problems-crisp-dm-fix.html)
+  
+  ### Data Collection and BS Opportunities
+  
+  Empathize Process
+  
+  1. Get as close to the source of data as possible usually by interviewing the people involved.
+  2. Identify the business problem.
+  3. Obtain all of the relevant the data.
+  4. Translate the business problem into a testable hypothesis or hypotheses.
+  
+  #### Identifying business opportunities
+  
+  You are suprised by the fact that you, a data scientist, are being asked to help out with interviews, observations, process mapping, and various design thinking sessions. These techniques as well as many others are used during the `empathize stage` to gather as much information as possible so that a problem may be defined.
+  
+  You are going to need to talk everyone involved in the data generation process. This is why you're spending time on interviews and observations.
+  
+  Asking questions is a critical part of getting the process started. You will want to be naturally curious gathering details about the products, the subscribers, and the interaction between the two. This information gathering stage provides both a perspective on the situation and it will help you formulate the business question.
+  
+  __Articulate the business question__
+  
+  Enumerate the possible questions (it makes the discussion easier when you work with the involved stakeholders - prioritize questions).
+  
+  To prioritize, there are some factors:
+  
+  - Stakeholder or domain expert opinion: people closest to the domain.
+  - Feasibility: Do we have the necessary data to address the business questions?Do we have clean enough data to address the business questions? Do we have the technology infrastructure to deploy a solution once the data are modeled?
+  - Impact: When looking at Impact we’re purely looking at expected dollar contribution and added value from a monetary perspective. When possible, calculating the back-of-the-envelope ROI is a crucial step that you can do. This is an expectation and not real ROI calculation, but it is a guiding principle nonetheless.
+  
+  The ROI calculation should be an expected dollar value that you can generate based on all available information you currently have in your organization combined with any domain insight you can collect.
+  
+  Measuring the back-of-the-envelope ROI calculation could make use of any of the following:
+  
+  - Estimates for fully-loaded salaries of employees involved.
+  - Cost per unit item and/or time required to produce.
+  - Number of customers, clients, or users.
+  - Revenue and more.
+  
+  [How to realize the ROI with Data Science](https://www.youtube.com/watch?v=tRZN-q6GYKU)
+  [Learn to deliver fast ROI with data science | IBM Big Data & Analytics Hub](https://www.ibmbigdatahub.com/blog/learn-deliver-fast-roi-data-science)
+  
+  #### Scientific Thinking for Business
+  
+  - **confounding Factor**: In a study, is a variable which is related to one or more of the variables defined in the study.
+  - **Hypotesis**: An idea that propose a tentative explanation about a phenomenon or a narrow set of phenomena observed in the natural world. it is here where our business opportunity is directly related to the data. With each iteration of testing, you will reject ideas until only the remaining idea is the proposed explanation. hypothesis testing is an important tool to help establish a link between model performance and the variables most closely associated with our business opportunity.
+  
+  The business scenario needs to be communicated in a couple of ways:
+  
+  1. Stated in a testable way in terms of data.
+  2. Stated in a clear way that minimizes the influence of confounding factors.
+  
+  __Guidelines for creating testable hypotheses__
+  
+  - Become a scientist of the business: Spend a little bit less time learning new algorithms and Python packages and more time learning the levers that make your specific business go up or down and the variables that impact those levers.
+  - Make an effort to understand how the data are produced: If the data come from a database you should ask about the process by which the data are stored. If the data are compiled by another person then dig into the details and find out about the compiling process as well as the details of what happened before the data arrived on their desk.
+  - Make yourself part of the business: Proactively get involved with the business unit as a partner, not a support function.
+  - Think about how to measure success.
+  
+  __The Scientific Method__
+  
+  1. Formulate the question.
+  2. Generate a hypothesis to address the question.
+  3. Make a prediction.
+  4. Conduct an experiment.
+  5. Analyze the data and draw a conclusion
+  
+  Scientific experiments must be repeatable in order to become reliable evidence.
+  
+  #### Gathering data
+  
+  __Documenting your data__
+  
+  eveloping the habit of creating a simple document with at least a description of the ideal data needed to test the hypotheses around the business problem may seem like an unnecessary step, but it has potential to both:
+  
+  1. Streamline the modeling process.
+  2. Help ensure that all future data come in an improved form
+  
+  __ETL__
+  
+  `Jupyter Lab` has an extension called `data grid` that allows it to read delimited files with millions or even billions of rows. Then tools like `Dask` help you scale your analyses. To ensure that projects are completed in a reasonable amount of time the initial pass at ETL should use a simple format like CSV, then a more complex system can be built out once you have accomplished the `Minimum Viable Product (MVP)`.
+  
+  __Common methods of gathering data__
+  
+  Plain Text:
+  
+  The large majority of data science projects involve a modeling step that requires `input data in a tabular numeric format`. In order to extract data from a `plain text file` you may need to identify patterns in the text and use regular expressions (regex) to pull out the relevant information. `Python’s built-in regex library is known as re`.
+  
+  On the other hand if the data you are working with consists of natural language, then there are a number of libraries that can work directly with the text files. The two main libraries are:
+  
+  - Spacy.
+  - NLTK.
+  
+  **TIP**: A best practice when loading data from plain text or delimited files is to separate the code for parsing into its own script. Because the files are read line by line in a separate Python call, it is more memory efficient and this separation of tasks helps with automation and maintenance.
+  
+  Web Scraping:
+  
+  `Requests` is a user-friendly library for downloading web pages. It can also be used to retrieve files that are exposed through a URL. For a webpage the data returned from a call using Requests is HTML.
+  
+  `Beautiful Soup` is a Python library that provides tools for walking through that structure in a systematic and repeatable way. Thus, in the context of web scraping Beautiful Soup can be used to extract the relevant data from the soup of all the other information contained in an HTML file.
+  
+  Many websites’ contents are dynamically rendered in such a way that the information displayed on a page never makes it directly into the page’s HTML.
+  
+  For this scenario use:
+  
+  - Selenium.
+  - Scrapy.
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

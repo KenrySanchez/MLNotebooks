@@ -1,0 +1,114 @@
+createdAt: "2018-07-11T02:59:30.230Z"
+updatedAt: "2018-10-08T13:12:12.558Z"
+type: "MARKDOWN_NOTE"
+folder: "d464926e49d183704d56"
+title: "CRM Teorico"
+content: '''
+  ## CRM Teorico
+  
+  Cuando hablamos de CRM, hablamos sobre procesos organizativos y funcionales para poder conocer mejor a nuestros clientes. Es mas que una herramienta tecnologica
+  
+  #### Aplicando el conocimiento para hacer negocios
+  
+  **Omnicanalidad**
+  
+  Con la transformacion digital, buscamos mas que crear una simple App o pagina web. Buscamos la transformacion e innovacion de todos los procesos de la empresa a un nivel digital y moderno. En muchos negocios, la manera en como nos comunicamos con el cliente ha cambiado, de alli a que nace el concepto de **omnicanalidad**.
+  
+  La omnicanalidad es la realidad de las comunicaciones y de como conocer a nuestros clientes hoy en dia.
+  
+  
+  ### PErfil de consumidor
+  
+  Pasa que existe un nuevo perfil de consumir que utiliza cualquier canal a su alcance para obtener lo que busca. Son mucho mas exigentes, mas informados y solo son fieles con las experiencias de compra que cubran todas sus necesidades. Basicamente se puede clasificar en:
+  
+  - **Cliente ROPO** (Research Online, Purchases Offline), busca on-line pero compra en tienda fisica.
+  - **Cliente Showroomer**, investiga en tienda fisica y despues compra lo mas economico posible.
+  - **Cliente RTB** (Research, Testing and Buying) que investiga on-line, testea en tiendas fisicas y compra-online.
+  
+  Las empresas antes dependian de la multicanalidad para poder acercarse a sus clientes. Sin embargo, con el uso de la omnicanalidad han llegado a entender que no es solamente comunicarse, es tambien interconectar los canales para ser mas eficiente y innovador el modelo de comunicacion que poseen con sus clientes.
+  
+  *La omnicanalidad significa poner al cliente en el centro del negocio y reconocerle, indipendientemente por donde contacte con nosotros*.
+  
+  ---
+  
+  Para las empresas, la idea parte desde definir una estrategia integral para la organizacion dando respuesta a la necesidad de omnicanalidad.
+  
+  - Definir lo servicios disponibles para el cliente (especificar canales)
+  - Los procesos de negocios necesarios para una disponibilidad optima en los servicios
+  - los mecanismos (herramientas) de IT y la organizacion.
+  
+  *La idea es dar la maxima experiencia al usuario*
+  
+  Algunas preguntas para pensar y poder obtener beneficios:
+  
+  - ¿Cuantos entran en nuestro site y se dan cuenta que no es lo que buscan?
+  - ¿Cuantos los segundos de media que le dedicamos a muchas paginas web?
+  
+  Se debe clarificar el mapa de interaccion entre nuestro cliente y nuestra marca (organizacion)
+  
+    Se debe hacer seguimiento de informacion continua: comentarios en redes, emails, chats, sms, whatsapp, patrones de navegacion.
+  
+  *TODO PUEDE SER EMPLEADO, APROVECHADO Y EXPLOTADO si se define un MARCO Y ENFOQUE*
+  
+  **Tecnicas para analizar situacion y seguimiento de nuestros usuarios**
+  
+  - Mapa de interacciones
+  - Tracking de interacciones
+  - Monitoreo de la experiencia
+  - Dashboard de la experiencia
+  
+  ----
+  
+  #### El reto de la informacion dispersa
+  
+  ¿De donde viene la informacion **REAL**?
+  
+  NO EXISTE UNA VERSION UNICA DE LA VERDAD.. La informacion llega desde diferentes canales en diferentes formatos, por lo que para obtener la informacion real y concisa se debe analizar todos ellos. (Quizas la unica informacion que siempre sea real es la informacion suministrada por nuestros stakeholders)
+  
+  Se debe determinar quien sera el responsable (gobernante de los datos) del seguimiento de los datos para no deformar su valor. 
+  
+  Se necesita montar un repositorio que sirva como Master Data en nuestra organizacion. *El corazon de la compañia*.
+  
+  Debemos consegui convertir los datos en informacion y ya con ello, poder segmentar, identificar, diferenciar y interactuar con los clientes de la organizacion. Para ello es una buena estrategia usar los dos tipos de CRM.
+  
+  - CRM Analitico: Identifico y diferencio a los clientes en base a sus datos
+  - CRM Operativo: se retroalimenta del CRM analitico (este a su vez del operativo) y tiene como funcion poder personalizar y interactuar con la informacion y los servicios dispuestos al cliente.
+  
+  **Una buena idea**
+  
+  Crear un sistema de datos integrados que genere perfiles en base a interacciones con nuestra organozacion, de modo que a la vez podamos establecer comunicaciones mas eficientes con ellos (stakeholders).
+  
+  ---
+  
+  Se debe plantear como objetivo, a traves de una sistema omnicanal, llegar a obtener una relacion de `1 a 1` con el cliente
+  
+  **Notas**
+  
+  - Adquirir un nuevo cliente puede costar 5 veces mas que retener un cliente actual y fidelizarlo
+  - Un crecimiento del 2% en la retencion de clientes fidelizados puede tener el mismo efecto que una reduccion de costes al 10%.
+  
+  HAy que apuntar a fidelizar los clientes a traves de una experiencia omnicanal en nuestros productos y servicios. Que el cliente viva la experiencia de usar el producto como si nosotros, los ingenieros, estuvieramos a su lado respondiendole a cada momento.
+  
+  Una buena experiencia de usuario es la llave para encontrar el exito en los nuevos productos a desarrollar.
+  
+  [The User Experience: It's also about Data – Not Just Design](http://knowledge.wharton.upenn.edu/article/the-user-experience-why-data-not-just-design-hits-the-sweet-spot/)
+  
+  Yet even with this determined focus on design, most digital experiences fall short of user expectations. Of the 700 million websites that exist, 72% fail to consistently engage users or drive conversions. Of the 1.6 million apps available, just 200 account for 70% of all usage, and three out of four apps aren’t even used beyond the initial download.
+  
+  
+  ----
+  
+  #### KPIs de negocio importantes
+  
+  - Repeticion de interacciones/compra (conversiones).
+  - Cesta Media.
+  
+  
+'''
+tags: [
+  "CRM"
+  "OMNICANALIDAD"
+  "Data_orientada_a_negocio"
+]
+isStarred: false
+isTrashed: false

@@ -1,0 +1,135 @@
+createdAt: "2019-02-10T22:33:09.361Z"
+updatedAt: "2019-03-11T04:04:19.209Z"
+type: "MARKDOWN_NOTE"
+folder: "a431d02702033fa18596"
+title: "Advanced Topics"
+content: '''
+  ## Advanced Topics
+  
+  ### Execution and Scheduling
+  
+  spark context is the first object taht we have to create. it tells your application how to access a cluster. Coordinates processes on the cluster to run your application.
+  
+  - task is the unit of work. They are created by a job scheduler for every job stage.
+  - jobs is spawned in response to a spark action.
+  - job is divided in smaller sets of tasks called stages.
+  
+  **Differents between job stage and tasks**
+  
+  Job stage is a pipelined computation spanning between materialization boundaries -> not inmediately executable.
+  
+  Task is a job stage bound to particular partions -> inmediately executable.
+  
+  Materialization happens when reading, shuffling or passing data to an action.
+  
+  - narrow dependencies allow pipelining. 
+  - wide dependencies forbid it.
+  
+  **Execution**
+  
+  Action -> Job -> Job Stages -> Task.
+  
+  **Spark Context - other functions**
+  
+  1. The context keeps track of live executors by sending heartbeat messages periodically.
+  2. In more complex applications, the context performs scheduling between multiple concurrent jobs within the application.
+  3. Context may perform dynamic resource allocation if the cluster manager permits. The increases cluster utilization in shared environments by proper scheduling of multiple applications according to their resource demands.
+  
+  ### Caching & Persistence
+  
+  **Block**, is a unit of input and output in spark. Usually, blocks are a few megabytes in size.
+  
+  Spark allows you to hint which RDDs are better to be kept in memory or even on the disk. Spark does so by caching the blocks comprising your dataset. **You can mark the data set as cached my invoking a cache method on ot**. The method actually is a **persist**.  This method allows you to set RDDs storage to persist across operations after the first time it is computed. This method is parameterized by a storage level. That is, a descriptor controlling the persistence behavior.
+  
+  **Best Practices**
+  
+  For interactice sessions.
+  
+  - cache preprocessed data. it is a good idea to cache your dataset after you've done all the necessary preprocessing. That way, by keeping your work inside, in the memory, you would get a more responsive experience.
+  
+  For batch computations.
+  
+  - Cache dictionaries. . When running a batch computation, it is a good idea to cache dictionaries that you join with your data. Join dictionaries are often reshuffled, so it would be helpful to speed up their read times.
+  - Cache other datasets that are accessed multiple times.
+  
+  For iterative computations.
+  
+  - Cache static data. When running an iterative computation, again it is a good idea to cache static data like dictionaries or input datasets to a avoid reloading the data from the ground up on every iteration. The static data tends to get evicted due to the memory pressure from the intermediate data.
+  
+  ### Broadcast variables.
+  
+  They are a read-only variables that are efficiently shared among tasks.
+  
+  When it captures a variable into the closure, it's sent to an executor together with a task specification. That is one to many comunication.
+  
+  When you create a broadcast variable, it's content is distributed in a torrent-like version.
+  
+  Torrents can make your network clicks burn and this is' cause thet implement many to many communication protocol.
+  
+  Useful to share dictionaries or models.
+  
+  ### Accumulator variables
+  
+  Accumulator variables are used for aggregating the information through associative and commutative operations.
+  
+  is a read-write variable that is shared among tasks. The only way you can update them is by adding a delta
+  
+  I.E : var += delta
+  
+  Reads are allowed only by the driver program and not by the executors.
+  
+  Updates generated in actions are guaranteed to be applied only once to the accumulator. This is because successful actions are never re-executed and spark can conditionally apply the update.
+  
+  **Use cases**
+  
+  1. Performance counters
+    - number of proccessed records, totoal elapsed time, total error and so on and so forth.
+  
+  2. Simple control flow
+   - conditionals: stop on reaching a threshold for corrupted records
+   - loops: decide whether to run the next iteration of an algorithm or not
+  
+  3. Monitoring
+   - export values to the monitoring system
+  
+  4. Profiling and debugging
+  
+  **Questions**
+  
+  How does your application find out the executors to work with?
+  
+   - The SparkContext object allocates the executors by communicating with the cluster manager.
+  
+  Mark all the statements that are true.
+  
+    - Data can be cached both on the disk and in the memory.
+    - You can ask Spark to make several copies of your persistent dataset.
+    - Spark can be hinted to keep particular datasets in the memory.
+  
+  Imagine that you need to deliver three floating-point parameters for a machine learning algorithm used in your tasks. What is the best way to do it?
+  
+    - Capture them into the closure to be sent during the task scheduling.
+  
+  Imagine that you need to somehow print corrupted records from the log file to the screen. How can you do that?
+  
+    - Use an accumulator variable to collect all the records and pass them back to the driver.
+  
+  What will happen if you use a non-associative, non-commutative operator in the accumulator variables?
+  
+    - Operation semantics are ill-defined in this case.
+  
+  ### Twitter graph case
+  
+  - social graph: Vertexes correspond to users and edges is followed by relation.
+  - vertex(path) : a sequence of vertices where every two consequent vertices are connected by an edge.
+  - path length: number of edges in the path.
+  - shortest path: onw with a minimal length.
+  
+  
+  
+'''
+tags: [
+  "Data_Eng"
+]
+isStarred: false
+isTrashed: false

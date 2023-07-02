@@ -1,0 +1,159 @@
+createdAt: "2018-10-15T06:52:09.804Z"
+updatedAt: "2018-10-15T13:24:17.432Z"
+type: "MARKDOWN_NOTE"
+folder: "24cb38cf2bc84305c3de"
+title: "GEstion de la data en Retail"
+content: '''
+  ## GEstion de la data en Retail
+  
+  Como usar la data para vender en retail.
+  
+  Retail: Liquidez al mayor y Pago a probadores retrasado.
+  `cash conversion cycle`..
+  
+  Las retail han tenido que apostar por la economia local y adaptarse a TD. Etica y Innovacion.
+  
+  Evolucion del Retail. De un reporte plano al Big Data Reporting.
+  
+  `batalla de guagamela`.
+  `batalla de lepanto`.
+  
+  La idea del retail es adaptarse a las necesidades que va necesitando el cliente.
+  
+  Empresas que desaparecieron fueron:
+  
+  - vivieron anos de triunfo y dominacion.
+  - siempre se repetian las mismas cosas cada ano.
+  - Vivieron de dogmas y creencias encuestionables.
+  - Eran sociedaddes o empresas muy jerarquicas.
+  - No se adaptaron a los cambios. Ni vieron el cambio ni se prepararon para el.
+  - Buscaban culpables a sus problemas y nunca los solucionaban.
+  
+  EVOLCUION DEL RETAIL
+  
+   Tiendas de Barrio (Gama insuficiente) ----> Grandes Superficies (Hiperdisponibilidad) ----> Canal Digital (Long Tail)
+   
+  En el Retail de ahora `o te ADAPTAS o MUERES`.
+  
+  **ZEROCHANNEL**: Que la vida de la Marca Retail este integrado en la vida de los usuarios, de modo que la logica del Retail se venda por si misma dentro del ciclo de compra de los usuarios.
+  
+  En la vision **OMNICANAL**, los canales son "transparentes" para los clientes, pero cana canal garantiza:
+  
+  - 1 mision Principal.
+  - Rentabilidad.
+  - Crecimiento, caracteristica y Recursos Asociados.
+  
+  Las tiendas Fisicas son el **Emblema del Retail**.
+  
+  -----
+  
+  #### MultiFormato Tiendas
+  
+  - > 6000 m2
+  - 4000 a 6000 m2
+  - 2000 a 4000 m2
+  - > 2000 m2.
+  
+  Localizacion de secciones en tiendas: Se basan en ventas historicas de los usuarios, se pueden analizar los datos de la tienda para definir el `concepto` a vender en la tienda ("concepto" referencia a productos o tematica de productos).
+  
+  Experiencia Optimizada: Proyecto de movilidad que garantice conexion entre canales.
+  
+  -----
+  
+  #### Como se gestiona el Retail en la IA
+  
+  `DeepStack` es una IA que posee "instuicion". le permite aorebder y adaptarse a cada mano para jugar Poker y "Ganar".
+  
+  Los clientes en el Details se comunican a traves de los sistemas omnicanales.
+  
+  En el `Customer Journey`, las empresas han implementado la tecnologia para mejorar los aspectos de:
+  
+  - Atraer
+  - Descubrir
+  - Seleccionar
+  - Pagar
+  - inspirar
+  - Comprender
+  - Servicio
+  - Transportar
+  - Disfrutar
+  - COMPARTIR (REDES SOCIALES - IMPORTANTISIMO)
+  
+  Las companias tienen que comprender las necesidades de los clientes.
+  
+  5 BENEFICIOS DE TENER UN MODELO DE GESTION DE LA INFORMACION
+  
+  - SISTEMA OMNICANAL
+  - MISMA NOMECLATURA PARA GUPOS
+  - PARTICIPACION DIRECTA CON PROVEEDORES
+  - CONTROL DE LA CALIDAD DE LA INFORMACION
+  - UN SISTEMA PARA CRECER
+  
+  RCO: "Relacion Cliente Omnicanal"
+  
+  Dentro de las Organizaciones como "Retail" se debe implementar un modelo de "Ambicion" para los colaboradores.
+  
+  El Retail solo puede tener datos de clientes de las personas: que se fidalicen o pagan con TDC en la tienda online.
+  
+  "Poner al cliente en el centro del modelo NO ES UNA ELECCION".
+  
+  Maneras de Enlazar con una IVR (Proceso de comunicacion-contacto a traves de elocucion):
+  
+  - Respuestas Automaticas.
+  - Informacion General de tiendas.
+  - Informacion de Fidelidad.
+  - Informacion de Pedidos.
+  
+  68% de los usuarios necesitan un asesor en la tienda para resolver sus necesidades.
+  
+  Un asistente virtual requiere 3 bloques funcionales:
+  
+  1. El entendimiento: Entendimiento de los usuarios y sus necesidades.
+  2. Toma de decisiones: Luego del entendimiento, procesar la informacion y poder entregarle una solucion al problema.
+  3. Interaccion: Interaccion con API's propios o de terceros.
+  
+  [Rastreador de Precios de la Competencia Online | Minderest](https://www.minderest.com/es?gclid=Cj0KCQjw9ZDeBRD9ARIsAMbAmoaVvyoN1yV28o9jbNMAMzXGla5izlQe4YB0zxr_zAkA29d5kUMJIQgaAtrcEALw_wcB)
+  Ubica los productos a traves del SKB.
+  
+  RFID.
+  
+  LAs empresas que triunfan actualmente:
+  
+  - integran experiencias.
+  - Empresas que hablan el mismo lenguaje del cliente.
+  - Visibilidad global del supply chain.
+  - Empresas Comprometidas.
+  
+  Se deben desarrollar **SOFT Skills**.
+  
+  ------
+  
+  1. Desarrollar la innovacion en torno a las EXPERIENCIAS.
+  2. Cultivar una cultura de la innovacion.
+  3. Pensar en la innovacion como sistemas.
+  4. Adaptar un Proceso disciplinado a la innovacion.
+  
+  La estructura del dato esta muy compartimentada:
+  
+  - Marketing: datos de clientes y fidelidad.
+  - Financieron: datos de cuentas.
+  - Tiendas: CV, Stock.
+  - Central de compras: datos segmentados por familia de productos.
+  - Mundo Digital.
+  - Sistemas.
+  - RRHH.
+  
+  ----
+  
+  Las organizaciones necesitan adaptarse al cambio de las nuevas tecnologias y marcos de negocio se desarrollan. Para que las empresas de Retail "aguanten" este nuevo marco, una solucion es construir una estructura "LIQUIDA".
+  
+  
+'''
+tags: [
+  "Datos_y_Funnel"
+  "marketing"
+  "Social_CRM"
+  "OMNICANALIDAD"
+]
+isStarred: false
+isTrashed: false

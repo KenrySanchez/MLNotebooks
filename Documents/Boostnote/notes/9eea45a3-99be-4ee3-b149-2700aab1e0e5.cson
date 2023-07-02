@@ -1,0 +1,21 @@
+createdAt: "2018-10-17T12:37:34.315Z"
+updatedAt: "2019-07-09T05:18:41.854Z"
+type: "MARKDOWN_NOTE"
+folder: "a41d44d96fbd153c28c9"
+title: "Taller Spark"
+content: '''
+  ## Taller Spark
+  
+  Solo se puede levantar un Spark Context (hilo). 
+  
+  RDD: Es un array de datos, contiene particiones. Se pueden trasformar los indices del arreglo con funciones de transformacion.
+  
+  Los procesos de transformacion, eliminan el Objeto Anterior y crea una nueva instancia del objeto, donde solo puede haber uno solo.
+  
+  Spark forma un grafo de RDD conectadas por transformaciones y acciones.
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: true

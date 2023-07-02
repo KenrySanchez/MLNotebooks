@@ -1,0 +1,267 @@
+createdAt: "2018-10-10T07:07:40.134Z"
+updatedAt: "2018-10-10T16:41:46.647Z"
+type: "MARKDOWN_NOTE"
+folder: "24cb38cf2bc84305c3de"
+title: "Estrategia Data Driven: Filosofia de negocio"
+content: '''
+  ## Estrategia Data Driven: Filosofia de negocio
+  
+  - sanidad
+  - banco
+  - retail
+  - telco
+  
+  Prof: Jose Manuel Viseras, TeraData
+  
+  Objetivos:
+  
+  - El enfoque es dar una vision de la tecnologia al servicio del negocio.
+  - Cross para cualquier actividad del sector.
+  
+  El principal activo de la empresa es: "Los Clientes +  RRHH"
+  
+  Investigar **Canvas** para poder segmentar y definir el cliente de tu modelo de negocio.
+  Se debe definir la propuesta de valor en base al modelo canvas.
+  
+  **Long tail** significa que el cliente debe acompañarnos siempre en nuestro proceso de negocio, de modo que se compierta en nuestro principal activo en el marco de negocio.
+  
+  ***Segmentacion de clientes + propuesta de valor***
+  
+  Cartera de clientes = Activo de la empresa.
+  
+  Si el cliente se convierte en el mejor comercial de la empresa, esa empresa ha realizado transformacion digital orientado al customer centric.
+  
+  1 - El CEO debe acoplarse y ser la bandera de la transformacion digital, por ende debe apoyar la transformacion.
+  2 - El segundo factor importante de la empresa es el cliente.
+  
+  El cliente define cual es el producto que se debe desarrollar de modo que se debe crear producto en base a lo que el cliente analice.
+  
+  En la venta de productos al cliente se debe trabajar:
+  
+  preventa - venta - postventa, se debe trabajar la postventa para lograr la fidelizacion de la empresa.
+  
+  -----
+  
+  #### La tecnologia hacia la humanizacion
+  
+  ***Estamos en una sociedad liquida*** buscar el concepto de sociedad liquidad. La tecnologia debe empezar a desarrollarse orientado a la humanizacion.
+  
+  ##### El proceso y la tecnologia orientada al negocio, nuevos paradigmas de interaccion:
+  
+  formula universal
+  
+  TD = ((T x C c FH) + (Ve x Va x N)) x Com
+  
+  TD: Transformacion Digital
+  T: Tecnologia Aplicada
+  C: Personas Clientes
+  FH: El equipo humano
+  Ve: Velocidad (Implantacion del modelo de negocio)
+  Va: La Valentia
+  N: La necesidad de URgencia
+  Com: Comunicacion (publicacion interna)
+  
+  Fuente del Libro: La gran oportunidad...
+  
+  descargar libro: the merge..
+  
+  El eje central es el consumidor y este es:
+  
+  - Es unico: requiere personalizacion. (Ofertas personalizadas)
+  - Es mas reflexivo: Necesita mas informacion y tiempo para decidir. (showrooming webrooming)
+  - Es mas exigente: Trinomio precio/calidad/servicio. (right... product, price, place, time)
+  - Es mas emocional: No solo compra productos, compra valores. (engagement emocional)
+  - Es movil y social: El proceso de compra debe estar influenciado por el entorno. (omnicanalidad)
+  
+  El CUX adquiere el producto...
+  
+  - Satisfacer una "necesidad" B2C.
+  - Algo que le proporciona beneficio B2B
+  - Product Market Fit Growth Hacking C2B
+  
+  ***La segmentencion de clientes es importantes para definir los grupos de usuarios y los productos market fit que pertenecen a cada grupo***
+  
+  ***En las etapas del funnel de ventas no debe haber fricciones, debe haber simplicidad en el negocio sin rozes y problemas entre los distintos agentes***
+  
+  Debo definirme como un lider humilde que pueda dirigir un grupo multidisciplinario de roles donde de manera facil y simple transmitir ideas y dirigir acciones.
+  
+  Cosumidores Digitally-Empowered ----> Marcas Digitally-Empowered
+  
+  **Ecosystem Customer Experience**
+  
+  -----TODO esto al rededor del Customer Experience------
+  
+  Foco negocio - Staff Personals HArd & Soft Skill
+  Estrategia de la Cia - Responsabilidad e interaccion
+  
+  ----Reingenieria de procesos: integracion, toma decisiones RT---
+  
+  ----TECNOLOGIA/SISTEMAS
+  
+  En consultores para la transformacion digital nos enfocamos mas en lo que has hecho mal, para luego venderte una solucion.
+  
+  **Capas de Gestion ECRM: No romper nunca este paradigma**
+  
+  Modelo de negocio orientado al cliente -> El proceso esta orientado al modelo de negocio -> La tecnologia esta al servicio del proceso.
+  
+  CDX = CX + DX
+  
+  Punto clave de esta formula son las infraestructuras.
+  
+  CDX y Marca: Una relacion Long Tail
+  
+  1. Integrar tecnologia en la compania.
+  2. Construir la marca como icono en el mundo digital.
+  3. Definir el brand  voice..
+  4. Crear rituales de relacion con la marca.
+  5. Experiencias que cambien las relaciones.
+  6. Necesitamos medir la cantudad de datos que tiene que ver con las calidad.
+  
+  Importante para el TD, es el TIUV.
+  
+  T: Generacion de Trafico
+  
+  conjunto de atributos compartidos: Medios Ganados, Medios Propios, Medios Pagados.
+  
+  I: Informacion (ratings y reviews, herramienta segmentacion)
+  V: Venta (Scoring, Soluciones de Pay y Click&Collect)
+  P: PostVenta (Atencion al cliente App, charbox, redes sociales y videos)
+  
+  
+  Un lider digital debe poseer capacidad de:
+  - Business Analytics (crear analisis de negocio)
+  - Vision de Ecosistema (comprension del desempeno relativo de diferentes tecnologias y omnicanalidad)
+  - Data Agility (Soporte agil para la integracion y lectura de datos para la toma de decision de modo que pueda haber soporte de las tareas a ejecutar en las diferentes areas)
+  
+  -------------
+  
+  ##### Arquitectura de IT, Systemas de DWH al servicio del negocio
+  
+  customer journey define nuestra estrategia del dato.
+  
+  Data = Tecnologia, Tecnologia = Data.
+  
+  Segun Peter Drucker, todo aquello que no se pueda medir no existe.
+  
+  LA habilidad de transformar esos datos en conocimiento util nos llevara a conocer a los usuarios.
+  
+  **Nuevo Paradigma**
+  NEgocio obtiene respuesta a cualquier pregunta (si tenemos datos) --> IT Captura todos los datos en caso de que sea necesario en el futuro.
+  
+  Antiguos procesos o modelos de negocio + nueva cara tecnologica = Caros antiguos procesos de negocios.
+  
+  El objetivo no es solamente ganar insights sino que tambien saber racionalizar esos insights en forma de que sean util.
+  
+  ciclo funcional de los datos
+  
+  - modo social
+  - modo busqueda
+  - modo compra
+  
+  Ciclo funcional de los datos antes de pensar en la arquitectura de solucion CRM
+  
+  Capturar informacion, organizo, la integro y despues la analiso desde el punto de vista del negocio de modo que luego puedas proponer productos/servicios.
+  
+  El CRM debe ser un CRM integrado entre los CRM: Operacional, Analitico y Relacional.
+  
+  Por ley debe haber 10 años de datos historicos.
+  Las pruebas de concepto se cobran.
+  
+  Del total a cotemplar para la implementacion del negocio, se debe incluir todo lo necesario y poder estimar un porcentaje de riesgo.
+  
+  Se debe medir el ROI para establecer la ganancia por la inversion de la implementacion tecnologica, asi como tambien medir los objetivos de inversion a traves de KPI's.
+  
+  Crear indicadores operacionales.
+  Crear indicadores de clientes.
+  Visualizacion agil de cuadros de mandos, que sean intuitivos de los datos, mediante el uso de tipo graficos como lo son time-line, mapas, scorecards, alertas, etc.
+  
+  ```
+  don't make me think, libro descargar
+  ```
+  -----
+  
+  #### Seccion Dinamica de la clase
+  
+  Sistema delegado + front office ======> Netflix
+  
+  Back Office - La informacion sobre el paquete es tan importante como el propio paquete ====> FedEx
+  
+  sensores ===> IOT.
+   
+  Si no hay interaccion de los usuarios no se puede realizar digitalizacion.
+   
+  Una V's mas del Big Data puede ser: Visualizacion..
+  
+  Apache Storm Es mas global que usar Apache Spark Straming.
+  
+  Para hacer Event Complex Processing.
+  
+  CEP establece la conexion entre el Stream Data y las acciones de emprender de manera automatica.
+  
+  Requiere integraciones de las plataformas.
+  
+  #### Tendencias en Big Data
+  
+  CRM como servicio, Analisis autoservicio, inteligencia social, etc. no pierdas ningun analisis del cliente.
+  
+  Las Herramientas de Big Data deben implementarse a traves de Herramientas Open Source.
+  
+  Reducir riesgo, detectar fraude y monitorizar la seguridad en tiempo real.
+  
+  ```
+  Privacidad x diseno - seguridad x defecto.
+  ```
+  
+  Es fundamental en pensar en la capas de gestion para la implementacion tecnologica.
+  
+  Las empresas demuestran la responsabilidad en todas las actividades de procesamiento con datos cuando se pide el consentimiento de los usuarios para poder usar sus datos.
+  
+  fundamentalista: personas que no son capaces de entregar sus datos.
+  
+  Todos somos personas.
+  
+  Los analisis de datos deben ir orientados a la tom de decisiones y orientado a la accion.
+  
+  Advanced Analytics es una serie de metodologias, tecnicas algotimicas o modelos estadisticos que permiten extraer valor a los datos corporativos disponibles y externos de las empresas..
+  
+  No confundir el uso de estrategias CRM con la tecnologia Aplicable.
+  
+  -------
+  
+  #### Marketing Automation
+  
+  5 P's Cut Marketing
+  
+  - Producto.
+  - Precio.
+  - Peer to Peer.
+  - Modelo Predictivo.
+  - Personalizacion.
+  
+  Conexion Analisis Comportamental - Cux
+  
+  ```
+  Buscar Hype Cycle Tendencias tecnologicas en gartner
+  
+  ```
+  Machine LEarning + Regla de negocios = Super importante a entender.
+  
+  Al usar una herramienta de hubspot se necesita poder definir el buyer persona de modo que se puede definir a quien va a dedicado el in-bound de ventas.
+  
+  Al implementar salesForce, se debe empezar por el grupo de "sales" y luego por marketing cloud finalizando.
+  
+  Prioridad del negocio son los clientes y se deben crear modelos de negocios tecnologicos que permitan crear una experiencia humanizada. Prioridad CUX objetivo NEGOCIO.
+  
+  Tenemos que aprender a desaprender y volver a aprender. El fracaso como metodo por que el fracaso permite aprender y corregir nuestros errores.
+  
+  La tecnologia al servicio del desarrollo. Establecer prioridades, Empezar con preguntas no con datos. Traducir el conocimiento en acciones. (Seguir revisando la presentacion del profesor de modo que se pueda hacer el research)
+  
+  
+'''
+tags: [
+  "Gestion_del_cliente_Big_Data"
+  "marketing"
+  "Data_orientada_a_negocio"
+]
+isStarred: false
+isTrashed: false

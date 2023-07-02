@@ -1,0 +1,208 @@
+createdAt: "2018-07-15T22:37:49.993Z"
+updatedAt: "2020-11-03T03:05:23.830Z"
+type: "MARKDOWN_NOTE"
+folder: "48fbce2016d43f0faffa"
+title: "Big Data -  Lugar de recogida de datos"
+content: '''
+  ## Big Data -  Lugar de recogida de datos
+  
+  #### Como Big Data Crece dentro de la compania
+  
+  Establishing enterprise reporting --> Performing exploratory analysis --> Using predictive modeling --> Optimizing the analysis.
+  
+  When approching Big Data analysis, there are two kinds of perspective:
+  
+  - Decision-oriented: Analyze data subsets and take decisions --> Decisions lead to action or process change. Here we can use:
+   1. Compares historical and present data to decide.
+   2. Uses scorecards and dashboards for decision making.
+   3. Sets alerts for breach of SLAs.
+   4. Uses 360 degree view of data to generate results.
+   5. Uses various data sources are used to make decisions.
+  - Action-oriented: Uses for rapid responses when specific data is found it. Here we can use:
+   1. Uses clustering to segment data.
+   2. Makes recomendations by iterative decisions and analyzes behaviour.
+   3. In Process Analytics (analytics for processing actions like a contact center call). 
+  
+  #### Gestion de los datos en funcion de los departamentos de la empresa
+  
+  ***Revisar nota tecnica para obtener mas informacion en cuanto a gestion y preguntas que sirvan como funcion (funcion tecnica) en la busqueda de nuevos procesos y analisis (preguntas)***
+  
+  El CDO (Chief Data Officer) es el director de los siguientes puestos de trabajo en una oficina:
+  
+  - Data Science
+  - Data Analytics and BI
+  - Data Engineering
+  
+  **BD en RH**
+  
+  Datos sobre los trabajores:  (fecha de alta, datos sociodemográficos, hábitos y estilos de vida, salario, situación familiar...)
+  
+  **Preguntas para la reflexion**
+  
+  - ¿Podríamos llegar a establecer el sueldo de la compañía en función de estos datos?
+  - ¿Podríamos pensar salarialmente en los datos del empleado para poner un sueldo en función a su estilo de vida, gustos, inquietudes, número de hijos... en vez de por un mero rendimiento o laboral?
+  - ¿Podríamos llegar a establecer salarios no por departamento sino porque el tipo de empleado que tengo?
+  - ........ (ver nota tecnica)
+  
+  Fijaros qué cantidad de preguntas aparecen, simplemente con un departamento
+  crítico, al que muchas veces no se le presta la atención suficiente. Si contestamos y
+  damos solución a todas ellas, y a las que puedan surgir... ¿realmente podremos
+  incrementar los beneficios de la empresa, ser más rentables, ser un mejor sitio para
+  trabajar, y crecer?.
+  
+  *El objetivo para cualquier departamento de RH en buscar, capturar y retener. Se deben usar los datos para tener exito*
+  
+  **BD en el Departamento Financiero**
+  
+  A traves del analisis de datos y procesamiento de la informacion se obtienen multiples aplicaciones en el area financiera de una empresa. Por ejemplo:
+  
+  - Oportunidades de negocio
+  - nuevos mercados (matriz de ansoff)
+  - minimizacion de riesgos gracia a la capacidad predictiva
+  - identificacion de cleintes riesgosos
+  - reduccion de costes
+  - identificacion de  fugas de ingresos
+  - fraude u optimizacion de procesos
+  
+  **Area de marketing y ventas**
+  
+  Mejorando la relación con el cliente y fidelización (**es esta la area donde se deben trabajar los datos para mejorar los sistemas de fidelizacion y CRM, tambien se pueden generar nuevas estrategias omnicanales aqui**), ofreciendo una atención personalizada, segmentación y personalización de campañas y/o contenido que satisfagan sus necesidades, personalizando su experiencia.
+  ----
+  
+  #### Recoleccion y gestion de datos por sectores
+  
+  **Sector Agricola**
+  
+  El sector agricola es el sector donde probablemente se produce mayor interconexion de datos, ya que es aqui donde se relacion una gran cantidad de procesos y gestion.
+  
+  Desde la siembra hasta la comercialización del producto, pasan multitud de procesos, actividades, e imponderables que hacen que sea una actividad de mucho riesgo, y a la vez una de las más gratificantes. Aspectos de datos de tercer nivel como la meteorología, las modas, los usos y costumbres en la alimentación, o el coste de la materia prima, hacen que debamos tener en cuenta muchos factores para la venta del producto y su rentabilidad
+  
+  - **Matriz de ansoff**: Sirve para identificar oportunidades de crecimiento en las unidades de negocio en una organizacion. A traves de ello se puede establecer una estrategia para comercializar nuevos productos.
+  
+  *En los tres primeros cuadrantes la idea es obtener estrategias de crecimiento, mientras que el ultimo cuadrante marza una estrategia de diversificacion. Dependiendo del estatus o la situacion actual de la empresa, la matriz permite escoger la opcion estrategica con el menor riesgo para el crecimiento. La matriz recomienda el siguiente orden de elección de la estrategia a implementar: en primer lugar la penetración de mercados, en segundo lugar el desarrollo de nuevos mercados, en tercer lugar el desarrollo de nuevos productos y en cuarto lugar la diversificación. Como se puede apreciar en la aplicación de la Matriz de Ansoff, toda empresa debe agotar todas las opciones de expansión antes de abordar una estrategia de diversificación.*
+  
+  ----
+  
+  Nota de Kenry:
+  
+  - Pudieramos llevar la matriz de ansoft a un plano digital e innovador para conectarlo con modulos de big data
+  
+  ----
+  
+  Para este tipo de problemas, no solo vale poder procesar y gestionar mis propios datos internos (historial de ventas, tendencias, etc.). Se debem procesar datos de **tercer nivel**, como lo son los del pais que me quiero dirigir, instituciones publicas de aquel pais, empresas privadas para llegar a algun tipo de acuerdo que me permita una complicada gestion de informacion.
+  
+  Es con el **BI** donde se aportan los datos historicos e informacion, que combinado con **big Data** se obtendra una mayor capacidad predictiva. Se pueden gestionar datos de todo tipo (X) procesados para obtener una informacion de calidad para empresas y mi propio negocio, lo que permite una toma de decision a nivel tactico y estrategico.
+  
+  **Sector Turismo**
+  
+  ***Ver nota tecnica para obtener mas informacion sobre Big Data y turismo en Espana, junto a la empresa Roca Salvatella***
+  
+  A traves de **informacion en tiempo real**, en españa se ha logrado obtener estrategias para aumentar ventas.
+  
+  Macrodatos de la actividad online (digital), de turistas extranjeros, ofrece una radiografía real de los comportamientos y movimientos de turistas.
+  
+  Se puede llegar a optimizar la informacion que existe sobre:
+  
+  - Visitas: cuanta visitas y de donde (lugar preferido de visitas, que prefieres las edades y que dice las ultimas tendencias vs procesos en el presente)
+  - Estancia: tiempo medio por nacionalidades y demas categorias (revisar categorias como grupo de edades, fechas de estancia, tipo de habitacion alquilada, precio medio de gasto, promociones, etc.)
+  - Dezplazamiento entre ciudades (como se desplazan, numero de personas como grupos familiares se desplazan, cuanto tiempo les toma, etc.)
+  - Lugares preferidos
+  - Niveles de gastos: en global y en la categoria de alojamiento
+  
+  Así se **pueden mejorar las decisiones de negocio y optimizar el servicio y la gestión empresarial**.
+  
+  **6 ventajas en cuanto a la gestion y procesamiento de datos a traves de analisis en acciones**
+  
+  1. **Fiablidad**: Los datos se deben analizar preferiblemente a traves de observacion en las acciones de las personas. Solo analisis cualitativos deben ser por encuestas o intencion en pensamiento (hablandolo o indicandolo al momento).
+  2. **Representatividad**: la base muestral se incrementa en relación a las investigaciones convencionales.
+  3. **Detalle de la información y capacidad de segmentación**: conocer el volumen real de los clientes, cuáles son sus actividades favoritas, su idioma, gustos, necesidades, etc. Se permiten optimizar los resultados de la gestión turística al conocer **lo que el cliente desea en función de su comportamiento y necesidades**. Como ejemplo más real, poder predecir el precio más conveniente según cada cliente o mejorar su experiencia y establecer una mejor relación con él.
+  4. **Hibridacion de los datos con otras fuentes**: se pueden cruzar datos como geoposicion, redes sociales o datos publicos. De manera segmentada y estructurada (formatos).
+  5. **Nuevos flujos de informacion**: incrementar el conocimiento - a partir de los datos de los turistas. Datos como los grustos y preferencias. Quizas hacer un enlace abierto para clientes donde se permitan valorar, puntar y compartir opiniones.
+  6. **Posibilidad de nuevas oportunidades de negocios**: con datos internos de cada empresa turística para determinar si las ofertas se ajustan a la realidad o poder crear nuevas estrategias, líneas de negocio y productos personalizados a medida para cada cliente. Mediante guías, servicios, actividades, reservas... Así debemos definir constantemente una nueva planificación, ejecución y análisis de las estrategias.
+  
+  ----
+  
+  #### Cuadro de mando de la empresa
+  
+  ***Se trata de saber lo que está ocurriendo en la empresa para tomar las decisiones correctas en el momento oportuno.***
+  
+  **¿Qué es un cuadro de mando?**
+  
+  Es una herramienta que permite saber la situacion actual de tu negocio. Esta organizado por tus **KPIs** (estos son los que se miden para gestionar y mejorar, en consecuencia mejorar tu negocio). Por lo general poseen un dashboard donde se da una representacion grafica de tu siatuacion en la empresa.
+  
+  Agrega informacion de forma automatica y actualizada.
+  
+  Se pasa de una forma de obtener información para la toma de decisiones financiera, a una información para la toma de decisiones de cualquier departamento de la empresa (tanto grandes empresas, como pequeñas).
+  
+  - **cuadro de mando integral (CMI)**: Es un cuadro de mando destinado a los departamentos de compras, ya que permite medir la evolucion y los resultados, desde una perspectiva estrategica y global. Al igual que el cuadro de mando, esta compuestos de KPIs, los cuales evaluan:
+  
+  - Gestion de compras
+  - Amenazas y oportunidades
+  - Descubrir posibles incidencias y actuar (proceso requerido en funcion a la incidencia)
+  
+  **Formas de recolectar datos para la empresa**
+  
+  1. Datos creados
+  
+  Son solicitados por nosotros a traves de herramientas cualitativas. Formularios, encuestas, etc. Generalmente son estructurados y puede ser para clientes externos y internos.
+  
+  2. Datos Provocados
+  
+  Creados, aunque obtenidos de una forma pasiva. Una valoración en Internet sería un buen ejemplo.
+  
+  3. Datos transaccionales
+  
+  Recogidos cada vez que el cliente hace una compra. Combinados con otras fuentes y permite mejorar ofertas y desarrollar estrategias de marketing especificos. Datos internos y estructurados.
+  
+  4. Datos compilados
+  
+  Datos recopilados por empresas que se encargan en comercializarlos.
+  
+  5. Datos experimentales
+  
+  Hibridos entre datos creados y los datos transaccionales. Son experimentos en los que consumidores reciben datos y tratamientos de marketing diferentes. A/B testing por ejemplo.
+  
+  6. Datos capturados
+  
+  Recogidos de forma pasiva sobre el comportamiento entre las personas y máquinas (aplicaciones).
+  
+  7. Datos generados por usuarios
+  
+  Son los datos que tanto personas como empresas generan de forma consciente. Comentarios en foros, redes sociales o blogs... Datos desestructurados y externos a la empresa.
+  
+  *Existen muchos trucos o tácticas para mejorar los resultados de campañas, pero hay que plantearse cómo segmentamos.*
+  
+  **Modelo RFM**
+  
+  - **Recencia**, ultima vez que un cliente me ha comprado un producto. 
+  - **Frecuencia**, cada cuanto me compra
+  - **Money**, cesta media por cliente (Average Revenue Per user)
+  
+  It's an analysis to figure out our important customers and their buying patterns.
+  
+  **Cómo diseñar un cuadro de mando**
+  
+  El cuadro de mando es una **solución a la visualización de datos** para su entendimiento.
+  
+  1. Escoger las metricas importantes y relevantes. Colocar comentarios destinados a resaltar lo que dicen
+  
+  2. El cuadro de mando debe ser visual, rapido y facil de leer. Graficos, barras, embudos de conversion, colores y datos que faciliten su interpretacion.
+  
+  3. Debe ser interactivo util al mayor numero de posibles usuarios, asi como tambien contar con opciones de segmentacion y juego de propiedades. Que vaya adaptondose y cambiando en base a la realidad del negocio.
+  
+  
+  ---
+  
+  #### La formula del ROI en funcion a la tecnologia o software contratado
+  
+  Retorno de la inversion, permite determinar el volumen de rentabilidad que se obtiene por invertir y gastar dinero. Mide el rendimiento de la inversion, para evaluar que tan eficiente es el gasto que estamos haciendo.
+  
+  
+'''
+tags: [
+  "Build_Big_Data_Project"
+  "big_data_theory"
+  "OMNICANALIDAD"
+]
+isStarred: false
+isTrashed: false

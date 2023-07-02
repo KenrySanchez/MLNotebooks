@@ -1,0 +1,131 @@
+createdAt: "2019-10-06T02:31:55.010Z"
+updatedAt: "2021-04-19T04:19:47.832Z"
+type: "MARKDOWN_NOTE"
+folder: "8af9713f3b0695b046b9"
+title: "Building an IoT Analytics Pipeline"
+content: '''
+  ## Building an IoT Analytics Pipeline
+  
+  [Cloud IoT Core  |  Google Cloud](https://cloud.google.com/iot-core/) is a fully managed service that allows you to easily and securely connect, manage, and ingest data from millions of globally dispersed devices. The service connects IoT devices that use the `standard Message Queue Telemetry Transport (MQTT) protocol` to other Google Cloud Platform data services.
+  
+  Cloud IoT Core has two main components:
+  
+  - A `device manager` for registering devices with the service, so you can then monitor and configure them.
+  - A `protocol bridge` that supports MQTT, which devices can use to connect to the Google Cloud Platform.
+  
+  **Create a Cloud Pub/Sub topic**
+  
+  [Cloud Pub/Sub  |  Google Cloud](https://cloud.google.com/pubsub/)  is an asynchronous global messaging service. By decoupling senders and receivers, it allows for secure and highly available communication between independently written applications. Cloud Pub/Sub delivers low-latency, durable messaging.
+  
+  In Cloud Pub/Sub, publisher applications and subscriber applications connect with one another through the use of a shared string called a **topic** (based on Apache Kafka). A publisher application creates and sends messages to a topic. Subscriber applications create a subscription to a topic to receive messages from it.
+  
+  In an IoT solution built with Cloud IoT Core, device telemetry data is forwarded to a Cloud Pub/Sub topic.
+  
+  Steps to create a pub/sub topic:
+  
+  - set a `topic name`.
+  - set `permissions`,  Add members --> type `<topic_name>@system.gserviceaccount.com`.
+  - set a `role`, type ` Pub/Sub > Pub/Sub Publisher` role.
+  
+  **Create a BigQuery dataset**
+  
+  [BigQuery - Analytics Data Warehouse  |  BigQuery  |  Google Cloud](https://cloud.google.com/bigquery/) is a serverless data warehouse. Tables in BigQuery are organized into datasets. In this lab, messages published into Pub/Sub will be aggregated and stored in BigQuery.
+  
+  Create a big query dataset --> table, in this case, our table have the fields `timestamp, device, temperature`. The idea is create a table where store success data.
+  
+  **Set up a Cloud Dataflow Pipeline**
+  
+  [Cloud Dataflow - Stream & Batch Data Processing  |  Cloud Dataflow  |  Google Cloud](https://cloud.google.com/dataflow/)  is a serverless way to carry out data analysis. In this lab, you will set up a streaming data pipeline to read sensor data from Pub/Sub, compute the maximum temperature within a time window, and write this out to BigQuery.
+  
+  Steps to create dataflow pipeline:
+  
+  - click on `CREATE JOB FROM TEMPLATE`.
+  - set `Job name`.
+  - For `Cloud Dataflow template`, choose `Cloud PubSub Topic to BigQuery`. When you choose this template, the form updates to review new fields below.
+  - For `Cloud Pub/Sub input topic`, enter `projects/` followed by your GCP project ID then add `/topics/<topic_name>`. The resulting string will look like this: `projects/qwiklabs-gcp-d2e509fed105b3ed/topics/<topic_name>`.
+  - The BigQuery output table takes the form of GCP project `ID:dataset.table` (:iotlabdataset.sensordata). The resulting string will look like this: `qwiklabs-gcp-d2e509fed105b3ed:<dataset>:<table>`.
+  - For Temporary location, enter gs:// followed by your GCS bucket name (should be your GCP project ID if you followed the instructions) then /tmp/. The resulting string will look like this: gs://qwiklabs-gcp-d2e509fed105b3ed-bucket/tmp/.
+  - Click Optional parameters.
+  - For Max workers, enter `2`.
+  - For Machine type, enter `n1-standard-1`.
+  
+  **Create a registry for IoT devices**
+  
+  To register devices, you must create a registry for the devices. The registry is a point of control for devices.
+  
+  Enter this command to create the device registry:
+  
+  ```
+  gcloud beta iot registries create iotlab-registry \\
+     --project=$PROJECT_ID \\
+     --region=$MY_REGION \\
+     --event-notification-config=topic=projects/$PROJECT_ID/topics/<topic_name>
+  ```
+  
+  - Create a Cryptographic Keypair, to connect devices to IoT core. (search more info in real time devices).
+  
+  ## Streaming IoT Kafka to Google Cloud Pub/Sub
+  
+  Whether Kafka is provisioned in the Cloud or on premise, you might want to push to a subset of Pub/Sub topics. Why? For the flexibility of having Pub/Sub as your GCP event notifier. Then you could not only choreograph Dataflow jobs, but also use topics to trigger Cloud Functions.
+  
+  So how do you exchange messages between Kafka and Pub/Sub? This is where the Pub/Sub Kafka Connector comes in handy.
+  
+  ![Screen Shot 2019-10-07 at 11.31.36 PM.png](:storage/3fbbe633-c364-418d-a57d-36857ae0ba49/4496243a.png)
+  
+  In the VM instance created after install apache kafka from the marketplace, you need to set `Allow full access to all Cloud APIs` and restart the instance.
+  
+  **Configure the Kafka VM instance**
+  
+  ```
+  export PROJECT_ID=[PROJECT_ID]
+  gsutil cp gs://cloud-training/gsp285/binary/cps-kafka-connector.jar .
+  sudo mkdir -p /opt/kafka/connectors
+  sudo mv ./cps-kafka-connector.jar /opt/kafka/connectors/
+  sudo chmod +x /opt/kafka/connectors/cps-kafka-connector.jar
+  cd /opt/kafka/config
+  sudo nano cps-sink-connector.properties
+  ```
+  
+  ```
+  name=CPSSinkConnector
+  connector.class=com.google.pubsub.kafka.sink.CloudPubSubSinkConnector
+  tasks.max=10
+  topics=to-pubsub
+  cps.topic=from-kafka
+  cps.project=PROJECT_ID
+  ```
+  
+  ```
+  sudo nano cps-source-connector.properties
+  ```
+  
+  ```
+  name=CPSSourceConnector
+  connector.class=com.google.pubsub.kafka.source.CloudPubSubSourceConnector
+  tasks.max=10
+  kafka.topic=from-pubsub
+  cps.subscription=to-kafka-sub
+  cps.project=PROJECT_ID
+  ```
+  
+  **Pub/Sub Topic and Subscription setup**
+  
+  ```
+  export PROJECT_ID=[PROJECT_ID]
+  gcloud pubsub topics create to-kafka from-kafka
+  
+  gcloud pubsub subscriptions create to-kafka-sub --topic=to-kafka --topic-project=$PROJECT_ID
+  
+  gcloud pubsub subscriptions create from-kafka --topic=from-kafka
+  ```
+  
+  - continue the lesson here, [Streaming IoT Kafka to Google Cloud Pub/Sub | Qwiklabs](https://google.qwiklabs.com/focuses/2766?parent=catalog)
+  
+  ## ETL Processing on GCP Using Dataflow and BigQuery
+  
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: true

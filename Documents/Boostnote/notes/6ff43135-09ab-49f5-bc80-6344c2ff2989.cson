@@ -1,0 +1,60 @@
+createdAt: "2018-06-21T02:40:45.036Z"
+updatedAt: "2018-07-18T00:40:52.777Z"
+type: "MARKDOWN_NOTE"
+folder: "24cb38cf2bc84305c3de"
+title: "Libro blanco del Big Data"
+content: '''
+  ## Libro blanco del Big Data 
+  
+  - LA fusion del Big Data junto a un analisis potente permite a las empresas crear valor.
+  
+  *Todas las empresas deben valerse del Big Data y de su potencial para crear valor. Permitirá a las empresas ser más competitivas. Por ejemplo, los minoristas que aprovechen el Big Data pueden evaluar su potencial para aumentar beneficios.*
+  
+  - Con Big Data se puede crear ventajas competitivas
+  
+  *Las empresas obtienen datos exhaustivos sobre clientes, no solo lo que compran, sino también qué páginas web visitan, dónde viven, cuándo se pusieron en contacto con el servicio de atención al cliente y si interactúan con la marca en las redes sociales.*
+  
+  Para predecir correctamente el futuro, las empresas deben tomar en consideración tres puntos:
+  
+  - · Los productos correctos
+  - · Los clientes correctos
+  - · El canal correcto
+  
+  **Casos de ejemplo**
+  
+  - Southwest Airlines, que usa análisis del discurso en el avión para extraer información rica en datos sobre interacciones entre el personal y los clientes grabadas en directo. Como resultado, tienen una mejor comprensión por parte de sus clientes y proponen servicios optimizados.
+  
+  - La cantidad de datos clínicos disponibles para investigación y objetivos analíticos aumentará. Esta es la razón principal por la que los expertos en sanidad se han interesado en análisis clínicos que examinan un gran volumen de datos con el objetivo de encontrar conocimiento que pueda mejorar potencialmente el valor del cuidado al paciente.
+  
+  La reducción de costes es uno de los beneficios más significativos del análisis del Big Data. Muchas empresas que lo han utilizado han confirmado todos los beneficios que se mencionan en este documento.
+  
+  ```
+  “Big Data = Grandes economías”
+  ```
+  
+  *Segun McKinsey, utilizar una aplicacion para estudiar Big Data podria ayudar a reducir costos.*
+  
+  - Es importante entender la capacidad analítica como una solución para cuestiones internas y externas, rompiendo con el almacenaje tradicional y proporcionando ideas innovadoras a otras empresas.
+  
+  #### Analisis de Datos
+  
+  El análisis del Big Data es el proceso por el cual se examinan grandes grupos de datos que contienen diferentes tipos de datos para mostrar patrones escondidos, relaciones no conocidas, tendencias de mercado, preferencias del cliente y otra información comercial de interés.
+  
+  ¿Por que se han convertido en mejores empresas?
+  
+  Ejemplo en el sector de **Marketing**:
+  
+  Aunque las cookies funcionan bien para hacer analisis en paginas web, hoy en dia las empresas mas grandes estan usando big data para poder analizar y recopilar datos de otras fuentes.
+  
+  Por ejemplo, Amazon utiliza los datos de navegación de Facebook, Twitter y Google para encontrar mejores targets y para entender mejor los **intereses del cliente**.
+  
+  Un buen ejemplo es la cesta abandonada; los correos y cupones funcionan bien para recordar que la cesta está esperando. Sin embargo, para mejorar el resultado, el retargeting se asegura de la visualización de la información. De hecho, el retargeting de los datos de los clientes ayuda a organizar i clasificar los datos desde las redes sociales y otros sitios para optimizar los gastos basándose en el rendimiento de la inversión esperado.
+  
+  - Conde Nast es un ejemplo de empresa en la que se uso Power Bi
+'''
+tags: [
+  "big_data_theory"
+  "casos_big_data"
+]
+isStarred: false
+isTrashed: true

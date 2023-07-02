@@ -1,0 +1,39 @@
+createdAt: "2020-09-15T04:15:13.891Z"
+updatedAt: "2020-10-12T03:51:57.509Z"
+type: "MARKDOWN_NOTE"
+folder: "7b6dd385ab806689b09e"
+title: "Tips From Andrew Ng"
+content: '''
+  ### Tips From Andrew Ng
+  
+  ### Machine Learning System Design
+  
+  To Large data:
+  
+  - polynomial features can still be insufficient to capture the complexity of the data, especially if the features are very high-dimensional. Instead, you should use a complex model with many parameters to fit to the large training set.
+  
+  - It is important that the features contain sufficient information, as otherwise no amount of data can solve a learning problem in which the features do not contain enough information to make an accurate prediction.
+  
+  - You should use a "low bias" algorithm with many parameters, as it will be able to make use of the large dataset provided. If the model has too few parameters, it will underfit the large training set.
+  
+  - A sufficiently large training set will not be overfit, as the model cannot overfit some of the examples without doing poorly on the others.
+  
+  To thershold:
+  
+  - Increasing the threshold means more y = 0 predictions. This will increase the decrease of true positives and increase the number of false negatives, so recall will decrease.
+  - we decrease true and false positives and increase true and false negatives. Thus, precision and recall will certainly change. We cannot say whether accuracy will increase or decrease.
+  - You can and should adjust the threshold in logistic regression using cross validation data.
+  
+  To Skewed classes:
+  
+  - You can always achieve high accuracy on skewed datasets by predicting the most the same output (the most common one) for every input. Thus the F_1 score is a better way to measure performance.
+  
+  To build first model version:
+  
+  - You cannot know whether a huge dataset will be important until you have built a first version and find that the algorithm has high variance.
+  
+  - The logistic regression cost function is convex, so gradient descent will always find the global minimum.
+'''
+tags: []
+isStarred: false
+isTrashed: false

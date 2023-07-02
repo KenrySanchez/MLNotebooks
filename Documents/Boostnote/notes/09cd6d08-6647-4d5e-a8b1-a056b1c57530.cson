@@ -1,0 +1,150 @@
+createdAt: "2020-03-28T05:38:03.849Z"
+updatedAt: "2021-09-25T05:20:53.201Z"
+type: "MARKDOWN_NOTE"
+folder: "48fbce2016d43f0faffa"
+title: "Integrating Big Data in Organizations"
+content: '''
+  ## Integrating Big Data in Organizations
+  
+  #### Discover problems based on data
+  
+  1. Discovery Stage: Basic Stage, Problem identification, High-Level description of the solution.
+  2. Exploratory stage or Pilot stage: Search patterns and make macthes.
+  
+  Process in this fase include:
+  
+  Collect Sample data and select analytical tools --> Perform data quality checks and transform data as needed --> Develop Analyticals and models for Big Data --> DEvelop visualization alternatives --> Validate results and finalize a model.
+  
+  3. Codifying stage: Verifies results of analytical applications using Analytical or ML Model to get insights.
+  4. Integration and incorporate stage: Incorporate results into organization.
+  
+  Big Data platform demands: Data speed and Data scalibility to handle structure and unstructure data.
+  __TIP__: Ajustar los features de `data speed y data scalibility` como modulos funcionales dentro de arquitecturas de big data.
+  
+  Businesses needs to priority:
+  
+  - Data Quality.
+  - Data accuracy.
+  - Data completeness.
+  - Time data delivery.
+  - Correct data delivery.
+  
+  Data integration technologies would need common platform to support quality and profiling of enterprise data and Big Data. Information delivered in a controller and consistent way across the enterprise. This, to ensure information understood at all levels of the organization.
+  
+  stages of analysis
+  
+  1. we need to evaluate and analyze existing systems to reveal business nedds.
+  2. Identify the type of data required to by analyzed.
+  3. Identify sources of data.
+  
+  Integrate workflows to data processing businesses.
+  
+  1. Identify Big Data Sources.
+  2. Map Big Data types to workflow data types.
+  3. Ensure proper proccessing and storage capacity.
+  4. select the best suited data store for the data types.
+  5. Modify or create workflow to accommodate Big Data.
+  
+  #### Streaming data
+  
+  Data at Rest..
+  
+  Data at rest can be stored, retrieved, and analyzed after the data generating event occurs.
+  
+  Infrastructure required for data at Rest
+  
+  - BAtch processing or online transaction processing methods.
+  - Scalable infrastructure to support large data sets for:
+  1. Data warehousing.
+  2. BI.
+  
+  Data Motion
+  
+  Data in motions needs:
+  
+  - Huge volume and velocity.
+  - Continuously flowing into business.
+  - Captured at frequent intervals.
+  - Various tools required for processing.
+  
+  Elements in Real-time Analytics
+  
+  - Complex event processing.
+  - Alert mechanisms.
+  - Reporting and visualization.
+  - Streaming analytics in alerting threshould values: Adjust treshould values using ML Models .
+  
+  #### Implementing Big Data Solutions.
+  
+  ***If an organization were to implement a big data solution, how would it go about it?***
+  
+  stages in Big Data Planning Process
+  
+  1. stage 1: Planning with data.
+  2. stage 2: Peforming the analysis.
+  3. stage 3: Checking the results.
+  4. stage 4: Acting on plane.
+  
+  **Stage 1**
+  
+  Understanding of:
+  - how data sources are relationed.
+  - infrastructure requirements
+  - goals and business objectives.
+  
+  Implement various methods to retrieve enterprise metadata stored in DW and ERP Systems.
+  
+  Virtualization and well-planned Big Data storage approaches.
+  
+  Robust analytics testing plan.
+  
+  **Stage 2**
+  
+  You would perform the followings:
+  
+  - Data transformation techniques.
+  - data governance guidelines.
+  - identify analysis tools and techniques.
+  - develop descriptive, predictive, and prescriptive models.
+  - Statiscal analysis or models.
+  - pilot implementations.
+  - involve the business group.
+  - Data visualization in a easy way.
+  
+  **Stage 3**
+  
+  You need to check and assess the accuracy of the analysis model used.
+  
+  - Choose the right kind of data from trustworthy data sources that is relevant for businesses.
+  - Check user feedback and analyze it.
+  - Assess the ROI before implement the results and acting on a plane.
+  
+  **Stage 4**
+  
+  Actions should be compact with Part of iterative planning cycle, that should be based on the dinamyc market.
+  
+  Create a big data evaluation cycle for each new business strategy.
+  
+  When real-time data is involved??
+  
+  - Monitoring in real-time.
+  - Adjusting the impact in real-time.
+  - Combining experimentation with real-time monitoring and rapid adjustment.
+  
+  **Manage data access and data governance**
+  
+  `//here aqui va contenido`
+  
+  Governance of how data is to be used and not used by your users. This is what we mean when we say a data engineer must manage the data. This includes critical topics, like privacy and security.
+  
+  - data engineering must set and communicate a responsable data governance model.
+  
+  `GCP Solution: Use Cloud Data Catalog - is a managed data discovery - + Data Loss Preventing API for guarding PII`
+  
+  Cloud Data Catalog unified sources for search data.
+  
+  ![Screen Shot 2020-05-08 at 1.52.10 AM.png](:storage/09cd6d08-6647-4d5e-a8b1-a056b1c57530/c61c709d.png)
+'''
+tags: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,43 @@
+createdAt: "2018-09-21T00:25:19.866Z"
+updatedAt: "2019-04-07T19:49:54.001Z"
+type: "MARKDOWN_NOTE"
+folder: "6ce8e9fa5ab8d660e1a1"
+title: "Candidatos proyectos de tesis"
+content: '''
+  ## Candidatos proyectos de tesis
+  
+  **Aplicacion de FErnando Intelectia. Aplicar inteligencia para reconocer nombre de marcas con mayor probabilidad de aplicacion**
+  
+  - Requerimientos: Aun sin saber.
+  
+  **Aplicacion para mejorar el tranporte publico en ciudad de panama a traves de inteligencia computacional**
+  
+  - Industria: Transporte
+  - Area de aplicacion: Smart City
+  - Requerimiento: A mayor profundidad pero de manera general. Datos sobre transporte, usuarios, programacion de transporte, trafico, mapas y geolocalizacion de paradas del bus
+  - Datos Requeridos: Explique
+  - Ganancia
+  - ROI (Formula de ganancia por inversion):
+  - Costo
+  - Tecnologias
+  - anexos: usar tecnologia de Computer Vision Library.
+  
+  
+  **TFM**
+  
+  - Todos los objetivos del big data van a retail
+  - Proyecto para sanidad
+  - Proyecto para abogados
+  - Proyecto para banca
+  
+  ----
+  
+  El profesor nos da el caso.
+  La escuela nos da el servicio de BD.
+  El profesor ayudara a poder ayudarnos a realizar el caso.
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: true

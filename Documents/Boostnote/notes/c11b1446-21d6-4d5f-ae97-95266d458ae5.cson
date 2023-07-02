@@ -1,0 +1,40 @@
+createdAt: "2021-07-02T02:50:09.049Z"
+updatedAt: "2021-07-06T05:59:39.095Z"
+type: "MARKDOWN_NOTE"
+folder: "af73b6258c29a0815419"
+title: "Redshift"
+content: '''
+  ## Redshift
+  
+  - it does not support schema on write while loading data.
+  - it does not support partions. Instead, it has distribution keys and sorted keys for tunning and optimization.
+  - it supports SQL Queries while loading data into its tables using the Copy CMD, alongg with other techniques.
+  
+  BigQuery instead, can:
+  
+  - create tables dynamically while loading data.
+  - supports partions and shards for tunning and optimization.
+  
+  "**Redshift** you pay for the number nodes in your cluster regardless of how often you can scan the data or not."
+  
+  "**BigQuery** bills users basis the amount of data scanned there is a storage cost involved".
+  
+  "Redshift is more costly when your query volumes are slow whereas BigQuery is relative less expensive if the data is not scanned frequently".
+  
+  "If query frequency and volume is high, Redshift is the best option".
+  
+  "Redshift costs are predictive since you pay a fixed price for the number of nodes in your cluster, whereas BiggQuery its not easy to predict the pricing because calculate data storage and processing".
+  
+  __Data Consistency__
+  
+  - Redshift supports data transaction while BigQuery does not.
+  - If anything goes wrong during data transaction, you can always do a roll-back and be sure your data will fall back to their previous step.
+  - BigQuery, it something goes wrong with your data during a loading process, then you will start again the process or use a ETL job to continue from the point that the process has failed.
+  
+  __Set Up Cluster__
+  
+  1. Import historical data (one time import from s3).
+'''
+tags: []
+isStarred: false
+isTrashed: false

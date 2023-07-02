@@ -1,0 +1,55 @@
+createdAt: "2019-10-17T04:10:18.201Z"
+updatedAt: "2019-10-18T04:05:40.909Z"
+type: "MARKDOWN_NOTE"
+folder: "8af9713f3b0695b046b9"
+title: "Google App Engine"
+content: '''
+  ## Google App Engine
+  
+  Google App Engine can be used to run a scheduled task to import and sanitize data that is periodically updated in order to maintain an up-to-date active data set for analysis.
+  
+  SET PROJECT ID FROM CONFIG.PROPERTY
+  
+  ```
+  export PROJECT_ID=$(gcloud info --format='value(config.project)')
+  ```
+  
+  CREATE BUCKET STORAGE FROM CONSOLE
+  
+  ```
+  gsutil mb gs://$BUCKET
+  ```
+  
+  If Google App Engine needs to be initialized. The simplest way to do this is to create a new application and then deploy an application to it. Do that by running the following:
+  
+  `gcloud app create --region us-central
+  `
+  
+  To load and run an application on Google App Engine you need to create a yaml file that contains the details that specify the type of application, the application itself, and its parameters.
+  
+  ```
+  runtime: python
+  env: flex
+  entrypoint: gunicorn -b :$PORT ingestapp:app
+  service: flights
+  
+  #[START env]
+  env_variables:
+      CLOUD_STORAGE_BUCKET: cloud-training-demos-ml
+  #[END env]
+  
+  handlers:
+  - url: /ingest
+    script: ingestapp.app
+  
+  - url: /.*
+    script: ingestapp.app
+  ```
+  
+  **Note**: If a specific deployable configuration yaml file is not specified gcloud app deploy defaults to app.yaml.
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

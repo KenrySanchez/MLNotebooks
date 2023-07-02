@@ -1,0 +1,21 @@
+createdAt: "2020-09-27T23:22:30.615Z"
+updatedAt: "2020-09-27T23:26:27.251Z"
+type: "MARKDOWN_NOTE"
+folder: "7b6dd385ab806689b09e"
+title: "Anomaly Detection Algorithm"
+content: '''
+  ### Anomaly Detection Algorithm
+  
+  Used when:
+  
+  - Fraud detection.
+  - Unusual patterns.
+  - very small number of positive examples (0-20 is common).
+  - Large number of negative examples
+  - Many different types of anomalies.
+  
+  Review notes and documents from AndrewNg to learn algorithm.
+'''
+tags: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,22 @@
+createdAt: "2021-06-24T22:00:20.229Z"
+updatedAt: "2021-06-24T22:46:34.920Z"
+type: "MARKDOWN_NOTE"
+folder: "af73b6258c29a0815419"
+title: "Message Que SQS"
+content: '''
+  ## Message Que SQS
+  
+  __What is a message?__
+  
+  In context of SQS, a message can be up to 256Kb.
+  
+  - synchronous process -> tightly coupled systems "No Message Queue".
+  - Asynchronous process -> Loosely coupled Systems "Message Queue".
+  
+  
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

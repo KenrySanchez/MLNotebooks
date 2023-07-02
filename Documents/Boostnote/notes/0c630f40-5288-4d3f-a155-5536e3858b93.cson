@@ -1,0 +1,377 @@
+createdAt: "2019-04-19T19:24:08.578Z"
+updatedAt: "2020-10-05T04:24:20.493Z"
+type: "MARKDOWN_NOTE"
+folder: "7b6dd385ab806689b09e"
+title: "Python - Data Modeling"
+content: '''
+  ## Python - Data Modeling
+  
+  ### How much data to train
+  
+  Useful test: Given the input `x`, can a human expert confidently predict `y`?
+  
+  Use a learning algorithm with many parameters (low bias algorithm, train error will be small) and use a very large training set (unlikely to overfit - low variance, train error approximately to test error) ==> `Test error will be small`.
+  
+  For this, features `x` must have enought information.
+  
+  ### Linear and Multiple Regression
+  
+  Linear regression will refer to one independent variable to make a prediction. Multiple linear regression will refer to multiple independent variables to make a prediction. Simple linear regression or SLR is a method to help us understand the relationship between two variables. The predictor independent variable x and the target dependent variable y.
+  
+  Usuarlly we use numpy arrays for X and Y label.
+  
+  - The value we want to predict is call it target --> Y
+  - We store the dependent variable in the data frame or array X
+  
+  uncertainty is taken into account by assuming a small random value is added to the point on the line. This is called noise.
+  
+  **Fitting a sample linear model estimator**
+  
+  ```python
+  ##import linear model from scikit-learn
+  from sklearn.model import LinearRegression
+  
+  ##create linear regression object
+  lm = LinearRegression()
+  
+  X = df[['highway-mpg']]
+  Y = df['price']
+  
+  lm.fit(X, Y)
+  
+  ##find intercept and slope
+  lm.intercept_
+  lm.coef
+  
+  ##example Y = b0 - b1*X
+  target = lm.intercept_ - lm.coef * dependent
+  
+  ##predict
+  Yhat = lm.predict(new_value)
+  ```
+  
+  Multiple Linear regression is used for explain the relationship between one target and two or more predictor x variables
+  
+  `Y = b0 - (b0*X)^n`
+  
+  ### Regression Plot
+  
+  it gives us a good estimate of:
+  
+  - The relationship between two variables.
+  - The strenght of the correlation.
+  - The direction of the relationship.
+  
+  ```python
+  import seaborn as snb
+  
+  snb.regplot(x="x", y= "y", data = df)
+  plt.ylabel(0,)
+  ```
+  
+  **Residual Plot**
+  
+  Represent the error between a value. Examining the predicted value and actual value we see a difference. We obtain that value by subtracting the predicted value, and the actual target value. We then plot that value on the vertical axis with the dependent variable as the horizontal axis. Similarly, for the second sample, we repeat the process. Subtracting the target value from the predicted value. Then plotting the value accordingly. Looking at the plot gives us some insight into our data.
+  
+  We expect to see the results to have zero mean, distributed evenly around the x axis with similar variance. There is no curvature. This type of residual plot suggests a linear plot is appropriate.
+  
+  if the residuals are not randomly spread out around the x-axis. This suggests the linear assumption is incorrect. This plot suggest a nonlinear function.
+  
+  ```python
+  snb.residplot(df[x], df[y])
+  ```
+  
+  **Distribution plot**
+  
+  Counts the predicted value versus the actual value. These plots are extremely useful for visualizing models with more than one independent variable or feature.
+  
+  ```python
+  import seaborn as sns
+  
+  ax1 = sns.displot(df["price"], hist = False, color = "r", label = "Actual value")
+  
+  sns.displot(Yhat, hist = False, color = "b", label = "Fitted Values", ax=ax1)
+  ```
+  
+  __TIP__
+  
+  Suppose you're facing a supervise model and have a very large dataset (m= 100,000,000). How can you tell if using all of the data is likely to perform much better than using a subset of the data??
+  
+  R: Plot a `learning curve` for a range of values `m` and verify thet algorithm has hight varience when m is small.
+  
+  - Overfitting, then increase m.
+  - Underfitting, make more features to reduce the bias first.
+  
+  ### Polynomial Regression and Pipelines
+  
+  - special case of the general linear regression model
+  - useful for describing curvilinear model
+  
+  **what is a curvilinear relationship?**
+  
+  It's what you get by squaring or setting higher-order terms of the predictor variables in the model transforming the data.
+  
+  ```python
+  
+  ##canlculate polynomial 3_ order
+  f = np.polyfit(x, y, 3)
+  p = np.poly1d(f)
+  
+  print(p)
+  ```
+  
+  Polynomial regression with more the one dimension.
+  
+  ```python
+  from sklearn.preprocessing library import PolynomialFeatures
+  
+  pr = PolynomialFeatures(degree = 2, include_bias = False)
+  x_polly = pr.fit(x[["data1", "data3"]])
+  ```
+  
+  **TIP**: High polynomial degree not always mean low training error.
+  
+  ### Pre-processing Libraries
+  
+  We can normalize the each feature simultaneously.
+  
+  ```python
+  from sklearn.preprocessing import StandartScaler
+  
+  SCALE = StandartScaler()
+  
+  SCALE.fit(data[["name1", "name2"]])
+  x_scale = SCALE.transform(data[["name1", "name2"]])
+  ```
+  
+  **Pipelines**
+  
+  Getting a prediction using pipelines on polynomial.
+  
+  normalization -> polynomial Transformation -> prediction.
+  
+  ```python
+  import sklearn.preprocessing import PolynomialFeature, StandartScaler
+  import sklearn.linear_model import LinearRegression
+  import sklearn.pipeline import Pipeline
+  
+  input = [("scale", StandartScaler()), ("polynomial", PolynomialFeature(degree = 2)), ("model", LinearRegression())]
+  
+  pipe = Pipeline(input)
+  
+  ## We can train the pipeline object
+  
+  pipe.fit(data["name1", "name2", "name3", ...], y)
+  yhat = pipe.predict(x[["name_data"]])
+  ```
+  
+  ### Measures for in-sample evaluation
+  
+  A way to numerically determine how good the model fits on dataset.
+  
+  - Mean Squared Error(MSE)
+  - R-Squared(R^2)
+  
+  **MSE**
+  
+  (Average of all samples Squared ("which is..."actual value - predictor value))/ number of samples.
+  
+  ```python
+  from sklearn.metrics import mean_squared_error
+  
+  value = mean_squared_error(df["price"], Y_predict_fitted)
+  value
+  ```
+  
+  **R^2**
+  
+  - The coefficient of determination or R squared.
+  - Is a mesuare to determine how close the data is to the fitted regression line.
+  - R^2 the percentage of variation of the target variable (Y) that is explained by the model.
+  -  If the variable x is a good predictor our model should perform much better than just the mean.
+  
+  ```
+  R^2 = (1 - (MSE Regression Line/ MSE average of the data))
+  ```
+  
+  For the most part, it takes values between 0 and 1.
+  
+  A R^2 value near of one means the line is good fit for the data. In otherwise, near to zero means this line performs about the same as just using the average of the data points, therefore, this line did not perform well.
+  
+  ```python
+  ##get R^2 value on linear regression
+  
+  lm.fit(X, y)
+  lm.score(X, y)
+  ```
+  
+  From the value that we get from this example, we can say that approximately 49.695% of the variation of price is explained by this simple linear model. Your R^2 value is usually between 0 and 1, if your R^2 is negative it can be due to overfitting that we will discuss in the next module.
+  
+  ### Example predicted values
+  
+  to determinate final best fit, we look at a combination of:
+  
+   - do to predicted values make sense
+   - visualization
+   - numerical measures for evaluation
+   - comparing models
+  
+  ### Model Evaluation and Refinement
+  
+  In-Sample tell us how well our model will fit the data used to train it.
+  
+  Problem? R: It doesn't tell us how well the trained model can be used to predict new data.
+  
+  Solution? R:
+   - In-Sample data or training data.
+   - Out-of-sample evaluation or test set.
+  
+  Split dataset into:
+  - 70% training.
+  - 30% testing.
+  
+  Use testing set to assess the performance of a predictive model.
+  
+  When we have completed testing our model we should use all the data to train the model to get the best performance.
+  
+  ```python
+  from sklearn.model_selection import train_test_split
+  
+  x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size=0.3, random_state=0)
+  
+  ##test_size: percentage of the data for testing
+  ##random_state: number of generator for random sampling
+  ```
+  
+  **Generalization performance**
+  
+  Generalization error is measure of how well our data does at predicting previously unseen data.
+  
+  The error we obtain using our testing data is an approximation of this error.
+  
+  **Cross validation**
+  
+  - Most common out-of-samples evaluation metrics.
+  - More effective use of data (each observation is used for both training and testing).
+  
+  folds = partions
+  
+  For example, we can use three folds for training, then use one fold for testing. This is repeated until each partition is used for both training and testing. At the end, we use the average results as the estimate of out-of-sample error. The evaluation metric depends on the model, for example, the r squared.
+  
+  Bias-variance trade-off seeks a compromise between bias and variance, here using cross-validation.
+  
+  ```python
+  from sklearn.model_selection import cross_val_score
+  
+  scores = cross_val_score("The object to use to fit the data.", x_test, y_test, cv="number of partions")
+  
+  #We can average the result together to estimate out of sample r squared #using the mean function NnumPi.
+  np.mean(scores)
+  ```
+  
+  **Cross val predict**
+  
+  The cross_val_score function returns a score value to tell us the cross-validation result. What if we want a little more information? What if we want to know the actual predicted values supplied by our model before the r squared values are calculated? To do this, we use the cross_ val_predict function. The input parameters are exactly the same as the cross_val_score function, but the output is a prediction.
+  
+  - it returns the prediction that was obtained for each element when it was in the test set.
+  
+  ```python
+  from sklearn.model_selection import cross_val_predict
+  
+  yhat = cross_val_predict("The object to use to fit the data.", x_test, y_test, cv="number of partions")
+  ```
+  
+  ### Overfitting, Underfitting and Model Selection
+  
+  **Underfitting**, When the model is too simple to fit the data.
+  
+  **Overfitting**, When the model is too flexible and fits the noise raither than the function. it fails to generalize new predictions.
+  
+  - overfitting: high variance.
+  - underfitting: high bias.
+  
+  **model selection on polynomials**
+  
+  The test error is a better means of estimating the error of a polynomial. The error decreases 'til the best order of the polynomial is determined then the error begins to increase. We select the order that minimizes the test error.
+  
+   Let's use R-squared to see if our assumption is correct. The following is a plot of the R-squared value. The horizontal axis represents the order polynomial models. The closer the R-squared is to one the more accurate the model is.
+   
+  ```python
+  Rsqu_test = []
+  
+  order=[1,2,3,4]
+  
+  for n in order:
+    pr = PolynomialFeatures(degree = n)
+    
+    x_train_pr = pr.fit_transform(x_train[["x_name"]])
+    x_test_pr = pr.fit_transform(x_test[["x_name"]])
+    
+    lr.fit(x_train_pr, y_train)
+    
+    Rsqu_test.append(lr.score(x_test_pr, y_test))
+  ```
+  
+  **TIP**: Cross Validation or Test Error is high for low performance algorithm.
+  
+  ### Ridge Regression
+  
+  Ridge regression prevents overfitting.
+  
+  Ridge regression can help us to determinate the most accurate hight order for a polynomial.
+  
+  **Alpha**
+  
+  Alpha is a parameter we select before fitting or training the model. Each row in the following table represents an increasing value of alpha. Let's see how different values of alpha change the model. This table represents the polynomial coefficients for different values of alpha. The column corresponds to the different polynomial coefficients, and the rows correspond to the different values of alpha. As alpha increases the parameters get smaller. This is most evident for the higher order polynomial features. But Alpha must be selected carefully. If alpha is too large, the coefficients will approach zero and underfit the data. If alpha is zero, the overfitting is evident.
+  
+  ***En caso de dudas ver el video**
+  
+  ```python
+  from sklearn.linear_model import Ridge
+  
+  RigeModel = Ridge(alpha=0.1)
+  
+  RigeModel.fit(X, y)
+  
+  yhat = RigeModel.predict(X)
+  ```
+  
+  The overfitting problem is even worse if we have lots of features. The following plot shows the different values of R-squared on the vertical axis. The horizontal axis represents different values for alpha. We use several features from our used car data set and a second order polynomial function. The training data is in red and validation data is in blue. We see as the value for alpha increases, the value of R-squared increases and converges at approximately 0.75. In this case, we select the maximum value of alpha because running the experiment for higher values of alpha have little impact. Conversely, as alpha increases, the R-squared on the test data decreases. This is because the term alpha prevents overfitting. This may improve the results in the unseen data, but the model has worse performance on the test data. See the lab on how to generate this plot.
+  
+  ### Grid Search
+  
+  In the last section, the term alpha in Ridge regression is called hyperparameter, which means, it's not part of the fitting or training process.
+  
+  Scikit-learn has a means of automatically iterating over these hyperparameters using cross-validation. This method is called Grid Search. Grid Search takes the model or objects you would like to train and different values of the hyperparameters. It then calculates the mean square error or R-squared for various hyperparameter values, allowing you to choose the best values.
+  
+  ```python
+  from sklearn.linear_model import Ridge
+  from sklearn.model_selection import GridSearchCV
+  
+  ## answer to question: What dictionary value would we use to perform a grid search to determine if normalization should be used and testing the following values of alpha: 1,10, 100
+  parameters1 = [{"alpha": [0.001, 0.01, 0.1, 1, 10, 100, 1000]} "normalize": [True, False]]
+  
+  RR = Ridge()
+  
+  Grid1 = GridSearchCV(RR, parameters1, cv="number of faults, like cross validation")
+  
+  Grid1.fit(X_data, y_data)
+  
+  Grid1.best_estimator_
+  
+  scores = Grid1.cv_results_
+  scores["mean_test_score"]
+  
+  ##get metrics from grid search
+  for param, mean_val, mean_test, inzip(scores["params"], scores["mean_test_score"], scores["mean_train_score"]):
+    
+    print(param, "R^2 on test data:", mean_val, "R^2 on train data", mean_test)
+  ```
+  
+  ### Learning Curve
+  
+  Review material from Standfor Andrew Ng.
+'''
+tags: []
+isStarred: false
+isTrashed: false

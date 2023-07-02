@@ -1,0 +1,76 @@
+createdAt: "2018-07-26T00:43:34.037Z"
+updatedAt: "2020-07-30T07:43:09.060Z"
+type: "MARKDOWN_NOTE"
+folder: "24cb38cf2bc84305c3de"
+title: "COMPRA PROGRAMATICA"
+content: '''
+  ## COMPRA PROGRAMATICA
+  
+  La compra programatica es la conjuncion de los conceptos de Big Data y Real Time Bidding. La idea es que a traves de algoritmos se puedan hacer compra de medios online usando un sistema de pujas, donde los algoritmos definen los terminos de la demanda y son capaces de ejecutar la compra mas adecuada a los objetivos de la compañia.
+  
+  Con esto las agencias de medios anunciantes pueden directamente optar a comprar los espacios publicitarios en un mercado abierto en que emplazan sus pujas en tiempo real.
+  
+  **Subasta Vickrey**
+  
+  Es un modelo de subastas que se usa para la compra y venta. Esta presente tambien en los canales de AdWords, Bing o Facebook Ads.
+  
+  El modelo se basa en el concepto de Second Price Auction, donde se establce que el ganador de la subasta (aquel que ofrezca mas), terminara pagando el valor total de la segunda subasta total mas 1centimo. De este modo se convertira en la segunda puja mas alta.
+  
+  **Big data dentro compra-programatico**
+  
+  Se entiende como la generacion de audiencias concretas para su impacto a traves de acciones publicitarias. De este modo, esos datos se basan en clasificaciones socio-demograficos, de intereses, intenciones, visitas a los diferentes puntos y profundidades de las paginas web de las marcas, etc.
+  
+  Dentro de la compra programatica. El RTB se sirve de analisis del big data para ofrecer el espacio de medio ideal en base a las busquedas de los compradores, sus preferencias y su comportamiento dentro del sistema. De esta manera se optimiza la plataforma y tambien se generan mas ventas correctas.
+  
+  Para empezar un proyecto de generacion de audiencias, en base al analisis de datos de las pujas, se necesita la utilizacion de un Data Management Platform, que solape las diferentes herramientas de compra-venta espacios publicitarios.
+  
+  ----
+  
+  #### Data: La importancia de las audiencias
+  
+  En Marketing Digital, las audiencias se basan en identificadores digitales: **cookies**, para los dispositivos convencionales y **AdvertisingID** para dispositivos móviles.
+  
+  Las cookies usualmente son legible solo por aquellos sistemas que las crean. Por lo tanto, los cookies de un sistema de recoleccion de audiencias no pueden ser utilizados por otro sistema diferente, es por ello que se usan los DMP. Un DMP permite a las marcas recopilar informacion de sus consumidores, con el fin de crear campanas publicitarias y contenidos adaptados a traves de los diferentes canales digitales (Ominicanalidad) para generar mas ingresos (ROI).
+  
+  Los DMP ofrecen la posibilidad de actuar como conectores a otras plataformas, de modo que se pueden acoplar sus datos. Sus integradores se basan en sistemas de `cookie matching/synching` a traves de `mapping/matching tables`
+  
+  Lo que realmente se comparte en el proceso de integracion es un identificador hasheado a partir de la cookie y no el valor real de la cookie. Durante el proceso de intercambio de datos, los cookies pasan por un proceso de `one way hash function`.
+  
+  ----
+  
+  #### Funcionalidades Extras de los DMP
+  
+  **Look-a-like modeling**
+  
+  En base a un modelo definido, los DMP hacen una busqueda de audiencias o busqueda de gemelos. Esto lo hace a traves de toda la informacion tecnica y anonima recogida por la herramienta, en base a esto se habilita una opcion de busqueda automatica de gemelos.
+  
+  **Cross-Device Targeting**
+  
+  What is cross-device tracking?
+  Cross-Device tracking describes the myriad ways platform, publishers and ad tech companies try to identify internet users across smartphones, tablets and desktop computers. The goal of cross-device tracking is to be able to know that the person using smartphone X is the same person who uses table Y and computer Z
+  
+  Existen dos tipos de obtencion de CD-Tracking.
+  
+  - Modelo Deterministico: Basado en informacion concreta de logins. Es uno de los bienes mas preciados por las empresas multinacionales
+  - Modelo Probabilistico: Es el modelo que es usado por todas las empresas y marcas que no disponen de un registro recurrente en todos los dispositivos de los usuarios. En base a procesos algoritmicos, son capaces de recolectar suficiente informacion anonima y tecnica de los usuarios para unificarlos en un unico ID a traves de los diferentes dispositivos.
+  
+  Los elementos que suelen usar estos algoritmos para trazar estas reglas de similitud son:
+  
+  - Resolucion de pantalla
+  - Tipo de dispositivo
+  - Sistema operativo
+  - Localizacion
+  - Wifi NEtwork
+  - Datos sobre comportamiento digital y historial de navegacion
+  
+  La diferencia entre los dos metodos es que mientras en uno la informacion esta identificada por el proceso de logeo, en el otro la informacion es recopilada de manera anonima y sin significado en el proceso. Lo que indica que se deben ejecutar procesos para poder identficar el usuario.
+  
+  **Retargeting**
+  
+  En DMP. A los usuarios que se quedan en la mitad del proceso de compra, se buscan las cookies o los advertisend de esos usuarios de modo que puedas presentar de nuevo la oferta y incentivar la finalizacion de la compra anteriormente empezada.
+'''
+tags: [
+  "marketing"
+]
+isStarred: false
+isTrashed: true

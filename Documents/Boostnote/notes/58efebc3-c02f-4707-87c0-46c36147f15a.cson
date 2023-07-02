@@ -1,0 +1,32 @@
+createdAt: "2019-09-12T04:11:29.327Z"
+updatedAt: "2019-09-12T06:15:27.417Z"
+type: "MARKDOWN_NOTE"
+folder: "8af9713f3b0695b046b9"
+title: "Cloud DataProc"
+content: '''
+  ## Cloud DataProc
+  
+  **COMANDS**
+  
+  - Connect to instances
+  
+  ```
+  gcloud compute ssh [instance_name]
+  ```
+  
+  - Copy files from gs://bucket to instance
+  
+  ```
+  gsutil cp gs://<buckey> <file_directory>
+  ```
+  
+  **Interfaces disponibles**
+  
+  Las siguientes interfaces están disponibles en un nodo maestro del clúster de Cloud Dataproc (reemplaza master-host-name con el nombre de tu nodo maestro).
+  
+  http://master-host-name:8088 `YARN`
+  http://master-host-name:9870 `HDFS`
+'''
+tags: []
+isStarred: false
+isTrashed: false

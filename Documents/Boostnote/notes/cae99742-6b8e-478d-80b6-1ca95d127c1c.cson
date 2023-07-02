@@ -1,0 +1,50 @@
+createdAt: "2020-11-20T05:09:03.014Z"
+updatedAt: "2020-11-20T07:27:53.723Z"
+type: "MARKDOWN_NOTE"
+folder: "6ef4a199ec2ea1601e84"
+title: "MongoDB Scalability"
+content: '''
+  ## MongoDB Scalability
+  
+  ### Storing data in Memory Mapped Files
+  
+  Assign byte-per-byte to a file or a file-like resource that can be referenced throught a file descriptor.
+  
+  - Improves I/O Performance as compared to usual disk read and write.
+  - Mongo can expand its database cache to use all available memory without any additional configuration.
+  
+  Memory mapping introduces a few limitations:
+  
+  - Mongo implementations restricts data size to a maximum of 2 gb on 32-bit systems. This doesn't apply to 64-bit.
+  - Maximum document size 16 mb.
+  
+  ### Guidelines for using collections and indexes in Mongo
+  
+  - no put a lot of disparate data into a single collection. This create complexity indexing.
+  - Capped Collections, delete old records (based on Last-in-First-out) when limit size is hit in.
+  - Cursor return applicable data in batches, each restrict by a maximun size of 8 mb.
+  - Updates to record are in-place.
+  
+  ### Reliability, Durability and Scalability
+  
+  Cursors don't automatically get refreshed if the underlying data is modified.
+  
+  By default, `Mongo` flushes to disk every minute. That's when the data inserts and updates are recorded in disk. Any failure between two synchronization can lead to inconsistency. You can increase the sync frequency or force a flush to disk but all of that comes at the expense of some performance.
+  
+  To avoid loss during a system failure, it's advisable to set `up replication`. Two MongoDB instancces can be set up in a master-slave to replicate and keep data. Replicate set allows automatic recovery and automatic failure.
+  
+  Mongo support `autosharding for scaling`.
+  
+  MongoDb allows ordered collections to be saved across multiple machines. Each machine that saves part of the collection is then a `shard. Shards` are replicated to allow failover. 
+  
+  `Shards are at the collection level and not the database level`. Each shard stores continuos sets of ordered data. Such boundies are called `chunks`. Each chunk is identified by three atributes, namely, the first document key (min key), the last document key (max key), and the collection.
+  
+  A collection can be shard based on any valid shard key. Any documeny or combination of documents `fields` can be used as the basis of a shard key. Shards keys also contain an order direction property in addition to the field which define the shard key.
+  
+  All definitions about the shards and the chunks they maintain are kept in metadata catalogs in config server. Config servers are also replicated.
+  
+  Client processes reach out to a mongo cluster via mongos process. There can be one or more mongos process. `Mongos process have the responsability of routing queries and combined results where required`. Queries that can not leverage index are global queries. `Target queries` are more efficient than global queries.
+'''
+tags: []
+isStarred: false
+isTrashed: false

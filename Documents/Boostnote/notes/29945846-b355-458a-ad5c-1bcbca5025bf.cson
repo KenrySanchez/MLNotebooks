@@ -1,0 +1,25 @@
+createdAt: "2018-10-17T10:44:56.971Z"
+updatedAt: "2020-06-12T03:54:04.628Z"
+type: "MARKDOWN_NOTE"
+folder: "a41d44d96fbd153c28c9"
+title: "Requisitos de un proyecto de ciencia de datos:"
+content: '''
+  #### Requisitos de un proyecto de ciencia de datos:
+  
+  1. Conocimiento del negocio.
+  2. Analisis Cuantitativo.
+  3. Programacion.
+  4. Comunicacion.
+  5. Trabajo en Equipo.
+  
+  Evaluacion de un modelo de clasificacion: Matriz de confusion
+  
+  **Sensibilidad**: Indica la capacidad de estimar en nuestro modelo aquellos valores positivos que en realidad son "positivos". La **especificidad** hace lo mismo con los valores que si son "negativos".
+  
+  Curva ROC.
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: true

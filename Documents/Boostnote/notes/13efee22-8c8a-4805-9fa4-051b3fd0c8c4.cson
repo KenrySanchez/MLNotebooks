@@ -1,0 +1,103 @@
+createdAt: "2018-07-01T01:33:52.429Z"
+updatedAt: "2018-10-23T22:20:54.201Z"
+type: "MARKDOWN_NOTE"
+folder: "48fbce2016d43f0faffa"
+title: "Gestion de proyectos Big Data"
+content: '''
+  ## Gestion de proyectos Big Data
+  
+  *Las empresas solicitan la implementacion de proyectos Big Data, cuando requieren la implementacion de un sistema de BI que les permita, agilmente, obtener informacion de valor a la gran cantidad de datos que tienen almacenados.*
+  
+  Los proyectos de Big Data tienen 2 ramas:
+  
+  1. La arquitectura de sistemas, como se acopla la tecnologia tanto a nivel de software como a nivel de infraestructura de modo que se pueda realizar la cadena del big data.
+  2. Los procesos de analisis y estudios de los datos, que es donde se identifica y se descubre el valor real de los datos.
+  
+  #### En que consiste un proyecto de BI/Big Data
+  
+  Los proyectos de BI/Big data tienen en comun un objetivo basico el cual es dotar a la empresa de un sistema u operaciones, para tomar decisiones en base al analisis de datos.
+  
+  Las principales pretensiones de todo un proyecto BI/Big Data son:
+  
+  - Cubrir las necesidades de la falta de informacion
+  - Que la informacion este almacenada en un mismo repositorio.
+  - Puede ser visualizada y organizada para que cualquier persona dentro de la organizacion puede ser analizada y procesada.
+  
+  ---
+  
+  #### Fases del proyecto
+  
+  **Inicio**
+  
+  Es imprecindible valorar que la implementacion de un proyecto de Big Data en nuestro negocio es factible y realista. En caso de que sea asi, se debe preparar todo lo necesario para llevar acabo su implementacion.
+  
+  - Detectar las necesidades: Tiene que ver con el volumen de datos a almacenar, su variedad, velocidad de recogida, procesamienta y escabilidad horizontal. En este proceso tambien se revelan carencias tecnologicas dentro de la organizacion para poder implementar el proyecto.
+  
+  - Justificar la inversion: Con el Big Data se pretende mejorar las cuestiones tecnicas, al igual que crear un entorno de alto rendimiento que facilite el ahorro de costes en procesamiento de datos y analisis.
+  
+  - Evaluar las limitaciones: Se debera tener en cuenta la infraestructura de la empresa, madurez tecnologica, sus recursos, pero sobre todo, los aspectos legales en cuanto a procesamiento y analisis de datos en base a la privacidad en obtenerlos.
+  
+  **Planificacion**
+  
+  Se determina el presupuesto que vamos a necesitar en todo el ciclo de vida del proyecto asi como tambien los recursos que necesitaremos para su implementacion.
+  
+  - Gestores: sponsors, directores de proyecto, coordinadores y gestores de calidad
+  - Disenadores y Arquitectos de datos: perfiles tecnicos con los objetivos claros para la implementacion del proyecto
+  - Implementadores: personal cualificado, analistas y desarrolladores, con conocimientos del sector y las tecnologias
+  - Operadores de datos: de entrada, intermediarios y resultados
+  
+  **Diseño**
+  
+  Generar un diseno acorde a las necesidades de la organizacion y se va optimizando tomando en cuenta el coste, la escabilidad y las distintas opciones del mercado.
+  
+  Costa de 2 etapas:
+  
+  - Infraestructura y arquitectura: soporte fisico de la solucion (Hardware y redes, cloud computing).
+  - NEgocio, analisis de datos, incluyendo modelado de datos y respectivo diccionario: diseñar los procesos en ETL, incluye los procesos de normalizacion y seleccion de datos que puedan aportar valor.
+  
+  **Implementacion**
+  
+  Este punto se ejecuta luego de obtener los aspectos como la administracion, el mantenimiento o la seguridad en los datos, cualquier proceso dentro de las fases de planificacion y diseño. Los pasos son los siguientes:
+  
+  - Instalacion de servidores y componentes necesarios. Sistemas distribuidos, bases de datos NoSQL, Dataware house, etc.
+  - Si es una solucion en la nube, las configuraciones necesarias de red y comunicacion de componentes.
+  - Crear todos los ETL.
+  - Cuadros de manos y Redes.
+  - Herramientas para el procesamiento de datos.
+  
+  **Analis de datos y generacion de valor**
+  
+  El componente basico y primordial en las soluciones de BIg Data son los datos. Son necesarios ya que con ellos se genera todo el proceso de informacion para luego poder convertirlos en conocimiento. El proceso de analisis de datos es el nucleo de la solucion de Big Data y se concreta en 3 acciones:
+  
+  - Generar los calculos, algoritmos para poder procesar los datos y implementar la solucion.
+  - utilizar data scientist para detectar patrones, tendencias, oportunidades y/o amenazas.
+  - comunicar a la organizacion cuando se generar conclusiones y nuevas vias de negocio.
+  
+  ---
+  
+  #### Elementos primordiales del Big Data
+  
+  - Identificasr fuentes de datos.
+  - Generar los procesos de ETL.
+  - Implementar y guardar los datos en data warehouse, data mart.
+  - Salida de informacion a traves de cuadros de mando y visualizacion de datos.
+  
+  Las soluciones de Big Data mas eficaces identifican primero los requisitos de negocio y, a continuacion, adaptan la infraestructura, las fuentes de datos y la analitica a fin de respaldar la oportunidad de negocio. A traves de este metodo, se define la estrategia tecnologica de big data y, posteriormente se actualiza progresivamente a lo largo del tiempo.
+  
+  **5 Recomendaciones claves para avanzar en iniciativas Big Data**
+  
+  - Dedicar los esfuerzos iniciales a obtener resultados centrados al cliente.
+  - Desarrollar un plan de Big Data para toda la empresa.
+  - Comenzar con datos ya existentes para lograr resultados a corto plazo.
+  - Desarrollar capacidades analiticas sobre la base de prioridades del negocio.
+  - Crear un caso de negocio sobre la base de resultados cuatificables.
+  
+  Por lo general, los objetivos centrados al cliente son de maxima prioridad, los hacen mas importantes.
+  
+  
+'''
+tags: [
+  "Build_Big_Data_Project"
+]
+isStarred: false
+isTrashed: false

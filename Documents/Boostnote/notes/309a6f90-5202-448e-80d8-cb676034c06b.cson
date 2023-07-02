@@ -1,0 +1,199 @@
+createdAt: "2020-04-08T04:17:25.723Z"
+updatedAt: "2021-09-06T22:20:47.242Z"
+type: "MARKDOWN_NOTE"
+folder: "48fbce2016d43f0faffa"
+title: "Promoting Big Data Projects"
+content: '''
+  ## Promoting Big Data Projects
+  
+  ***How do business and IT stakeholders collaborate to identify the right business opportunity on which to focus the Big Data initiative, and then design the right architecture to exploit these Big Data monetization opportunities? How do we ensure successful deployment of these new Big Data capabilities?***
+  
+  -----
+  
+  ### Big Data envisioning process
+  
+  The envisioning process defines how Big Data can power key business initiatives, and where and how Big Data and advanced analytics can be deployed to transform a business. The process does this by helping the business and IT stakeholders understand what all is possible with respect to new Big Data sources and new Big Data technologies
+  
+  #### Prioritization of Big Data Use Cases
+  
+  One key challenge to a successful Big Data journey is gaining consensus and alignment between the business and IT stakeholders in identifying the Big Data business use cases recognized so far, which deliver sufficient value to the business, while possessing a high probability of success. The facilitation team can probably identify multiple business use cases where Big Data and advanced analytics can deliver compelling business value.
+  
+  However, many of these use cases have a low probability of execution success due to the following:
+  
+  - Unavailability of timely and accurate data.
+  - Lack of experience with new data sources such as social media, mobile, logs, and telemetry data.
+  - Limitations of data science or advanced analytics resources or skills.
+  - Lack of experience with new technologies such as R, Hadoop, MapReduce, and text mining.
+  
+  **Prioritization matrix** is a tool for driving business and IT collaboration and agreement around identifying the right initial use cases for the Big Data journey—those with sufficient business value and a high probability of success. The use cases are placed on the matrix based on Business Value vs Implementation Feasibility (Business Team vs IT Team).
+  
+  ```The prioritization matrix is a 2×2 grid that facilitates the interactive process and debate between the business and IT stakeholders to determine where, on the matrix, should one place each use case in relation to the other use cases```
+  
+  **Prioritization Matrix Process**
+  
+  The prioritization matrix process starts by documenting each use case identified in the brainstorming and aggregation stages. The group, which must include both business and IT stakeholders, decides the placement of each use case on the prioritization matrix by weighing business value and implementation feasibility.
+  
+  ***It is critical to capture the reasons for the relative positioning of each use case, to identify the critical business value drivers and potential implementation risks***.
+  
+  One of the keys to use the prioritization matrix is to understand the potential discussion traps. In particular, you  want  to  avoid  use  cases  that  fall  into  the  matrix  zones  where  the  business  values  and  implementation  feasibility are not high.
+  
+  ![Screen Shot 2020-04-08 at 1.36.23 AM.png](:storage/309a6f90-5202-448e-80d8-cb676034c06b/a4f879e1.png)
+  
+  - Mismanaged expectations: These zones are those use cases with huge business value but little chance of successful execution.
+  - User disillusioment: These  zones  are  those  use  cases  that  are  easy  to  execute  but  provide little business value. These types of use cases tend to be technological science experiments, such as one where an IT group has developed some skills in a new technology or has gained access to some new data sources and is trying to find a use case against which to apply its new capabilities.
+  - Career limiting moves: These zones are those use cases that have little business value and a low probability of success. These use cases should be self-evident and no one from business or IT should target one of these use cases.
+  
+  -----
+  
+  #### Solution Engineering Process
+  
+  `Solution engineering is a process` for identifying and breaking down an organization’s key business initiatives into its business-enabling capabilities and supporting technology components to support decision-making and data monetization efforts.
+  
+  ![Screen Shot 2020-04-08 at 1.58.59 AM.png](:storage/309a6f90-5202-448e-80d8-cb676034c06b/ae973d6e.png)
+  
+  **Step 1: Understand How the Organization Makes Money (Point 0: The nothing State)**
+  
+  The key to solution engineering process is an up-front investment of time and creative thinking to grasp how an organization makes money.
+  
+  You need to identify the organization’s key business initiatives and understand the desired impact of these initiatives on the organization’s strategic nouns (that  is,  the  strategic  business entities—such  as  customers,  stores,  employees,  and  products—around  which  your  organization  builds  differentiated business processes such as acquisition, retention, optimization, and management).
+  
+  Next,  you  would  need  to  identify  how  those  nouns  drive  the  moneymaking  capabilities  of  the  organization. For  example,  aviation  hubs  are  an  important  noun  in  the  airline  industry.  To  generate  more  the revenue, the number of flights per hub can be increased by minimizing the airplane turnaround times or maximizing terminal and ramp efficiencies. If you are in the movie theater business, then concession is a very important noun. To increase your customers, you can provide concession in different forms such as free popcorn packet with a cold drink bottle, or a small water bottle with a large water bottle.
+  
+  Let’s try to understand how an organization makes money generally—how the organization increases revenues, decreases costs, reduces risks, or increases compliance?
+  
+  We know that across most industries: 
+  
+  - 0–25% of customers drive most of its profits.
+  - 50–60% deliver no profits.
+  - 10–25% deliver negative profits.
+  
+  Consequently,  the  solution  engineering  challenge  in  Business-to-Consumer  (B2C)  industries  is  to  determine  how to leverage Big Data analytics to:
+  
+  - Move customers “up” the profitability curve by cross-selling them additional products, up-selling them more profitable products and services, replacing branded products with private label products to increase market basket profitability.
+  - Service unprofitable customers in a more cost-effective manner by selling via the Web, using self-service or through partners escalating.
+  
+  An  organization  can  pull  many  levers  to  make  more  money  by  either  increasing  revenue  or  reducing  cost  of  products or services.
+  
+  If an organization is in the B2C market, management of the organization can easily imagine how to leverage both internal and external customer engagement data. E-mail, consumer comments, service logs, or physician notes  can  be  used  for  internal  customer,  and  social  media  postings,  service  ratings  such  as  Yelp  or  blogs  are used for external customer engagement. These insights can help organizations to optimize the customer engagement processes and create more “profitable” customers.
+  
+  **Step 2: Identify Organization’s Key  Business Initiatives (Point 1: What they want?)**
+  
+    For each identified business initiative or opportunity, capture key information such as (you can use these to form a business proposal):
+  
+  - Business stakeholders and their roles, responsibilities, and expectations .
+  - Key performance indicators and the metrics against which success of the business initiative should be measured.
+  - Time frame for delivery.
+  - Critical success factors.
+  - Desired Outcomes.
+  - Key tasks.
+  
+  **Research and Interview to Understand Business Initiatives**
+  
+  Prior  to  the  envisioning  process,  the  business  and  IT  teams  need  to  identify  the  key  problem  scenario  or  targeted business opportunity, challenge, or initiative that can lead the envisioning accordingly. Here are some business initiative examples:
+  
+  - Reduce attrition rate and optimize customer engagement points with the help of subscriber behavioral insights.
+  - Provide  in-store  behavioral  patterns  combined  with  customer  historical  purchase  data  to  enhance  location-based offers.
+  - Enhance customer satisfaction levels and flag service and product problem areas with the help of internal and external customer communications.
+  
+  Points for discussion with business users:
+  
+  - What they look for when they review a report or a dashboard?.
+  - How they know that they have a problem or opportunity?.
+  - What steps they take to resolve a problem or opportunity?.
+  - What  additional  data  or  analysis  they  conduct  to  further  understand  the  problem  or  work  on  an  opportunity?.
+  - What other stakeholders they typically engage to help analyze the problem or opportunity?.
+  - What decisions they may make based on their analysis?.
+  - Who the downstream stakeholders are—the recipients of the analysis?.
+  
+  ***
+  Depending  on  the  business  initiative,  the  facilitation  team  can  also  expand  the  customer-specific envisioning process by incorporating data from external sources.
+  ***
+  
+  
+  **Step 3. BrainStorm and decide on Big Data Business impact (Point 2: How they want?)**
+  
+  There  are  four  ways  that  the  Big Data and advanced analytics can power an organization’s key business initiatives:
+  
+  - ***Mine  the  more  detailed  transactional  data  at  the  lowest  level  of  transaction  granularity***, which  enables  more  granular  and  detailed  decisions.  For  example,  analyze  the  detailed  transactional data, such as customer loyalty transactions, to enable more granular decision-making and uncover newdata  monetization  opportunities  at  the  individual  customer,  seasonal/holiday,  and  location/geographylevels.
+  
+  [SAP HANA - Wikipedia](https://en.wikipedia.org/wiki/SAP_HANA)
+  
+  - ***Integrate  new  unstructured  data  sources***  to  enable  more  robust  and  complete  decisions.  This includes  internal  unstructured  data  sources  such  as  consumer  comments,  call  center  notes,  e-mail, physician notes, and service bay logs, as well as external unstructured data sources such as social media posts, blogs,  mobile/smartphone  apps, and  third-party or public data  sources. You  can  also  consider sensor-generated data such as smart grids, connected cars, and smart appliances in this category. These new diverse data sources provide new variables, metrics, and dimensions that can be integrated into analytic models to yield material business insights and recommendations.
+  
+  - ***Provide real-time/low-latency data access*** where you reduce the time delay between the time of occurrence of the data event and the time when the data event was analyzed. This enables frequent and timely decisions and data monetization. This may include the creation of on-demand customer segments as well as real-time location-based insights from smartphones and mobile applications apps.
+  
+  - ***integrate  predictive  analytics  into  key  business  processes*** to  provide  new  opportunities  to uncover causality cause and effect  buried  in  the  data.  Predictive  analytics  enable  a  different  mind set with your business stakeholders, encouraging them to use new verbs—such as optimize, predict, recommend, score, and forecast—as they explore new data monetization opportunities.
+  
+  **Brainstorm New Ideas**
+  
+  The  team  can  start  brainstorming  to  leverage  Big  Data  and  operational  data—coupled  with  advanced  and  predictive analytics—to power targeted business initiative. They can review the client-specific envisioning exercise just developed to help the business stakeholders visualize what is possible with respect to new data sources  and  advanced  analytics  tools—so  that  decisions  for  implementation  can  be  made.  ***They  can  also  demonstrate to the business and IT stakeholders how applying advanced analytics to their internal data with a third-party data, as appropriate, can provide new business insights and monetization opportunities***.
+  
+  The team can leverage the client-specific example, as well as examples from similar and other industries, to fuel the creative thought process with respect to how other organizations and other industries are leveraging Big Data to drive business value. The facilitation team usually takes time to review several scenarios that can help to identify new sources of Big Data and advanced analytics techniques, which could deliver financial and competitive value to the targeted business initiative.
+  
+  ***
+  The  key  idea  of  brainstorming  is  to  challenge  the  group’s  current  thinking  processes  and assumptions toward transformation. This can be done by exploring several “what ifs” and “how mights”
+  
+  Example:
+  
+  - What if I can get new insights into my customer shopping behaviors and product preferences, and how might that change my customer engagement opportunities?.
+  
+  ***
+  
+  **Step 4: Break Down Business Initiative into Use Cases**
+  
+  in this step you should capture the following information:
+  
+  - Targeted personas and stakeholders, including their roles, responsibilities, and expectations.
+  - Questions that the business stakeholders are trying to answer, or could be trying to answer if they had access to more detailed and diverse data sources.
+  - Key performance indicators and key metrics against which business success should be measured.
+  - Data  requirements,  including  sources,  availability,  access  methods,  update  frequency,  granularity,  dimensionality, and hierarchies.
+  - Analytic  algorithms  and  modeling  requirements  such  as  prediction,  forecasting,  optimization,  and  recommendations.
+  - User experience requirements, which should couple closely with the user’s decision-making process.
+  
+  **Step 5. Prove the use cases (Point 3: How i'll do it?)**
+  
+  This is a good time to introduce a proof of value analytic lab to prove out the business case such as financial model and analytic lift using the full depth of available data and full breadth of available technology capabilities.
+  
+  From step 4, you have a detailed definition of the desired solution, including key decisions, business questions, key performance indicators, and other solution details. At this point, you should also have a firm understanding of the required data. You may have information about data sources, key metrics, levels of granularity, frequency of access, dimensionality, and the necessary technology and analytic capabilities to build out the **Proof of value**.
+  
+  This Proof-of-Value analytic process should include the following:
+  
+  - gathering required data from both internal and external data sources, and integrating them into a single data platform. You want the detailed data, not the aggregated data, to mine the detailed data to uncover the material, significant and actionable nuances buried in the data. You should also explore the use of third-party data, some of it publicly available from sources such as www.data.gov or social media data.
+  - Defining and executing data transformation processes necessary to cleanse, align, and prepare the data for analysis. It includes several data enrichment processes to create new composite metrics.
+  - Defining the analytic test plan,  including  the  test  hypotheses,  test  cases,  and  measurement  criteria.
+  - Developing and fine-tuning analytic models against defined key performance indicators and critical success factors. The team involved in this step likely continues to explore new data sources and new data transformation techniques that may help improve the reliability and predictability of the analytic models.
+  - Defining  user  experience  requirements—in   particular,   understanding   the   downstream   constituents  of  the  analytic  results  and  how  the  analytic  results  need  to  be  consumed  by  those  constituents.
+  - Developing mock-ups and/or wireframes that help business stakeholders understand how the resulting analytic results and models should be integrated into their daily business processes.
+  
+  
+  ***
+  You  want  to  validate  that the integration of massive amounts of detailed structured and unstructured data coupled with advanced analytics can result in a more predictive, real-time analytic model that can deliver material meaningful and actionable insights and recommendations for the targeted business solution.
+  ***
+  
+  **Step 6: Design and Implement the Big Data Solution**
+  
+  You can start defining and building the  detailed  data  models,  analytic  models,  technology  architectures,  and  production  roadmap.
+  
+  - **Data  Sources  and  Data  Access  Requirements**:  This  should  include  a  detailed  plan  and  roadmap for prioritizing the data to be captured, its storage from a data access, as well as analysis perspective. This plan should address both structured and unstructured data. It also needs to address external  data  sources,  which  means  that  the  data  plan  needs  to  be  updated  every  4–6  months  to  accommodate many new data sources that are becoming available.
+  - **instrumentation  Strategy**: It  is  likely  that  additional  data  about  your  customers,  products,  and  operations  need  to  be  captured  mainly  from  the  existing  business  processes.  The  instrumentation  strategy needs to cover how additional tags, cookies, and other instrumentation techniques can be used to capture additional transactional data.
+  - **Real-time  Data  Access  and  Analysis  Requirements**: Certain  use  cases  require  real-time  or  low-latency data access, analysis, and decision-making as data flows through the business. These real-time  requirements  must  be  addressed  across  the  entire  technology  and  architectural  stack.
+  - **Data  Management  capabilities**: Organizations need to address when the data quality is good enough given the types of decisions and business processes that are being supported. Organizations need to carefully think through this question so that time is not wasted trying to make imperfect data perfect.
+  - **Data Modeling capabilities**: Data modeling requirements need to encompass all traditional data warehousing  architectural  approaches—operational  data  store,  data  staging  area,  data  marts,  enterprise data warehouse—plus many new data platform and data federation tools and techniques that are available.
+  - **Business  intelligence**: Most  organizations  have  an  existing  business  intelligence  or  Business  Performance  Monitoring  (BPM)  environment  in  place  that  addresses  key  performance  indicators,  reporting, alerts, and dashboard requirements. This is the time to determine ways to enhance that investment  with  new  Big  Data  capabilities  such  as  unstructured  data,  real-time  data  feeds,  and  predictive analytics.
+  - **Advanced  Analytic  capabilities  (Statistical  Analysis,  Predictive  Modeling,  and  Data  Mining)** : This is the realm of the data science organization and much has already been discussed about the importance of creating an environment where the data science team is free to do its jobs.
+  - **User  Experience  Requirements** :  The  user  experience  plan  needs  to  include  the  wireframe  and  mock-up  processes  to  ensure  an  understanding  of  how  the  analytic  results  and  models  manifest  themselves into the business users’ daily operations and the management reports and dashboards. Use this opportunity to understand the user experience requirements of your internal users, external customers,  and  business  partners,  and  to  capture  how  analytic  insights  should  be  integrated  into  those user environments.
+  
+  **Documentation**
+  
+  It refers to summarize the identified and prioritized business opportunities, and recommend steps for deploying advanced analytics in support of the targeted business initiatives. Documenting the results of the envisioning process includes the following:
+  
+  - Prioritization  matrix  results,  including  details  on  the  placement  of  each  use  case,  business  value  drivers, and implementation risk items.
+  - Recommended next steps.
+  - Analytic use cases that came out of the envisioning process.
+  - put businesses questions.
+'''
+tags: [
+  "Build_Big_Data_Project"
+]
+isStarred: false
+isTrashed: false

@@ -1,0 +1,89 @@
+createdAt: "2018-06-22T01:48:57.375Z"
+updatedAt: "2020-10-02T03:49:49.428Z"
+type: "MARKDOWN_NOTE"
+folder: "24cb38cf2bc84305c3de"
+title: "Organizacion de los datos en las compañias"
+content: '''
+  ## Organizacion de los datos en las compañias
+  
+  ### Tip para construir un proyecto de Big Data - * Build Big Data Project
+  >Para construir una accion de datos (**Conformar y construir un proyecto de datos - BIG DATA**) se debe tener **vision** de lo que se quiere abordar, y una **estrategia** clara para satisfacer los **objetivos**.
+  
+  ```
+  Preguntas a Resolver
+  
+  - ¿Como hago la captacion de datos?
+  - ¿LA extraccion de informacion puede ayudarme a resolver los problemas de la empresa?
+  - ¿Que aporte del usuario puede ayudarme a diferenciarme de la competencia?
+  
+  ```
+  
+  ##### *La tecnologia ha hecho cambiar la manera en como piensan las empresas*
+  
+  **Reflexion de kenry**
+  
+  -------
+  
+  La idea es poder usar los datos para poder generar ventajas competitivas que no poseen las otras compañias. De modo que debemos saber diferenciar los datos que recogeremos de nuestro estudio.
+  
+  - La tecnologia hace que los productos se desarrollen de manera mas rapida y escalable. 
+  
+  `Embudo de conversion`: Estudia todas las fases de relacion con el cliente (Siguiendo el modelo AIDA). Entonces, en base al embudo de conversiones, debemos usar herramientas de compresion que nos ayuden a entender el comportamiento de los usuarios.
+  
+  ```
+  Preguntas a Resolver
+  
+  - ¿Cuales son mis objetivos empresariales?
+  - ¿Quienes son y que quieren mis clientes?
+  - ¿Que servicios y soluciones soy capaz de vender y con que tecnologia?
+  ```
+  
+  Los datos de la compañia por lo general se guardan en los departamentos de Recursos humanos y MArketing. Por lo que si la compañia quisiera obtener datos de sus mismos empleadores, deberia poder obtenerlos de tales departamentos
+  
+  Lo mas importante para las empresas es implanatar una herramienta que ayude a conocer y gestionar a los clientes. De modo que se pueda explotar y analzar todas las variables necesarias para poder generar nuevas oportunidades de negocio.
+  
+  #### Employee experience y transformación digital
+  
+  Las herramientas de gestion de clientes no solo puede usarse para los clientes. Tambien pudiera usarse para contratar, reclutar, captar, etc. Generar engagement dentro de la misma conpañia.
+  
+  ```
+  Preguntas a Resolver
+  
+  - ¿Que me aportan los datos de los empleados, sus necesidades, los esfuerzos que realizan, sus ambientes y sus entornos familiares?
+  - ¿Como pueden ayudarme las herramientas de gestion en relaciones a generar una mayor productividad dentro de la empresa usando como base la relacion de mis empleados con las tareas a ejecutar?
+  
+  ```
+  
+  #### Funcion de los datos en las compañias
+  
+  Se pueden usar los datos para que a traves de un modelo organizativo, crear capacidades y perfiles. De modo que a traves de este modelo, se pueda implementar una cultura data-driven **(see 3 key steps to a data-driven business)**.
+  
+  Una unidad de datos, puede hacer "analisis", pero, su funcion es crear nuevas propuestas de valor que tienen como objetivo toda la organizacion. Se compite creando modelos de negocios. Debemos escoger las variables clave –de las muchas posibles– e inferir modelos competitivos. **(ver reto de la informacion dispersa)**.
+  
+  **La función de datos es una estructura de innovación y se inserta de forma orgánica en muchas empresas, estableciendo relaciones y vínculos de cocreación con los diferentes departamentos y divisiones**.
+  
+  Esto explica el auge de la figura del Chief Data Officer, cuya misión es ser una palanca estratégica en la transformación digital y en la consecución de objetivos de crear mercados, convirtiendo los datos y los algoritmos en activos empresariales.
+  
+  **Claves para la estructura de gobierno en la empresa, en funcion de los datos**
+  
+  - Automatizacion + industrializacion
+  - Centralizacion del conocimiento
+  - Herramientas y plataformas mixtas
+  
+  Los puestos de trabajo dentro de un gobierno de datos: Data Engineering, Data Science y Data analytics requieren tener capacidades de sintesis y diseño.
+  
+  A partir de los perfiles que describen cada rol dentro de una organizativa de datos se puede definir que una unidad de datos es una nueva estructura organizativa en continua interacción con el resto de divisiones de la empresa, desde tecnología hasta sistemas como negocio.
+  
+  La unidad de datos debe ser coherente con la estrategia de la empresa y generar coherencia con el resto de la organizacion; por otro lado, debe ser adaptable al entorno, guiando las fuerzas que impulsan cambios en el contexto hacia las transformaciones que mejor se ajustan a la mision de la empresa
+  
+  El reto a batir a medida como se va generando mas informacion es ver como se usa toda esa data. Asi mismo, recordar que los datos tienen vigencia, no duran para siempre.
+  
+  
+'''
+tags: [
+  "Build_Big_Data_Project"
+  "Gestion_del_cliente_Big_Data"
+  "OMNICANALIDAD"
+]
+isStarred: false
+isTrashed: false

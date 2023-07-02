@@ -1,0 +1,168 @@
+createdAt: "2020-03-18T06:24:23.024Z"
+updatedAt: "2021-07-05T19:19:22.079Z"
+type: "MARKDOWN_NOTE"
+folder: "24cb38cf2bc84305c3de"
+title: "Managing Big Data Eco-System"
+content: '''
+  ## Managing Big Data Eco-System
+  
+  ### Stack Architecture
+  
+  considerations associated with Big Data
+  
+  Functional and Infrastructure requirements --> Design Principles --> Creates Strong envrioment to support Big Data:
+  
+  - capture data
+  - organize data
+  - integral data
+  - analyze data
+  - act on the results of the analysis
+  
+  A framework of the Big Data Technologies that can address the functional requirements for Big Data projects is referred to as a `technology stack`.
+  
+  ![Screen Shot 2020-03-18 at 9.48.13 PM.png](:storage/0ebac2e5-6cf4-4ee0-b1bc-8dfcb6db26d8/ac47493f.png)
+  
+  **Infrastructure Operations**
+  
+  - Optimum performance.
+  - Flexibility.
+  - Anticipate and prevent failures.
+  - Maintain integrity pf the data.
+  
+  **Security Infrastructure**
+  
+  Security and privacy requirements have to by closely aligned to Business requirements.
+  
+  - Data access.
+  - Application access.
+  - Data encryption.
+  - Threat detection.
+  
+  **Organized data services and Tools**
+  
+  Used to gather and assemble data in preparation for further processing:
+  
+  - A distributed file system.
+  - Serialization services.
+  - Coordination services.
+  - ETL Tools.
+  - Worflow Services.
+  
+  **Classes of tools in the layer of analytics**
+  
+  - Analytics and Advanced analytics.
+  - Reporting and dashboard.
+  - Visualization.
+  
+  ***Big Data Applications are either horizontal, meaning that they address problems that are common across industries, or vertical, which means that they are intended to help solve an industry-specific problem***
+  
+  ## Big Data Management Systems-Databases and Warehouses
+  
+  - RDBMS are the primary storage repository.
+  - Data Warehousing, are just a permanent data storage space. Its mainly used for analysis, reporting and BI functions.
+  
+  **Considerations when choosing a data warehouse**
+  
+  - Can is serve as a sink for both batch and streaming data pipelines?
+  - Can the data warehouse scale to meet the needs?
+  - How is the data organized, cataloged, and access controlled?
+  - Is the warehouse designed for performance?
+  - What level of maintenance is required by our engineering team?
+  
+  **Top 10 Data Warehouse Software**
+  - Snowflake.
+  - Amazon Redshift.
+  - BigQuery.
+  - IBM Db2.
+  - Teradata Vantage.
+  - Vertica.
+  - IBM PureData System for Analytics (PDA)
+  - Panoply.
+  - Hive.
+  
+  OLAP involves the basic framework for data analyzing. OLAP Data Processing includes:
+  
+  - Slicing.
+  - Dicing.
+  - Filtering.
+  - Drilling-up.
+  - Drilling-down.
+  
+  **Component of DW**
+  
+  - ETL.
+  - Warehouse.
+  - Metadata.
+  - CUBE.
+  - Reports and Dashboard.
+  
+  1. Data should be stored in a way that has consisten definitions.
+  2. It should be subject-oriented and organized.
+  3. The information should be non-volatile.
+  4. It should be include all the applicable operational sources.
+  
+  Benefits of DW
+  
+  - Strategic alignment and enhanced corporate performance visibility.
+  - Increased team collaboration.
+  - An envrioment which builds a culture that promotes fact-based decision-making.
+  - Non-violation of compliances.
+  - improved business processes.
+  
+  ### DataLake
+  
+  A datalake is a data infrastructure.
+  
+  - Ingests, stores and processes all kinds of structured and unstructured data.
+  - Maintains the different kinds of data in their native formats.
+  - Allows the use of the data for on-demand analysis.
+  - Allows the ingestion, storage, and processing to be done (on promise, on the cloud, a hybrid of both, almost always in a centralized repository).
+  
+  ***The importance of datalakes has grown significantly as well. A Forrester research report suggests that insight-driven businesses are growing 30% faster than their industry counterparts.***
+  
+  RDBMS simply could not handle the variety, velocity and volume of data being generated and demanded by businesses. What was needed was a system that could continuously ingest data, store it, and offer real-time schema-on-read capabilities from a wide variety of data formats, for real-time processing and analysis. With the advent of Hadoop and NoSQL servers, data could be ingested and processed without increased pressure on computing resources.
+  
+  **Key considerations when building datalake**
+  
+  - can your datalake handle all the types of data you have?
+  - can it scale to meet the demand?
+  - Does it support high-throughput ingestion?
+  - Is there fine-grained access control to objects?
+  - Can other tools connect easily?
+  
+  The porpuse of datalake is to make data accesible for analytics.
+  
+  Google Tool Option --> `Google Storage`.
+  
+  What is your data is not usable in its original form?
+  
+  Data proccessing ---> `ETL (Pig, Spark, MapReduce, GCP DataProc, GCP Dataflow)`.
+  
+  What if you data arrives continuosly and endlessly?
+  
+  Data Proccesing ---> `Storm, Spark Streaming, Flume, GCP Pub/Sub, GCP Dataflow, GCP BigQuery`.
+  
+  **Datalake architecture**
+  
+  - ingestion: This refers to all forms of inputs into the datalake and usually contains commercial or open-source tools. Examples include Apache Kafka, Cloudera Morphlines and Amazon Kinesis. The most important aspect to keep at the forefront of your choice is the elasticity of the ingestion tool, and its ability to ingest streaming data.
+  - storage: This essentially is the “lake” in the datalake. Storage is not structured and files are in native formats, incorporating massively parallel processing (MPP). These include NoSQL databases that can be housed in commodity hardware, extremely cost-effective public or hybrid clouds, or even bare-metal servers in the enterprise’s own data center. The current trend is one of colocation and the use of hybrid clouds.
+  - data preprocessing and metadata: In the lake, metadata is maintained using several frameworks and tools. Metadata is used to identify and classify the data in the lake, and while it is not as structured as in a warehouse, it is certainly useful to acquire the correct data required for processing and modelling.
+  - app layer and consumption:  Once the datalake is prepared, the schema-on-read principle is used. The stored data is identified by the associated metadata and classification, and pulled out to the application layer for modelling or visualization, based on the needs of the enterprise. In most cases, these also happen in near real-time.
+  
+  ![Screen Shot 2020-04-07 at 3.01.03 AM.png](:storage/0ebac2e5-6cf4-4ee0-b1bc-8dfcb6db26d8/00927423.png)
+  
+  **Build Production-ready pipelines - Based on GCP**
+  
+  Questions:
+  
+  - how can we sure pipeline health and data cleanliness?
+  - how do we productionalize these pipelines to minimize maintenance and maximize uptime?
+  - how do we respond and adapt to changing schemas business needs?
+  - are we using the latest data engineering tools and practice?
+  
+  `GCP Solution: Cloud Composer (apache airflow - is better than apache oozie, it uses python - oozie uses java) is used to orchestrate production 
+  s`
+'''
+tags: []
+isStarred: false
+isTrashed: false

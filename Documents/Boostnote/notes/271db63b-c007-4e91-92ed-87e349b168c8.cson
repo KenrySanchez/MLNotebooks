@@ -1,0 +1,71 @@
+createdAt: "2020-01-08T04:40:14.220Z"
+updatedAt: "2020-03-10T01:47:05.960Z"
+type: "MARKDOWN_NOTE"
+folder: "28ee488a0fecd6ba780c"
+title: "Rack servers"
+content: '''
+  ### Rack servers
+  
+  The rack servers offer increased computing and improved reliability at reduced cost.
+  
+  Racks are physical collectiosn of nodes in a single location.
+  
+  ### HDFS main concept
+  
+  HDFS is a `data storage cluster` that facilities the storage and management of related file across machines.
+  
+  - Stores data reliably.
+  - Writes data only once.
+  - Allows data to be read from any cached copy of files replicated on diferent machines.
+  - Is fault tolerant.
+  - Ensures portability of data.
+  - Allows for realiable storage and processing large amounts of data.
+  
+  HDFS Keep tracking where the data is located. how??: USing hdfs metadata, which is a template for providing detailed description of every file.
+  
+  The namenode is always stored in the memory and Datanodes are stored in racks.
+  
+  For Data Access, `network bandwidth` and performance is usually better between machines in the same rack than between machines in different racks.
+  
+  ### Introduction to Grid Computing
+  
+  Grid computing is a processor architecture that combines computer resources from various domains to reach a main objective. In grid computing, the computers on the network can work on a task together, thus functioning as a supercomputer.
+  
+  Grid computing is used to increase the processing power by combining computers at differents location. In a grid computing envrioment, these computers can be monitored and managed from a single centralized location.
+  
+  `The grid computing envrioment uses a midleware to divide computing resources amoung several computers`.
+  
+  On the basis of their structure, grid computing could be categorized into two types:
+  
+  - Resource grid: The key concept of a resource grid is the availability of such computaional devices and storage rather than their scalability.  This ensures replication of resources to maintain the reliability. The more resources available (across devices and storage), the more code are deployed and executed in the grid.
+  - E - business grid: refers to a grid where the logic is distributed on multiples sites.
+  
+  The grid computing include complete computers with a separete central proccesing unit, storage device and power suppy. These computers are connected by a conventional that can be public, provate or internet.
+  
+  One disadvantage of grid computing is that computers within a grid don't have a high speed link to communicate their proccesed outcomes. Howewer, the grid computing is suitable for tasks where sharing of resources and proccesing of results are not required.
+  
+  When compared to supercomputers, the grid computing provides a lower efficiency in comparasion to small number of supercomputers. Writing programs for supercomputers is a complex and difficult task because they use customized operating systems, whereas using grid computing allows programmers to write conventional and stand-alone programs to solve differents parts of a given problem.
+  
+  ### Service Level Agreement
+  
+  An SLA refers to a contract between service provider and a customer that describes the Levels of services offered within the time period of the contract. It describes the offered service in measurable terms.
+  
+  Normally, SLA contain the following specifications:
+  
+  - Mean time between failures (MTBF).
+  - Mean time to recovery service failure.
+  - Turnaround time (TAT), specifies require time to complete a task.
+  - Data rate, specifies the speed of the internet connection.
+  - Data usage, specifies the total data usage.
+  - Time Limit, specifies the limit of the service.
+  - Charge, specifies the charge on the basis of usage.
+  
+  **Levels of SLA**
+  
+  - Customer Level.
+  - Service Level.
+  - Multilevel.
+'''
+tags: []
+isStarred: false
+isTrashed: false

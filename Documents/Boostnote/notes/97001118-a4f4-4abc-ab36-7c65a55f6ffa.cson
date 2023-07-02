@@ -1,0 +1,108 @@
+createdAt: "2019-10-02T00:53:33.534Z"
+updatedAt: "2020-04-12T02:14:36.670Z"
+type: "MARKDOWN_NOTE"
+folder: "8af9713f3b0695b046b9"
+title: "DataPrep"
+content: '''
+  ## DataPrep
+  
+  Un servicio inteligente de datos en la nube que permite examinar, limpiar y preparar datos de forma visual para analizarlos y crear modelos de aprendizaje automático
+  
+  ![Screen Shot 2019-10-01 at 8.01.05 PM.png](:storage/97001118-a4f4-4abc-ab36-7c65a55f6ffa/3adc1eb8.png)
+  
+  Code for create dataset in BigQuery
+  ```
+  #standardSQL
+   CREATE OR REPLACE TABLE ecommerce.all_sessions_raw_dataprep
+   OPTIONS(
+     description="Raw data from analyst team to ingest into Cloud Dataprep"
+   ) AS
+   SELECT * FROM `next-marketing-analytics.ecommerce.all_sessions_raw`
+   WHERE date = '20170801'; # limiting to one day of data 56k rows for this lab
+  ```
+  
+  `Reminder: Cloud Dataprep works ONLY in Chrome`
+  
+   Create Flow dialog, specify these details:
+   
+   - Flow name.
+   - Flow Description.
+  
+  **Tip**: When looking for a specific column, click the Find column icon ( ![Ui5aE9D%2FnzHJzNjz1IX48nZPBtuIhbd8YNvv9JZ4r3M%3D](https://cdn.qwiklabs.com/Ui5aE9D%2FnzHJzNjz1IX48nZPBtuIhbd8YNvv9JZ4r3M%3D) ) in the top right corner, then start typing the column's name in the Find column textfield, then click on the column's name. This will automatically scroll the grid to bring the column on the screen.
+  
+  To close the details window, click the `Close Column Details` button in the top right corner.
+  
+  A red bar indicates mismatched values. While sampling data, Cloud Dataprep attempts to automatically identify the type of each column. If you do not see a red bar for the productSKU column, then this means that Cloud Dataprep correctly identified the type for the column (i.e. the String type). If you do see a red bar, then this means that Cloud Dataprep found enough number values in its sampling to determine (incorrectly) that the type should be Integer. Cloud Dataprep also detected some non-integer values and therefore flagged those values as mismatched. In fact, the productSKU is not always an integer (for example, a correct value might be "GGOEGOCD078399"). So in this case, Cloud Dataprep incorrectly identified the column type: it should be a string, not an integer.
+  
+  **Cleaning the data**
+  
+  **Why do we need to pre process data?**
+  
+  Much  of  the  raw  data  contained  in  databases  is  unpreprocessed,  incomplete,  and  noisy.
+  
+  In order to be useful for data analytics purposes, the databases need to undergo preprocessing, in the form of data cleaning and data transformation. Data analytics often deals with data that has not been looked at for years, so that much of the data contains field values that have expired, are no longer relevant, or are simply missing. The overriding objective is to minimize **garbage in, garbage out (GiGo)**, ie, to minimize the Garbage that gets Into our model, so that we can minimize the amount of Garbage that our models give Out. ***Depending on the data set, data preprocessing alone can account for 10 – 60% of all the time and effort for the entire data analytics process.***
+  
+  CHANGE TYPE
+  
+  To ensure that the productSKU column type is a string data type, open the menu to the right of the productSKU column by clicking ![4RIUGfHjcTkc3C8%2F8cuxxnFWjyVXCgyNf0afoBdidWM%3D](https://cdn.qwiklabs.com/4RIUGfHjcTkc3C8%2F8cuxxnFWjyVXCgyNf0afoBdidWM%3D), then click Change `type > String`.
+  
+  DELETE
+  
+  Open the `menu` for the itemQuantity column, and then click `Delete`.
+  
+  DEDUPLICATING ROWS
+  
+  Click the `Filter rows` icon in the toolbar, then click `Remove duplicate rows`.
+  
+  ![M7zceE5c8t7br68Fn1RvH6fg3%2FKtNVJwcCVsa6Zuflo%3D](https://cdn.qwiklabs.com/M7zceE5c8t7br68Fn1RvH6fg3%2FKtNVJwcCVsa6Zuflo%3D)
+  
+  Click Add in the right-hand panel.
+  
+  FILTERING OUT
+  
+  Under the totalTransactionRevenue column, click the `grey Missing values bar`. All rows with a missing value for totalTransactionRevenue are now highlighted in red.
+  
+  In the `Suggestions panel`, in `Delete rows` , click Add.
+  
+  Filtering sessions for PAGE views
+  
+  The dataset contains sessions of different types, for example PAGE (for page views) or EVENT (for triggered events like "viewed product categories" or "added to cart"). To avoid double counting session pageviews, add a filter to only include page view related hits.
+  
+  In the histogram below the type column, click the bar for PAGE. All rows with the type PAGE are now highlighted in green.
+  
+  In the Suggestions panel, in Keep rows, and click Add.
+  
+  **Enriching the data**
+  
+  Creating a new column for a unique session ID
+  
+  - Click on the Merge columns icon in the toolbar.
+  - For Columns, select fullVisitorId and visitId.
+  - For Separator type a single hyphen character: -
+  - For the New column name, type unique_session_id.
+  
+  The unique_session_id is now a combination of the fullVisitorId and visitId.
+  
+  Creating a case statement for the ecommerce action type
+  
+  As you saw earlier, values in the eCommerceAction_type column are integers that map to actual ecommerce actions performed in that session. For example, 3 = "Add to Cart" or 5 = "Check out." This mapping will not be immediately apparent to our end users so let's create a calculated field that brings in the value name.
+  
+  - Click on the `Conditions icon` in the toolbar, then click `Case on single column`.
+  - For Column to evaluate, specify `eCommerceAction_type`.
+  - Next to Cases (1), click Add 8 times for a total of 9 cases.
+  
+  For each Case, specify the following mapping values (including the single quote characters):
+  
+  Adjusting values in the totalTransactionRevenue column
+  
+  As mentioned in the schema, the totalTransactionRevenue column contains values passed to Analytics multiplied by 10^6 (e.g., 2.40 would be given as 2400000). You now divide contents of that column by 10^6 to get the original values.
+  
+  - Open the menu to the right of the totalTransactionRevenue column by clicking ![4RIUGfHjcTkc3C8%2F8cuxxnFWjyVXCgyNf0afoBdidWM%3D](https://cdn.qwiklabs.com/4RIUGfHjcTkc3C8%2F8cuxxnFWjyVXCgyNf0afoBdidWM%3D), then select Calculate > Custom formula.
+  
+  - then select Calculate > Custom formula.
+  - For Formula, type: DIVIDE(totalTransactionRevenue,1000000) and for New column name, type: totalTransactionRevenue1. Notice the preview for the transformation:
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

@@ -1,0 +1,27 @@
+createdAt: "2020-11-10T18:01:53.306Z"
+updatedAt: "2020-11-10T18:26:45.698Z"
+type: "MARKDOWN_NOTE"
+folder: "d95c9bc9473d8dba8318"
+title: "Enterprise AI IBM (Advanced)"
+content: '''
+  ## Enterprise AI IBM (Advanced)
+  
+  ### Core NLP Capabilities (by IBM)
+  
+  - Understand: Semantic Parsing, Concept Extraction, Deep Content Understanding.
+  - Classify: Semantic Analysis, Element Classification, Topic clustering.
+  - Retrieve: Multi-lingual QA, Fine-grained retrievel.
+  - Generate: NL Generation, Summarization.
+  
+  ### Toolkit for Data Quality Analysis and Remedation
+  
+  ![Screen Shot 2020-11-10 at 1.19.14 PM.png](:storage/9e38576d-7609-4968-abf9-15d1d5dfaad5/cc4dcbd4.png)
+  
+  - Validators: Perform data quality assessment and output a data quality score.
+  - Remediators: Corrective actions to fix data quality, and impact on the data quality score.
+  - Constraints: Explicit input provided by domain experts, or implicitly derived by analyzing the data characteristics.
+  - Data Synthesizer: Synthesize data by learning constraints from real data, when actual data cannot be shared due to privacy concerns.![Screen Shot 2020-11-10 at 1.26.10 PM.png](:storage/9e38576d-7609-4968-abf9-15d1d5dfaad5/40f3066f.png)
+'''
+tags: []
+isStarred: false
+isTrashed: false

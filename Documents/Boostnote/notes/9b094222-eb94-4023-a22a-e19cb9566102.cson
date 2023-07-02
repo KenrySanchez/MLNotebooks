@@ -1,0 +1,114 @@
+createdAt: "2019-01-23T02:49:27.152Z"
+updatedAt: "2021-09-09T02:49:16.001Z"
+type: "MARKDOWN_NOTE"
+folder: "2e56bbd9db6601e3e30a"
+title: "HDFS Technicals"
+content: '''
+  ## HDFS Technicals
+  
+  - free: Display the total amount of free and used memory.
+  - top: Provides a dynamic real-time view of a running system.
+  - ps: Provides a snapshopt of the current processes. (use 'ps au')
+  - kill: send a signal to a process.
+  
+  One node will get out of service in three years on average.
+  
+  **GFS Key Components**
+  
+  - components failures are a norm.
+  - even space utilisation.
+  - write once-read-many.
+  
+  Measure of distance when you request file from FS.
+  
+  D = Distance.
+  
+  - if the file is on the same machine, D = 0;
+  - if the file is on the same RACK, D = 2;
+  - if the file is on other RACK, D = 4;
+  - if the file is on other region, D = 6;
+  
+  **States on HDFS**
+  
+  All of this apply on the block file (metadata on the namenode)
+  
+  - FINALIZED: it means that the content of this replica is cool and icy. Technically speaking is frozen. The latter means that meta-information for this block on name node is aligned with all the corresponding replica's states and data. For finalized replicas you have a guarantee that all of them have the same GS number and visible lengths.
+  
+  Each block of data has a version number called Generation Stamp or GS for short. For finalized replicas, you have a guarantee that all of them have the same GS number which can only increase over time. It happens during error recovery process or during data appending to a block.
+  
+  - RBW: Replica Waiting to be Recovered.
+  - RUR: Replica Under Recovery.
+  - TEMPORARY: It is pretty much the same state as RBW except the fact that this data is not visible to user unless finalized. In case of failure, the whole chunk of data is removed without any intermediate recovery state.
+  
+  **List of Recoveries**
+  
+  - Replica Recovery.
+  - Block Recovery.
+  - Lease Recovery.
+  - Pipeline Recovery.
+  
+  Pipeline Recovery: -> pipeline setup (time0 - time1) -> data straming (time1 - time2) -> close (time2 - time3).
+  
+  **HDFS Client**
+  
+  - group: `hdfs groups`: show your dfs ID.
+  - setrep: it provides API to decrease and increase replication factor.
+  - fsck: request namenode to provide information about file blocks and the  allocations.
+  
+  handyWebUi: port `50070`.
+  
+  WebHFDS: There are two ways to access data on the hdfs. `Direct Access` which means access data by direct HTTP request, to namenode and take the notes or `HDFS proxies` which will translate your queries into RPC codes.
+  
+  HDFS is a write once, read several times type of filesystem. Also, you can append a file, but you cannot update a file. So if you need to make an update, you need to create a new file with a different version. `If you need frequent updates and the amount of data is small, then you should use other software as RDBMS or HBASE.`
+  
+  **NameNode Architecture**
+  
+  WAL helps you to persist changes into the storage before applying them.
+  
+  NFS helps you to overcome node crashes so you will be able to restore changes from a remotable storage.
+  
+  secondary node is a node for make a "checkpoint of data", that means that this image has compacts the edit log by creating a new fsimage. New fsimage is made of all the fsimage by applying all stored transactions in edit log.
+  
+  MPP helps to process data in parallel, using a cluster or split the disk in 2 or more disk of node.
+  
+  **Testing I/O Hadoop**
+  
+  Running benchmarks is a good way to verify whether your HDFS cluster is set up properly and performs as expected. `DFSIO is a benchmark test that comes with Hadoop, which can be 􏰌benchmark the read and write performance of a HDFS cluster`.
+  
+  **Rebalancing HDFS**
+  
+  When you add new nodes, HDFS won't rebalance automatically. Howewer, HDFS provides a `rebalancer` tool that can be invoked manually. This tool will balance the data blocks across cluster up to an optional threshold percentage. Rebalancing would be very helpful if you are having space issues in the other existing nodes.
+  
+  use the parameter `–threshold`.
+  
+  - An under-utilized data node is a node whose utilization is less than average utilization – threshold.
+  - An over-utilized data node is a node whose utilization is greater than average utilization + threshold. Smaller threshold values will achieve more evenly balanced nodes, but would take more time for the rebalancing. Default threshold value is 10 percent.
+  - bin/start-balancer.sh –threshold 15
+  
+  **How to calculate minimun namenode RAM size for HDFS with 1 PB capacity, block size 64 MB, average metadata for each bloch is 300 B**
+  
+  Capacity / (block-size * replication) * metadata-size
+  10^15 B / ((64,000,000 B) * 3) * 300B = 1.6 GB
+  
+  
+  **HDDs in your cluster have the following characteristics: average reading speed is 60 MB/s, seek time is 5 ms. You want to spend 0.5 % time for seeking the block, i.e. seek time should be 200 times less than the time to read the block. Estimate the minimum block size.**
+  
+  - size = velocity-read * time-read = 60 mbs * 200 * 5 ms = 60MB
+  - 60MB/s = block size / (5ms *200) = 60MB 
+  
+  `Used space: 242.12 GB (=DFS Used) or 242.12+35.51 = 277.63 GB (=DFS Used + Non DFS Used) - the latter answer is more precise, but the former is also possible`
+  
+  **QUESTIONARY**
+  
+  - What fact is more relevant to the horizontal scaling of the filesystems than to the vertical scaling?. R: Usage of commodity hardware.
+  - The operation 'modify' files is not allowed in distributed FS (HDFS, GS). what was not a reason to do it?. R: reliability and accessibility are mostly achieved by the replication.
+  - How to achieve uniform data distribution across the servers in DFS?. R: splitting large files into blocks increases data items granularity and allows to fill the servers more evenly.
+  - what does a metadata DB contain?. R: Location on the file blocks, File creation Time, File Permissions.
+  - If you have a very important file, what is the best way to protect it in HDFS? R: a replication is used for better reliability and you should also remember about the appropriate access to your data.
+  - What the block size in HDFS does depend on?. R: HDFS block size mostly depends on Namenode RAM amount and Datanode disks performance.
+'''
+tags: [
+  "Data_Eng"
+]
+isStarred: false
+isTrashed: false

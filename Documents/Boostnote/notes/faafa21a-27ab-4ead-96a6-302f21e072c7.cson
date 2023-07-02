@@ -1,0 +1,164 @@
+createdAt: "2021-05-08T19:16:01.491Z"
+updatedAt: "2021-05-08T19:16:51.755Z"
+type: "MARKDOWN_NOTE"
+folder: "2e56bbd9db6601e3e30a"
+title: "Format Applications Samples in Hadoop"
+content: '''
+  ## Format Applications Samples in Hadoop
+  
+  #### MapReduce
+  
+  ```java
+  package com.country.timeline;
+  
+  import java.io.IOException;
+  
+  import org.apache.avro.Schema;
+  import org.apache.avro.SchemaBuilder;
+  import org.apache.hadoop.fs.Path;
+  import org.apache.hadoop.io.Text;
+  import org.apache.hadoop.mapreduce.Job;
+  import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+  import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
+  import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+  import org.apache.parquet.avro.AvroParquetOutputFormat;
+  import org.apache.parquet.avro.AvroWriteSupport;
+  import org.apache.parquet.hadoop.ParquetOutputFormat;
+  import org.apache.parquet.hadoop.metadata.CompressionCodecName;
+  
+  import com.country.timeline.comparator.CustomGroupComparator;
+  import com.country.timeline.comparator.CustomSortComparator;
+  import com.country.timeline.mappers.CountryEventsMappers;
+  import com.country.timeline.partioners.CountryPartion;
+  import com.country.timeline.reducers.CountryEventsReducers;
+  
+  /**
+   * Hello world!
+   *
+   */
+  public class App {
+    
+    public static final String JOB_NAME = "Country_Timeline_Events";
+    
+    public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
+      
+      Job job = Job.getInstance();
+      job.setJobName(JOB_NAME);
+      job.setJarByClass(App.class);
+      
+      //custom partion and sorting
+      job.setPartitionerClass(CountryPartion.class);
+      job.setSortComparatorClass(CustomSortComparator.class);
+      job.setGroupingComparatorClass(CustomGroupComparator.class);
+  
+      //Job Mappers/Reducers
+      job.setMapperClass(CountryEventsMappers.class);
+      job.setReducerClass(CountryEventsReducers.class);
+      
+      //Set the type output key/value
+      job.setOutputKeyClass(Text.class);
+      job.setOutputValueClass(Text.class);
+      
+      //Set I/O Format
+      job.setInputFormatClass(TextInputFormat.class);
+      job.setOutputFormatClass(AvroParquetOutputFormat.class);
+      
+      FileInputFormat.addInputPath(job, new Path(args[0]));
+      FileOutputFormat.setOutputPath(job, new Path(args[1]));
+      
+      //Parquet Output
+  //    ParquetOutputFormat.setCompression(job, CompressionCodecName.GZIP);
+  //    ParquetOutputFormat.setCompressOutput(job, true);
+  //    ParquetOutputFormat.setOutputPath(job, new Path(args[1]));
+      
+      //Avro Schema
+      Schema schema = SchemaBuilder.record("countryTimeline").namespace("org.apache.avro.ipc").fields().name("country")
+          .type().nullable().stringType().noDefault().name("date").type().nullable().stringType().noDefault()
+          .name("nEvents").type().nullable().stringType().noDefault()
+          .endRecord();
+          
+  //    ParquetOutputFormat.setWriteSupportClass(job, AvroWriteSupport.class);
+      
+      AvroParquetOutputFormat.setCompression(job, CompressionCodecName.GZIP);
+      AvroParquetOutputFormat.setCompressOutput(job, true);
+      AvroParquetOutputFormat.setSchema(job, schema);
+      
+      boolean result = job.waitForCompletion(true);
+      
+      System.exit(result ? 0 : 1);
+    }
+  }
+  ```
+  
+  ```java
+  package com.country.timeline.reducers;
+  
+  import java.io.IOException;
+  
+  import org.apache.avro.Schema;
+  import org.apache.avro.SchemaBuilder;
+  import org.apache.avro.generic.GenericData;
+  import org.apache.avro.generic.GenericRecord;
+  import org.apache.hadoop.io.Text;
+  import org.apache.hadoop.mapreduce.Reducer;
+  
+  import com.country.timeline.utils.CharacterEnums;
+  
+  public class CountryEventsReducers extends Reducer<Text, Text, Void, GenericRecord> {
+    
+    public void reduce(Text key, Iterable<Text> values, Context context)
+        throws IOException, InterruptedException {
+      
+      Schema schema = SchemaBuilder.record("countryTimeline").namespace("org.apache.avro.ipc").fields().name("country")
+          .type().nullable().stringType().noDefault().name("date").type().nullable().stringType().noDefault()
+          .name("nEvents").type().nullable().stringType().noDefault()
+          .endRecord();
+      
+      String currentDate = "";
+      int numEvents = 0;
+      
+      for (Text value: values) {
+        
+        if (currentDate.length() == 0) {
+          currentDate = value.toString();
+        }
+        
+        if (!currentDate.equalsIgnoreCase(value.toString())) {
+  
+          String finalText = key.toString().split(CharacterEnums.SEPARATOR_DELIMITER.getValue())[0]
+              + CharacterEnums.WHITESPACE_DELIMITER.getValue() + currentDate
+              + CharacterEnums.WHITESPACE_DELIMITER.getValue() + numEvents;
+          
+          GenericRecord record = new GenericData.Record(schema);
+  
+          context.write(null, record);
+  
+          currentDate = value.toString();
+          numEvents = 1;
+  
+        } else {
+  
+          numEvents++;
+        }
+        
+      }
+      
+      GenericRecord record = new GenericData.Record(schema);
+  
+      context.write(null, record);
+  
+    }
+  
+    public String getFinalText(Text key, String currentDate, Integer numEvents) {
+      return key.toString().split(CharacterEnums.SEPARATOR_DELIMITER.getValue())[0]
+          + CharacterEnums.WHITESPACE_DELIMITER.getValue() + currentDate
+          + CharacterEnums.WHITESPACE_DELIMITER.getValue() + numEvents;
+    }
+  
+  }
+  
+  ```
+'''
+tags: []
+isStarred: false
+isTrashed: false

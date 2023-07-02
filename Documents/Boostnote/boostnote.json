@@ -1,0 +1,100 @@
+{
+  "folders": [
+    {
+      "key": "ea7fabfaecef0910d2c8",
+      "color": "#1278BD",
+      "name": "Default"
+    },
+    {
+      "key": "d464926e49d183704d56",
+      "color": "#30D5C8",
+      "name": "Big Data - CRM and CUX"
+    },
+    {
+      "key": "0fe456c2fe3ab010875c",
+      "color": "#30D5C8",
+      "name": "Big Data - Casos de uso"
+    },
+    {
+      "key": "4a17dc80ccbb28b98a68",
+      "color": "#30D5C8",
+      "name": "Big Data - Fases del Dato"
+    },
+    {
+      "key": "684eca6ee5c27e941bf4",
+      "color": "#30D5C8",
+      "name": "Big Data - Proteccion, Restricciones y Seguridad en Datos"
+    },
+    {
+      "key": "48fbce2016d43f0faffa",
+      "color": "#E8D252",
+      "name": "Big Data - Big Data TI Projects Planificacion"
+    },
+    {
+      "key": "24cb38cf2bc84305c3de",
+      "color": "#E8D252",
+      "name": "Big Data - BIG DATA EN LA EMPRESA"
+    },
+    {
+      "key": "a41d44d96fbd153c28c9",
+      "color": "#FF8E00",
+      "name": "Big Data - Analisis, ML y Data Mining"
+    },
+    {
+      "key": "6ce8e9fa5ab8d660e1a1",
+      "color": "#B013A4",
+      "name": "Big Data - Investigacion y Desarrollo"
+    },
+    {
+      "key": "2e56bbd9db6601e3e30a",
+      "color": "#E10051",
+      "name": "Big Data Practice - Hadoop"
+    },
+    {
+      "key": "a431d02702033fa18596",
+      "color": "#E8D252",
+      "name": "Big Data Practice - Spark"
+    },
+    {
+      "key": "7b6dd385ab806689b09e",
+      "color": "#FF8E00",
+      "name": "Big Data - Data Sciencies"
+    },
+    {
+      "key": "d95c9bc9473d8dba8318",
+      "color": "#FF8E00",
+      "name": "Big Data - IBM AI Workflow"
+    },
+    {
+      "key": "28ee488a0fecd6ba780c",
+      "color": "#E10051",
+      "name": "Big Data - Hadoop Yarn Clustering Managament"
+    },
+    {
+      "key": "6ef4a199ec2ea1601e84",
+      "color": "#3FD941",
+      "name": "Big Data - Apache Storm"
+    },
+    {
+      "key": "8af9713f3b0695b046b9",
+      "color": "#E8D252",
+      "name": "Big Data - GCP"
+    },
+    {
+      "key": "8b224285402d815a35a7",
+      "color": "#E8D252",
+      "name": "Webinar"
+    },
+    {
+      "key": "af73b6258c29a0815419",
+      "color": "#30D5C8",
+      "name": "AWS - Data Engineering"
+    },
+    {
+      "key": "e4cbdec55dfbb6bc59d4",
+      "color": "#2BA5F7",
+      "name": "Ml system design"
+    }
+  ],
+  "version": "1.0"
+}

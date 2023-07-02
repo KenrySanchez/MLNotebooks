@@ -1,0 +1,136 @@
+createdAt: "2018-09-14T01:30:35.890Z"
+updatedAt: "2021-07-05T19:21:16.832Z"
+type: "MARKDOWN_NOTE"
+folder: "48fbce2016d43f0faffa"
+title: "Entornos Big Data"
+content: '''
+  ## Entornos Big Data
+  
+  #### Elementos de Bajo Nivel
+  
+  **Entornos en una plataforma de Big Data**
+  
+  - Servidores - Unidad minima de computo en la plataforma
+  - Redes
+  - Almacenamiento
+  - Sistemas operativos - Manejan los recursos y los ponen a disposicion de los programas que se ejecutan en ellos
+  - Procesamiento de la informacion - Capa encargada a realizar las funciones dentro de nuestra arquitectura
+  - Lenguajes de programacion
+  - 3 V's Big Data
+  
+  Los 3 pilares sobre los que descansan una arquitectura Big Data son:
+  
+  - Escalabilidad
+  - Disponibilidad
+  - Fiabilidad
+  
+  **Servidores**
+  
+  En un proyecto de Big Data, siempre ejecutaremos las tareas sobre servidores que seran nodos dentro de nuestra arquitectura. En sistemas distribuidos, haremos un sistema de mallas en modo cluster.
+  
+  DESVENTAJAS:
+  
+    - Complica la arquitectura de nuestro sistema
+    - En caso de haber algun problema con algun nodo, ello afectara toda la malla
+  
+  VENTAJAS:
+    
+    - Podemos configurar el nodo de la forma en como nosotros los requeramos, de modo que puedan aumentar las capacidades de rendimiento y procesamiento de datos
+    - Eficientar en gran medida el consumo de hardware. Menos pesado para la solucion
+  
+    En Big Data, los servidores funcionan como una **entidad**, de modo que la union de varias entidades conforman un **enjambre**.
+    
+  SEGURIDAD PARA EL CLUSTER:
+  
+    - Es habitual tener un almacen de claves centralizadas y generar una firma para cada una de las maquinas del cluster. Esta firma es igual al total de maquinas que tenemos en el cluster. Si hay una maquina mas que no este validad por las llaves, esa no pertenece a la configuracion del cluster. Manetener seguro el almacen de claves para no generar brechas de seguridad.
+  
+  MODELOS DE MONTAJE EN SERVIDORES:
+  
+  - **on-promise**: instalar el hardware en las instalaciones de la compañia (Costoso). Costoso en el desembolso inicial y tambien en el mantenimiento de los servidores. Resultaria economico ya contar con los servidores, sin embargo estos traerian problemas de rendimiento si no son los mas actualizados.
+  
+  - **cloud**: nos dan mejor escalado, al poder crear y destruir instancias segun nuestra necesidad y en el caso de la nube publica, un escalado vertical infinito (Es el mas ideal).
+  
+  La eleccion de uno u otro modelo nos lo dara el caso de uso, las regulaciones que tenga la informacion sobre las que vamos a actuar, y nuestra predisposicion a ceder este tipo de informacion a terceros.
+  
+  Una opcion considerada pudiera ser cloud híbrido. Por un lado tendremos el escalado que nos da la nube y del lado del on-promise, el almacen donde queremos que vivan nuestros datos.
+  
+  **Ejemplo en la nota tecnica de un modelo hibrido**
+  
+  la escalabilidad, disponibilidad y fiabilidad nos la da el clúster y es parte esencial del sistema.
+  
+  **Redes**
+  
+  Las redes de los entornos de Big Data deben soportar:
+  
+  - Aislamiento: evitar sobre carga de datos en las redes por parte de las entidades/servidores que constituyen la malla.
+  - Seguridad
+  - Rendimiento
+  - Baja Latencia: no generar cuellos de botella
+  
+  Para poder configurar/emular/desplegar redes completamente visualizadas por software, podemos usar productos que implementen **SDN** (Software-defined Network).
+  
+  **SDN**: Software que permite controlar por un lado la capa de infraestructura real en una capa de datos, por otro lado, con la capa de control gestionar las demandas de las aplicaciones que necesitan red y servicios de red.
+  
+  para nuestros servicios Lo importante es que podamos garantizar el aislamiento, la seguridad y el rendimiento.
+  
+  En la parte de redes la escalabilidad, disponibilidad y fiabilidad la solemos conseguir mediante virtualización.
+  
+  **Almacenamiento**
+  
+  Para este caso, el almacenamiento de datos vienen dadas en las siguientes maneras:
+  
+  - Almacenamiento de Objetos (igual a almacenar objetos dentro de un arreglo con sus mismas funciones, add, get, set, list. Comandos se hacen a traves de una shell siguiendo POSIX. Portable Operating System Interface, UNIX).
+  
+  - Almacenamiento de datos estructurados.
+  - Almacenamiento de datos no estructurados.
+  
+  Los datos a guardar, que flujen dentro del flujo de proceso pueden guardarse de manera efimera para ejecutar algunos procesos (cache, cacher.set(clave, valor)) o persistir para hacer extraccion de informacion a lo largo del ciclo de vida de la plataforma.
+  
+  Los permisos en este punto son los mismos en cuanto al nivel de seguridad del cluster.
+  
+  El secreto para que el almacenamiento pueda cumplir con la escalabilidad, disponibilidad y fiabilidad es que se encuentre distribuido. Segun el teorema CAP, no podemos garantizar a la vez que en un almacenamiento tenga consistencia, disponibilidad y que ademas sea tolerante a particiones, por ello cada producto tiene su propia aproximacion, y en ocasiones es posible configurarlo para que se comporte de fprma diferente segun este teorema.
+  
+  [¿Qué es el teorema CAP? - Quora](https://es.quora.com/Qué-es-el-teorema-CAP)
+  
+  ***En términos prácticos: si tienes, por ejemplo, un sitio web como Amazon que se ejecuta empleando múltiples servidores a la vez de forma tal que alguno de ellos te devolverá una página web la próxima vez que hagas click en algún enlace, si ocurre un problema técnico por el cual algunos de ellos quedan aislados del resto no es razonable esperar que los contenidos del carrito de compras sean consistentes (algunas veces podrían aparecer menos items de los que uno ya había agregado) pero sin embargo el sitio web seguiría funcionando (estaría disponible) y se habría exhibido un cierto grado de tolerancia al particionamiento. En este ejemplo sacrificamos la consistencia (C) para poder tener un sistema con disponibilidad y tolerancia al particionamiento (AP).***
+  
+  **Sistemas Operativos**
+  
+  Habitualmente, para los nodos del cluster se suelen utilizar OS en UNIX/LINUX. Estas herramientas manejan todo el cluster como si fuera una entidad unica.
+  
+  **DC/OS**: Se trata de un OS que nos permite extraer los recursos de cada servidor y añadirlos en un Pool de tareas de modo que nuestro framework de Big Data los puedan usar como mejor les convenga. Estas plataformas funcionan sobre **Apache Mesos**, que replica el modelo de UNIX pero lo aplica de manera distribuida.
+  
+  Los sistemas para Big Data garantizan la escalabilidad, disponibilidad y fiabilidad por que tienen componentes que estan monitorizando cada unos de los componentes que las integran.
+  
+  ***Cuando se detecta un fallo, son capaces de autorecuperarse reiniciando la maquina o cambiando el nodo sobre el que se va a ejecutar alguna aplicacion***
+  
+  **Procesamiento de la informacion**
+  
+  Para el procesamiento de datos, usaremos **MPP**. Habitualmente tenemos productos que bien trabajan en disco como MapReduce o en memoria como Spark o Storm.
+  
+  Podemos usar Jenkins para configurar Jobs de trabajo en procesamiento.
+  
+  ----
+  
+  #### Arquitectura para tratamiento de datos
+  
+  **Analisis en tiempo real**
+  
+  Por lo general estos analisis se realizan a traves de arquitecturas orientadas a la nube, a la vez sin parar los procesos de ETL y eventos de funcion de la cadena del big data. En el tiempo real, **el tiempo de respuesta es critico**, debemos tener en cuenta que nuestro sistema debe responder en menos de un tiempo establecido, siendo en la mayoria de los casos preferible que se pierda la informacion a que se tarde demasiado en responder.
+  
+  Nuestra arquitectura de informacion debe recurrir a arquitecturas orientadas a eventos. Generalmente sera una arquitectura con 3 capas, donde por un lado tendremos unos origenes de datos que estan emitiendo informacion en forma de eventos, un sistema de almacenamiento intermedio de mensajeria y por otro lado sistemas que requieren estar informados de dichos eventos.
+  
+  **MPP (Massive Parallell Process)**
+  
+  Se procesa una gran cantidad de informacion a la vez. En la arquitectura MPP existe un enjambre de nodos donde cada uno tiene su propio procesador y su propia memoria, asi como su propio disco. Para eliminar la ineficiencia de la red, se eliminan las conexiones de modo que cada nodo procesa un segmento de la informacion que tiene de forma local, de modo que cada nodo se comporta como si fuera un almacenamiento distribuido.
+  
+  Este tipo de configuracion llamada "shared nothing" tambien es compatible a escalado horizontal, ya que a medida como vaya requiriendo procesamiento se pueden ir añadiendo mas nodos al enjambre.
+  
+  Lo que se hace es particionar los datos a traves de un "sharding". Esto es, para cada dato que queremos obtener/guardar se calcula una clave que identifica a que nodo pertenece el mismo. Una vez obtenido, esa clave nos sirve para hacer set o get del dato.
+'''
+tags: [
+  "Build_Big_Data_Project"
+  "big_data_theory"
+]
+isStarred: false
+isTrashed: false

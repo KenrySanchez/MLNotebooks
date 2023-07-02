@@ -1,0 +1,105 @@
+createdAt: "2019-03-11T04:27:18.254Z"
+updatedAt: "2020-05-24T02:55:20.772Z"
+type: "MARKDOWN_NOTE"
+folder: "7b6dd385ab806689b09e"
+title: "Data Science Methodology"
+content: '''
+  ## Data Science Methodology
+  
+  The **Data science methodology** aims to answer the following 10 questions in this prescrib sequence:
+  
+  **From problem to approach**
+  
+  1. What is the problem that you are triying to solve?
+  2. How can you use data to answer the question?
+  
+  **Working with the data**
+  
+  3. What data do you need to answer the question?
+  4. Where is the data coming from (identify the source) and how will you get it?
+  5. Is the data that you collected representative of the problem to be solved?
+  6. What additional work is required to manipulate and work with the data?
+  
+  **Deriving the answer**
+  
+  7. In what way can the data be visualized to get the answer that is required?
+  8. Does the model used really answer the initial question or does it need to be adjusted?
+  9. Can you put the model into practice/
+  10. Can you get constructive feedback into answering the question?
+  
+  ### From Problem to approach
+  
+  **Business understanding**, having this undestarnding is placed at the beginning of the methodology because getting clarity around the problem to be solved, allows you to to determinate which **data** will be used to answer the question. Establishing a clearly defined question starts with understanding the GOAL of the person who is asking the question. Once the goal is clarified, the next piece of the puzzle is to figure out the objectives that are in support of the goal.
+  
+  - Establish the questions.
+  - Define the GOAL of the proposal.
+  - Establish Objectives which help to reach the goal.
+  
+  **Analytic Approach**, Selecting the right approach depends on the question being asked. The approach involves seeking clarification from the person who is asking the question. Once the problem to be addressed is defined, the appropiate analytic approach is selected on the context of the business requirements. This means identifying what type pattenrs will be needed to address the question most effectively.
+  
+  Types of Analytic
+  - Descriptive: Current states.
+  - Diagnostic (statical analysis): what happened? why is this happening?
+  - Predictive (Forecasting): What if these trends continue? What will happen next?
+  - Prescriptive: How do we solve it?
+  
+  **if the question is to determinate probabilities of an action**
+    - use a predictive model.
+  
+  **if the question is to show a relationship**
+    - Use a descriptive model.
+  
+  **if the question requires a yes/no answer**
+    - Use a classification model.
+  
+  **Statical analysis applies to problems that requires counts**
+  
+  **ML**, Identifies relationships or trends in data that might otherwise not be accesible or identified. In the case where the question is to learn about human behavior, then an appropiate response would be to use a clustering association approaches.
+  
+  ## From Requirements to Collection
+  
+  **Data Requirements**, means identify the data and the source of that data wich could help to reach the goal of the business understanding phase. Also means identify and undestand the right format of the data (which could lead to processing that data firts) for will use it on a analytical aproach.
+  
+  **Data Collection**, in this phase data requirements are revised and decisions are made as to whether or not the collection requires more or less data. Then, data scientist will have a good undestanding of what they will be working with. Techniques such as descriptive statistics and visualization can be applied to the data set, to assess the content, quality, and initial insights about the data.
+  
+  It is important to gather all of the relevant data in this stage, because ***access and quality of the data may force you to modify the business question***. It is very difficult to assess the quality of data when it is not in hand. If possible effort should be made to collect even marginally related data.
+  
+  ## From Understanding to Preparation
+  
+  **Data Understanding**, This answer the question: is the data you collected representative of the problem?. In order to understand the data: 
+  
+  - descriptive statiistics needed to be run agains the data columns that would become variables in the model.
+  - Pairwise correlations were used to see how closely certain variables were related, and which ones, if any, were very highly correlated, meaning that they would be essentialy redundat, thus making only one revelent for modeling.
+  -  histograms of the variables were examined to understand their distributions. Histograms are a good way to understand how values or a variable are distributed, and which sorts of data preparation may be needed to make the variable more useful in a model.
+  
+  **Data Preparation**, is the process of getting the data into a state where it may be easier to work with. Specially, the data preparation stage of the methology answer: **What are the ways in which data is prepared?**. To work effectevily with the data, it mus be prepared in a way that addresses missing or invalid values and remove duplicates, toward ensuring that everything is properly formatted.
+  
+  **Feature engineering** is also a part of data preparation. It's the process of using domain knowledge of the data to create feaatures make the machine learning algorithms work. A feature is a characteristic that might help when solving a problem. Features within the data are important to predictive models and will influence the results you want to achieve. Feature engineering is critical when machine learning tools are being applied to analyze the data.
+  
+  __HINT__: This is the stage where we enumerate the advantages and disadvantages of the possible modeling solutions.
+  
+  Once the transformations are carried or staged as part of some pipeline it is a valuable exercise to document what you know about the process so far. The form that this most commonly takes is a table of possible modeling strategies complete with the advantages and disadvantages of each.
+  
+  ## From Modeling to Evaluation
+  
+  **Modeling**, Data modeling focuses on developing models that are either descriptive or predictive. An example of a descriptive model might examine things like: if a person did this, then they are likely to prefer that.A predictive model tries to yield yes/no, or stop/go type outcomes. These models are based on the analytic approach that was taken, either statistically driven or machine learning driven. The data scientist will use a training set for predictive modelling. A training set is a set of historical data in which the outcomes are already known. The training set acts like a gauge to determine if the model needs to be calibrated.
+  
+  [Understanding AUC - ROC Curve – Towards Data Science](https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5)
+  
+  **Evaluation**, Evaluation allows the quality of the model to be assessed but it's also an opportunity to see if it meets the initial request. Evaluation answers the question: Does the model used really answer the initial question or does it need to be adjusted? Model evaluation can have two main phases. The first is the **diagnostic measures phase**, which is used to ensure the model is working as intended. If the model is a predictive model, a decision tree can be used to evaluate if the answer the model can output, is aligned to the initial design. It can be used to see where there are areas that require adjustments. If the model is a descriptive model, one in which relationships are being assessed, then a testing set with known outcomes can be applied, and the model can be refined as needed. The second phase of evaluation that may be used is **statistical significance testing**. This type of evaluation can be applied to the model to ensure that the data is being properly handled and interpreted within the model. This is designed to avoid unnecessary second guessing when the answer is revealed.
+  
+  The ROC curve is a useful diagnostic tool in determining the optimal classification model. This curve quantifies how well a binary classification model performs, declassifying the yes and no outcomes when some discrimination criterion is varied. In this case, the criterion is a relative misclassification cost. By plotting the true-positive rate against the false-positive rate for different values of the relative misclassification cost, the ROC curve helped in selecting the optimal model.
+  
+  ## From Deployment to Feedback
+  
+  **Deployment**,  the key to making the answer relevant and useful to address the initial question, involves getting the stakeholders familiar with the tool produced. In a business scenario, stakeholders have different specialties that will help make this happen, such as the solution owner, marketing, application developers, and IT administration. Once the model is evaluated and the data scientist is confident it will work, it is deployed and put to the ultimate test. Depending on the purpose of the model, it may be rolled out to a limited group of users or in a test environment, to build up confidence in applying the outcome for use across the board.
+  
+  **FeedBack**, feedback from the users will help to refine the model and assess it for performance and impact. The value of the model will be dependent on successfully incorporating feedback and making adjustments for as long as the solution is required. Throughout the Data Science Methodology, each step sets the stage for the next. Making the methodology cyclical, ensures refinement at each stage in the game. The feedback process is rooted in the notion that, the more you know, the more that you'll want to know.
+  
+  As a scientist you always want to remain skeptical about your findings until you have `multiple ways to corroborate them`. You will also want to always be aware of the overall goal of why you are doing the work you are doing. This example is an interesting metaphor for what can happen as a data scientist. It is possible to go down a path that may only marginally be related to the central business question. You need to always ask yourself is this the best way for me or my team to address the business problem? The questions your ask here are going to guide how best to iterate on the entire workflow.
+'''
+tags: [
+  "BIG_DATA_MODELATION"
+]
+isStarred: false
+isTrashed: false

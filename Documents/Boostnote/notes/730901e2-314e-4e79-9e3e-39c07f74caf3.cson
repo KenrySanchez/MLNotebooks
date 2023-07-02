@@ -1,0 +1,267 @@
+createdAt: "2018-10-11T07:00:44.183Z"
+updatedAt: "2021-07-05T19:17:50.297Z"
+type: "MARKDOWN_NOTE"
+folder: "a41d44d96fbd153c28c9"
+title: "DataMining - Teoria"
+content: '''
+  ## DataMining - Teoria
+  Prof: prof_amatilla@esden.es
+  
+  #### Funciones Basicas
+  
+  - Caracterizacion y discriminacion.
+  - Clasificacion y Prediccion.
+  - Cluster Analisis.
+  - Analisis de Outliers.
+  - Analisis de Tendencias y evolucion.
+  
+  
+  Es Generalizar resumir y constrastar las caracteristicas de los datos.
+  
+  La clasificacion seria encontrar modelos que describan clases para una distintos datos.
+  
+  Prediccion de valores numericos.
+  
+  Cluster de analisis cuando no se sabe a que parte pertenece un dato.
+  
+  Clustering se basa en el principio de maximizar la magnitud dentro de la misma clase.
+  - KNN
+  
+  Outlier es un objeto o dato que no respeta el comportamiento general, puede ser un ruido lo cual significa que no es un dato relevante.
+  
+  Series de tiempo donde se ve secuencialmente como se comporta un dato dentro del tiempo (Es una progression).
+  
+  **El objetivo** es un atributo o factor que queremos predecir.
+  
+  La ingenieria de factores es un proceso donde se realiza el analisis de los datos para revisar si son validos y limpios.
+  
+  De los datos se extraen un modelo (un "insight") el cual se aplicara de modo de entrenamiento donde se extraiga el nuevo conocimiento.
+  
+  -----
+  
+  #### Algoritmos
+  
+  Algoritmo cualitativo, cuando en sus instrucciones no se ingresan valores numericos, solo valores en cadenas ("string").
+  
+  Algoritmo cuantitativo, donde estan ingresados valores numericos.
+  
+  TECNICAS DE REPRESENTACION
+  
+  Para la representacion de un algoritmo se usan algunos metodos: diagramas de flujo, pseudocodigo, Diagramas nassi-sheniderman, lenguaje natural o formulas matematicas.
+  
+  #### Proceso de data mining
+  
+  1. Seleccion de conjunto de datos.
+  2. Analisis de las propiedades de los datos.
+  3. Transformacion de los datos de entrada.
+  4. Tecnicas a aplicar en la data mining.
+  5. Extraccion del conocimiento.
+  6. Interpretar y evaluar lo conocido.
+  
+  PROTOCOLO DE LA MINERIA DE DATOS
+  
+  - Compresion del negocio y del problema a resolver.
+  - Determinacion, obtencion y limpieza: de los datos necesarios.
+  - Creacion de modelos matematicos.
+  - Validacion, comunicacion de los resultados obtenidos.
+  - Integracion si procede, de los resultados de un sistema.
+  
+  datos de entrenamiento, pares de objeto v<a,b>. R = Resultados deseados.
+  
+  Algoritmo supervisado ---> Funcion(x) para predeccion.
+  
+  Algoritmo no supervisado ----> Funcion(x) para obtener descubrimiento.
+  
+  Caja Negra (algoritmo no supervisado, conjunto de instrucciones y algoritmos que realizan procesos para el descubrimiento de conocimiento) ---> Objetivo.
+  
+  El paradigma de las empresas grandes se estan orientando a los valores humanos. Ya que aumentar la felicidad de los empleados repercuta en la ejecucion y rendimiento de trabajo de los empleados.
+  
+  ---
+  
+  Algoritmos Supervisados
+  
+  - Arboles de decision.
+  - Naive Bayes Clasification: Familia de clasificadores. Basado en el teorema de Bayes
+  - Ordinary Least Squares Regression: Metodo de regresion lineal.
+  - Regresion Logistica: Modelar un resultado binomial. Estableciendo una funcion logistica.
+  - Support Vector Machines: Algoritmo de clasificacion de tipo binario.
+  - Metodos Ensemble: Algoritmos que construye un conjunto de clasificadores.
+  
+  Algoritmos no supervisados
+  
+  - Clustering: Agrupar conjunto de objetos, los objetos se agrupan por similitud de datos y valores.
+  - Analisis de componentes principales: Procedimiento estadistico, realiza una transformacion ortogonal. Alinea los valores de manera ortogonal. Se deben eliminar los datos que hagan ruido.
+  - Singular Value Decomposition: Factorizacion de una matriz compleja lineal.
+  - Analisis de componentes independientes: Tecninca estadistica para revelar los factores ocultos.
+  
+  Algoritmos de aprendizaje profundo
+  
+  Conjunto de algoritmos ("Perceptron") que son automaticos que intentan modelas abstracciones de alto nivel de datos, usando arquitecturas compuestas por transformaciones de abstracciones no lineales multiples.
+  
+  Aprenden mediante ejemplos (datos).
+  
+  ¿Por que es importante? R: Es preciso a la hora de aprender de manera impirica. De modo que puedan implementarse a soluciones impiricas de manera precisa.
+  
+  Cuando hay una similitud de dos atributos donde la coinciencia es 100%, se realiza un match.
+  
+  Cuando hay una diferencia de dos atributos donde la coinciencia no es 100%, se realiza un hit.
+  
+  Metodos combinados son algoritmos de aprendisaje que contruyen un conjunto de clasificadores que clasifican nuevos puntos de datos haciendo uso del boto ponderado de sus predicciones.
+  
+  Metodos de estimado combinado
+  
+  - Estimado combinado
+  - Metodos de empuje: Los estimadores  construyen por instrucciones y tratan de reducir el sesgo combinado.
+  
+  La clave es combinar varios modelos debiles de modo que pueda generarse un modelo grande. Estos algoritmos reducen un poco el sesgo.
+  
+  Cuidar la implicacion de sobreajustes en estadistica.
+  
+  El sesgo es la variale que modifica la inclinacion de la recta en la funcion de regresion lineal. Es un elemento que tambien se usa en las redes neuronales.
+  
+  -------
+  
+  La interaccion ayuda a que el entrenamiento del procesamiento ("algoritmo") sea mas correcto.
+  
+  REDES NEURONALES
+  
+  Los **conectores** es un elemento importante en las redes neuronales. Tambien es una herramienta de analisis estadisticos. Parte de ejemplos para luego transformarse.
+  
+  Buscar: Teorema de kolmogorov.
+  
+  Perceptron multicapa es la union de varios perceptrones.
+  
+  ------
+  
+  Pre requisitos para el exito de los data sciences:
+  
+  - Caso de usos
+  - Business Domain Expertise
+  - Good Data Quality (Veracity) and Access to the data (Velocity)
+  - Consisten Data Volume
+  - Adquate Modeling approach (ML, IA, DL)
+  
+  Los modelos analiticos se hacen para ganar un "insight" y aplicar una accion.
+  
+  Los Data Sciences necesitan el apoyo de la comunidad para mantener el desarrollo en sus modelos.
+  
+  ------
+  
+  #### Active Enterprise Intelligence
+  
+  Inteligencia + velocidad = AEI
+  
+  - Inteligencia - La trata de la informacion como un objetivo estrategico de la empresa. Integrar datos a traves de la mejora de toma de decisiones.
+  
+  - velocidad
+  
+  Automatizar las decisiones de:
+  - decisiones muy frecuentes, que si se pueden "explicar", Donde la velocidad es crucial.
+  
+  No Automatizar:
+  - decisiones ambiguas, muy complejas. Sin datos disponibles.
+  
+  ACELERADORES DE DECISIONES EN TIEMPO REAL
+  
+  `
+  Eventos de negocio --> Datos Recogidos --> Inteligencia Producida --> Accion a Tomar
+  `
+  En todos los procesos aplica la latencia.
+  
+  Depende del tipo de aplicacion donde se vaya a implementar, no siempre vale la pena reducir el costo de las operaciones:
+  
+  - "Real" Real time
+  - NEar Real Time
+  - Comercial Time
+  - Batch
+  
+  Los Business Analytics y los CIO Diferencian sus acciones y necesidades en base a sus requisitos. Ambos tienen tareas similares pero no aplican las mismas herramientas y soluciones.
+  
+  Se debe ajustar la formula de la recta a sacar en F(X) Tomando la mayor cantidad de datos y nuevos algoritmos de precision.
+  
+  Los data science lo que hacen es contruir modelos empiricos basados en:
+  
+  - Funciones escalables
+  - Faster and ligther than physical models
+  
+  Objetivos:
+  
+  - Reduccion de costos
+  - Optimizacion de sistemas complejos
+  - To give insight on system complex.
+  
+  Pre-Requisitos:
+  
+  - The relevant information must be contained in the data
+  - good dara quality required
+  - The volume of data must be contained with the targed cuarity
+  
+  ----
+  
+  #### Data Quality
+  
+  La calidad de datos es buena si es:
+  
+  - Es precisa: Sin errores de salida o entrada.
+  - Completa: Disponible donde es necesaria
+  - Coherente y Consistente
+  - Subordinado
+  - Enriquecido
+  - Mantenida y Documentada
+  
+  DATA QUALITY IMPROVEMENT MODEL
+  
+  Discover
+  Defined and Analyze
+  Act
+  Govern
+  
+  Antes de hacer el modelo se debe hacer un profiling de los datos. Implemenetar un `Data Quality Scorecard`.
+  
+  -----
+  
+  #### DataLAB: Entorno de trabajo Data Science sin danar DataLake
+  
+  DataLAB es un entorno de... Optimizacion de desarrollo y el costo de las respuestas de negocio. Es un entorno agil dentro del datalake que tiene la opcion de incrementar la flexibilidad y reactivacion para hacer pruebas de negocio. Se hacen procesos en el dataLab sin tener que danar el dataLake (SandBox).
+  
+  Se debe colocar un `Active Workload Management` para poder controlar el proceso de rendimiento dentro del cluster (DataLake).
+  
+  Luego de generar el modelo de produccion dentro del DataLab. Se debe colocar en produccion como cualquier proyecto a produccion.
+  
+  LAs pruebas de QA y Pipiline.
+  
+  En este tipo de arquitectura Apache Kafka se reduce por completo. La reduccion del tiempo en el uso del DataLab es necesario. La reduccion de tiempo/rendimiento es importante en las arquitecturas orientados en DataLab (Revisar presentacion del profesor).
+  
+  PROFILING DE LOS DATOS
+  
+  Motor de Profiling: Scorecard de la BD.
+  
+  HERRAMIENTA PARA HACER PROFILING: STATICAL ANALYSIS.
+  
+  Analtical DataSet: Es la union de varias tablas de modo que se pueda obtener una integracion de todos los set. ADS, Se genera a traves de operaciones, joins, sort, etc.
+  
+  ADS de desarrollo y ADS de Produccion.
+  
+  Estos se realizan a traves de un `ADS Generator`.
+  
+  HERRAMIENTA: ANALISIS TRANSFORMACION DE VARIABLES (VARIABLE TRANSFORMATION).
+  
+  Antes de ir al modelo se debe hacer: Data Profling y luego Transformacion de los datos (Transformacion de Variables).
+  
+  CREAR MODULOS DE shiny.server()...... Lenguaje R.
+  
+  PRACTICAR Y INVESTIGAR METODO DE BALANCEO EN DATA SCIENCE.
+  
+  SE CREA LA TARJETA DE PUNTEACION A TRAVES DE UN ENTRAMADO DE DATOS.
+  
+  Modelo de ScoreCard lo que tiene es una regresion loguistica con valores optimos para construir los tramos.
+  
+  Buscar Dependencias de [R Graphing Library | Plotly](https://plot.ly/r/)
+'''
+tags: [
+  "Machine_Learning"
+  "BIG_DATA_MODELATION"
+]
+isStarred: false
+isTrashed: false
+isPinned: false

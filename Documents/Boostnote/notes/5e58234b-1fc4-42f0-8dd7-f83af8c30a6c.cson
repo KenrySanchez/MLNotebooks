@@ -1,0 +1,136 @@
+createdAt: "2019-11-02T19:35:36.675Z"
+updatedAt: "2020-08-19T04:14:24.378Z"
+type: "MARKDOWN_NOTE"
+folder: "7b6dd385ab806689b09e"
+title: "Estimators, Loss functions, Optimizers - Core of Ml Algortihm"
+content: '''
+  ## Estimators, Loss functions, Optimizers - Core of Ml Algortihm
+  
+  **¿How machine learning learns from data to predict an outcome?**
+  
+  #### Estimators
+  
+  `Estimation` is a statistical term for finding some estimation of unknown parameter, given some data. Point Estimation is the attempt to provide the single best prediction of some quantity of interest.
+  
+  Quantity of interest can be:
+  
+  - A single parameter.
+  - A vector of parameters, e.g., weights in linear regression.
+  - A whole function.
+  
+  To distinguish estimates of parameters from their true value, a point estimate of a parameter `θ` is represented by `θˆ`.
+  
+   Let `{x(1) , x(2) ,..x(m)}` be `m` independent and identically distributed data points.Then a point estimator is any function of the data:
+   
+   ![1*bj4LtwEK0sH1HkgEWsEXGw.png](https://miro.medium.com/max/552/1*bj4LtwEK0sH1HkgEWsEXGw.png)
+  
+  This definition of a point estimator is very general and allows the designer of an estimator great flexibility. While almost any function thus qualifies as an estimator, a `good estimator` is a function whose output is close to the `true` underlying `θ` that generated the training data.
+  
+  #### Bias and Variance
+  
+  - Bias: measures the expected deviation from the true value of the function or parameter.
+  - Variance: provides a measure of the deviation from the expected estimator value that any particular sampling of the data is likely to cause.
+  
+  #### Variance and Standart Error
+  
+  The square root of the variance is called the standard error, denoted standard error `SE(ˆθ)`. The variance or the standard error of an estimator provides a measure of how we would expect the estimate we compute from data to vary as we independently re-sample the dataset from the underlying data generating process.
+  
+  ***Just as we might like an estimator to exhibit low bias we would also like it to have relatively low variance***.
+  
+  **Differences between standart error and standart deviation**
+  
+  The standard deviation (SD) measures the amount of variability, or dispersion, for a subject set of data from the mean, while the standard error of the mean (SEM) measures how far the sample mean of the data is likely to be from the true population mean. The SEM is always smaller than the SD.
+  
+  #### Estimators Functions
+  
+  ##### Maximum Likehood Estimator (MLE)
+  
+  Maximum likelihood estimation is a method that determines values for the parameters of a model. The parameter values are found such that they maximise the likelihood (probability) that the process described by the model produced the data that were actually observed.
+  
+  [Probability concepts explained: Maximum likelihood estimation](https://towardsdatascience.com/probability-concepts-explained-maximum-likelihood-estimation-c7b4342fdbb1)
+  
+  **Two important properties: Consistency & Efficiency**
+  
+  - Consistency: As the number of training examples approaches infinity, the maximum likelihood estimate of a parameter converges to the true value of the parameter.
+  - Efficiency:  A way to measure how close we are to the true parameter is by the expected mean squared error, computing the squared difference between the estimated and true parameter values.
+  
+  ***For the reasons of consistency and efficiency, maximum likelihood is often considered the preferred estimator to use for machine learning.***
+  
+  When the number of examples is small enough to yield over-fitting behavior, `regularization strategies` such as` weight decay` may be used to obtain a biased version of maximum likelihood that has less variance when training data is limited.
+  
+  ##### Maximum A Posteriori (MAP) Estimation
+  
+  ollowing Bayesian approach by allowing the prior to influence the choice of the point estimate. The MAP can be used to obtain a point estimate of an unobserved quantity on the basis of empirical data. The MAP estimate chooses the point of maximal posterior probability (or maximal probability density in the more common case of continuous θ):
+  
+  As with full Bayesian inference, MAP Bayesian inference has the advantage of
+  leveraging information that is brought by the prior and cannot be found in the
+  training data. This additional information helps to reduce the variance in the
+  MAP point estimate (in comparison to the ML estimate). However, it does so at the price of increased bias.
+  
+  [MLE vs MAP: the connection between Maximum Likelihood and Maximum A Posteriori Estimation - Agustinus Kristiadi's Blog](https://wiseodd.github.io/techblog/2017/01/01/mle-vs-map/)
+  
+  ##### Loss Functions
+  
+  In most learning networks, error is calculated as the difference between the actual output `y` and the predicted output `ŷ`. The function that is used to compute this error is known as `Loss Function` also known as `Cost function`.
+  
+  Until now our main focus has been on parameter estimating via the `MLE` or `MAP`. The reason we discussed it before is that both MLE & MAP provide a mechanism to derive the loss function.
+  
+  **ML problems and corresponding Loss functions**
+  
+  Regression Problem
+  
+  A problem where you predict a real-value quantity.
+  
+  - Output Layer Configuration: One node with a linear activation unit.
+  - Loss Function: Mean Squared Error (MSE).
+  
+  Binary Classification Problem
+  
+  A problem where you classify an example as belonging to one of two classes.
+  
+  - Output Layer Configuration: One node with a sigmoid activation unit.
+  - Loss Function: Cross-Entropy, also referred to as Logarithmic loss.
+  
+  Multi-Class Classification Problem
+  
+  A problem where you classify an example as belonging to one of more than two classes.
+  
+  - Output Layer Configuration: One node for each class using the softmax activation function.
+  - Loss Function: Cross-Entropy, also referred to as Logarithmic loss.
+  
+  #### Optimizers
+  
+  Optimizers are used to update weights and biases i.e. the internal parameters of a model to reduce the error.
+  
+  **TIP**: The secret for a better gradient descent performance is to reduce the number of iterations. Consider to use **Normal Equation** when the number of raws are less than `10000`.
+  
+  **Gradient Descent**
+  
+  There are three ways of doing gradient descent:
+  
+  - Batch gradient descent: Uses all of the training instances to update the model parameters in each iteration.
+  - Mini-batch Gradient Descent: Instead of using all examples, Mini-batch Gradient Descent divides the training set into smaller size called batch denoted by ‘b’. Thus a mini-batch ‘b’ is used to update the model parameters in each iteration.
+  - tochastic Gradient Descent (SGD): updates the parameters using only a single training instance in each iteration. The training instance is usually selected randomly. Stochastic gradient descent is often preferred to optimize cost functions when there are hundreds of thousands of training instances or more, as it will converge more quickly than batch gradient descent.
+  
+  **TIP**: The secret for a better gradient descent performance is to reduce the number of iterations.
+  
+  Some other commonly used optimizers:
+  
+  **Adagrad**
+  
+  Adagrad adapts the learning rate specifically to individual features: that means that some of the weights in your dataset will have different learning rates than others. This works really well for sparse datasets where a lot of input examples are missing. Adagrad has a major issue though: the adaptive learning rate tends to get really small over time. Some other optimizers below seek to eliminate this problem.
+  
+  **RMSprop**
+  
+  RMSprop is a special version of Adagrad developed by Professor Geoffrey Hinton in his neural nets class. Instead of letting all of the gradients accumulate for momentum, it only accumulates gradients in a fixed window. RMSprop is similar to Adaprop, which is another optimizer that seeks to solve some of the issues that Adagrad leaves open.
+  
+  **Adam**
+  
+  Adam stands for adaptive moment estimation, and is another way of using past gradients to calculate current gradients. Adam also utilizes the concept of momentum by adding fractions of previous gradients to the current one. This optimizer has become pretty widespread, and is practically accepted for use in training neural nets.
+  
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

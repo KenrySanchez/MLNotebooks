@@ -1,0 +1,204 @@
+createdAt: "2020-01-12T02:18:54.104Z"
+updatedAt: "2020-09-18T05:41:07.235Z"
+type: "MARKDOWN_NOTE"
+folder: "2e56bbd9db6601e3e30a"
+title: "HBASE, HDFS (Storage), HIVE and PIG"
+content: '''
+  ## HBASE, HDFS (Storage), HIVE and PIG
+  
+  ### HDFS Storage
+  
+  
+  ### Storing data in Hadoop
+  
+  The foundation of efficient data proccesing in Hadoop it's is storage model.
+  
+  compared to NFS, hdfs can store very large amount of data and support much larger file sizes.
+  
+  With data replication, hdfs can replicate (until 3 times by block) and in that way it is data reliable.
+  
+  **Limitations of hdfs**
+  
+  - HDFS is not a general application and it is restricted to a particular class of applications.
+  - hdfs support high streaming read performance, but this comes at the expense of random seek performance (rendimiento busquedas aletorias).
+  - sequential reads (as sequencial files and avro) are the preferred way to access hdfs files.
+  - hdfs doesnt has caching (cache).
+  
+  **Data Storage in HDFS**
+  
+  To improve its performance, `datanodes` (which is saved in racks across the nodes) uses heuristics to determine the optimal number of files per directory, and creates subdirectories appropiately.
+  
+  The `namenode` (which is saved in memory) ensure that the metadata in hdfs remains across all the nodes.
+  
+  When there is a checkpoint of data in namenode from secondaryNameNode, you can see how much the edit log change to lower memory and how much the fsimage increase memory.
+  
+  **Data replication**
+  
+  Data replication in HDFS is implemented in the write operation from the namenode to datanodes and it's done by a data pipeline across all the datanodes.
+  
+  Now, when client is writing data to an hdfs, this data is frist writing in a local file. Then, when the local file accumulates a full block of data, client ask to the namenode for a list of datanodes available for replication assigned to that data block. The client then writes the data blocks from its local storage to the `first datanodes` in 4k portions.
+  
+  The datanodes write (save) the data block into its file system and then forward the operation to the next datanode until the last node in the replica set recieves data. If a datanode is failed while operation is running, it is removed from the pipeline.
+  
+  the default block size and replication factor are configured by hadoop configurations but can be overwritten on a per-file basis. `Optimization of replica placement is crucial to hdfs`.
+  
+  All decisions regarding replication of blocks are made by the namenode.
+  
+  **Rack awareness**
+  
+  LArge hdfs instances run on a cluster of computers that is commonly spread across many racs.
+  
+  `Hadoop Rack Awareness Process`, its the process when determinades the rack id that each datanodes belongs.
+  
+  To minimize `global bandwith consumption and read latency`, hdfs tries to satisfy a read request from a replica that is closest to the reader.
+  
+  **Programming: USing HDFS Files**
+  
+  `programming`
+  
+  HDFS Cliento ---> Access to HDFS FileSystem.
+  
+  Access to the hdfs is throught instance of `FileSystem Object`.
+  
+  There is a abstract class, `FileSystem class`.
+  
+  An instance of `FileSystem Object` can be created by passing a new `confoguration object`.
+  
+  ***If execution is done by remote machine, the configuration file must be explicity added to the application class path***
+  
+  ```java
+  Configuration conf = new Configuration();
+  FileSystem fs = new FileSystem.get(conf);
+  
+  //Some Operations
+  Path path = new PAth(path as string);
+  
+  FSDAtaInputStream in = fs.open(path);
+  FSDAtaOutputStream out = fs.create(path);
+  
+  Boolean resul = fs.delete(path);
+  Boolean result = fs.createNewFile(path)
+  
+  ```
+  
+  Recommended keys desing:
+  
+  - key `salting`.
+  
+  ----
+  
+  ### HBASE
+  
+  **What does hbase do?**
+  
+  Whan large amount of data need to be:
+  
+  - stored.
+  - procesed.
+  - updated.
+  
+  at high speed volume.
+  
+  **What are hbase implementations best suited for?**
+  
+  - High volume, incremental data gathering and proccesing.
+  - Real-time information exchange.
+  - Frequently changing content.
+  
+  **Characteristics of hbase**
+  
+  - Consistency: read/write.
+  - Sharding: distribution of data as reliable/automatic splitting.
+  - high avability: supports LAN or WAN failover and recovery throught implementation of region servers.
+  - client api: Offers a JAVA API.
+  
+  **starting hbase**
+  
+  First, hadoop services must be running. Then, init `start-hbase.sh`.
+  
+  To init `hbase commands`, you must be at the root folder of your machine, you can not initialize hbase in the bin folder.
+  
+  __some commends__
+  
+  - status: return status information od the database. There is 2 more options, `simple` and `detailed`.
+  - version: return version.
+  - whoami: return the name of the user logged.
+  
+  - list: return a list of tables.
+  - create: create table. `create table, {name=column, version=version}, ...`
+  - describe: describe table.
+  - drop: drop a table. before droped, you mus `disable` a table.
+  
+  - put: put new value, `table, row, column_family:column, value`.
+  - scan: scan values of a table.
+  - scan {VERSIONES => N}: scan table by number of version.
+  - get: get table, row. table, row, {columns=>columnfamily:colum, versions => version}
+  
+  hbase admin
+  `localhost:60010`
+  
+  hbase region-server
+  `localhost:60030`
+  
+  hbase configuration is in `hbase-site.xml`. It's at the `config` folder.
+  
+  For the java connections to hbase, in the property `zookeper.property.clientPort`, the port `2222` should be change by `2181`.
+  
+  **Combining hdfs and hbase**
+  
+  The approach is based on creation of a SequenceFile which contains the large data items. Both hdfs and hbase treat data as binary streams.
+  
+  Majority of application leveraging these storage mechanisms use some form of binary marshaling.
+  
+  One such binary marshaling is Apache Avro.
+  
+  [How to avoid HBase Hotspotting? - DWgeek.com](https://dwgeek.com/avoid-hbase-hotspotting.html/)
+  
+  ------
+  
+  ### HIVE
+  
+  Hive use three componentes as mechanism for its own functionality:
+  
+  - Tables: Data is represented as tables.
+  - Partition: Are fisics representation of the data in the filesystem.
+  - Buckets: Data in tables is divided into buckets which are stored in the partions of the filesystem.
+  
+  `metastore`: hive metadata is stored in a external store `metastore`, which can synch catalog data with other metadata services in hadoop.
+  
+  Default database for metastore is `derby database`. You can change this changing its configuration in the file `hive-site.xml`.
+  
+  Remember: After the database is created, you can't change its name. Alter Database just allow you to change database properties (DBPROPERTIES).
+  
+  In `BigData, Proccesing is taking in data`.
+  
+  **Advance queries using arrays and maps**
+  
+  `Create index <index_name> on table <table_name>(<column_name>) as 'COMPACT' with deferred rebuild`.
+  
+  `show index formatted <index_name>`
+  
+  ### PIG
+  
+  `data flow language`.
+  
+  #### Basic Pig Commands and Scripting
+  
+  **Set up**
+  
+  in the file `pig.properties` in the `conf` directory of pig installation, set the following:
+  
+  - fs.default.name=hdfs://<NameNodeIp | localhost>:54310.
+  - mapred.job.tracker=hdfs://<JobTrackerIp | localhost>:54311.
+  
+  this is just used when you need to set up a cluster in a remote location.
+  
+  directory `/apache/pig/bin/pig` to start grunt console
+  
+  you must start `pig` from the `bin` folder when run a pig execution.
+  
+  ------
+'''
+tags: []
+isStarred: false
+isTrashed: false

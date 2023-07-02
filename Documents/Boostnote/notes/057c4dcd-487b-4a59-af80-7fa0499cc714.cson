@@ -1,0 +1,50 @@
+createdAt: "2018-10-18T07:07:07.439Z"
+updatedAt: "2021-09-09T02:35:30.587Z"
+type: "MARKDOWN_NOTE"
+folder: "a41d44d96fbd153c28c9"
+title: "IA Chat Bot"
+content: '''
+  ## IA Chat Bot
+  
+  IBM Role: Arquitecto de Soluciones.
+  
+  Las Tecnologias de IA son capaces de aprender por si mismo, razonar y reconocer el contexto para influersiarse y interactuar.
+  
+  - Bot de Contenido.
+  - Bot de Soporte tecnico.
+  - Bot Resolutivo.
+  - Bot Advisor: Bot Especifico que pueda atacar problemas con mas precision en temas de detalle.
+  - Ad Bot: Bot que nos permite vender publicidad como mensajeria.
+  - Bot Awareness: Bot de campaña publicidad en Twitter/red-social.
+  
+  Al crear el Chat Bot, se empieza desde el chat bot no personalizado.
+  
+  #### Mejores Practicas para crear Chat Bot
+  
+  - Se debe tener un buen On-Bourding: Se debe tener una buena manera de como llegar a los usuarios. que el cht bot sea preciso en base a que servicio va a vender.
+  
+  En Telegram se puede colocar un encabezado cada vez que se inicia la Conversacion.
+  
+  - Artefactos: Se pueden usar plugins que ayudan a mejorar la interaccion. Como por ejemplo de Maps.
+  
+  - Conversacion Progresiva: No sobrecargar al usuario al principio con todas las cosas que se pueden hacer.
+  - Give user Feed-Back: Tenemos que ser transparentes con los procesos que hace el chat-bot. Con todos los procesos y notificar cada vez que se genera un proceso.
+  
+  - Personalidad al usuario.
+  - Gestion de caidas: No temer que la conversacion se salga de entendimiento. De modo que el chat bot tiene que reformular la pregunta como para volver a estar en camino.
+  - History: Cualificar que estamos entendiendo al usuario. Es como la confirmacion de la conversacion que hemos estado realizando. Dividir los check points en secciones.
+  
+  Es mejor realizar la interaccion del chat bot a traves por modulos/workspace.
+  
+  ##### IBM POSEE PARA HACER SUS PETICIONES UN ORQUESTADOR/MIDLEWARE.
+  
+  Intencion: Representa un proposito de interaccion del chat-bot.
+  
+  Slots: Proceso de todo un nodo en un "solo" nodo.
+  
+  KenryBot0705 / Kenry Bot Node Red
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

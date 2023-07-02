@@ -1,0 +1,95 @@
+createdAt: "2019-05-23T04:25:23.559Z"
+updatedAt: "2020-09-15T04:15:08.825Z"
+type: "MARKDOWN_NOTE"
+folder: "7b6dd385ab806689b09e"
+title: "Recommender System"
+content: '''
+  ## Recommender System
+  
+  To figure out similarity between items using their attributes, simple mathematical technique formula are used, such as `cousine similarity, eucledean distance, pearson coefficiente` and so on.
+  
+  We need to create a vector of features and then find the distance between these vectors using these mathematical formulas.
+  
+  `See note: Big Data Analytics with Java. Page 315.`
+  
+  **Advantages of Recommender System**
+  
+  - Broader exposure.
+  - Posiibility of continual usage or purchase of products.
+  - Provides better experience.
+  
+  **Types of Recommender System**
+  
+  `Content-Based`: "Show me more of the same of what I've liked before". Content-based systems try to figure out what a user's favorite aspects of an item are, and then make recommendations on items that share those aspects.
+  
+  `Collaborative filtering`: “Tell me what's popular among my neighbors because I might like it too.” Collaborative filtering techniques find similar groups of users, and provide recommendations based on similar tastes within that group. In short, it assumes that a user might be interested in what similar users are interested in
+  
+  ![Screen Shot 2019-05-22 at 11.32.05 PM.png](:storage/7af998df-978e-445c-9492-46bd7d40638c/d0c3a784.png)
+  
+  There are also hibrids recommender system.
+  
+  **Implementing recommender System**
+  
+  Memory based:
+  - Uses the entire user-item dataset to generate a recommendation.
+  - Uses statistical techniques to approximate users ot items. E.g., Pearson correlation, Cosine simularity, Euclidean distance, etc.
+  
+  Model based:
+  - Develops a model of users in attemps to learn their preferences.
+  - Models can be created using ml like regression, clustering, classification, etc.
+  
+  ### Content-Based Recommender
+  
+  It makes the recommendation in based of the movies the user has watched. In this case we try to make a recommendation matrix based on the features of the product we want to recommend.
+  
+  The problem with this system is it can not make recommendation based on one gendre or feature that user has not tried. In that case, it's better to yse a filtering system.
+  
+  
+  ![Screen Shot 2019-05-25 at 4.15.33 PM.png](:storage/7af998df-978e-445c-9492-46bd7d40638c/e9f92cef.png)
+  
+  ### Collaborative filtering
+  
+  It's based on the idea of they are a relation between the user and the products the user has consumed.
+  
+  There are two types of collaborative filtering:
+  
+  - User-based: It's based on user's neighborhood.
+  - Item-based: It's based on items similarity.
+  
+  **User Based Approach**
+  
+  we have an `active user` for whom the recommendation is aimed.
+  
+  he collaborative filtering engine first looks for users who are similar. That is users who share the active users rating patterns. Collaborative filtering basis this similarity on things like history, preference, and choices that users make when buying, watching, or enjoying something. For example, movies that similar users have rated highly.
+  
+  Steps:
+  
+  1.  discover how similar the active user is to the other users. Learning the similarity weights.
+  
+  2. The next step is to create a weighted rating matrix. We just calculated the similarity of users to our active user in the previous slide. 
+  
+  **Challengues of collaborative filtering**
+  
+  - Data sparsity: Data sparsity happens when you have a large data set of users who generally rate only a limited number of items. As mentioned, collaborative based recommenders can only predict scoring of an item if there are other users who have rated it. Due to sparsity, we might not have enough ratings in the user item dataset which makes it impossible to provide proper recommendations.
+  
+  - Cold Start: Cold start refers to the difficulty the recommendation system has when there is a new user, and as such a profile doesn't exist for them yet. Cold start can also happen when we have a new item which has not received a rating.
+  
+  - Scalability:  As the number of users or items increases and the amount of data expands, collaborative filtering algorithms will begin to suffer drops in performance, simply due to growth and the similarity computation. There are some solutions for each of these challenges such as using hybrid based recommender systems.
+  
+  Since they don't require product comparison among each other as they are based on other users past data (like ratings they gave/ historical data), they can be made to be very fast specially on big data when cluster computing framework such as apache spark.
+  
+  **Apache Spark**
+  
+  Apache Spark provides an inbuilt algorithm for collaborative filtering and it's based on the approach of alternating least square.
+  
+  The code for this is straightforward, yet it;s very good in terms of predictive results and also this algorithm is highly scalable, so varios portions of the algorithm can be paralelly run on multiple nodes.
+  
+  1 - **Get the original matrix of the user and item combinations**, There, on the rows you will have users and on the column you will have items (for example movies). The entries within the matrix are the values of rating given to the movies by the users. The `?` sign depicts missing entries where the user has not rated the movies. So, for predictive analytics problem, the job is to predict the rating of movies for these missing entries and the highest rated movie for the prediction will become the recommendation for the user.
+  2 - **Do matrix factorization on this sparse matrix and break it into a two smaller matrixes**, it's good idea to use matrix factorization and convert it into dense smaller matrixes. The matrix can be broken into two smaller matrixes.
+  3 - **To figure out the rating for a user at index u of the matrix and for a movie at index i**.
+  
+  We need to figure out the values in these users factors and movies factors matrix. An approach for this is to assign a high value; since our max rating is 5, we can assign and initilize the user factor matrix with these values and as for k, we can ramdonly choose some value for k say 10. We keep this x factors as matrix as constant and we now figure out the values in the `movie` factors matrix, then we multiply these matrixes and figure out `the mean squared error`. Now, our task is to figure out the best fit values.
+'''
+tags: []
+isStarred: false
+isTrashed: false

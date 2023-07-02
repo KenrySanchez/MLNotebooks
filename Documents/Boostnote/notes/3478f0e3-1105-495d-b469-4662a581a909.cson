@@ -1,0 +1,138 @@
+createdAt: "2018-07-20T05:31:40.160Z"
+updatedAt: "2018-07-24T02:20:02.383Z"
+type: "MARKDOWN_NOTE"
+folder: "4a17dc80ccbb28b98a68"
+title: "Datos informacion y conocimiento"
+content: '''
+  ## Datos informacion y conocimiento
+  
+  
+  #### Fuentes de datos
+  
+  **Fuentes primarias**
+  
+  Fuentes desde donde hacemos nuestros estudios y analisis.
+  
+  - Perfil de Facebook
+  
+  **Fuentes secundarias**
+  
+  Fuentes desde donde buscamos las fuentes primarias
+  
+  - Facebook
+  
+  -----
+  
+  ## Pasos para investigacion de datos
+  
+  #### Marcar un objetivo
+  
+  1. investigacion cualitativa
+  
+  Seria obtener el analisis o investigacion de un tema en concreto. Suele hacerse en fases exploratorias del proyecto.
+  
+  2. investigacion cuantitativa
+  
+  Seria explicar a traves de analisis estadisticos y con datos la investigacion cualitativa.
+  
+  #### Uso de las fuentes
+  
+  Elegir bien la fuente de datos y aplicarlas de manera correcta.
+  
+  #### Analisis y interpretacion de la informacion
+  
+  Revision, organizacion y analisis e interpretacion de los datos recolectados
+  
+  **preguntas**
+  
+  - ¿Que calidad y vigencia tiene la informacion recolectada?
+  - ¿Cual es la utilidad de esta?
+  - ¿Como va a ser la lectura de los datos?
+  
+  ----
+  
+  #### Diferenciacion entre dato e informacion
+  
+  - ¿Que datos quiero?
+  - ¿Para que los quiero?
+  - ¿Cuanto me costara obtenerlos?
+  
+  Cuando hablamos de costes nos referimos a:
+  
+  - cuanto me costara que el usuario me de los datos, eso se refiere a que tan pesado o privado seran sus datos o si sera muy tedioso obtenerlos de ello.
+  - cuanto me costara economicamente, desde el punto de vista de recursos humanos
+  - costes de las herramientas (software)
+  
+  El dato, una vez que se procesa a traves de un proceso, pasa a ser informacion. El dato ha de agruparse en un mismo contexto, categorias o familia, para poder extraer informacion.
+  
+  Los datos que vamos a recoger deben tener calidad o validez para la problematica que vayamos a solucionar. Por eso debemos estar claro de los datos que vayamos a recolectar.
+  
+  La pregunta mas importante de todas es:
+  
+  ***¿que problema resuelvo con la informacion obtenida de los datos?***
+  
+  #### Tipologia de datos
+  
+  - **datos racionales**: datos acerca de las caracteristicas de un producto (color de un carro)
+  - **datos numericos o continuos**: seria la cantidad de productos u objetos que tenemos, manejamos o poseemos. De aqui derivan tambien datos decimales o fraccionados
+  - **datos nominales**: se refieren a una nomina (escala, extrapolacion entre variables, etc)
+  - **datos jerarquizados**: en funcion de un convenio previamente establecido
+  
+  #### Escala de medicion de datos
+  
+  - **Escala nominal**: Se usa para especificar atributos especificos de un elemento, como puede ser el sexo de una persona, dato nominal no numerico, o tu afiliacion a la seguridad social, dato nominal numerico.
+  - **Escala ordinal**: Se usa para jerarquizar. Por ejemplo, si un barco es grande, o pequeno, es un dato ordinal no numerico.
+  - **Escala de intervalo**: Se usa para proponer una escala, un intervalo entre los datos, y esas calas siempre son fijas, se miden siempre igual. Por ejemplo, los grados de temperatura.
+  - **Escala de la razon**: para datos como el peso, la altura. Como la escala de intervalo, pero sin ser subjetivas, como podría ser, siguiendo el ejemplo anterior, la sensación de calor.
+  
+  #### Otras escalas de medicion
+  
+  **Escala de Likert**
+  
+  que contiene un número impar de posibles soluciones, desde lo más negativo a positivo, teniendo una central como “neutra”, que según el investigador, se suele desechar. Está muy orientada a conocer las actitudes de las personas.
+  
+  **Escala de diferencial semántico**
+  
+  donde se suele combinar conceptos diferentes cada una con sus características que se califican, teniendo cada extremo valores opuestos.
+  
+  **Matriz de atributos**
+  
+  donde podríamos identificar a nuestra competencia y a nosotros mismos en base a aspectos clave del mercado, obteniendo un posicionamiento en base a esos atributos, o estudiar espacios “vacíos”, sin competencia, a los que aplicar una estrategia y atacarlos.
+  
+  #### Datificacion
+  
+  Es el concepto de obtener datos desde cualquier punto o lo que nos rodee.
+  
+  **Reflexion**
+  
+  Plantear los datos que tu empresa podrian tener, desear y obtener para un optimo desarrollo de sus funciones.
+  
+  ----
+  
+  ## La informacion
+  
+  La informacion se refiere a los datos procesos a traves de un analisis o proceso de conjuncion, donde se le otorga un significado, despues del tratamiento. Permite la toma de decisiones y ayuda a la empresa a entender su entorno.
+  
+  ```
+    I = Datos + Contexto (añadimos valor) + Utilidad (disminuir la incertidumbre)
+  ```
+  
+  ## Conocimiento
+  
+  Es una mezcla de experiencias, valores, informacion y `know-how` que sirve como marco para la incorporacion de nuevas experiencias e informacion, y es util para la accion.
+  
+  El conocimiento es una propiedad propia del `Business intelligence`.
+  
+  Informacion y datos, `Business operation`.
+  
+  La piramide es datos --> Informacion --> conocimiento.
+  
+  **Reflexion**
+  
+  Entre informacion y conocimiento hay un proceso de que se ejecuta que se llama `aprendisaje`.
+'''
+tags: [
+  "big_data_theory"
+]
+isStarred: false
+isTrashed: false

@@ -1,0 +1,32 @@
+createdAt: "2019-09-25T02:55:20.436Z"
+updatedAt: "2019-09-25T03:02:40.580Z"
+type: "MARKDOWN_NOTE"
+folder: "a431d02702033fa18596"
+title: "Spark Ml Lib"
+content: '''
+  ### Spark Ml Lib
+  
+  **ALS "Alternative Least Square"**
+  
+  This algorithm is an example of `collaborative filtering`. 
+  
+  ```JAVA
+  ALS als = new ALS()
+    .setMaxIter(10)
+    .setRegParam(0.01)
+    .setUserCol("userId")
+    .setItemCol("movieId")
+    .setRatingCol("rating")
+  ```
+  
+  - Maximum Iterations: This is the maximum number of iterations to run; the default value is `10`.
+  - Reg Param: This specify the regularization parameter; the default value is `10`.
+  - User Column: This is the column to read the user id from.
+  - Item Column: This is the column to read the item id or movie id.
+  - Rating Column: This is the column to read the explicit rating from, given by the user.
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

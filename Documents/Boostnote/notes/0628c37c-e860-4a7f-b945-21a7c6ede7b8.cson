@@ -1,0 +1,86 @@
+createdAt: "2020-04-22T14:56:58.329Z"
+updatedAt: "2020-04-22T18:35:15.851Z"
+type: "MARKDOWN_NOTE"
+folder: "2e56bbd9db6601e3e30a"
+title: "Integrating R and Hadoop"
+content: '''
+  ## Integrating R and Hadoop
+  
+  `Analytical Power of R + Storage and Processing Power of Hadoop =Ideal Solution for Big Data Analytics`
+  
+  There is no doubt that R is the most preferred programming tool for statisticians, data scientists, data analysts and data architects but it falls short when working with large datasets.
+  
+  Since, R is not very scalable, the core R engine can process only limited amount of data.
+  
+  Integrating Hadoop with R lets data scientists run R in parallel on large dataset as none of the data science libraries in R language will work on a dataset that is larger than its memory.
+  
+  **Methods of Integrating R and Hadoop Together**
+  
+  To use these R scripts or R packages with Hadoop, they need to rewrite these R scripts in Java programming language or any other language that implements Hadoop MapReduce.
+  
+  To integrate Hadoop with R programming language, we need to use a software that already is written for R language with the data being stored on the distributed storage Hadoop.
+  
+  __RHADOOP - Install R on Workstations and Connect to Data in Hadoop__
+  
+  The most commonly used open source analytics solution to integrate R programming language with Hadoop is RHadoop. It lets users directly ingest data from HBase database subsystems and HDFS file systems.
+  
+  Rhadoop package is the ‘go-to’ solution for using R on Hadoop because of its simplicity and cost advantage. Rhadoop is a collection of 5 different packages which allows Hadoop users to manage and analyse data using R programming language. RHadoop package is compatible with open source Hadoop and as well with popular Hadoop distributions- Cloudera, Hortonworks and MapR.
+  
+  - rhbase: rhbase package provides database management functions for HBase within R using Thrift server. This package needs to be installed on the node that will run R client. Using rhbase, data engineers and data scientists can read, write and modify data stored in HBase tables from within R.
+  - rhdfs: rhdfs package provides R programmers with connectivity to the Hadoop distributed file system so that they read, write or modify the data stored in Hadoop HDFS.
+  - plyrmr:  This package supports data manipulation operations on large datasets managed by Hadoop. provides data manipulation operations present in popular packages like reshape2 and plyr. This package depends on Hadoop MapReduce to perform operations but abstracts most of the MapReduce details.
+  - ravro: This package lets users read and write Avro files from local and HDFS file systems.
+  - rmr2 (Execute R inside Hadoop MapReduce) : Using this package, R programmers can perform statistical analysis on the data stored in a Hadoop cluster. Using rmr2 might be a cumbersome process to integrate R with Hadoop but many R programmers find using rmr2 much easier than depending on Java based Hadoop mappers and reducers. rmr2 might be a little tedious but it eliminates data movement and helps parallelize computation to handle large datasets.
+  
+  
+  
+  __RHIPE – Execute R inside Hadoop Map Reduce__
+  
+  RHIPE is an R library that allows users to run Hadoop MapReduce jobs within R programming language. R programmers just have to write R map and R reduce functions and the RHIPE library will transfer them and invoke the corresponding Hadoop Map and Hadoop Reduce tasks. The advantage of using RHIPE over other parallel R packages is, `that it integrates well with Hadoop and provides a data distribution scheme using HDFS` across a cluster of machines - which provides fault tolerance and optimizes processor usage.
+  
+  The RHIPE package uses the Divide and Recombine technique to perform data analytics over Big Data.n this technique, data is divided into subsets, computation is performed over those subsets by specific R analytics operations, and the output is combined. RHIPE Follows:
+  
+  - Allowing you to perform in-depth analysis of large as well as small data.
+  - Allowing users to perform the analytics operations within R using a lower-level language. RHIPE is designed with several functions that help perform Hadoop Distribute File System (HDFS) as well as MapReduce operations using a simple R console.
+  
+  Use the latest supported version of RHIPE which is 0.73.1 as `Rhipe_0.73.1-2.tar.gz`
+  
+  Installing R
+  
+  If we use a multinode Hadoop architecture, there are a number of TaskTracker nodes for executing the MapReduce job. So, we need to install R over all of these TaskTracker nodes. These TaskTracker nodes will start process over the data subsets with developed map and reduce logic with the consideration of key values.
+  
+  Installing protocol buffers
+  
+  Protocol buffers just serialize the data to make it platform independent, neutral, and robust (primarily used for structured data). Google uses the same protocol for data interchange. RHIPE depends on protocol `buffers 2.4.1` for data serialization over the network.
+  
+  ```
+  ## For downloading the protocol buffer 2.4.1
+  wget http://protobuf.googlecode.com/files/protobuf-2.4.1.tar.gz
+  
+  ## To extracting the protocol buffer
+  tar -xzf protobuf-2.4.1.tar.gz
+  
+  ## To get in to the extracted protocol buffer directory
+  cd protobuf-2.4.1
+  
+  ## For making install the protocol buffer
+  ./configure # --prefix=...
+  make
+  make install
+  ```
+  
+  __R and Hadoop Streaming__
+  
+  Hadoop Streaming API allows users to run Hadoop MapReduce jobs with any executable script that reads data from standard input and writes data to standard output as mapper or reducer. Hadoop Streaming API can be used along R programming scripts in the map or reduce phases. This method to integrate R, Hadoop does not require any client side integration because streaming jobs are launched through Hadoop command line. MapReduce jobs submitted undergo data transformation through UNIX standard streams and serialization to ensure Java complaint input to Hadoop, irrespective of the language of the input script provided by the programmer.
+  
+  __RHIVE –Install R on Workstations and Connect to Data in Hadoop__
+  
+  If you want your Hive queries to be launched from R interface then RHIVE is the go-to package with functions for retrieving metadata like database names, column names, and table names from Apache Hive. HiveQL with R language functions. RHIVE functions allow users to apply R statistical learning models to the data stored in Hadoop cluster that has been catalogued using Apache Hive. The advantage of using RHIVE for Hadoop R integration is that it parallelizes operations and avoids data movement because data operations are pushed down into Hadoop.
+  
+  __ORCH – Oracle Connector for Hadoop__
+  
+  Mappers and Reducers are written in R programming language and MapReduce jobs are executed from the R environments through a high level interface. With ORCH for R Hadoop integration, R programmers do not have to learn a new programming language like Java for getting into the details of Hadoop environment like Hadoop Cluster hardware or software. ORCH connector also allows users to test the ability of MapReduce programs locally.
+'''
+tags: []
+isStarred: false
+isTrashed: false

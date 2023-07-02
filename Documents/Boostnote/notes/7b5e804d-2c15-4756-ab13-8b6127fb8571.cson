@@ -1,0 +1,63 @@
+createdAt: "2020-09-17T06:43:33.425Z"
+updatedAt: "2021-01-06T05:24:30.145Z"
+type: "MARKDOWN_NOTE"
+folder: "a431d02702033fa18596"
+title: "Testing Spark"
+content: '''
+  ## Testing Spark
+  
+  __Recommendations__
+  
+  - Spark should be used to bring the big to the small.
+  - In that case more of the logic may be in the small.
+  
+  __What to test__
+  
+  - Experiments.
+  - Complex logic.
+  - Samples.
+  - Business generated scenarios.
+  
+  __Things to note__
+  
+  - Needed spark context.
+  - Parallelize function.
+  - Separate out testable work from driver code.
+  - Everything is debuggable.
+  
+  __Method to selecting data for testing__
+  
+  - Developer defined data.
+  - Selected sampling of data from production System.
+  - Generated data from a data generator (ssCheck, SparkTestingBase).
+  - Requirement/Business driven selection and generation (ask for data to them).
+  
+  ### Testing Spark SQL
+  
+  __How to create a DataFrame__
+  
+  - Code and make a structType.
+  - Take the schema from an existing table.
+  
+  ```
+  val emptyDf = hc.sql("select * from trans limit 0")
+  ```
+  
+  it'd gives us no data, but the schema from the table.
+  
+  ```
+  hc.createDataFrame("Rdd with Row object containing a list of values", emptyDf.schema).registerTempTable("Temp")
+  ```
+  
+  ### Testing Hive Context
+  
+  - Spark will create a local HMS.
+  - Allows all the creation, deleting, writing.
+  - Make sure you can set the table directory location.
+  - Also, feel free to delete the metastore folder in-between jobs.
+  
+  [GitHub - tmalaska/SparkUnitTestingExamples: This project is a collection of Spark Unit Tests Examples to help new Spark users have good examples on how to unit start their code for Spark Core, Spark SQL, and Spark Streaming](https://github.com/tmalaska/SparkUnitTestingExamples)
+'''
+tags: []
+isStarred: false
+isTrashed: false

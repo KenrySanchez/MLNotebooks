@@ -1,0 +1,68 @@
+createdAt: "2018-10-11T12:22:23.342Z"
+updatedAt: "2019-11-03T17:48:19.287Z"
+type: "MARKDOWN_NOTE"
+folder: "a41d44d96fbd153c28c9"
+title: "Tecnica R"
+content: '''
+  ## Tecnica R
+  
+  - Para limpiar los valores vacios a N/A, colocamos ALT + 255 !.
+  
+  - crear una copia del conjunto ariq, comprobar con ls y luego anade una nueva tem que contenga una copia exacta de temp
+  
+  - Potencia estadistica, buscar definicion.
+  
+  - cuando la potencia estadistica es del 80%, es un valor aceptable.
+  
+  - Tomar los valores aletorios donde estemos seguros que el alcanze llegara a la media buscada en su totalidad.
+  
+  - Cuando mides en tiempo real, aun estas haciendo muestras. La media y la mediana te informa siempre del comportamiento global de las situaciones presentadas.
+  
+  - investigar sobre el concepto de blocking.
+  
+  - El Q Q plot nos indica como la linea se aproxima a tus puntos, como de cerca stan los puntos de la grafica.
+  
+  - boostraping: investigar concepto para analizar aplicacion.
+  
+  - si la desviacion standart esta en mas de `0.5`, entonces afecta la muestra.
+  
+  - La potencia nos indica que tan buena sera el resultado de nuestro experimento, el resultado optimo es encontrar `0.8`. El valor de `n` en la funcion `pwr::pwr.anova.test` nos indica el numero de grupos necesarios para aplicar mayor precision en la practica.
+  
+  - Analitica Prescriptiva: te ayuda a saber donde cambiar los valores para que puedas optimizar tu logica.
+  
+  - El `multiple squared` explica cuanto de los valores explican y justifican mi situacion.
+  
+  - el iterador `.~` significa `coloca todas las variables`
+  
+  - En la funcion `vif` cualquier atributo que tenga mas de `10` debemos eliminarlo de nuestro estudio ya que rompe la interaccion. Ese valor realiza multicualinalidad, hacen una nube de variables inservible. Mete ruido.
+  
+  - Luego de hacer `summary` al modelo generado con `lm`. Se deben eliminar aquellas variables donde su estimado es menor a `0`. El resto, puede ser usado en el metodo `vif`
+  
+  - Un modelo `adecuado` sera aquel que tenga un margen de error menor del `15%`.
+  
+  `stepAIC` 
+  
+  coursera-----
+  standfor ---> MAchine Learning ----> Andrew Ng
+  curso en la universidad Jhon Hopkins
+  
+  ------
+  
+  `Textos Auto-Explicados`...tecnologia. 
+  
+  BUSCAR LIME..
+  
+  Buscar concepto de la Learning Curve. Lo ideal es siempre dividir el split en 70% training y 30% test para construccion de modelos.
+  
+  ---
+  
+  como definir si un modelo es estable o no: Validacion cruzada. Si todos dan la misma precision y fiabilidad de manera cercana. (es decir precision alta y poco con error).
+  
+  Si este tipo de error pasa es por que el modelo tiene pocas observaciones y no muestra sentido
+  
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

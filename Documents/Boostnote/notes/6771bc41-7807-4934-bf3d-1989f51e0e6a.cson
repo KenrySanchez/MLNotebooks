@@ -1,0 +1,79 @@
+createdAt: "2018-08-26T00:38:21.176Z"
+updatedAt: "2018-08-27T21:14:02.390Z"
+type: "MARKDOWN_NOTE"
+folder: "d464926e49d183704d56"
+title: "Cuadros de mando"
+content: '''
+  ## Cuadros de mando
+  
+  Los cuadros de mando ayudan a la empresa a saber que esta ocurriendo en el momento, de modo que ayuda a tomar decisiones correctas.
+  
+  La herramienta de cuadro de mando permite conocer la situacion global y real de tu negocio o de una parte de tu negocio en un momento dado. Debe estar organizado y constituido en base a tus KPIs. Ellos deben permitir dar un indicador en base a cada medida relacionada a tus KPIs acompañado con una visualizacion grafica.
+  
+  - Debe agregar informacion de forma automatica y actualizada.
+  
+  El **Cuadro de mando integral** (CMI) o **Balanced Score** (BSC) es una herramienta de gestion empresarial destinado a los departamentos de compra. Permite medir la evolucion y los resultados, desde una perspectiva global y estrategica. Sus indicadores deben de evaluar la gestion de compras, ver amanezas y oportunidades, etc. Son los indicadores de compra lo que hacen que el CMI sea diferente a otros CM.
+  
+  Los beneficios de un CMI son:
+  
+  - Ofrecer una vision global de la situacion de tu empresa.
+  - A traves de la vision: poder planificar una estrategia a corto y mediano plazo.
+  - Genera informes para la toma de decisiones.
+  - Minimizar riesgos.
+  - Alinear los objetivos de cada departamento.
+  
+  ----
+  
+  #### Formas de recolectar informacion
+  
+  Una cosa son las tipologias de datos, otras son las fuentes de datos y por ultimo las formas de recolectar informacion.
+  
+  A) Datos Creados:
+  
+  Son datos recolectados de manera directa con el cliente. Por medio de:
+  
+  - Formularios
+  - Encuentas
+  
+  La informacion por lo general llega en formato estructurado.
+  
+  B) Datos provocados:
+  
+  Se crean, aunque son obtenidos de manera pasiva y provocada. Una valoracion en internet es un ejemplo.
+  
+  C) Datos transaccionales:
+  
+  Recogidos cada vez que un usuario hace una compra. Combinado con otras fuentes permite mejorar ofertas y desarrollar mejores estrategias.
+  
+  D) Datos compilados:
+  
+  Datos que son recopilados por empresas para luego ser vendidos.
+  
+  E) Datos Experimentales:
+  
+  Es un hibrido entre los datos creados y los datos transaccionales. Son el resultado de experimentos de marketing y servicios, como por ejemplo A/B testing.
+  
+  F) Datos capturados
+  
+  Recogidos de forma pasiva en base a la interaccion de los usuarios con las maquinas (Aplicaciones).
+  
+  G) Datos generados por usuario:
+  
+  Son los datos que son generados por los usuarios de manera conciente. Cada vez que dejan un comentario, le dan like a una notificacion, etc. Por lo general estan de manera desestructurada, son datos externos a la empresa.
+  
+  ---
+  
+  #### Como diseñar un CM
+  
+  1. Escoger las metricas importantes y relevantes. Se debe ser capaz de comprender y entender las metricas que se ven en un cuadro de mano.
+  2. El cuadro de mando debe ser visual, rapido y facil de leer.
+  3. Debe ser interactivo, util al mayor numero posible de usuarios de la empresa, con lo que ha de ser versatil, con opciones como filtros, segmentacion, calculos, resumenes. Que vaya adaptandose y actualizando en base a la realidad del negocio de manera actual.
+'''
+tags: [
+  "OMNICANALIDAD"
+  "Build_Big_Data_Project"
+  "CRM"
+  "Gestion_del_cliente_Big_Data"
+]
+isStarred: false
+isTrashed: false

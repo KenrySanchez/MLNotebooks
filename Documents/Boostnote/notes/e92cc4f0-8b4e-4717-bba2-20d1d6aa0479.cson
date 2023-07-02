@@ -1,0 +1,91 @@
+createdAt: "2018-06-21T02:38:24.362Z"
+updatedAt: "2018-09-30T20:03:04.734Z"
+type: "MARKDOWN_NOTE"
+folder: "d464926e49d183704d56"
+title: "Automaticacion relacion con el cliente"
+content: '''
+  ## Automaticacion relacion con el cliente
+  
+  
+  Interactiar con el cliente, debe ser el modelo base para obtener `conocimiento` y poder dar un servicio mas personalizado.
+    
+   El tiempo de respuesta al cliente, en el mundo actual, es uno de los pilares mas importantes en la relacion cliente-empresa.
+   
+   *A traves del marketing automatizado podemos mejorar nuestras operaciones de comunicacion, es decir, fidelizacion de clientes*
+   
+   #### Principios Basicos
+   
+   **Marketing Automation** es un software que automatiza, mide y hace más eficiente las tareas de Marketing y Comunicación para que las compañías puedan incrementar sus operaciones, su “Engage” con el cliente , por lo tanto mejoras en ell servicio y la experiencia de los clientes.
+   
+   La automatización del Marketing no es solamente software o una herramienta tecnológica.
+   
+   - El equilibrio entre la herramienta y la estrategia es la clave.
+  
+  TAmbién es importante recordar que la base de todo , el cimiento principal son nuestros datos, la calidad de los mismos, nuestra segmentación... Recordad: convertir datos en información.
+  
+  `La base de todo proyecto de CRM, son los datos`
+  
+  *`La relacion uno a uno es la relacion mas fuerte a nivel de conocer a tu cliente, en cierto modo, la omnicanalidad es una relacion 1 - omni`*
+  
+  *La idea es llegar a fusionar toda la informacion de un cliente que tengamos*
+  
+  **Beneficios**
+  
+  A través de una herramienta de Marketing Automation facilitamos la conexión con los clientes , les entendemos mejor y convertimos ese conocimiento en más conversiones, monetización, incrementos en la retención y disminución en las bajas de clientes.
+  
+  - Obtencion de mas informacion de clientes
+  - Captacion de nuevos registros
+  - BBDD centralizada y normalizada
+  - campañas multicanal sincronizadas
+  - trazabilidad acciones en campaña
+  - Test-Precampaña
+  
+  #### Principales Áreas
+  
+  1. Engagement en con el clientes y/o producto
+  2. Automatización de los procesos reiterativos de marketing
+  3. Educación automática de la base de datos
+  
+  1: Facilita el entendimiento entre la empresa y el usuario.
+  
+  Ejemplo de dos tecnicas para facilitar el entendimiento.
+  
+  - Envio de correos electronicos e interacciones
+  
+  las campañas de emailing se ponen en marcha de forma automática cuando el usuario cumple con una serie de características relacionadas con su perfil y con su comportamiento con la empresa. **SIEMPRE ESTA ACTIVA UNA CAMPAÑA**
+  
+  - Re-engagement
+  
+  Despues de un tiempo de inactividad del usuario, este tecnica consiste en volver a captar la atencion e interes del usuario de forma automatica.
+  
+  2: Es importante tener claro que no se puede atomatizar un proceso que no existe. Es imprencinsible crear nuestro funnel de ventas y relacion. El funnel de ventas es como el mapa a seguir en la automatizacion del marketing.
+  
+  **Aplicaciones del marketing automatizado**
+  
+  - Cambio de propiedades de los perfiles de usuarios: A traves de una implementacion, se puede aplicar un cambio automatico en escala masiva u una gran cantidad de leads dentro de la base de datos.
+  - interaccion instantanea con el usuario: Permite mandar notificaciones automatizadas a usuarios que han llevado a cabo una acción determinada.
+  - Segmentacion automática de los contactos: A traves del marketing automatizado, podemos generar de manera mas rapida y eficiente grupos de leads en base a las interacciones o comportamientos que tenga nuestro usuario con los diferentes productos o servicios de nuestra organizacion.
+  
+  **Educacion autonatica de la base de datos**
+  
+  Consiste en poder hacer cambios y de alguna manera, la organizacion constante de datos a traves de diferentes sistemas basicos: lead nurturing y el lead scoring.
+  
+  - lead scoring: herramienta que permite puntear las oportunidades de negocio que entran en un funnel, segun su comportamiento en tus soportes. Permite segmentar segun el grado de interes de cada uno de ellos. Este cultivo de negocios permite desarrollar una relacion con el cliente, ofreciendole contenido de valor.
+  - lead nurturing: en base al comportamiento de tu cliente, generar acciones de cualificacion para que avancen en el embudo de ventas. Permite que los usuarios que aun no esten preparados, reciban informacion o contenido valioso con el fin de prepararse para ls posible venta o contratacion.
+  
+  `automatización del marketing` = captación || fidelización.
+  
+  **Automatización de captación vs. fidelización**
+  
+  Desde el punto de vista del *customer journey*
+  
+  La idea del marketing automatizado es generar una serie de procesos y ejercisios que tengan como fin conseguir el objetivo de fidelizacion o captacion de clientes, a traves del lead nurturing o lead scoring.
+  
+  `touchpoints`: momentos en el proceso de customer journey que representan experiences positivas o negativas para el consumidor.
+'''
+tags: [
+  "marketing"
+  "Data_orientada_a_negocio"
+]
+isStarred: false
+isTrashed: false

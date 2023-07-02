@@ -1,0 +1,255 @@
+createdAt: "2019-05-18T23:49:22.471Z"
+updatedAt: "2021-06-23T18:12:04.412Z"
+type: "MARKDOWN_NOTE"
+folder: "7b6dd385ab806689b09e"
+title: "Python in Machine Learning - Unsupervised Learning"
+content: '''
+  ## Python in Machine Learning - Unsupervised Learning
+  
+  ### Clustering
+  
+  What is a cluster? R: A group of data points that are similar to each other, and disimilar to data points in other clusters.
+  
+  **Clustering Application**
+  
+  1. Retail/Marketing:
+    - Identifying buying patterns of customers.
+    - Recommending new books or movies to customers.
+  
+  2. Banking:
+    - Analysts find clusters of normal transactions to find the patterns of fraudulent credit card usage.
+    - Identifying cluster of customers (For instance, to find loyal customers versus churned customers)
+  
+  3. Insurance:
+    -  clustering is used for fraud detection in claims analysis.
+    -  Evaluate the insurance risk of certain customers based on their segments.
+  
+  4. Publication:
+    - Auto - categorizing new bases on their content.
+    - Recommending new similar articles.
+  
+  5. Medicine:
+    - Characterizing similar behavior.
+    
+  6. Biology:
+    - Clustering genetic markers to identify family ties.
+  
+  Why Clustering:
+  - Exploratory data analysis.
+  - Summary generation or  reducing the scale.
+  - Outlier detection. especially to be used for fraud detection or noise removal.
+  - Finding duplicates.
+  - Pre-processing step for either prediction, other data mining tasks or as part of a complex system.
+  
+  ![Screen Shot 2019-05-18 at 7.08.05 PM.png](:storage/a0a782a0-acf4-43d4-9642-9df5920ad01d/bd0791f0.png)
+  
+  ------
+  
+  ### K-Means
+  
+  K-Means can group data only unsupervised based on the similarity of customers to each other.
+  
+  K-means is a type of ***partioning cluster***, which is it divides into cluster without any cluster internal structure or labels.
+  
+  There are two questions:
+  
+  - How can we find the simularity of samples in clustering?
+  - How do we measure how simular two customers are with regard to their demographics?
+  
+  The objective of K-Means is to form clusters in such a way that `similar samples go into a cluster`, and `dissimilar samples fall into different clusters`, it can be shown that instead of a similarity metric, `we can use dissimilarity metrics. In other words, conventionally the distance of samples from each other is used to shape the clusters.`
+  
+  We can say K-Means tries to minimize the intra-cluster distances and maximize the inter-cluster distances.
+  
+  ***how can we calculate the dissimilarity or distance of two cases such as two customers?***
+  
+  R: We can use `eucledan distance (teorema de pitagoras)` to calculate the distance between two cases. Also, we can use the same distance matrix for multidimensional vectors. Of course, we have to normalize our feature set to get the accurate dissimilarity measure.
+  
+  There are other types of measurement, it's recommended to undestand the domain knowledge of your dataset and datatypes of features and then choose the meaningful distance measurement.
+  
+  - Euclidean distance.
+  - Cosine similarity.
+  - Average distance.
+  
+  There are few mores.
+  
+  **How K-means works**
+  
+  We can show the distribution of points with a scatter plot.
+  
+  Step 1:
+  
+  We should define the number of cluster `K=?`. The key concept of the K-Means algorithm is that it randomly picks a center point for each cluster. It means we must initialize K which represents number of clusters.
+  
+  The centroids are the center points of the clusters.
+  
+  Approaches to choose `centroids`:
+  
+  1. we can randomly choose three observations out of the dataset and use these observations as the initial means.
+  2. we can create three random points as centroids of the clusters.
+  
+  Step 2:
+  
+  Distance calculation. herefore, you will form a matrix where each row represents the distance of a customer from each centroid. It is called the Distance Matrix.
+  
+  Step 3:
+  
+  Assign each point to the closets centroid. We can use the distance matrix to find the nearest centroid to datapoints.
+  
+  We can easily say that it does not result in good clusters because the centroids were chosen randomly from the first. Indeed, the model would have a `high error`. Here, `error is the total distance of each point from its centroid. It can be shown as within-cluster sum of squares error.`
+  
+  ```
+  SSE = The sum of the squared differences between each point and its centroid
+  ```
+  
+  **How make a beteer clister with least error?**
+  
+  We move centroids.
+  
+  Compute the new centroids for each cluster.
+  
+  Step 4:
+  
+  Repeat until there are not more changes.
+  
+  However, as it is a heuristic algorithm, there is no guarantee that it will converge to the global optimum and the result may depend on the initial clusters. It means, this algorithm is guaranteed to converge to a result but the result may be a local optimum i.e. not necessarily the best possible outcome.
+  
+  **How to initialize K with Local Optimun??**
+  
+  To solve this problem, it is common to run the whole process multiple times with different starting conditions. This means with randomized starting centroids, it may give a better outcome. As the algorithm is usually very fast, it wouldn't be any problem to run it multiple times.
+  
+  - K < (number of training points).
+  - Run `1-100` randomly initializing k-means. Run k-means and then compute the cost function (distorsion).
+  - Pick clustering that give lowest cost function.
+  
+  **Calculating K-means clustering accuracy**
+  
+  External approach:
+  
+  - Compare the cluster with the ground truth, if it is available. However, because k-Means is an unsupervised algorithm we usually don't have ground truth in real world problems to be used.
+  
+  Internal approach:
+  
+  - Average the distance between data points within a cluster.
+  
+  **Choosing K-means**
+  
+  There are some approaches to address this problem, but one of the techniques that is commonly used is to run the clustering across the different values of K and looking at a metric of accuracy for clustering.
+  
+  This metric can be mean, distance between data points and their cluster's centroid. Which indicate how dense our clusters are or, to what extent we minimize the error of clustering. Then, looking at the change of this metric, we can find the best value for K.
+  
+  But the problem is that with increasing the number of clusters, the distance of centroids to data points will always reduce. This means increasing K will always decrease the error. So, the value of the metric as a function of K is plotted and the elbow point is determined where the rate of decrease sharply shifts. It is the right K for clustering. This method is called the ***elbow method***.
+  
+  **What to do if we get a cluster without points**
+  
+  In that case, you should delete the cluster or again randomly initialize cluster centroid. But, delete the cluster is rather be used.
+  
+  ![Screen Shot 2019-05-19 at 6.24.58 PM.png](:storage/a0a782a0-acf4-43d4-9642-9df5920ad01d/5fcbb604.png)
+  
+  Another solution is if the elbow method is not doing well, you can select the number of cluster based on the label of features do you expect to gain from the clusterin. I.E: if you have a cluster of t-shirts select the number of k based on the size of t-shirts you want to collect.
+  
+  **BIG DATA**
+  
+  K-means clustering is much faster approach than hierarchical clustering as it does not require the program to calculate the simularity coefficients between data points again and again. Due to this, it can be used to run on a very large dataset. this is the main reason why is include it into the spark ml lib.
+  
+  There is one drawbak of k-means clustering and that is the randomness of choosing the `k` cluster. So, if the next time you ramndonly choose some other k points, you'd get a different set of clusters.
+  
+  -----
+  
+  ### Hierarchical clustering
+  
+  Hierarchical clustering algorithms build a hierarchy of clusters where each node is cluster consist of the clusters of its daugther nodes.
+  
+  The concept is very simple:
+  
+  - First, we find the distance between all the data points based on their attributes. To find the distance we can use any algorithm like eucledean distance.
+  - Secondly, we find the two most popular points based on this distance and combine them in a group.
+  - We find the average of the centroid of this group and, using this centroid we again find the distance of this point with respect to other points in the dataset. The closest point is again found and the previous cluster is now combined with the new data point to form a new cluster.
+  - Keeps on repeating until we find the required number of cluster.
+  
+  There is two types of them:
+  
+  - Divise: you start with all observations in a large cluster and break it down into smaller pieces. Since the top until the bottom.
+  - Agglomerative: The opposite of Divise.
+  
+  Agglomerative algorithm:
+  
+  1. Create n clusters, one for each point.
+  2. Compute the proximity matrix.
+  3. Repeat:
+  
+  - Merge the two closets clusters.
+  - Update the proximity matrix.
+  
+  **Calculate the distance between two clusters**
+  
+  Let's assume that we have a data set of patients and we want to cluster them using hierarchy clustering. So our data points are patients with a featured set of three dimensions. For example, age, body mass index, or BMI and blood pressure. We can use different distance measurements to calculate the proximity matrix. For instance, Euclidean distance.
+  
+  So, if we have a data set of n patience, we can billed an n by n dissimilarity distance matrix. It will give us the distance of clusters with one data point.
+  
+  how can we calculate the distance between clusters when there are multiple patients in each cluster?
+   
+  We can use different criteria to find the closest clusters and merge them. In general, it completely depends on the data type, dimensionality of data and most importantly, the domain knowledge of the data set.
+   
+  - Single-Linkage Clustering: Minimun distance between clustering.
+  - Complete-Linkage Clustering: Maximun distance between clusters.
+  - Average-Linkage Clustering: Average distance between clusters.
+  - Centroid-Linkage Clustering: Distance between cluster centroids.
+  
+  Agglomerative produces a `dendogram`, which helps with understanding the data.
+  
+  ![Screen Shot 2019-05-20 at 10.46.13 PM.png](:storage/a0a782a0-acf4-43d4-9642-9df5920ad01d/2134f91e.png)
+  
+  Remember that a <b>distance matrix</b> contains the <b> distance from each point to every other point of a dataset </b>. <br>
+  Use the function <b> distance_matrix, </b> which requires <b>two inputs</b>. Use the Feature Matrix, <b> X2 </b> as both inputs and save the distance matrix to a variable called <b> dist_matrix </b> <br> <br>
+  Remember that the distance values are symmetric, with a diagonal of 0's. This is one way of making sure your matrix is correct. <br> (print out dist_matrix to make sure it's correct)
+  
+  **BIG DATA**
+  
+  Hierarchical clustering gives very good result in terms of cluster accuracy, however, it's a highly computanionally intensive approach. On a big data dataset, this is quite infeasible as too many computations would slow down this approach tremendously. On small datasets, this approach can be used with good results.
+  
+  ----
+  
+  ### DBSCAN Clustering
+  
+  A density-based clustering algorithm which is appropriate to use when examining spatial data.
+  
+  When applied to tasks with arbitrary shaped clusters or clusters within clusters, traditional techniques might not be able to achieve good results that is, elements in the same cluster might not share enough similarity or the performance may be poor. Additionally, while partitioning based algorithms such as K-Means may be easy to understand and implement in practice, the algorithm has no notion of outliers that is, all points are assigned to a cluster even if they do not belong in any.
+  
+  density-based clustering locates regions of high density that are separated from one another by regions of low density. Density in this context is defined as the number of points within a specified radius. A specific and very popular type of density-based clustering is DBSCAN.
+  
+  DBSCAN is particularly effective for tasks like class identification on a spatial context. The wonderful attributes of the DBSCAN algorithm is that it can find out any arbitrary shaped cluster without getting effected by noise.
+  
+  It works based on two parameters; radius and minimum points. R determines a specified radius that if it includes enough points within it, we call it a dense area. M determines the minimum number of data points we want in a neighborhood to define a cluster.
+  
+  To see how DBSCAN works, we have to determine the type of points:
+  
+  - Core point.
+  - Border point.
+  - Outline Point.
+  
+  `what is a core point?` A data point is a core point if within our neighborhood of the point there are at least M points.
+  
+  `What is a border point?` A data point is a border point if:
+  - its neightbourhood contains less than M data point.
+  - its reachable from some core point.
+  
+  `What is an outlier?` An outlier is a point that is not a core point and also is not close enough to be reachable from a core point.
+  
+  -----
+  
+  ### BISECTING K-MEANS CLUSTERING
+  
+  This clusteting technique is a comobination of hierarchical clustering and k-means. The main purpose if this clustering apprach is to `enhance the accuracy bottleneck of the k-means clustering`. This algorithm is more accurate than the normal k-means clustering algorithm and is faster than the hierarchical clustering as it requires fewer itearions.
+  
+  **Steps**
+  
+  1 - There is a single cluster.
+  2 - it further bifurcates the data into two smaller clusters using k-means clustering, that is, by taking `k=2`.
+  3 - From these two clusters, it figures out `MES` of both clusters.
+  4 - it picks the cluster with the lowest `MSE`, that is, `the cluster that has the maximum similarity between the items`.
+  5 - We repeat the step of bifurcation on the sub-cluster until the total number of expected cluster is reached.
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

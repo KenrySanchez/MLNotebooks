@@ -1,0 +1,53 @@
+createdAt: "2018-09-19T02:01:23.425Z"
+updatedAt: "2018-10-26T16:14:55.567Z"
+type: "MARKDOWN_NOTE"
+folder: "d464926e49d183704d56"
+title: "User Experience and Big Data"
+content: '''
+  ## User Experience and Big Data
+  
+  [The User Experience: It's also about Data – Not Just Design](http://knowledge.wharton.upenn.edu/article/the-user-experience-why-data-not-just-design-hits-the-sweet-spot/)
+  
+  However, there is a fine line between “helpful” and “annoying” in the digital world, and the price of getting your data-driven personalization right or wrong may be the difference between a delighted customer and one who will never come back to your brand.
+  
+  ***Hay 3 razones por lo que las las soluciones digitales que son exitosas terminan atrapando a los usuarios y obtienen comentarios positivos: segmentacion, relevansa y recompensa.***
+  
+  #### 1. Segmentation: Behavioral
+  
+  Are you someone who likes competition and rewards? Or are you someone motivated by helpful nudges from friends and family? Do you respond to text messages during work, or do you catch up on your personal messages at night? Do you travel a lot? Do you have a “wearable” (or are willing to use one)?
+  
+  These are the types of questions we should be asking our users. We can either ask them directly, or infer answers from user interactions and behaviors.  The majority of applications create a one-size-fits-all experience that fails to engage even a fifth of those who sign up. The good news is that we have the ability to collect individual behavioral data from users so that we can segment them more accurately, and present them with experiences that speak to their unique experiences and preferences.
+  
+  #### 2. Relevance: Getting Context Right
+  
+  Context is much more than just time (when?) and location (where?). With richer data being collected from both users and third-party sources, context is now evolving to include situation (what am I doing?) and emotion (how am I feeling?). An expanded definition of context is shown in the figure above.
+  
+  With this multifaceted model of context, we move closer to the ideal “segment of one” (a unique profile for each user at a given point in time). You would not want to send weight loss content to a customer who is maintaining a healthy weight, or give a shopping coupon to a stressed out traveler in an airport security line. Context-aware applications like Google Now and Tempo AI (acquired by Salesforce) leverage a user’s calendar as a source of context, so that they know when a user may be busy, in a meeting or enjoying downtime.
+  
+  Most users are only willing to share their data if they perceive that they will get real benefits in return. More than 60% of consumers want real-time promotions, yet 67% don’t trust retailers with their data (Opinion Lab Survey, 2015). We have the opportunity to do better.
+  
+  #### 3. Reward: Overcoming the Effort versus Benefit Challenge
+  
+  In order to get, you have to give. Unfortunately, `most applications ask for too much and offer too little`. Twitter  It’s common for apps to have a long-winded sign-up process that asks you every question under the sun. This is not a recipe for success.
+  
+  Popular applications like Waze and Pandora are case studies in proper information gathering. They provide us with immediate benefits right after we download their apps. Waze improves our driving route in exchange for our location. Pandora gives us a personal DJ, tailored to our tastes, in exchange for rating the songs we’re listening to. In both these cases, our effort seems minimal in comparison to the benefits we get back. Contrast this with the majority of digital solutions that ask for a lot of data (like registration, profile, location, etc.) before delivering one ounce of benefit. We have to “earn the right” to collect the type of data we need to appropriately segment users. We have to win the “benefit versus effort” trade-off with our users by providing them with immediate, tangible benefits and using the data being collected to further personalize their experiences.
+  
+  -----------
+  
+  80% of companies' data is dark and untouched, but Bluewolf's report shows that companies that have increased their investments in analytics in the past 12 months are three times more likely to see their data as a competitive advantage compared to companies that have not. To keep pace with the best companies, some ways to prepare for intelligent applications now include:
+  
+  - Supplementing back-office BI tools with modern front-office capabilities, such as Salesforce Analytics Cloud, that support rapid analysis of data and empower employees to perform their own analyses, discover insights and gather intelligence to improve business outcomes.
+  
+  - Investing in analytics capable of properly gathering and synthesizing unstructured data -- companies will have a much larger pool of customer data to run through intelligent applications in order to make smarter business decisions.
+  
+  - Applying tools with intelligent functions that can augment and automate discovery, make proactive recommendations about the next best action, and continue to learn which actions are working -- and which are not.
+  
+  
+  
+  
+'''
+tags: [
+  "CRM"
+]
+isStarred: false
+isTrashed: false

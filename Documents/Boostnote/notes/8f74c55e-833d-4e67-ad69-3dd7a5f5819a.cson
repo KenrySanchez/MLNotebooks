@@ -1,0 +1,152 @@
+createdAt: "2018-09-20T00:41:48.632Z"
+updatedAt: "2020-07-30T07:44:39.312Z"
+type: "MARKDOWN_NOTE"
+folder: "48fbce2016d43f0faffa"
+title: "Desarrollo Tecnologico Big Data Software"
+content: '''
+  ## Desarrollo Tecnologico Big Data Software
+  
+  #### Almacenamiento distribuido
+  
+  **Tipos de almacenamiento**
+  
+  - **DAS**: Direct Attached Storage, tendremos un disco qu esta fisicamente conectado a la computadora y es el sistema operativo el que se encarga de gobernar el almacenamiento. Para ello utiliza varios formatos como son FAT32, vFAT, exFAT, NTFS o HFS+.Esto funciona por medio de una tabla de asignacion de archivos, un mapa por decir asi del disco duro y por otro lado la informacion que queremos guardar. Con ello podemos hacer configuracion RAID (el mas usado es RAID 0)
+  - **NAS**: Network Attached Storage, Se desplaza el sistema de archivos a otro dispositivo que se rige con su propio sistema operativo y que gobierna el disco y su tabla de asignacion. En la red lo que viaja son los archivos completos de nuestro disco duro, tanto para la escritura como para la lectura. Para comunicar los dispositivos podemos usar el protocolo de NFS para la transferencia de archivo.
+  - **SAN**: Storage Area Network, La  conexion de este disco se hace desde redes dedicadas (habitualmente fribra optica). El disco se encuentra de forma remota pero el sistema de ficheros se encuentran en la maquina de origen. ESta solucion al contar con canales de fibra dedicados es la que nos ofrece mejor rendimiento.
+  
+  Los sistemas de almacenamiento distribuido sirven para cuando se tiene muchos nodos/servidores queriendo acceder a la informacion almacenada.
+  
+  En los sistemas de almacenamiento distribuido, lo que se hace es deslocalizar todo, la tabla de asignacion de archivos y los nodos con la informacion, de forma que cada nodo tiene una parte del contenidp y para acceder al contenido es necesario una conexion a todos los nodos, pero cada nodo a su vez es autonomo para acceder a su parte de la informacion.
+  
+  ***El principal problema de este modelo es la seguridad***
+  
+  Es mejor y mas facil gestionar la informacion desde un solo punto a tener que fortificar y asegurar cada nodo de manera independiente. Cada nodo debe poseer un nivel de seguridad especifico.
+  
+  <https://cdn.oreillystatic.com/en/assets/1/event/193/A%20practitioner’s%20guide%20to%20securing%20your%20Hadoop%20cluster%20Presentation%201.pdf>
+  
+  **Cuando hacemos almacenamiendo distribuido lo haces sobre los tipos de discos (DAS, NAS, SAN), pero se implementa una capa de abstraccion superior. Para temas de mayor rendimiento se recomiendo usar  racks de discos DAS por su capacidad de localizar los datos en nodos fisicos (a la final los datos siempre terminan viajando por la red).**
+  
+  La capa de abstraccion conoce en todo momento en que nodo del cluster se encuentra la informacion que buscamos, y en caso de que eliminemos nodos o añadamos uno nuevo, tambien se encarga de balancear y replicar la informacion adecuadamente. La capa suele contar con un sistema de replicacion de informacion, de modo que aseguran que los datos unicamente no residan en un solo nodo y que sea respaldada correctamente para futuros fallos en discos.
+  
+  -----
+  
+  #### Arquitectura Hadoop
+  
+  Apache Hadoop es un Framework que nos permite ejecutar procesos con un modelo de programacion sobre un cluster. Permite escalar a cuantas maquinas requiera y ofrece computacion y almacenamiento **local** en cada uno de los nodos. El framework cumple con la caracetristica de **disponibilidad** ya que permite sortear los fallos particulares de cada nodo. Los pilares fundamentales de Hadoop son HDFS, Yarn y MapReduce.
+  
+  **HDFS**
+  
+  Hadoop Distributed File System, esta optimizado para distribuir grandes cantidades de datos por el cluster de forma balanceada y replicada. Ademas establece politicas para que la prioridad de los datos se almacenen en local/servidores propio.
+  
+  HDFS soporta varios formatos, pero es habitual conseguir los siguientes:
+  
+  - Avro Apache: formado por un fichero de cabecera y unos de datos. El de cabecera contiene la metainformación y el esquema del fichero que está escrito en JSON. Es un formato de filas.
+  - PARQUET Apache: es un formato orientado a columnas. Tiene integrado compresión e índices.
+  
+  HDFS esta diseñado de la manera en que:
+  
+  - Como esta diseñado pensado en servidores de bajo costo, es muy susceptible a fallos. Por lo que la deteccion de estos fallos, la resolucion y la recuperacion automatica son parte esencial del sistema.
+  - Las aplicaciones que se ejecutan sobre HDFS tendran acceso a striming de datos, esto implica que el sistema ofrece un rendimiento alto.
+  - El tamaño habitual los ficheros de HDFS son en terminologia de gigas o teras. No esta diseñada para paquetes pequeños. De querer guardar un archivo pequeño, se debe empaquetar con otros archivos hasta conseguir el tamaño minimo esperado.
+  - El ciclo de vida habitual de un archivo es el siguiente: se crea, se escribe y se cierra. No se permite modificar al menos que se vaya añadir informacion al final del archivo, truncando. No se permite borrar archivos asi que lo ideal es generar nuevas versiones de un archivo en caso tal se requiera hacer algun cambio.
+  - es más eficiente llevar la capacidad de cómputo a los datos que al revés. Esto quiere decir que una vez que tenemos los datos ya almacenados es mejor que el tratamiento de los datos se haga en el nodo directamente que mandar los datos a otro nodo para que se hagan los cálculos. Optimizamos el consumo de la red y por el camino el tiempo de ejecución.
+  - no está pensado para un hardware concreto, esto permite que los programas diseñados para Hadoop podrán ejecutarse en un amplio abanico de hardware.
+  
+  Las caracteristicas principales de Hadoop son:
+  
+  - **Un coste muy bajo por byte**: HDFS funciona con hardware commodity y low-cost. Si unimos eso a discos DAS, tenemos un coste por byte muy bajo y con un rendimiento muy alto (comparado con soluciones NAS o SAN).
+  - **Gran fiabilidad**: tal y como hemos resaltado en el apartado anterior, una de las premisas de Hadoop es que el hardware va a fallar, así que el clúster está diseñado pensando precisamente en cómo recuperarse de los fallos.
+  - **Altísimo ancho de banda**: gracias al funcionamiento de MapReduce y a cómo se distribuye la información, es fácil encontrarnos con HDFS que soporten cargas de más de 2 gigabits por segundo.
+  
+  ---
+  
+  #### Arquitectura Hadoop
+  
+  Descripcion Arquitectura Hadoop
+  https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop- hdfs/HdfsDesign.html
+  
+  - Namenodo : nodo o servidor maestro del cluster. Hace de filtro y es quien da paso al cliente para tener acceso a la informacion que se esta buscando.
+  - datanodo : son los nodos donde se guarda la informacion que quiere almacenarse en HDFS. cuando la informacion va a ser almacenada en HDFS, se parte en bloques y estos bloques son almacenados en distintos nodos. El default de memoria para cada bloque es de 128mb.
+  
+  ***Revisar notas de laverna para mas informacion sobre hadoop***
+  
+  
+  HDFS has a master/slave architecture. An HDFS cluster consists of a single NameNode, a master server that manages the file system namespace and regulates access to files by clients. In addition, there are a number of DataNodes, usually one per node in the cluster, which manage storage attached to the nodes that they run on. HDFS exposes a file system namespace and allows user data to be stored in files. Internally, a file is split into one or more blocks and these blocks are stored in a set of DataNodes. The NameNode executes file system namespace operations like opening, closing, and renaming files and directories. It also determines the mapping of blocks to DataNodes. The DataNodes are responsible for serving read and write requests from the file system’s clients. The DataNodes also perform block creation, deletion, and replication upon instruction from the NameNode.
+  
+  -----
+  
+  #### Yarn
+  
+  Yet another resource negotiator, cumple las funciones del gestor d recursos del sistema, asi como tambien planifica los trabajos y monitoriza el estado de los recursos/aplicaciones. Hace como de OS para el cluster.
+  
+  Parte computacional del framework tiene:
+  
+  - node-manager
+  - resource-manager
+  
+  resource-manager se encarga de asignar los recursos a los clientes y el node manager informa y monitoriza los contenedores/aplicaciones que se ejecutan dentro de nuestro nodo al resource manager general.
+  
+  cad aplicacion contara con un application master que es quien se encarga de negociar con el resource manager y el node manager los recursos que necesita para funcionar.
+  
+  resource manager tiene 2 componentes, el planificador y el gestor. Este gestor de aplicaciones es quien se encarga de relizar los envios de los ultimos jobs y despliega por primera vez el aplicacion master.
+  
+  [Apache Hadoop 2.9.1 – Apache Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html)
+  
+  ----
+  
+  #### MapReduce
+  
+  MapReduce nos ayuda a procesar datasets dentro de nuestro cluster. Para ello lo hace apoyandose de la arquitectura de YARN asi como tambien a traves del sistema de ficheros distibuidos de HDFS.
+  
+  El framework divide nuestro dataset y ejecuta las tareas dentro del mismo nodo donde los hemos almacenado.
+  
+  **Proceso de MapReduce**
+  
+  Distribuye la carga entre los nodos y se realiza el procesamiento de estos (Map), se genera un resultado el cual es enviado al nodo maestro para que los vuelva a fusionar (Reduce). Devuelve al al final el resultado de todo el job ejecutado en el framework.
+  
+  Nuestro MapReduce dentro de la arquitectura YARN se comporta como el aplicacion master.
+  
+  La ejecucion se realizan en base a jobs. Nosotros programamos lo que se ejcutara en la parte Map y en la Parte Reduce como salida del proceso. Esta informacion (new dataset) MapReduce se la dara al resource manager que es quien se encargara de administrar los procesos por el node manager.
+  
+  [MapReduce Tutorial | Mapreduce Example in Apache Hadoop | Edureka](https://www.edureka.co/blog/mapreduce-tutorial/)
+  
+  **Productos para MapReduce**
+  
+  - sqoop: realiza volcados en la base de datos
+  - hive: consultas en hdfs.
+  - impala: motor de consultas. similar a hive.
+  - mahaout: aplica ML en hadoop.
+  - ping: interfaz para crear jobs en MapReduce.
+  - Cassandra: BD NoSQL para big data.
+  - spark: motor de computacion/procesamiento compatible con hdfs. Su nueva arquitectura permite que procese en memoria y por ende mas rapido. MapReduce procesa solo en disco y hace que sea mas tiempo que en spark.
+  - Hbase: similar a cassasndra.
+  
+  ------
+  
+  #### Why Hadoop could be cheaper than other solutions
+  
+  
+  
+  ------
+  
+  #### Ingenieria de datos
+  
+  La ingenieria de datos tiene como objetivo el funcionamiento operativo y la escala. En escala de procesos, la limpieza de datos representa el 70% del trabajo necesario en ingenieria de datos. Por otro, gobernar la capacidad de computacion necesaria y el almacenamiento con recursos internos y externos, con los proveedores adecuados de cloud.
+  
+  Una arquitectura Big Data tiene una estructura medular para asegurar su escalabilidad, lo que permite definir varias funciones:
+  
+  - Sistemas de computación en red compuestos por una estructura cloud con ordenadores internos y ex- ternos, para asegurar flexibilidad, accesibilidad, disponibilidad y ga- rantía de servicio.
+  - Sistemas de captación de datos in- ternos (ventas, recursos, produc- ción, I+D) con los sistemas de capta- ción externos, así como los sistemas de medición de rendimiento y uso de nuestros conectores (API).
+  - Diferenciación de los sistemas data lakes, orientados a la captura masiva de datos para la generación y síntesis de modelos en paralelo con los sistemas data warehouse, para el análisis, la explotación y mejora de los modelos existentes.
+  - Una arquitectura de estas caracte- rísticas debe permitir la escala y el soporte a los procesos de innovación en modelos de negocio, el procesa- miento de datos a alta velocidad y la administración de sistemas, incluyendo los aspectos de seguridad en la información y el seguimiento nor- mativo de la regulación existente.
+  
+  Las capas de presentacion o visualizacion de datos muestran la sintesis de nuevos modelos de negocio o formas de monetizar datos, asi como el analisis de modelos existentes. Es my relevante recordar que los sistemas cognitivos permiten trabajar con flujos de datos en el tiempo. Es evidente que el aprendisaje es un proceso que evoluciona en el tiempo, a diferencia de los modelos estadisticos, que son estaticos.
+  
+  La clave esta en combinar la creacion o deteccion de modelos que presenten patrones recoocibles con su evolucion dinamica. Con los sistemas cognitivos tenemos la capacidad de sintetizar los datos en tiempo real para nuestras actividades, con el objetivo de tener mayor flexibilidad, adaptabilidad y capacidad de adelantarnos a los acontecimientos.
+'''
+tags: [
+  "Build_Big_Data_Project"
+  "big_data_theory"
+]
+isStarred: false
+isTrashed: true

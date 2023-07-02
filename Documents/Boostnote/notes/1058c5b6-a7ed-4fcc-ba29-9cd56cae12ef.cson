@@ -1,0 +1,33 @@
+createdAt: "2018-10-13T06:59:54.232Z"
+updatedAt: "2020-06-30T04:16:11.981Z"
+type: "MARKDOWN_NOTE"
+folder: "a41d44d96fbd153c28c9"
+title: "Birt Reports"
+content: '''
+  ## Birt Reports
+  
+  Los ficheros deben estar en estructura de arbol y de manera organizada.
+  
+  guia de referenci de birt.
+  
+  `Design Engine` me permite crear informes de manera dinamica para manejar objetos como `params`.
+  
+  Chargin Engine: Nos permite crear graficos visuales.
+  
+  NOTA: Podemos crear las imagenes a usando web-service y R. Luego hacer rest request para obtener la imagen del fichero creado.
+  
+  Los Reportes pueden subir a cualquier contenedor de `servlet`.
+  
+  Tecnologia Gis para dibujar graficos en reportes.
+  
+  En PDF las capas a sacar salen desordenadas si vienen desde el archivo HTML.
+  
+  Se pueden subir los reportes a cualquier contenedor de servlet.
+  
+  Crear una variable de entorno BIRT_HOME para poder desplegar los reportes en el servidor de manera batch. Declarar una carpeta como carpeta BIRT.
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: true

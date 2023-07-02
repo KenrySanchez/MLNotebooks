@@ -1,0 +1,120 @@
+createdAt: "2020-10-11T19:00:20.117Z"
+updatedAt: "2020-11-30T02:12:13.648Z"
+type: "MARKDOWN_NOTE"
+folder: "d95c9bc9473d8dba8318"
+title: "Practice: Ingestion by Sparse Matrix"
+content: '''
+  ### Practice: Ingestion by Sparse Matrix
+  
+  Introducing the libraries
+  ```Python
+  ## to calculations
+  import numpy as np
+  from scipy import parse 
+  ```
+  
+  Sparse matrices `offer a middle-ground between a comprehensive data warehouse solution with extensive test coverage and a directory of text files and database dumps`. Sparse matrices `do not work for all data types`, but in situations where they are an appropriate technology `you can leverage them even under load in production`.
+  
+  A sparse matrix is one in which most of the values are zero. If the number of zero-valued elements divided by the size of the matrix is greater than 0.5 then it is consider sparse.
+  
+  ```Python
+  A = np.random.randint(0, 2, 100000).reshape(100, 1000)
+  sparcity = 1.0 - (np.count.nonzero(A)/A.size)
+  print(round(sparcity, 4))
+  
+  ### ==> 0.5038
+  ```
+  
+  Very large matrices require significant amounts of memory. If we make a matrix of counts for a document or a book where the features are all known English words, the chances are high that your personal machine does not have enough memory to represent it as a dense matrix. Sparse matrices have the additional advantage of getting around time-complexity issues that arise with operations on large dense matrices.
+  
+  Some of the common applications of sparse matrices are:
+  
+  - Word counts with a large vocabulary.
+  - Recommender Systems.
+  - large networks.
+  
+  There are different types of sparse matrix representations in Python available through SciPy. The most commonly used are:
+  
+  COO_Matrix
+  
+  sparse matrix built from the COOrdinates and values of the non-zero entries.
+  
+  ```Python
+  A = np.random.poisson(0.3, (10,100))
+  B = sparse.coo_matrix(A)
+  C = B.todense()
+  
+  print("A",type(A),A.shape,"\\n"
+        "B",type(B),B.shape,"\\n"
+        "C",type(C),C.shape,"\\n")
+        
+  ```
+  
+  CSC_Matrix
+  
+  When there are repeated entries in the rows or cols, we can remove the redundancy by indicating the location of the first occurrence of a value and its increment instead of the full coordinates. When the repeats occur in colums we use a CSR format.
+  
+  ```Python
+  
+  A = np.random.poisson(0.3, (10,100))
+  B = sparse.csc_matrix(A)
+  
+  ```
+  
+  Like the CSC format there is a CSR format to account for data that repeat along the rows
+  
+  ```Python
+  
+  A = np.random.poisson(0.3, (10,100))
+  B = sparse.csr_matrix(A)
+  ```
+  
+  Because the coordinate format is easier to create, it is common to create it first then cast to another more efficient format. Let us first show how to create a matrix from coordinates:
+  
+  ```Python
+  
+  rows = [0,1,2,8]
+  cols = [1,0,4,8]
+  vals = [1,2,1,4]
+  
+  A = sparse.coo_matrix((vals, (rows, cols)))
+  print(A.todense())
+  
+  ### cast
+  B = A.tocsr()
+  ```
+  
+  Because this introduction to sparse matrices is applied to data ingestion we would need to be able to:
+  
+  ```Python
+  
+  ## matrix merge example
+  C = sparse.csr_matrix(np.array([0,1,0,0,2,0,0,0,1]).reshape(1,9))
+  print(B.shape,C.shape)
+  D = sparse.vstack([B,C])
+  print(D.todense())
+  
+  ## read and write
+  file_name = "sparse_matrix.npz"
+  sparse.save_npz(file_name, D)
+  E = sparse.load_npz(file_name)
+  print(E.shape)
+  
+  ```
+  
+  There are other tools that walk the line between polished and prototype when it comes to data ingestion.
+  
+  - [Hive alternative](https://developer.ibm.com/tutorials/bd-hivetool)
+  - [[ETL Best Practices | MongoDB](https://www.mongodb.com/partners/partner-program/technology/certification/etl-best-practices)]
+  - [Data refinery - Overview | IBM](https://www.ibm.com/cloud/data-refinery)
+  - [IBM Knowledge Center](https://www.ibm.com/support/knowledgecenter/en/SSZJPZ_8.7.0/com.ibm.swg.im.iis.ds.intro.doc/topics/what_is_ds.html)
+  
+  __Additional Resources__
+  
+  - [Breaking the 80/20 rule: How data catalogs transform data scientists’ productivity | IBM](https://www.ibm.com/cloud/blog/ibm-data-catalog-data-scientists-productivity)
+  - [Data preprocessing in detail – IBM Developer](https://developer.ibm.com/articles/data-preprocessing-in-detail/)
+  - [Automating low-level tasks for data scientists | IBM Research Blog](https://www.ibm.com/blogs/research/2017/06/automating-low-level-tasks-data-scientists/)
+'''
+tags: []
+isStarred: false
+isTrashed: false

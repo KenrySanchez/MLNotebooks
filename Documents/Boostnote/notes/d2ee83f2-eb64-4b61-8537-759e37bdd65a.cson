@@ -1,0 +1,46 @@
+createdAt: "2020-05-26T04:18:11.959Z"
+updatedAt: "2020-10-14T18:49:01.166Z"
+type: "MARKDOWN_NOTE"
+folder: "d95c9bc9473d8dba8318"
+title: "Data Ingestion (ETL) - Emphatize Phase"
+content: '''
+  ## Data Ingestion (ETL) - Emphatize Phase
+  
+  ***will your data gathering procedure scale and can you trust the process?***
+  
+  __TIP__: Revisar conceptos del curso de AI Workflow.
+  
+  The time spent on data cleaning can start at `60% and increase depending on data quality and the project requirements`. One could debate the proportion and surely it depends on the team, the data and a number of other factors, but one statement that is difficult to argue against is `Very significant portions of time are often devoted to data ingestion pipelines`.
+  
+  Poor data quality can result in project delays, budget projection shortfalls, or other avoidable challenges. Companies may consider improving their data ingestion infrastructure and methods for the benefits it could return.
+  
+  [Big Data Maturity Model - Wikipedia](https://en.wikipedia.org/wiki/Big_Data_Maturity_Model)
+  
+  **Data ingestion and automation**
+  
+  [Database testing - Wikipedia](https://en.wikipedia.org/wiki/Database_testing)
+  [Data warehouse automation - Wikipedia](https://en.wikipedia.org/wiki/Data_warehouse_automation)
+  
+  Testing is an essential piece of data warehouse automation, because the quality of downstream models are tied to the quality of the available data.
+  
+  **IMPORTANT**: The testing process is data-centric and it helps validate that data has been transformed and loaded into the target destination as expected. It is a critical part of data ingestion automation.
+  
+  In reality, any form of data movement from source to target can be considered as data ingestion. In large enterprises like hospitals it is not uncommon to have dozens of independent systems saving data—oftentimes in a redundant way. A common database as a target is next to impossible due to logistical and privacy concerns, but a well-constructed gateway in the form of an Application Programming Interface (API) and API keys could be a viable solution towards automation.
+  
+  Outside of more comprehensive solutions automation can be achieved with scripting. If the data ingestion code exists as a script (e.g. Bash or Python), then [cron jobs](https://en.wikipedia.org/wiki/Cron) are an incredibly powerful way to automate the process. The testing process can be automated with cron as well.
+  
+  __Sparse Matrices for Data pipeline Development__
+  
+  Once a well-trained machine learning model `has been deployed`, the `data ingestion pipeline` for that model will `also be deployed`. That pipeline will consist of a collection of tools and systems used to fetch, transform, and feed data to the machine learning system in production.
+  
+  However, Finalizing the process of `data ingestion before models have been run and your hypotheses about the business use case have been tested` often leads to lots of re-work.
+  
+  Instead of building a complete data ingestion pipeline, `data scientists will often use sparse matrices during the development and testing` of a machine learning model. [Sparse matrix](https://en.wikipedia.org/wiki/Sparse_matrix) are used to represent complex sets of data (e.g., word counts) in a way that reduces the use of computer memory and processing time.
+  
+  [Practice: Ingestion by Sparse Matrix](:note:86da147c-7616-4708-9cdf-3417e626e7c3)
+  
+  The process of building a `data ingestion pipeline entails extracting data, transforming it, and loading it into an appropriate data storage technology`. When constructing a pipeline it is important to keep in mind that `they generally process data in batches`. For example, `data may be compiled during the day and the batch could be processed during the night`. The data pipeline may also be optimized to execute as a streaming computation (i.e., every event is handled as it occurs).
+'''
+tags: []
+isStarred: false
+isTrashed: false

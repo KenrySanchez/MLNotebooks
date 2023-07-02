@@ -1,0 +1,32 @@
+createdAt: "2020-01-11T23:44:41.364Z"
+updatedAt: "2020-01-12T00:29:33.030Z"
+type: "MARKDOWN_NOTE"
+folder: "7b6dd385ab806689b09e"
+title: "Databases Concepts"
+content: '''
+  ## Databases Concepts
+  
+  Databases are primarily of two types:
+  
+  - OLAP: Online Analytical Proccesing, Refers to the read-only database concept. This kind of database is used just for analytical porpuses. I.E, an organization can store historical data into a OLAP database and then generate descriptive or predictive analysis using that data stored.
+  
+  - OLTP: Online Transaccional Process, refers to databases which are used to manage dynamic data. They are used for common database operations such as modification, addition, and deletion of data.
+  
+  Relational databases follows the ACID Rules:
+  
+  - Atomicity: Run or not the operation.
+  - Consistency: Write the data into the bd.
+  - Isolation: Isolate db operations.
+  - Durability: Data updated and avability after a db operation.
+  
+  **Rare databases**
+  
+  Graph databases: As Graphs analytics, the secret is in the node (interception/vertice) of the relationship between data. It's used when you need to represent highly interconnections between information.
+  
+  Spatial databases: Are implementations of the Open Geospatial Consortium (OGC) standarts. The atomic of spatial databases are lines, points and polygons. They can be combined in any way to represent any object in 2, 2.5 or 3 dimensions.
+  
+  They can answer queries like "what is the distance between point a and point b", "does a specific line intersect with a particular set of polygons"?
+'''
+tags: []
+isStarred: false
+isTrashed: false

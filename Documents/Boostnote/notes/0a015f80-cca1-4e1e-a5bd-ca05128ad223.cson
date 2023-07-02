@@ -1,0 +1,278 @@
+createdAt: "2020-10-17T23:45:35.099Z"
+updatedAt: "2020-11-30T06:29:28.044Z"
+type: "MARKDOWN_NOTE"
+folder: "d95c9bc9473d8dba8318"
+title: "Feature Engineering and Bias Detection"
+content: '''
+  ## Feature Engineering and Bias Detection
+  
+  __Pipelines__
+  
+  Pipelines can help us to compare various workflows variants.
+  
+  ```Python
+  import numpy as np
+  from sklearn.model_selection import train_test_split
+  from sklearn.ensemble import RandomForestRegressor
+  from sklearn.pipeline import Pipeline
+  from sklearn.feature_selection import SelectKBest
+  from sklearn.metrics import median_absolute_error, r2_score
+  from sklearn.preprocessing import StandardScaler
+  from sklearn.datasets import load_boston
+  
+  ## load the boston dataset
+  boston = load_boston()
+  X, y = boston["data"], boston["target"]
+  features = boston["feature_names"]
+  
+  ## split the data to a training set and a test set
+  X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
+  
+  ## create a pipeline
+  pipe = Pipeline([("scaler", StandardScaler()),
+                   ("featsel", SelectKBest(k=10)),
+                   ("rf", RandomForestRegressor(n_estimators=20))])
+  
+  ## train on the training data
+  pipe.fit(X_train, y_train)
+  
+  ## evaluate the model with the test data
+  y_pred = pipe.predict(X_test)
+  print(r"R^2=%.2f, MAE=%.2f"%(r2_score(y_test, y_pred), median_absolute_error(y_test, y_pred))) 
+  ```
+  
+  ### class imbalance, data bias
+  
+  During the `Define and Ideate phases of the design thinking process`, there will be a lot of work accomplished that is related to the identification of data sources that can be used to create machine learning models. You’ll be building and testing numerous pipelines, comparing the performance of each one with the others, and utilizing the best ones.
+  
+  Dealing with `problems of class imbalance` often requires finesse. Typically being overwhelmed during the model’s training directly affects the model’s accuracy. Accuracy, that is the proportion of predictions that are correct, is an intuitive metric for classification, but can be misleading with imbalanced classes.
+  
+  __WARNING__: Accuracy is not an appropriate metric for imbalanced classes. Use F1 Score or another metric instead.
+  
+  [Evaluation of binary classifiers](https://en.wikipedia.org/wiki/Evaluation_of_binary_classifiers)
+  
+  __Sampling Techniques__
+  
+  The most common approaches are sampling based, or more specifically, re-sampling based. Between `up-sampling` and `down-sampling (also called over-sampling and under-sampling)`, down-sampling is a bit simpler conceptually.
+  
+  Synthetic Minority Over-sampling Technique for Nominal and Continuous `(SMOTENC)` is an extension of the original `SMOTE method` designed to handle a mixture of categorical and continuous features. SMOTE has a number of other variants including ones that make use of Support Vector Machines and K-means clustering to improve on the synthetic samples.
+  
+  - Models sensitive to class imbalance: some models are less or more sensitive to class imbalance.
+  - Sampling Techniques: up-sampling and down-sampling.
+  - Imbalanced learn python package: It contains many algorithms for up-sampling and down-sampling, which is important because you will need to compare different algorithms and assess their effects on the performance of your models
+  
+  The level of imbalance also affects your interpretation of the results in how you approach the problem. One typically imbalance problem is have in a dependent column more 1 than 0 binary values.
+  
+  __NOTE__: When `split the dataframe`, the `stratify parameter` makes the train, test, split, so the class proportion from the train and test split is the same as the original sample.
+  
+  Use of pipeline with two types of columns:
+  
+  ![Screen Shot 2020-10-18 at 1.26.56 PM.png](:storage/0a015f80-cca1-4e1e-a5bd-ca05128ad223/3990e9d9.png)
+  
+  Compare models using pipelines:
+  
+  ![Screen Shot 2020-10-18 at 1.36.51 PM.png](:storage/0a015f80-cca1-4e1e-a5bd-ca05128ad223/701c10b0.png)
+  
+  ![Screen Shot 2020-10-18 at 1.38.03 PM.png](:storage/0a015f80-cca1-4e1e-a5bd-ca05128ad223/40aa735b.png)
+  
+  __Models that naturally handle imbalance__
+  
+  `Neural networks` for example are very sensitive to imbalanced classes. `Support Vector Machines` on the other hand and to some `extent tree based methods` are more resilient. If available, the `class_weight` argument should be used when working with imbalanced classes.
+  
+  ```Python
+  
+  clf_3 = SVC(kernel="linear",
+           class_weight="balanced",
+           probability=True)
+  ```
+  
+  Additional resources:
+  
+  [IBM Research Releases 'Diversity in Faces' Dataset to Advance Study of Fairness in Facial Recognition Systems | IBM Research Blog](https://www.ibm.com/blogs/research/2019/01/diversity-in-faces)
+  
+  ***Which variant of SMOTE is most appropriate when you have a mixture of categorical and continuous variables? R: SMOTENC***
+  
+  ------
+  
+  ### Dimensionality reduction
+  
+  ***through the Ideate and Prototyping phases of the design thinking process***
+  
+  Here are some of the reasons:
+  
+  - Enable EDA visualization in high dimensional data.
+  - Remove multicolinearity.
+  - Remove redudant features.
+  - deal with the curse of dimensionality.
+  - help us identify structure for supervised learning.
+  
+  One `disadvantage to classical dimension reduction techniques like PCA`, is the interpretability of your data is obscured or lost. For example, the principal components themselves are linear combinations of the original features. So `interpreting a beta from linear regression is challenging`. If you need to `know which features are most important then feature elimination is one possibility`. But you could take it a step further by looking at the relationships between variables with techniques like `structural equation modeling`.
+  
+  One key area where dimensionality reduction is very useful is in data visualization. You will be asked to generate visuals of critical data distributions, and it will almost always be necessary to employ various dimensionality reduction techniques to arrive at a data set that can be easily used in a data plot.
+  
+  __Overview__
+  
+  Examples of data that often require dimensionality reduction either for visualization or for modeling purposes include `images, texts, signal processing data, astronomical data, and health data`.
+  
+  [sklearn matrix decomposition](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.decomposition)
+  
+  - Feature subsetting: ANOVA, LASSO.
+  - Matrix decomposition techniques: PCA, SVD.
+  - Manifold learning Techniques: tSNE, isomap.
+  
+  __Feature Subsetting__:
+  
+  Feature subsetting is a form of feature engineering where we identify `subsets of features we may use to build models`.
+  
+  `Akaike and Bayesian information criteria` may both be employed as methods for selecting the best linear models. `LASSO regression` performs variable selection and regularizes the data sets to enhance performance of your models. `Neural networks` of course can do feature extraction via upper layer outputs or via unsupervised autoencoders.
+  
+  Using sklearn, we can:
+  
+  ```Python
+  from sklearn.feature.selection import VarianceThreshold
+  from sklearn.feature.selection import SelectKBest
+  ```
+  
+  `Variance thresholding` be useful, especially in situations where there's a large feature space. For example, the entire Human Genome, and we want to tune the pipeline on a smaller data set or try to remove a noisy features in that large feature space.
+  
+  __NOTE__: Practice large datasets with the Fashion MNIST dataset.
+  
+  Other matrix decomposition:
+  
+  - DictionaryLearning.
+  - Factor analysis.
+  - FastICA: fast algorithm for independet component analysis.
+  - IncrementalPCA: IPCA Analysis.
+  - KernelPCA: KPCA.
+  - NMF: Non negative matrix factorization, topic modeling.
+  - LDA: topic modeling.
+  - sparsePCA.
+  - sparserCoder.
+  - TruncatedSVD: aka LSA.
+  
+  Topic modeling is an unsupervised process that enables us to identify clusters of features that exist in text data. For this case study, we will use topic modeling to generate insights from unstructured text.
+  
+  One major drawback to using `PCA is that non-linear or curved surfaces tend to not be well-explained by the approach`. `Manifold learning` for dimensionality reduction has gained a lot of traction recently.
+  
+  The embedding approach tSNE is often used to visualize the results of topic model representations in lower dimensional space to both tune the model as well as gather insights from the data
+  
+  [sklearn.manifold.TSNE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html)
+  
+  Additional Resources:
+  
+  [LDA was used to extract information from clinical notes](https://researcher.watson.ibm.com/researcher/files/ibm-Uri.Kartoun/srep42282_blei03a.pdf)
+  
+  [Topic modeling](https://mimno.infosci.cornell.edu/papers/2017_fntir_tm_applications.pdf)
+  
+  -----
+  
+  ### Dealing with Bias
+  
+  ***You will be the one who leads the discussion of bias during playbacks, and also the one who leads the way in making sure any models selected during the Prototype and Testing phases of the design thinking process are as un-biased as possible***.
+  
+  The [AI Fairness 360 toolkit](https://aif360.mybluemix.net/) is an extensible open-source library containing techniques developed by the research community to help detect and mitigate bias in machine learning models throughout the AI application lifecycle. The [AI Fairness 360 Python package](https://github.com/IBM/AIF360) includes metrics to test for biases and algorithms to mitigate bias.
+  
+  A bias detection and/or mitigation tool needs to be tailored to the particular bias of interest. More specifically, it needs to know the attribute or attributes, called `protected attributes`, that are of interest: race is one example of a protected attribute and age is a second.
+  
+  ----
+  
+  ### Outlier detection
+  
+  Visualizations can help reveal the presence of outliers. Some outliers are representative of natural variations in the data, while others are the result of mislabeling or another unintended error. When they have been identified it is important to investigate their origin. This will generally require talking with the individuals that are close to the data production and data gathering. There is a good chance that it will require some understanding of the nature of the data itself.
+  
+  The design thinking exercise called `Data Understanding is designed to allow a team to do a deep dive into each potential data source that might be used for machine learning models`. As a data scientist your role during this exercise would be to identify all of the complications associated with using a particular data source, including the presence of outliers that could skew the model's results. It will be up to you to ask the domain experts about what sort of outliers might appear in the data, as well as how common they are.
+  
+  __Outlier detection algorithm__
+  
+  - **Novelty detection algorithm**: Novelty detection algorithms assume that outliers are not present in the training data, and they are concerned with the detection of outliers given new data.
+  - **Outlier detection algorithm**:  we assume outliers are present in the training data then the algorithm falls into the category of outlier detection. It can be used also for novelty detection once trained.
+  
+  Main applications:
+  
+  - SP learning for extremely imbalanced data.
+  - Outlier/Novelty detection for deployed models.
+  
+  Algorithms:
+  
+  - Elliptic envelope (Outlier).
+  - One class SVM (Outlier, Novelty).
+  - Isolation Forest (Outlier).
+  - Local Outlier Factor (Outlier, Novelty).
+  
+  Notes:
+  
+  - The `Elliptic envelope may break or not perform well` in high-dimensional settings. For example, where N is less than P, P being the number of dimensions. However, you can use PCA or another dimension reduction technique first.
+  - One class SVM requires the choice of a kernel and a scalar parameter to define the boundary (radial basis function kernel is usually chosen).
+  - Local Outlier factor works well in high dimensional datasets.
+  - Isolation forests works like Random Forest with many single decision stumps.
+  
+  There are times when the `class imbalance is so extreme that we should consider outlier detection algorithms in place of more traditional supervised learning techniques`. Visualization is often used to help determine which algorithm(s) makes the most sense for the data. For `high-dimensional data it is sometimes necessary to pipe the data through a dimension reduction` algorithm before applying the outlier detection algorithm.
+  
+   Outlier detection can also be included as a step in the overall modeling pipeline which can improve performance of the core prediction algorithm, but the outlier observations should still be accounted for in some way.
+   
+   __NOTE__: When dealing with data that have many features, it is a reasonable practice to reduce the dimensionality of the feature space with PCA before calculating distance and detecting outliers.
+   
+   Additional Resources:
+   
+   [Compare the effect of different scalers on data with outliers — scikit-learn 0.23.2 documentation](https://scikit-learn.org/stable/auto_examples/preprocessing/plot_all_scaling.html#sphx-glr-auto-examples-preprocessing-plot-all-scaling-py)
+   [Customized sampler to implement an outlier rejections estimator — imbalanced-learn 0.5.0 documentation](https://imbalanced-learn.readthedocs.io/en/stable/auto_examples/plot_outlier_rejections.html)
+   
+   -----
+   
+   ### Unsupervised Learning
+   
+  Unsupervised learning techniques may be useful in all phases of the design thinking process. Since they are essentially designed for summarizing and clustering data sources, they can be helpful in a wide variety of different ways.
+  
+  During each of the design thinking stages, unsupervised learning techniques may be used to identify patterns in large data sets, which may then be useful in generating new ideas or in making predictions.
+  
+  With unsupervised learning problems, `we begin with a dataset that does not have this target value. In this case, our goals will usually be related to simplifying or summarizing the data`. Since we lack a dimension or `variable that has the special status of being the target, we can’t really talk about how well our model is doing as clearly as is possible with supervised models`. `We are not able to do cross-validation`, so at some level choosing what’s “good enough” will always be a judgment call in unsupervised learning. That said, it can be very useful to build a “big picture” representation of a dataset using unsupervised learning.
+  
+  __Clustering__
+  
+  A common use case for this approach is in `Market Segmentation`, where one uses `demographic and/or past purchase data to group consumers together`. This process can be helpful for identifying the characteristics of a company’s consumers, for the purpose of designing targeted advertising or promotions likely to appeal to those customers.
+  
+  Here we provide brief descriptions of a few of the most broadly applicable ones, starting with two classical combinatorial algorithms: `k-Means and Hierarchical clustering`. All methods of `clustering apply some measure of similarity between observations to group them together, and these two take a geometric perspective by treating observations as points in space and measuring the distances between them`.
+  
+  This approach has some `drawbacks, which some more contemporary algorithms attempt to address via ranking systems and/or transformations of the data`. We introduce two of these: `Spectral Clustering and Affinity Propagation`. An additional way of grouping data is to do so `probabilistically, that is to assume that the data are drawn from a finite number of population distributions and to try to characterize these underlying distributions`. Techniques of this form are referred to as `Mixture Models`, and are our final clustering topic.
+  
+  [sklearn.metrics.silhouette_score — scikit-learn 0.23.2 documentation](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html)
+  
+  __TIP__: Very useful, but silhouette is not optimized for datasets that fall outside of what is traditionally thought of as a cluster.
+  
+  __Unsupervised Learning__
+  
+  The `k-means algorithm` is very fast and has a large number of use cases. But as we can see it does not work well for all of these datasets. Considering how simple the algorithm is, though, it performs rather well.
+  
+  `Hierarchical clustering` does not require choosing the number of clusters to use before obtaining results. Putting off this choice is possible because the algorithm takes a bottom-up approach of successively fusing clusters together. Until all of the data are joined together. Like k-means, hierarchical clustering commonly uses Euclidean distances to group together data.
+  
+  __TIP__: Use a dendogram when apply Hierarchical clustering. Use `spectrum clustering` when apply to spacial data.
+  
+  Gaussian Mixture Models, use probability assetments to create clusters, they are very flexible. There is not need to specific `k`, it takes from the data. 
+  
+  __Clustering evaluation__
+  
+  - If the labels of the clusters are known then there are metrics like the [adjusted Rand index](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_rand_score.html#sklearn.metrics.adjusted_rand_score) and the [Normalized mutual information score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.normalized_mutual_info_score.html#sklearn.metrics.normalized_mutual_info_score).
+  - When the labels for the clusters are not known the [silhouette score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html#sklearn.metrics.silhouette_score) and [Davis-Bouldin](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.davies_bouldin_score.html#sklearn.metrics.davies_bouldin_score) may be used.
+  - Other methods [2.3. Clustering — scikit-learn 0.23.2 documentation](https://scikit-learn.org/stable/modules/clustering.html#clustering-evaluation).
+  
+  concept of inertia or the within cluster sum-of-squares has been used for model selection, but not is the best `approach`. Another method that is often discussed in the same context as inertia is the `elbow method` as a heuristic for determining the number of clusters.
+  
+  __TIP__: When thinking about the appropriate number of clusters it is possible that there is more than one answer depending on the perspective.
+  
+  When comparing `across algorithms` it is important that the comparisons be between results that contain roughly the `same number of clusters`. There have been some hints with the running wholesale example that an appropriate `number of clusters is around five`.
+  
+  For several of the algorithms discussed we can set `this value directly`. Another alternative is trying to `visualize the data using the dimension reduction techniques`. The labels designated with `colors can provide insight into the cluster assignments`. This technique is generally `appropriate for the EDA part of the workflow`.
+  
+  __Facts__
+  
+  - In a imbalanced dataset if the minority class represents less than 5%, you can still use a supervised model.
+  - Which outlier detection method is known to work well on high-dimensional data? R: Local outliert factor.
+  - Which of the following clustering methods does not need to set the number of clusters? R: Dirichlet process gaussian mixture models.
+  
+  __THE DESIGN THINKING PROCESS__
+  
+  Unsupervised learning techniques may be useful in all phases of the design thinking process. 
+'''
+tags: []
+isStarred: false
+isTrashed: false

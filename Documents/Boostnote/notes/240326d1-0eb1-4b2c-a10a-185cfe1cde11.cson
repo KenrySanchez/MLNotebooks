@@ -1,0 +1,21 @@
+createdAt: "2020-01-24T21:04:40.430Z"
+updatedAt: "2020-01-24T21:07:38.096Z"
+type: "MARKDOWN_NOTE"
+folder: "6ce8e9fa5ab8d660e1a1"
+title: "SOCIAL NETWORKING"
+content: '''
+    ### SOCIAL NETWORKING
+    
+    Influencers could be a hight source to get large amount of data..
+    
+    technologies..
+    
+    - n-gram model.
+    - hight speed carrier data (kafka, flume, rabbitMQ??).
+    - process near real time data (apache spark streaming, apache storm).
+    - columnar database.. MongoDB (data items are not so large, don't need hbase, casandra... just a columnar database for hight speed storing).
+  - SNA + Social Graph.
+'''
+tags: []
+isStarred: false
+isTrashed: false

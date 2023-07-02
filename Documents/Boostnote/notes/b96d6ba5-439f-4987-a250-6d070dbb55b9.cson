@@ -1,0 +1,493 @@
+createdAt: "2019-05-03T03:57:14.176Z"
+updatedAt: "2020-11-21T21:58:39.181Z"
+type: "MARKDOWN_NOTE"
+folder: "7b6dd385ab806689b09e"
+title: "Python in Machine learning - Supervised Learning"
+content: '''
+  ## Python in Machine learning - Supervised Learning
+  
+  **Major ML techniques**
+  
+  - Regression.
+  - Classification.
+  - Clustering.
+  - Associations.
+  - Anomaly detections: discovering abnormal and unusual cases.
+  - Sequence mining: Predicting next events, click-stream (Markov Model, HMM).
+  - Dimension Reduction: Reducing the size of data (PCA - Principal Component Analysis - PCA is a deterministic algorithm: there is no initialization and there are no local optima.).
+  - Recommendation System.
+  
+  **Python libraries for ML**
+  
+  - Scipy: collection of numerical algorithms and domain specific toolboxes, including signal processing, optimization, statistics and much more. SciPy is a good library for scientific and high performance computation.
+  - scikit-learn: collection of ml algorithmes.
+  
+  **scikit-leanr functions**
+  
+  ```python
+  from sklearn import preprocessing
+  X = preprocessing.StandartScaler().fit(X).transform(X)
+  
+  from sklearn import svm
+  clf = svm.SVC(gamma = 0.001, C = 100)
+  
+  from sklearn import confusion_matrix
+  print(confusion_matrix(y_test, yhat, labels=[1,0]))
+  
+  import pickle
+  s = pickle.dumps(clf)
+  ```
+  
+  **Unsupervised learning techniques**
+   - Dimension reduction.
+   - Density estimation.
+   - market basket analysis.
+   - clustering.
+  
+  ----
+  
+  ### Regression
+  
+  Regression is the process of predicting a continuos value.
+  
+  **Regression algorithms**
+  
+  - Ordinal regression.
+  - Poisson regression.
+  - Fast forest quantile regression.
+  - Linear, Polynomial, Lasso, Stepwise, Ridge regression.
+  - Bayesian linear regression.
+  - Neuronal network regression.
+  - Decision forest regression.
+  - Boosted decision tree regression.
+  - Knn (K-nearest neighbors).
+  
+  How can we find such a perfect line? Or said another way, how should we find the best parameters for our line? Should we move the line a lot randomly and calculate the MSE value every time and choose the minimum one? Not really. Actually, we have two options here. Option one, we can use a mathematic approach, or option two, we can use an optimization approach.
+  
+  ![Screen Shot 2019-05-03 at 10.35.51 PM.png](:storage/b96d6ba5-439f-4987-a250-6d070dbb55b9/e4f2663f.png)
+  
+  **Model evaluation approaches**
+  
+  Approaches for data evaluation on regression are:
+  
+  Train and test on the same data:
+  
+  - Means train the model with the whole data and then testing with a portion of the same data frame.
+  - Hight training accuracy but Low out-of-sample-accuracy.
+  
+  ***Training Accuracy***
+  
+  - Hight training accuracy isn't necessarily a good thing.
+  - Result of over-fiiting: The model is overly trained to the dataset, which may capture noise and produce a non-generalize model.
+  
+  ***Out-of-sample Accuracy***
+  
+  - it's important that our models have a high, out-of-sample accuracy.
+  - More accurate evaluation on out-of-sample accuracy.
+  - Highly dependent on which dataset the data is trained and tested.
+  
+  Another solution for evaluation could be **K-fold cross-validation**.
+  
+  **Metrics for Regression**
+  
+  - **MAE**: Mean absolute error is the mean of the absolute value of the errors. This is the easiest of the metrics to understand, since it's just the average error.
+  - **MSE**: Mean squared error is the mean of the squared error. It's more popular than mean absolute error, because the focus is geared more towards large errors. This is due to the squared term, exponentially increasing larger errors in comparison to smaller ones.
+  - **RMSE**: Root mean squared error is the square root of the mean squared error. This is one of the most popular of the evaluation metrics, because root mean squared error is interpretable in the same units as the response vector or y units, making it easy to relate its information.
+  - **RAE**: Relative absolute error, also known as residual sum of square, where y bar is a mean value of y, takes the total absolute error and normalizes it by dividing by the total absolute error of the simple predictor.
+  - **RSE**: Relative squared error is very similar to relative absolute error, but is widely adopted by the data science community, as it is used for calculating R squared.
+  
+  R squared is not an error per se, but is a popular metric for the accuracy of your model. It represents how close the data values are, to the fitted regression line. The higher the R-squared, the better the model fits your data. Each of these metrics can be used for quantifying of your prediction. The choice of metric, completely depends on the type of model, your data type and domain of knowledge.
+  
+  #### Multiple Linear regression
+  
+  Basically, it has two porpuse:
+  
+  - Independent variables effectiveness on prediction?? I.E: Does revision time, test anxiety, lecture attendance and gender have any effect on the exam performance of students?
+  
+  - Predicting impacts of changes?? I.e: How much does blood pressure go up (or down) for every unit increase (or decrease) in the BMI of a patient.?
+  
+  In a multiple linear regression, number of operations as coefficient turn into a vector "Theta" and x is the vector of the featured sets.
+  
+   theta transpose x in a one-dimensional space is the equation of a line, it is what we use in simple linear regression. In higher dimensions when we have more than one input or x the line is called a plane or a hyperplane, and this is what we use for multiple linear regression. So, the whole idea is to find the best fit hyperplane for our data. To this end and as is the case in linear regression, we should estimate the values for theta vector that best predict the value of the target field in each row. To achieve this goal, we have to minimize the error of the prediction.
+   
+   ![Screen Shot 2019-05-04 at 10.58.08 PM.png](:storage/b96d6ba5-439f-4987-a250-6d070dbb55b9/989493dc.png)
+   
+   **What are optimized parameters??**
+   
+  Optimized parameters are the ones which lead to a model with the fewest errors. The best model for our data set is the one with minimum error for all prediction values. So, the objective of multiple linear regression is to minimize the MSE equation. To minimize it, we should find the best parameters theta.
+  
+  ![Screen Shot 2019-05-04 at 11.11.50 PM.png](:storage/b96d6ba5-439f-4987-a250-6d070dbb55b9/7ac44ddc.png)
+  
+  **how do we find the parameter or coefficients for multiple linear regression?**
+  
+  ***Ordinary Least Squares***: Ordinary least squares tries to estimate the values of the coefficients by minimizing the mean square error.
+  
+  This approach uses the data as a matrix and uses linear algebra operations to estimate the optimal values for the theta. The problem with this technique is the time complexity of calculating matrix operations as it can take a very long time to finish. When the number of rows in your data set is less than 10,000, you can think of this technique as an option
+  
+  ***Optimization algorithms***:  you can use a process of optimizing the values of the coefficients by iteratively minimizing the error of the model on your training data.
+  
+  you can use **gradient descent** which starts optimization with random values for each coefficient, then calculates the errors and tries to minimize it through y's changing of the coefficients in multiple iterations. Gradient descent is a proper approach if you have a large data set.
+  
+  **TIP**: The secret for a better gradient descent performance is to reduce the number of iterations. Consider to use **Normal Equation** when the number of raws are less than `10000`.
+  
+  After we found the parameters of the linear equation, making predictions is as simple as solving the equation for a specific set of inputs.
+  
+  **How many independent variables should i use?**
+  
+  It sometimes results in a better model compared to using a simple linear regression which uses only one independent variable to predict the dependent variable. Basically, adding too many independent variables without any theoretical justification may result in an overfit model.
+  
+  ***should independent variables be continuous?*** Basically, categorical independent variables can be incorporated into a regression model by converting them into numerical variables (Hot Coding).
+  
+  **Calculate the regression coefficients**
+  
+  The regression coefficient is the constant `b` in the regression equation that tells about the change in the value of dependant variable corresponding to the unit change in the dependent variable.
+  
+  How to calculate it??
+  
+  - Gradient ascent or descent: Gradient ascent is an iterative technique whereby we try to find the max point within a graph. To find the max point we will move in the direction of the gradient using some mathematical function. To move one step ahead every time along this path we would require a tep function. We would try to minimize the loss or cost function. Similar tu gradient ascent that finds a max function,  a gredient descent finds a minimum function.
+  
+  #### Non-Linear Regression
+  
+  Polynomial regression fits a curve line to your data. A polynomial regression model can be transformed into a linear regression model.
+  
+  Polynomial regression is considered to be a special case of traditional multiple linear regression. So, you can use the same mechanism as linear regression to solve such a problem. Therefore, polynomial regression models can fit using the model of least squares. Least squares is a method for estimating the unknown parameters in a linear regression model by minimizing the sum of the squares of the differences between the observed dependent variable in the given dataset and those predicted by the linear function.
+  
+  ***How can i know if a problem is linear or non-linear in a easy way?***
+  
+  we have to do two things. The first is to visually figure out if the relation is linear or non-linear. It's best to plot bivariate plots of output variables with each input variable. Also, you can calculate the correlation coefficient between independent and dependent variables, and if, for all variables, it is 0.7 or higher, there is a linear tendency and thus, it's not appropriate to fit a non-linear regression. The second thing we have to do is to use non-linear regression instead of linear regression when we cannot accurately model the relationship with linear parameters. 
+  
+  ***How should I model my data if it displays non-linear on a scatter plot?***
+  
+  - Polynomial regression.
+  - Non-linear regression model.
+  - Transform your data.
+  
+  ----
+  
+  
+  ### Classification
+  
+  The target attribute is a categorical variable with discrete values.
+  
+  We can build both binary classification models and multi-class classification.
+  
+  **Classification algorithms in ML**
+  
+  - Decision Trees (ID, C4.5, C5.0).
+  - Naive Bayes.
+  - Linear Discriminant Analysis.
+  - KNN.
+  - Logistic Regression.
+  - Neural networks.
+  - SVM.
+  
+  #### KNN
+  
+  - A method for classifying cases based on their simularity to other cases.
+  - Cases that are near each other are said to be neighbors.
+  - Based on similar cases with same class labels are near each other.
+  
+  There are different ways to calculate ***the similarity or conversely, the distance or dissimilarity of two data points. For example, this can be done using Euclidean distance***.
+  
+  Follows to make KNN:
+  
+  - Pick a value `K`.
+  - Calculate distance between unknown case and all cases.
+  - Select the `K-Observation` in the training data that are `nearest` to the unknown data point.
+  - Predict the response of the unknown data point using the most popular response value from K-nearest neighbors.
+  
+  ***How Select the correct K?***
+  
+  A low value of K causes a highly complex model as well, which might result in overfitting of the model. It means the prediction process is not generalized enough to be used for out-of-sample cases.
+  
+  On the opposite side, if we choose a very high value of K such as K equals 20, then the model becomes overly generalized.
+  
+  So, how can we find the best value for K? The general solution is to reserve a part of your data for testing the accuracy of the model. Once you've done so, choose K equals one and then use the training part for modeling and calculate the accuracy of prediction using all samples in your test set. Repeat this process increasing the K and see which K is best for your model.
+  
+  ***How compute the similarity/distance between cases?***
+  
+  We can use Euclidean distance (Teorema de pitagoras) Between one or more features.
+  
+  [La fórmula de la distancia](https://www.varsitytutors.com/hotmath/hotmath_help/spanish/topics/distance-formula)
+  
+  `KNN can also be used for regression`
+  
+  #### Evaluation metrics in classification
+  
+  [Understanding AUC - ROC Curve – Towards Data Science](https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5)
+  [sklearn.metrics.roc_auc_score — scikit-learn 0.21.0 documentation](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html)
+  
+  ***Jaccard index***
+  
+  The Jaccard similarity coefficient. Let’s say y shows the true labels of the churn dataset. And y ̂ shows the predicted values by our classifier. Then we can define Jaccard as the size of the intersection divided by the size of the union of two label sets.
+  
+  ![Screen Shot 2019-05-11 at 10.34.02 PM.png](:storage/b96d6ba5-439f-4987-a250-6d070dbb55b9/003b8fc6.png)
+  
+  ***F1-Score or Confusion Matrix***
+  
+  A good thing about the confusion matrix is that it shows the model’s ability to correctly predict or separate the classes.
+  
+  `Precision` is a measure of the accuracy, provided that a class label has been predicted. It is defined by: precision = True Positive / (True Positive + False Positive).
+  
+  Recall is the true positive rate. It is defined as: Recall = True Positive / (True Positive + False Negative).
+  
+  We’re in the position to calculate the F1 scores for each label, based on the precision and recall of that label. The F1 score is the harmonic average of the precision and recall, where an F1 score reaches its best value at 1 (which represents perfect precision and recall) and its worst at 0. It is a good way to show that a classifier has a good value for both recall and precision. It is defined using the F1-score equation.
+  
+  ![Screen Shot 2019-05-11 at 10.41.30 PM.png](:storage/b96d6ba5-439f-4987-a250-6d070dbb55b9/69edf7eb.png)
+  
+  Please notice that both Jaccard and F1-score can be used for multi-class classifiers.
+  
+  __TIPS__
+  
+  - To `y=1` if `h >= 0.7`, then `higher precision, lower recall`.
+  - To `y=1` if `h >= 0.3`, then `lower precision, higher recall`.
+  - Choose the value of `threshold` which maximizes `f-score`.
+  - The goal is get the model with higher precision and higher recall.
+  
+  __Example__
+  
+  Suppose you are working on a spam classifier, where spam emails are positive examples (y=1) and non-spam emails are negative examples (y=0). You have a training set of emails in which 99% of the emails are non-spam and the other 1% is spam. Which of the following statements are true?
+  
+  - Since every prediction is y = 0, there will be no true positives, so recall is 0%.
+  - Since 99% of the examples are y = 0, always predicting 0 gives an accuracy of 99%. Note, however, that this is not a good spam system, as you will never catch any spam.
+  
+  ***Log Loss***
+  
+  Sometimes, the output of a classifier is the probability of a class label, instead of the label.
+  
+  Logarithmic loss (also known as Log loss) measures the performance of a classifier where the predicted output is a probability value between 0 and 1.
+  
+  #### Decision Trees
+  
+  In a decision Tree:
+  
+  - Each internal node corresponds to a test.
+  - Each branch corresponds to a result of the test.
+  - Each leaf node assigns a classification.
+  
+  Following steps to build a decision tree:
+  
+  - Choose an attribute from your dataset.
+  - Calculate the significance of attribute in splitting of data.
+  - Split data based on the value of the best attribute.
+  - Go to step 1.
+  
+  **How to build a decision Tree?**
+  
+  Decision trees are built using ***recursive partitioning*** to classify the data.
+  
+  We're looking for the best feature to decrease the impurity of data in the leaves, after splitting them up based on that feature.
+  
+  predictiveness is based on decrease in impurity of nodes. So the attribute which is best is the one that has:
+  
+  - Less impurity and Lower entropy -> more predictiveness.
+  
+  A node in the tree is considered pure if in 100 percent of the cases, the nodes fall into a specific category of the target field. the method uses recursive partitioning to split the trading records into segments by minimizing the impurity at each step. ***Impurity of nodes is calculated by entropy of data in the node***.
+  
+  ***What is entropy?***
+  R: Measure of randomness or uncertainty in the data. The lower the Entropy, the less uniform the distribution, the purer the node.
+  
+  The entropy is used to calculate the homogeneity of the samples in that node. If the samples are completely homogeneous, the entropy is zero and if the samples are equally divided it has an entropy of one. This means if all the data in a node are either drug A or drug B, then the entropy is zero, but if half of the data or drug A and other half or B then the entropy is one.
+  
+  The entropy in a node is the amount of information disorder calculated in each node.
+  
+  ![Screen Shot 2019-05-12 at 6.26.34 PM.png](:storage/b96d6ba5-439f-4987-a250-6d070dbb55b9/ea30bd9e.png)
+  
+  ***Which attributes is the best?***
+  R: The tree with the higher information gain after splitting.
+  
+  Information gain is the information that can increase the level of certainty after splitting.
+  
+  As entropy or the amount of randomness decreases, the information gain or amount of certainty increases and vice versa.
+  
+  #### Logistic Regression
+  
+  Logistic Regression is a classification algorithm for categorical variables.
+  
+  Logistic regression is analogous to linear regression, but tries to predict a categorical or discrete target field instead of a numeric one. In linear regression, we might try to predict a continuous value of variables such as the price of a house, blood pressure of a patient, or fuel consumption of a car. But in logistic regression, we predict a variable which is binary such as yes/no, true/false, successful or not successful, pregnant/not pregnant, and so on, all of which can be coded as zero or one.
+  
+  Please note that logistic regression can be used for both binary classification and multi-class classification.
+  
+  In logistic regression dependent variables should be continuous. If categorical, they should be dummy or indicator coded. This means we have to transform them to some continuous value.
+  
+  Logistic regression applications:
+  - Predicting the probability of a person having a heart attack.
+  - Predicting the mortality in injured patients.
+  - Predicting a customer's propensity to purchase a product or halt a subscription.
+  
+  **When we choose use logistic regression?**
+  
+  1. If your data is binary. I.e: 0/1, YES/NO, True/False.
+  2. If you need probabilistic result. I.e: If you want to know what the probability is of a customer buying a product. Logistic regression returns a probability score between zero and one for a given sample of data. In fact, logistic regression predicts the probability of that sample and we map the cases to a discrete class based on that probability.
+  3. If your data is linearly separable. The decision boundary of logistic regression is a line or a plane or a hyper plane. A classifier will classify all the points on one side of the decision boundary as belonging to one class, and all those on the other side as belonging to the other class. For example, if we have just two features and they're not applying any polynomial processing we can obtain an inequality like Theta zero plus Theta 1x1 plus theta 2x2 is greater than zero, which is a half-plane easily plotable. Please note that in using logistic regression, we can also achieve a complex decision boundary using polynomial processing as well.
+  4. You need to understand the impact of a feature. You can select the best features based on the statistical significance of the logistic regression model coefficients or parameters. That is, after finding the optimum parameters, a feature X with the weight Theta one close to zero has a smaller effect on the prediction than features with large absolute values of Theta one. Indeed, it allows us to understand the impact an independent variable has on the dependent variable while controlling other independent variables.
+  
+  ![Screen Shot 2019-05-14 at 11.30.49 PM.png](:storage/b96d6ba5-439f-4987-a250-6d070dbb55b9/804029f9.png)
+  
+  **Logistic Regression vs Linear Regression**
+  
+  What is sigmoide function?
+  R: The sigmoid function, also called the logistic function, resembles the step function and is used by the following expression in the logistic regression.
+  
+  Training Process:
+  
+  - Step one, initialize Theta vector with random values as with most machine learning algorithms. For example, minus 1 or 2.
+  - Step two, calculate the model output, which is sigmoid of Theta transpose x. The output of this equation is the prediction value, in other words, the probability that the customer belongs to class 1.
+  - Compare the output of y^ with actual output of customer, y, and record it as error.
+  - Calculate the error for all customers. The total error is the cost of your model and is calculated by the models cost function. The cost function, by the way, basically represents how to calculate the error of the model which is the difference between the actual and the models predicted values. So, the cost shows how poorly the model is estimating the customers labels. Therefore, the lower the cost, the better the model is at estimating the customers labels correctly. So, what we want to do is to try to minimize this cost.
+  - Change the theta to reduce the cost.
+  - After changing the values of Theta, we go back to step two, then we start another iteration and calculate the cost of the model again. We keep doing those steps over and over, changing the values of Theta each time until the cost is low enough.
+  
+  There are different ways to change the values of Theta, but one of the most popular ways is **gradient descent**. Also, there are various ways to stop iterations, but essentially you stop training by calculating the accuracy of your model and stop it when it's satisfactory. Thanks for watching this video.
+  
+  **Logistic Regression Training**
+  
+  The main objective of training and logistic regression is to change the parameters of the model, so as to be the best estimation of the labels of the samples in the dataset.
+  
+  We have to look at the cost function, and see what the relation is between the cost function and the parameters theta. So, we should formulate the cost function, then using the derivative of the cost function we can find how to change the parameters to reduce the cost or rather the error.
+  
+  `The cost function is the difference between the actual values of y and our model output y hat.`
+  
+  How do we find the best parameters for our model?
+  
+  The answer is, we should calculate the minimum point of the cost function and it will show us the best parameters for our model.
+  
+  `We can use the minus log function for calculating the cost of our logistic regression model`.
+  
+  Our objective was to find a model that best estimates the actual labels. **Finding the best model means finding the best parameters theta for that model**. 
+  
+  ***So, the first question was, how do we find the best parameters for our model??***.Well, by finding and minimizing the cost function of our model. In other words, to minimize the J of theta we just defined.
+  
+  ***how do we minimize the cost function?*** The answer is, using an **optimization approach**. There are different optimization approaches, but we use one of the most famous and effective approaches here, ***gradient descent***.
+  
+  **Gradient Descent**
+  
+  Generally, gradient descent is an iterative approach to finding the minimum of a function. Specifically in our case gradient descent is a technique to use the derivative of a cost function to **change the parameter values** to minimize the cost or error.
+  
+  `quede en min 6:45`
+  
+  Training algorithm recap:
+  
+  1. initialize the parameters randomly.
+  2. Feed the cost function with training set, and calculate the error.
+  3. Calculate the gradient of the cost function.
+  4. Update the weights with new values.
+  5. Go to step 2 until cost is small enought.
+  6.  the parameter should be roughly found after some iterations. This means the model is ready and we can use it to predict the probability of a customer staying or leaving.
+  
+  #### Support Vector Machine
+  
+  SVM classifies cases by finding a separator.
+  
+  1. Mapping data to a high-dimensional feature space. So that data points can be categorized, even when the data are not otherwise linearly separable
+  2. Finding a separator. The data should be transformed in such a way that a separator could be drawn as a hyperplane.
+  
+  This is how it looks a non linearly separable data set.
+  
+  ![Screen Shot 2019-05-17 at 9.36.47 PM.png](:storage/b96d6ba5-439f-4987-a250-6d070dbb55b9/9fd48e64.png)
+  
+  We can transfer this data to a higher-dimensional space, for example, mapping it to a three-dimensional space. After the transformation, the boundary between the two categories can be defined by a hyperplane. As we are now in three-dimensional space, ***the separator is shown as a plane. This plane can be used to classify new or unknown cases. Therefore, the SVM algorithm outputs an optimal hyperplane that categorizes new examples***.
+  
+  how do we transfer data in such a way that a separator could be drawn as a hyperplane?
+  
+  **Data Transformation**
+  
+  Mapping data into a higher-dimensional space is called, **kernelling**.
+  
+  The mathematical function used for the transformation is known as the `kernel function`, and can be of different types, `such as linear, polynomial, Radial Basis Function, or RBF, and sigmoid`. Each of these functions has its own characteristics, its pros and cons, and its equation. But the good news is that you don't need to know them as most of them are already implemented in libraries of data science programming languages.
+  
+  We can transfer it into a two-dimensional space. For example, you can increase the dimension of data by mapping x into a new space using a function with outputs x and x squared. Now the data is linearly separable.
+  
+  ![Screen Shot 2019-05-17 at 10.38.39 PM.png](:storage/b96d6ba5-439f-4987-a250-6d070dbb55b9/de234bbf.png)
+  
+  Notice that as we are in a two-dimensional space, the hyperplane is a line dividing a plane into two parts where each class lays on either side. Now we can use this line to classify new cases.
+  
+  Also, as there's no easy way of knowing which function performs best with any given dataset, `we usually choose different functions in turn and compare the results`.
+  
+  **how can we find the best or optimized hyperplane separator after transformation?**
+  
+  One reasonable choice as the best hyperplane is the one that represents the largest separation or margin between the two classes. So the goal is to choose a hyperplane with as big a margin as possible.
+  
+  Examples closest to the hyperplane are support vectors. It is intuitive that only support vectors matter for achieving our goal. And thus, other trending examples can be ignored. We tried to find the hyperplane in such a way that it has the maximum distance to support vectors.
+  
+  The hyperplane is learned from training data using an optimization procedure that maximizes the margin. And like many other problems, this optimization problem can also be solved by gradient descent.
+  
+  If the equation output return a value greater than 0, then the point belongs to the first class which is above the line, and vice-versa.
+  
+  **Advantages**
+  
+  - Accurate in high-dimensional spaces.
+  - subset of training points in the decision function called, support vectors, so it's also memory efficient.
+  
+  **Disadvantages**
+  
+   - Prone for over-fitting if the number of features is much greater than the number of samples.
+   - It not directly provide probability estimates, which are desirable in most classification problems.
+   - SVMs are not very efficient computationally if your dataset is very big, such as when you have more than 1,000 rows.
+  
+  **When i should use SVM**
+  
+  - Image Recognization.
+  - Text category assignment.
+  - When you have high-dimensional data.
+  - Detecting Spam.
+  - Sentimental Analysis.
+  - Gene Experssion Classification.
+  - Outlier detection, sometimes regression and clustering
+  
+  #### Random Forest y Gradient Boosted Trees (GBTs)
+  
+  **Ensembling**
+  
+  Multiple ML programs act on a problem that can be either of type classification or regression. The output from each ml algorithm is collected. The results from all the algorithms are then analyzed with different approaches like voting, averaging, or by using another ml algorithm, and finally out of the selected outcomes the best outcome is picked. The approaches for analyze the results could be:
+  
+  - voting: Multiple ml algorithms act on a task and give their output. The output from these algorithm is collected and each outcome is voted for. The outcome with the maximum number of votes is selected.
+  - averaging: This is another simple approach but one that also yields good results. In this case, we also apply multiple ml algorithms on a problem and collect the output from each. The final outcome is the average of all the outcomes that were predicted by the ml algorithms.
+  
+  **Types of ensembling**
+  
+  __bagging__
+  
+  - Bootstraping: It's a simple and powerful concept of pulling n samples of a fixes size from an existing training dataset. this is done until a decided number of samples is reached. Therefore, the existing training dataset now becomes a multi-training dataset, with each training set now containing n samples.
+  
+  Bagging is juts a concept of training multiple ml algorithms on these boostrap samples. So, on each boostrapped sample a ml algorithm is applied and predicts an outcome. Once all the outcomes of the ml algorithms are generatedm the final outcome is predicted using one of the approaches below described, that is, voting, averaing, use a ml model, etc. Baggin is used just to separete a dataset into chucks of training datasets.
+  
+  __Boosting__
+  
+  boosting is the concept of running multiple weak-supervised ml algorithm one after the other, with the asumption of improving the results upon multiple runs.
+  
+  The idea is a weak ml algorithm might still be good on a certain part of the dataset for predictions, and by clubbing this strenght of various weak algorithms we can come up with a strong prdictive apporach mechanism.
+  
+  There are some important points to note regarding the boosting approach:
+  
+  - Each model is trained on the entire dataset.
+  - The next model that is run after  the first one has complete focused on the errors made by the first model, and therefore it improves upon the results of the previous model.
+  
+  These all techniques are described to improve the accuracy of ensembling models.
+  
+  **Advantages**
+  
+  - The main advantage, and probably the only reason why ensembling is used so frequently, is that it improves the accuracy of the model. So, if you see and read the results of a lot of competitions on data analytics on sites like `kaggle` and so on, you would find that most of these competitions winers would have used ensembling in some form.
+  - Ensembling can be used to represent complex relationships. This form of combining different types of models in ensembling helps you to represent variable relationship using ml models.
+  - It's results in building a more generalized model with reduction in overfitting.
+  
+  **disadvantages**
+  
+  - This appraoch requires a training multiple model (which can run into hundreds, if not thousends, of model), and this approach can be tedious and slow. It's not suited for real-time applications that requires inmediate results.
+  - It makes the entire model prediction technical setup much more complex and hard to maintain as we have to take multiple components.
+  
+  **Random Forest**
+  
+  It's the approach of using multiple decision trees, or an ensembling of decision trees. From the perspective of big data, this approach is a clean fit on the big data stacks of apache spark and MapReduce. Decision trees can be trained in parallel on a cluster of distributed machines and their results can be collectively estimated.
+  
+  **Gradient boosted trees**
+  
+  The idea behind this technique is that a group of weak learners can be boosted to produce a strong predictor. It's a sequential approach whereby in every stage of the sequence, a weak model is used to predict an outcome. The error of the previous model is boosted and the new model then give a preference to these data item with error.
+  
+  ![Screen Shot 2019-08-15 at 11.19.43 AM.png](:storage/b96d6ba5-439f-4987-a250-6d070dbb55b9/9ae34997.png)
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

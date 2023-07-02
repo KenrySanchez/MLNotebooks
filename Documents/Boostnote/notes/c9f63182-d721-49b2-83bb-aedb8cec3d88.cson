@@ -1,0 +1,126 @@
+createdAt: "2018-08-15T02:25:13.068Z"
+updatedAt: "2020-02-15T05:38:10.495Z"
+type: "MARKDOWN_NOTE"
+folder: "4a17dc80ccbb28b98a68"
+title: "Generalmente, existen 2 tipos de datos generados:"
+content: '''
+  Generalmente, existen 2 tipos de datos generados:
+  
+  - generados por personas.
+  - generados por computadora.
+  
+  ## Tipologia de datos
+  
+  #### En la Web
+  
+  Se recomiendan crear:
+  
+  - Una lista de usuarios segmentados, tanto estaticos como dinamicos.
+  - Configuracion de sistemas de puntacion o scoring para base de datos.
+  - Configuracion de cadenas de lead nurturing o captacion de datos del usuario por fases.
+  - Gestion y monitorizacion de redes sociales.
+  - Buena gestion analitica.
+  
+  La mejor conversion de datos es la **apertura de una cuenta de correo**, es desde donde nos dejara el usuario datos necesarios para su identificacion, asi trabajar sobre el - Eventos.
+  
+  `De hecho es el dato mas solicitado. Ejemplo: cuando nos registramos en sitios o una aplicacion web, damos algun dato contacto (en la web es siempre la primera opcion), cuando queremos recuperar la contrasena, cuando queremos solicitar alguna llave, cuando queremos suscribirnos a boletines o informacion.`
+  
+  Una vez identificado el usuario, lo ideal seria relacionar los leads (las acciones) al comportamiento del usuario para poder luego ser analizado. Solicitud de productos, relleno de un formularios, eventos y mas eventos.
+  
+  Otra manera de poder conseguir informacion en la web es a traves del **buscador**, permite entender el tipo de palabra que busca el usuario, las paginas en las que acaba de entrar.
+  
+  **Cookies**
+  
+  Una cookie es una informacion enviada por un sitio web al navegador del usuario, de modo que registra ciertas actividades del usuario.
+  
+  **Retargeting**: Consiste en generar contenido para el usuario en base a los registros entregados por las cookies a los sitios web. Esto en funcion a las busquedas del usuario, los sitios visitados o las acciones ejecutadas (rellenar un landing page).
+  
+  Un buen **retargeting** es aquel en la que se hace en un maximo de 3-5 veces en funcion al producto el cual estamos vendiendo.
+  
+  En España, la normativa de cookies está dentro de la Ley de Servicios de la Sociedad de la Información, conocida como LSSI. La normativa de cookies contempla dos escenarios, las cookies “afectadas”, y “no afectadas”, a la hora de comunicar al usuario su uso.
+  
+  - cookies no afectadas: Tecnicas o necesarias para el equipo, puede ser por configuracion de los navegadores o para implementar alguna mejora de seguridad.
+  - cookies afectadas: hacen analitica ya que miden los esfuerzos del usuario, gestionan la frecuencia de los contenidos publicitarios, registran la actividad de los usuarios.
+  
+  **Datos de registro**
+  
+  ¿Que datos quiero?¿Para que los quiero?¿Cuanto me costara obtenerlos?
+  
+  Para obtener datos, existen 2 formas de hacerlo. Una son los datos **"cedidos"**, estos son entregados por los usuarios de manera conciente. LA otra son los obtenidos por las cookies, son **"inconcientes"** ya que aunque cada vez que el usuario entra a un sitio web, se le hace la mencion de que el sitio usa cookies para obtener datos, sin embargo el usuario no sabe con certeza cuales seran esos datos.  En el mundo móvil, estos datos se les denomina **“activos”** los tipo registro, y los datos **“pasivos”**, o generados mediante cookies etc.
+  
+  Entonces se puede resumir la captacion de datos en 3 niveles:
+  
+  - 1 nivel: son aquellos datos tanto concientes como inconcientes que consigo a traves de mi sitio web
+  - 2 nivel: Son aquellos los cuales puedo leer de otros sitios, en pocas palabras, vienen con el usuario a traves de la visita al sitio.
+  - 3 nivel: son aquellos que vienen desde fuentes externas y son gestionados por los DMP (data management platform).
+  
+  ----
+  
+  #### Datos desde las redes sociales
+  
+  **Social login** (implementacion para logear en sitio a traves de una red social)
+  
+  **Usuarios**. Los usuarios simplemente comparten lo que ellos quieren compartir. Registro mas facil y por parte del sitio, los usuarios simplemente dan al sitios datos que se soliciten de forma clara y transparente
+  
+  **Datos**. Los datos que son recogidos por el sitio no son compartidos en las otras redes sociales.
+  
+  **Red social**. La marca regularmente unifica todos los servicios y datos recogidos.
+  
+  **Marca**. La marca gana en crear nuevas experiencias que generen engagement a sus consumidores. Recopila y gestiona datos psicograficos de sus seguidores. Consrtuye relaciones mas leales y cruza datos con sus otras plataformas (CRM).
+  
+  - Lo ideal seria medir el nivel de interacciones que suceden entra la marca y el usuario. Likes, comentarios, @menciones, shares y las motivaciones que estan detras de estas acciones.
+  - Asignar un peso a cada interaccion.
+  - user social profiling (demográficos, gustos, intereses, e incluso transaccionales) profundizar en el analisis y perfil del usuario.
+  - Segmentar con precisión. Optimizar la agrupación de perfiles con intereses similares. Los usuarios siempre están abiertos a recibir información adecuada a sus intereses y es imprescindible agrupar a usuarios similares y separar a aquellos que tengan diferentes inquietudes o necesidades.
+  - Personalizar tus acciones.
+  - Conocer el valor real y potencial del cliente. Basado en el consumo que realiza el usuario. Incluir métricas como su autoridad en redes, su influencia o capacidad de difusión y conocer el potencial del usuario.
+  
+  (ver nota tecnica)
+  
+  **Custom audiences**
+  
+  Facebook permite cruzar tu base de datos de clientes con los usuarios de su red. De modo que se pueden crear campañas en facebook solo a tus clientes. La combinación de todos los datos recogidos por Facebook más la información procedente de “Custom Audiences” ayudan a la posibilidad de crear campañas con una alta segmentación.
+  
+  (ver nota tecnica)
+  
+  ---
+  
+  #### Datos desde la tienda
+  
+  Podemos obtener datos desde:
+  
+  **Su movil**. Tendriamos datos inconscientes. Aunque no podamos conocer la identidad del usuario, si pudieramos conocer la de su Mac Address, lo que nos permitiria implementar "Wifi Analitics".
+  
+  **Wifi Analitics**: es una tecnologia que controla indicadores como:
+  
+  - Afluencia: entrada de personas a la tienda.
+  - Trafico exterior: volumen aproximado de personas que pasan por el frente de la tienda.
+  - Ratio in/out: a partir de los dos datos anteriores.
+  - Tiempo: promedio en la punta fisica.
+  - Recurrencia: referido al numero de veces en las que un usuario entra en la misma oficina en un tiempo determinado.
+  - En zona caja, incluyendo análisis de cola.
+  - En otras zonas de nuestro establecimiento, baños, probadores, etc...
+  - Tracking de empleados (número de accesos, estancias, tiempo promedio)
+  
+  El **video analytics**, combinado con el anterior, me daría el perfil sociodemográfico de las personas que están en ese momento.
+  
+  (ver nota tecnica)
+  
+  Un servicio **omnicanal** es basicamente un puente de comunicacion con los clientes sin importar el medio donde se desarrolle. Con la omnicanalidad queda patente la tendencia empresarial de convertir al cliente en el centro de todas las estrategias
+  
+  (ver nota tecnica)
+  
+  ----
+  
+  #### Anexo
+  
+  [Sentiment analysis in Facebook and its application to e-learning - ScienceDirect](https://www.sciencedirect.com/science/article/pii/S0747563213001751)
+  
+'''
+tags: [
+  "big_data_theory"
+  "Build_Big_Data_Project"
+  "Social_CRM"
+]
+isStarred: false
+isTrashed: false

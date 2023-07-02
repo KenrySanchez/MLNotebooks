@@ -1,0 +1,377 @@
+createdAt: "2020-11-21T05:16:23.297Z"
+updatedAt: "2021-05-28T08:16:47.357Z"
+type: "MARKDOWN_NOTE"
+folder: "d95c9bc9473d8dba8318"
+title: "Enterprise Model Deployment"
+content: '''
+  ## Enterprise Model Deployment
+  
+  The Prototype phase of the design thinking process is where ideas are tested in real-life to see if they work in solving business challenges.
+  
+  During the earliest stages of prototyping you’ll be building new data pipelines and new models, testing your abilities every day.
+  
+  Depending on the needs of your business, it is possible that a sizable percentage of models exist as standalone projects that would provide little added value if they were deployed. It is also possible that nearly all models need to be deployed in production to be of benefit to the business. Either way it is likely that model deployment will become a necessity at some point and optimization is a key consideration for any model or service that is to be deployed.
+  
+  ### Optimization performance in Python
+  
+  It is important to know when to take the time to make code optimizations.
+  
+  An example of a situation where it is difficult to make speed improvements through code is when we have a model that takes several days on multiple GPUs to train. A `speech-to-text engine` is a good example, but almost any large neural network with a reasonable amount of data falls into this category. You can [profile TensorFlow models](https://www.tensorflow.org/tensorboard/tensorboard_profiling_keras) using [TensorBoard](https://www.tensorflow.org/tensorboard), but if you have already optimized the model for performance, it becomes tricky to make improvements from a code perspective. You can always use more GPUs or other computational resources, but `beyond saving model checkpoints in the event that there is a failure`, little can be done to improve training time.
+  
+  With scikit-learn model training it is also difficult to optimize, apart from using the `job` argument and trying several optimization algorithms when appropriate. In general, unless you write your own inference portion of the code, as is sometimes the case with [Expectation–maximization algorithm](https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm),  improving on the `efficiency of available inference algorithms is either difficult or unrealistic`. For model prediction there are several best practices, such as `keeping the trained model in memory`, that we will discuss later.
+  
+  Two important areas of data science where machine learning algorithms may not be the best solution are:
+  
+  1. [Mathematical optimization - Wikipedia](https://en.wikipedia.org/wiki/Mathematical_optimization)
+  2. [Graph theory - Wikipedia](https://en.wikipedia.org/wiki/Graph_theory)
+  
+  The first rule to ensuring that you are optimizing your code in a smart way is to `look around for implementations before creating one from scratch`. The `scipy.optimize submodule has a number of optimizers and algorithms (some of them general purpose) already implemented`. If your problem is in graph space like customer journeys or social networks then check out the [Algorithms — NetworkX 2.5 documentation](https://networkx.github.io/documentation/stable/reference/algorithms/index.html) before you set off building your own.
+  
+  Finally, we come to the scripts or blocks of code that need speed improvements, but you have come to the conclusion that there is no optimized code readily available. The task of optimizing the code then falls to you. The first step is to identify which parts of your code are bottlenecks. This is done using [Profiling (computer programming) - Wikipedia](https://en.wikipedia.org/wiki/Profiling_(computer_programming)) or more specifically Python profilers. Once the specific pieces of code that need to be optimized are identified, then there are a number of common tools that may be used to improve the speed of programs. Several of these tools make use of the fact that modern computers have multiple available processor cores on a machine. To see how many processor cores are available on your machine or compute resource try the following code.
+  
+  ```python
+  from multiprocessing import Pool, cpu_count
+  total_cores = cpu_count()
+  print("total cores: {0}".format(total_cores))
+  ```
+  
+  A list of commonly used techniques and tools to optimize code:
+  
+  Use appropriate data containers - For example, a Python set has a shorter look-up time than a Python list. Similarly, use dictionaries and NumPy arrays whenever possible.
+  
+  1. [multiprocessing — Process-based parallelism — Python 3.9.0 documentation](https://docs.python.org/3/library/multiprocessing.html)
+  2. [threading — Thread-based parallelism — Python 3.9.0 documentation](https://docs.python.org/3/library/threading.html#module-threading)
+  3. [subprocess — Subprocess management — Python 3.9.0 documentation](https://docs.python.org/3/library/subprocess.html)
+  4. [MPI for Python — MPI for Python 3.0.3 documentation](https://mpi4py.readthedocs.io/en/stable/)
+  5. [Using IPython for parallel computing — ipyparallel 6.3.0.dev documentation](https://ipyparallel.readthedocs.io/en/latest/)
+  6. [Cython: C-Extensions for Python](https://cython.org/)
+  7. [CUDA - Wikipedia](https://en.wikipedia.org/wiki/CUDA)
+  
+  [2.4. Optimizing code — Scipy lecture notes](https://scipy-lectures.org/advanced/optimizing/index.html)
+  
+  ### High Performance Computing
+  
+  We mentioned in a previous section that inference can be difficult to optimize and that one way around this is to add more GPUs, known as `high-performance computing (HPC)` or supercomputing. Within this field there is the important concept of parallel computing.
+  
+  There are two laws that constrain the maximum speed-up of computing: `Amdahl’s law and Gustafson’s law`.
+  
+  If we talk about scale in the context of a program or model, we may be referring to any of the following questions. Let the word service in this context be both the deployed model and the infrastructure.
+  
+  - Does my service train in a reasonable amount of time given a lot more data?
+  - Does my service predict in a reasonable amount of time given a lot more data?
+  - Is my service ready to support additional request load?
+  
+  The bottlenecks will depend heavily on `available infrastructure, code optimizations, choice of model and type of business opportunity`.
+  
+  ### On Containers and Docker
+  
+  Enterprise-scale data science will necessarily involve the eventual deployment of machine learning models for others to use.
+  
+  This will likely happen during the Prototype or Test phases of the design thinking process. A model that you have developed will need to be made available to others for testing purposes, and you’ll be responsible for assessing not only the performance of the model, but also for responding to user feedback. Also recall the design thinking cycle of Observe, Reflect, and Make. This cycle takes place rapidly, and is based on user feedback. What this means for the data scientist is that you’ll need to make fast changes to your models in response to user feedback during the Prototype and Test cycles.
+  
+  The Docker container is a running process that is `kept isolated from the host and from other containers`. One of the important consequence of this isolation is that each container interacts with its own private filesystem.
+  
+  [Docker Hub](https://hub.docker.com/) is a service provided by Docker for finding and sharing container image.
+  
+  [Docker Essentials: A Developer Introduction - Cognitive Class](https://developer.ibm.com/courses/docker-essentials-a-developer-introduction/)
+  
+  ### NVIDIA Docker
+  
+  To use TensorFlow with a GPU you need to ensure that the `NVIDIA driver, CUDA` and additional required libraries are set up and versioned appropriately. Then you can install `tensroflow-gpu`.
+  
+  The process is similar for `PyTorch, Caffe and in general any deep-learning framework that makes use of GPUs`. The NVIDIA container toolkit or simply `nvidia-docker` is an incredibly convenient way to build and run GPU-accelerated Docker containers. Once this is done, you can pull down the `latest GPU version of tensorflow` with Jupyter support with:
+  
+  ```
+  ~$ docker pull tensorflow/tensorflow:latest-gpu-jupyter
+  ```
+  
+  [Docker  |  TensorFlow](https://www.tensorflow.org/install/docker)
+  
+  [Home · NVIDIA/nvidia-docker Wiki · GitHub](https://github.com/NVIDIA/nvidia-docker/wiki)
+  
+  ### Getting Started with Flask
+  
+  The Python package [Flask](https://flask.palletsprojects.com/) is a `micro framework`.  There are alternatives to Flask like `Django, web2py, and FlashAPI`.
+  
+  ```python
+  #!pip install -U flask
+  #!/usr/bin/env python
+  
+  from flask import Flask
+  
+  app = Flask(__name__)
+  
+  @app.route("/")
+  def home():
+      return "Hello, World!"
+      
+  if __name__ == "__main__":
+      app.run(debug=True)
+      
+  #Run the file
+  #python main.py
+  
+  #navigate to http://127.0.0.1:5000/
+  ```
+  
+  ### More on Containers
+  
+  There are challenges that arise in managing hundreds (or even thousands) of containers across a distributed system. `Container orchestration technologies like Kubernetes and Docker Compose` have emerged as front-runners to address this unique challenge.  Additional tools like Jenkins and Ansible can be used alongside container orchestration to automate deployment-related tasks.
+  
+  [Ansible](https://www.ansible.com/) A tool for automation of the provisioning of the target environment and to then deploy the application.
+  
+  ### Model Management and Deployment in Watson Studio
+  
+  In a design thinking engagement you will come across a hill that specifies that users must be able to access a machine learning model that has been deployed to a particular platform. Recall that in design thinking, a hill is a written statement that describes who (the particular user, role, etc), what (what that user or role will be doing), and wow (the “wow” factor that makes the action different from what they are doing now).
+  
+  In order to ensure a smooth transition from a local environment to WML you will need to align your development environment with one of the available runtime environments in WML. Fortunately, this can be achieved quickly and repeatedly with the Anaconda distribution. The following procedure will use Anaconda to create a virtual environment and when used along with a specific requirements.txt file `this process ensures compatibility between the two environments`.
+  
+  [Python client - IBM Cloud Pak for Data](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/python-client.html)
+  
+  [Machine Learning - IBM Cloud Pak for Data](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html)
+  
+  The Watson Machine Learning (WML) service has very specific runtime requirements so developing and training a model locally and then deploying it means that you will need to ensure a specific version of Python and specific package versions. We will first create the Python environment.
+  
+  ```
+  ~$ conda create -n py3.6 python=3.6 anaconda
+  
+  ##Then activate the environment and install the specific version of the packages available in the following requirements file.
+  
+  conda activate py3.6
+  pip install -r requirements.txt
+  ```
+  
+  What is the principal reason to create a virtual environment before creating your model locally? R: Because it ensures that locally created/trained models are compatible with Watson Machine Learning.
+  
+  ### Spark Machine Learning
+  
+  How do you figure out what “scale” means in a design thinking project?
+  
+  `Your first clue` is to look at the users and personas that are referenced in the hill statements that direct the work of each design thinking team. `If the users and/or personas mentioned in the hills refer to huge populations of millions of people, then you’ll need to work with your technical teams on ensuring that your machine learning solutions will have enough processing power` to handle a high number of concurrent users.
+  
+  `During the Prototype and Test phases of the design thinking process you will have decided upon the algorithms you’ll be deploying to production`. A neural network-based approach will obviously require more resources than a logistic regression approach. These are the considerations you’ll be bringing up during playback sessions with architects and engineers.
+  
+  Note that during prototyping and testing, you’ll be required to deploy your test models to scalable platforms in order to assess user expectations about response time for predictions and results from your models.
+  
+  ### Spark Pipelines
+  
+  - DataFrames.
+  - Transformers: A Transformer is an algorithm which can transform one DataFrame into another DataFrame.
+  - Estimator: An Estimator is an algorithm which can be fit on a DataFrame to produce a Transformer For example, a learning algorithm is an Estimator which trains on a DataFrame and produces a model.
+  - Pipeline.
+  - Parameter.
+  
+  Feature extraction and transformations are part of the AI work flow. These topics were covered in module 3. The [feature extraction Spark docs](https://spark.apache.org/docs/1.6.2/mllib-feature-extraction.html)can provide insight into the many available transformations. Many of these will be familiar from working with them in scikit-learn like: a [ChiSq feature selection](https://spark.apache.org/docs/1.6.2/mllib-feature-extraction.html#chisqselector) and a [Spark StandardScaler](https://spark.apache.org/docs/1.6.2/mllib-feature-extraction.html#standardscaler). There are also available transformations specific to natural language processing applications like `Term frequency-inverse document frequency (TF-IDF)` and [Spark Word2Vec](https://spark.apache.org/docs/1.6.2/mllib-feature-extraction.html#word2vec).
+  
+  ### Spark Supervised Learning
+  
+  [Classification and regression - Spark 3.0.1 Documentation](https://spark.apache.org/docs/latest/ml-classification-regression.html)
+  
+  Both random forests and gradient boosted trees are models used in production and should be on your radar when comparing models. They both use decision trees as a base model.
+  
+  A minimal example for a random forest would look something like this:
+  
+  ```python
+  import pyspark as ps
+  from pyspark.ml import Pipeline
+  from pyspark.ml.classification import RandomForestClassifier
+  from pyspark.ml.feature import IndexToString, StringIndexer, VectorIndexer
+  from pyspark.ml.evaluation import MulticlassClassificationEvaluator
+  
+  spark = (ps.sql.SparkSession.builder
+          .appName("aavail-churn")
+          .getOrCreate()
+          )
+  
+  sc = spark.sparkContext
+  
+  # Load and parse the data file, converting it to a DataFrame.
+  data = spark.read.format("libsvm").load("./work/sample_libsvm_data.txt")
+  
+  # Index labels, adding metadata to the label column.
+  # Fit on whole dataset to include all labels in index.
+  labelIndexer = StringIndexer(inputCol="label", outputCol="indexedLabel").fit(data)
+  
+  # Automatically identify categorical features, and index them.
+  # Set maxCategories so features with > 4 distinct values are treated as continuous.
+  featureIndexer =\\
+      VectorIndexer(inputCol="features", outputCol="indexedFeatures", maxCategories=4).fit(data)
+  
+  # Split the data into training and test sets (30% held out for testing)
+  (trainingData, testData) = data.randomSplit([0.7, 0.3])
+  
+  # Train a RandomForest model.
+  rf = RandomForestClassifier(labelCol="indexedLabel", featuresCol="indexedFeatures", numTrees=10)
+  
+  # Convert indexed labels back to original labels.
+  labelConverter = IndexToString(inputCol="prediction", outputCol="predictedLabel",
+                                 labels=labelIndexer.labels)
+  
+  # Chain indexers and forest in a Pipeline
+  pipeline = Pipeline(stages=[labelIndexer, featureIndexer, rf, labelConverter])
+  
+  # Train model.  This also runs the indexers.
+  model = pipeline.fit(trainingData)
+  
+  # Make predictions.
+  predictions = model.transform(testData)
+  
+  # Select example rows to display.
+  predictions.select("predictedLabel", "label", "features").show(5)
+  
+  # Select (prediction, true label) and compute test error
+  evaluator = MulticlassClassificationEvaluator(
+      labelCol="indexedLabel", predictionCol="prediction", metricName="accuracy")
+  accuracy = evaluator.evaluate(predictions)
+  print("Test Error = %g" % (1.0 - accuracy))
+  
+  rfModel = model.stages[2]
+  print(rfModel)  # summary only
+  ```
+  
+  ### Spark Unsupervised Learning
+  
+  Spark MLlib has several available tools for unsupervised learning—namely dimension reduction and clustering. For clustering, K-means and Gaussian Mixture Models (GMMs) are the main tools. Latent Dirichlet Allocation (LDA) is available as a tool for clustering over documents of natural language. This is a particularly important tool since the size of NLP datasets can often make single-node computation challenging.
+  
+  [Clustering - Spark 3.0.1 Documentation](https://spark.apache.org/docs/latest/ml-clustering.html)
+  
+  For dimension reduction, two of the most frequently used tools are PCA and the [Chi-Squared Feature Selector](https://spark.apache.org/docs/latest/ml-features.html#chisqselector). All of the tools `in the unsupervised learning category take the form of a transformer or an estimator` and, in keeping with the scikit-learn API, they too can be assembled in pipelines.
+  
+  Ensure that Docker is working before attempting the following command. This command will download a Docker image and run a Spark environment locally through Docker.
+  
+  ```
+  docker run --name sparkbook -p 8881:8888 -v "$PWD":/home/jovyan/work jupyter/pyspark-notebook start.sh jupyter lab --LabApp.token=''
+  ```
+  
+  If you want to run the server in the background, add the docker flag `-d` to the above command.
+  
+  ### Model
+  
+  MLlib Estimators and Transformers use the same API for specifying parameters. There are two basic methods to pass parameters.
+  
+  - Param: A named parameter with self-contained documentation.
+  - ParamMap: Is a set of (parameter, value) pairs.
+  
+  1. Set parameters for an instance. For example, for the gradient boosted tree classifier.
+  
+  ```python
+  from pyspark.ml.classification import GBTClassifier
+  gbt = GBTClassifier(labelCol="indexedLabel", featuresCol="indexedFeatures", maxIter=10)
+  ```
+  
+  or
+  
+  ```python
+  gbt = GBTClassifier(labelCol="indexedLabel", featuresCol="indexedFeatures")
+  gbt.setMaxIter(20)
+  ```
+  
+  2. Pass a ParamMap to .fit() or .transform(). Any parameters in the ParamMap will override parameters previously specified via setter methods.
+  
+  ```python
+  model <- spark.gbt(training, label ~ features, "classification")
+  model.setMaxIter(10)
+  
+  paramMap = {model.maxIter: 20}
+  
+  ## update a paramMap
+  paramMap[model.maxIter] = 30
+  
+  model_fit = model.fit(training, paramMap)
+  ```
+  
+  You can [import a trained Spark MLlib model into Watson Machine Learning (WML)](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-import-spark-mllib.html) or you can deploy it in other ways once it is trained. The WML import tutorial uses the same Python client for API access.
+  
+  ### Model tuning in Spark MLlib
+  
+  A train-test split can be carried out with TrainValidationSplit. Cross Validation is accomplished in Spark MLlib using the CrossValidator() object. A data set is split into a set of folds which are used as separate training and test datasets. The CrossValidator computes the average evaluation metric for the k models produced by fitting the Estimator on the k different (training, test) dataset pairs. This helps identify the best ParamMap, which is then used to re-fit the Estimator with the entire dataset.
+  
+  [ML Tuning - Spark 3.0.1 Documentation](https://spark.apache.org/docs/latest/ml-tuning.html)
+  
+  ### Spark Recommendations
+  
+  In terms of a business opportunity, we can consider the use of a recommender system when any of the following questions are relevant:
+  
+  - What would a user like?
+  - What would a user buy?
+  - What would a user click?
+  
+  Rating matrix = Utility Matrix.
+  
+  Ratings come in two types: `explicit and implicit`. The above utility matrix contains explicit ratings because the user's rating feeds directly into the table. Implicit rating is derived from a user’s behaviors or actions for example likes, shares, page visits or amount of time watched. These can also be used to construct a utility matrix. Keeping with our AAVAIL feed example, we can engineer a measure based on indirect evidence. For example the score for Feed 1 could be based on a user’s location, comment history, preferred type of feed, specified topic preferences and more. Each element that contributes to the overall score could have a maximal value of 1.0 and the final number could be scaled to a range of 1-5. Explicit and implicit data can be combined using this type of approach as well. Naturally you would want to have a solid understanding of user stories before engineering a score.
+  
+  Most recommender systems today are able to leverage both explicit (e.g. numerical ratings) and implicit (e.g. likes, purchases, skipped, bookmarked) patterns in a ratings matrix. The `SVD++ algorithm` is an example of a method that exploits both patterns.
+  
+  __Recommendation systems__
+  
+  If the data is highly multi-class, we can build a recommendation system instead of a sp model.
+  
+  The majority of modern recommender systems embrace either a `collaborative filtering or a content-based approach`. A number of other approaches and hybrids exist, making some implemented systems difficult to categorize.
+  
+  - Collaborative Filtering: Collaborative filtering is a family of methods that identify a subset of users who have preferences similar to the target user. From these, a ratings matrix is created. The items preferred by these users are combined and filtered to create a ranked list of recommended items.
+  - Content-based approach: Predictions are made based on the properties and characteristics of an item. User behavior is not considered.
+  - Hybrid Recommender system: A combination of collaborative and content-based approach.
+  - Other Types of systems: Some Systems specially legacy ones were based on demographics. Other systems attempt to infer utility before making a recommendation.
+  
+  __Matrix factorization__
+  
+  Find the latent factors that help explain the patterns in a rating matrix.
+  
+  Matrix factorization is a class of collaborative filtering algorithms used in recommender systems. Matrix factorization algorithms work by decomposing the user-item interaction matrix into the product of lower-dimension matrices. In general, the user-item interaction matrix will be very, very large, and very sparse. The lower-dimension matrices will be much smaller and denser and can be used to reconstruct the user-item interaction matrix, including predictions where values were previously missing.
+  
+  Common Approaches:
+  
+  - Singular Values Descomposition.
+  - UV Descomposition.
+  - NMF
+  
+  `ALS and SGD` are the main algorithm used to infer the `latent factors` using the factorization technique. Hyperparameters are used to control regularization and the relative weighting of implicit versus explicit ratings matrices. With recommender systems we are most concerned with scale at prediction. Because user ratings change slowly, if at all, the algorithm does not need to be retrained frequently. For this reason, Spark is a common platform for developing recommender systems. The computation is already distributed under the Spark framework so scaling infrastructure is straightforward.
+  
+  There are several Python packages available to help create recommenders including `surprise`. Because scale with respect to prediction is often a concern for recommender systems, many production environments use the implementation found in Spark MLlib. The `Spark collaborative filtering implementation uses Alternating least Squares`.
+  
+  SVD++ used to carry out influence tend to overfit.
+  
+  __Recommendation Systems in Production__
+  
+  One issue that arises with recommender systems in production is known as the cold-start problem. There are two scenarios when it comes to the cold start problem:
+  
+  [Cold start (computing) - Wikipedia](https://en.wikipedia.org/wiki/Cold_start_(computing))
+  
+  ***What shall we recommend to a new user?***
+  
+  If the recommender is popularity-based then the most popular items are recommended and this is not a problem. If the recommender is similarity-based, the user could rate five items as part of the sign-up or you could attempt to infer similarity based on user meta-data such as age, gender, location, etc. Even if recommendations are based on similarities, you may still use the most popular items to get the user started, but you would likely want to customize the list possibly based on meta-data.
+  
+  ***How should we treat a new item that hasn't been reviewed?***
+  
+  In order to make good recommendations, you need data about how users review the item. But until the item has been recommended, it’s unlikely that users will review it. To overcome this dilemma, the item could be randomly suggested for a trial period to collect data. You could put it in a special section such as new releases to gauge initial interest. You can also use meta-data associated with the item to find similar items and infer its recommendations from these similar items.
+  
+  `Concurrency can be a challenge for recommender systems`. A recommender might, for example, find the 20 closest users based on latent factor profiles. From those users it would identify a list of potential recommendations that could be sorted and filtered given what is known about the user. The distances between users can often be pre-computed to speed up the recommendations because user characteristics change slowly. Nevertheless this process has a few steps to it that require a burst of compute time. If five users hit the service at the same time, there is the possibility that the processors get weighed down with these simultaneous requests and recommendations become unusually slow.
+  
+  Spark can help get around the problem of concurrency because it has a cluster manager that handles the distribution of compute tasks. The package [celery](http://www.celeryproject.org/), which works well with Flask, can also be used to mitigate this problem. If concurrency could be an issue in a system that you develop, even one based on Spark, it is worth taking the time to simulate the problem. Send a batch of requests over a set of pre-defined intervals and then plot times to response.
+  
+  ### Model Deployment case study
+  
+  [Collaborative Filtering - Spark 3.0.1 Documentation](https://spark.apache.org/docs/latest/ml-collaborative-filtering.html)
+  
+  [pyspark.mllib package — PySpark 3.0.1 documentation](https://spark.apache.org/docs/latest/api/python/pyspark.mllib.html#pyspark.mllib.recommendation.ALS)
+  
+  __Question__
+  
+  When you worked on model deployment case study, which modification to the ALS algorithm had the largest effect on model performance? R: The lambda or regularization parameter.
+  
+  [3.4. Model persistence — scikit-learn 0.23.2 documentation](https://scikit-learn.org/stable/modules/model_persistence.html)
+  
+  In order to rebuild a similar model with future versions of scikit-learn, additional metadata should be saved along the pickled model:
+  
+  - The training data, e.g. a reference to an immutable snapshot.
+  - The python source code used to generate the model.
+  - The versions of scikit-learn and its dependencies.
+  - The cross validation score obtained on the training data.
+  
+  Since a model internal representation may be different on two different architectures, dumping a model on one architecture and loading it on another architecture is not supported.
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: true

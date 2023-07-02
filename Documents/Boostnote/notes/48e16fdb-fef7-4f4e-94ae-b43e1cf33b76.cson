@@ -1,0 +1,216 @@
+createdAt: "2018-06-26T05:50:02.579Z"
+updatedAt: "2020-06-16T05:55:05.546Z"
+type: "MARKDOWN_NOTE"
+folder: "48fbce2016d43f0faffa"
+title: "Gestion de proyectos"
+content: '''
+  ## Gestion de proyectos
+  
+  `EDT`: estructura detallada de tareas.
+  
+  La gestion de proyectos es una disciplina de gestion que consiste en la aplicacion de conocimiento, metodologias, tecnicas y herramientas para la planificacion y realizacion de actividades con el objeto de transformar objetivos o ideas en realidades. De forma general, se puede considerar la gestion de proyectos como una aproximacion sistematica y estructurada de como las organizaciones gestionan sus actividades no recurrentes.
+  
+  `PMBOK`: PRoject Management Body Of Knowledge.
+  
+  **Concepto de proyecto**
+  
+  Es un conjunto de actividades coordenadas y controladas con fecha de inicio y finalizacion, llevadas a cabo para lograr un objetivo conforme con requesitos especificos y requerimientos especificos, incluyendo las limitaciones de tiempo, coste y recursos.
+  
+  El **PMI** establece el proyecto como un esfuerzo de caracter temporal llevada a cabo con objeto de crear un producto o servicio unico. **En este sentido un proyecto es siempre único**
+  
+  En conclusion:
+  
+  - un proyecto esta constituido por un conjunto de actividades y implementaciones, coordinadas y controladas.
+  - los proyectos tiene una fecha de incion y una fecha fin.
+  - precisan de una cantidad de recursos y materiales determinados.
+  
+  Cuando consideramos que se puede finalizar un proyecto:
+  
+  - cuando se alcanzan los objetivos
+  - cuando se decide que los objetivos no pueden alcanzarse.
+  - cuando su resultado o meta no es necesario. Se da de baja el proyecto.
+  
+  Dentro de los proyectos, existe la tematica de la triple restriccion (alcance, tiempo y coste). Donde indica que los proyectos deben mantener un margen tanto con los costos establecidos como con el tiempo indicado para alcanzar los objetivos.
+  
+  -----
+  
+  **Las operaciones**
+  
+  Son un conjunto de acciones permanentes y repetitivos, los cuales con llevan al mismo resultado siempre y se basan en un recurso ya establecido y determinado.
+  
+  Antes de empezar el proyecto se debe hacer un estudio de **viabilidad**, ya que los proyectos al momento de empezar corren con un riesgo alto en costo y esfuerzo de la empresa.
+  
+  El objetivo de un estudio de viabilidad, se pueden tomar como un proyecto aparte o una primera fase del proyecto, su deber es garantizar que el proyecto sea:
+  
+  - Viable
+  - Rentable
+  - Con riesgos asumibles por la empresa
+  
+  ----
+  
+  **Posibilidades por las que se origine un proyecto**
+  
+  - Demanda del mercado
+  - Solicitud del cliente
+  - Avance tegnologico (innovar los productos ya existentes)
+  - Oportunidad estrategica (competencia con el mercado. lanzar un producto en el cual los competidores aun no han podido lanzar o innovar.)
+  - Cambio normativo o impacto medioambiental (destinados al cumplimiento de una ley. Ejemplo de GRDP)
+  - Necesidad social o salud (proyectos para la creacion de nuevas vacunas o para mejorar una necesidad social).
+  
+  **Condicionantes de un proyecto**
+  
+  - **stakeholders**: Son individuos, grupos o organizaciones involucrados en el desarrollo del proyecto o cuyos intereses pueden verse afectados negativamente o psitivamente con el resultado final del proyecto.
+  
+  La gestion de los stakeholders incluye:
+  
+  - identificarlos
+  - analizar el grado de interes en el resultado final del proyecto.
+  - Definir como nos comunicaremos con ellos en base a su interes.
+  - Definir que acciones serian necesarias para minimizar los posibles riesgos de los stakeholders que puedan estar en contra del proyecto
+  
+  - **La triple restriccion**: Es llamada la triple restriccion de proyectos (alcance, tiempo y costo). LA idea basica es que ninugna de las restricciones puedan ser modificadas o impactadas por otro. La calidad es represantada en el centro de el triangulo representativo.
+  
+  *Todos los proyectos tienen un presupuesto limitado*
+  *necesariamente se tiene que limitar su alcance o aumentar su tiempo de ejecución*
+  
+  Hoy en dia, se agregan al concepto de triple restriccion los siguientes segmentos:
+  
+  - calidad
+  - riesgo
+  - recursos
+  
+  - **Estructura organizativa**: Por lo general, las estructuras organizativas en las empresas se encuentran en tres tipos: La funcional, orientada a proyectos y la matrical.
+  
+  
+  **Estructura funcional**
+  
+  Es una estructura clasica donde cada empleado tiene un superior y las personas se agrupan por especialidades, cada departamento funciona independientemente del otro.
+  
+  - ventajas: un solo jefe, varias especialidades
+  - desventaja: director de proyecto sin autoridad para gestionar los recursos personales y el presupuesto.
+  
+  
+  **Estructura matrical**
+  
+  Es la mas habitual en las empresas hoy en dia. SE basa en mezclar caracteristicas de organizaciones funcionales y orientadas a proyectos.
+  
+  Existen tres tipos:
+  
+  - matrical debil: similar a una organizacuon funcional, siendo el papel del director de proyecto mas bien como un coordinador en todas las areas. No puede tomar decisiones de forma personal.
+  
+  - matrical equilibrada: similar a la debil pero el director de proyecto tiene una mayor autonomia.
+  
+  - matrical fuerte: coincide en muchas características con la organización orientada a proyectos, ya que tienen un director de proyecto y un equipo administrativo dedicados a tiempo completo, sin que por ello se modifique la estructura funcional.
+  
+  **Estructura orientada a proyectos**
+  
+  Existe un director de proyecto y varios departamentos dedicados al desarrollo del proyecto. Todos ellos le deben y se rigen en base a lo indicado por el director de proyectos.
+  
+  - **Factores Ambientales**: Son condiciones externos al proyecto que tienen influencia en la misma. Los factores ambientales propios dentro de una compania pueden ser: Tipo de estructura, Estandares y procesos dentro de la empresa, Sistema de evaluacion y motivacion. Valores y cultura. Canales de informacion y los sistemas que usemos dentro de nuestra compania.
+  
+  Tambien existen factores ambientales externos a la organizacion:
+  
+  - La situacion economica donde se implementara el proyecto
+  - Normas de la industria
+  - Leyes y reglamentos gubernamentales
+  - Tratados internacionales
+  - Las condiciones del mercado
+  - El clima politico
+  - El riesgo del pais
+  ---
+  
+  **Gestion de proyectos**
+  
+  Existen dos tipos de proyectos:
+  
+  Proyectos muy grandes en cuanto a recursos humanos y economicos que requieren de un equipo dedicado solo a la gestion del proyecto. No sufren cambios desde su diseño inicial.
+  
+  Las metodologias mas usadas son: PMI y Prince 2.
+  
+  En los proyectos medianos o pequenos se tienen que revisar continuamente los objetivos y el diseno inicial ya que pueden estar sujetos a muchos cambios. Para evitar esto se usan metodologias agiles que permitan desarrollar el proyecto de forma incremental y permitan avanzar rapidamente las fases del proyecto
+  
+  Los proyectos **PMI** son los mas usados ya que:
+  
+  - Reconocimiento mundial
+  - Gran demanda en USA y Latinoamerica
+  - Conocimiento de gestion de grandes proyectos
+  - Facil conversion a gestionar con la metodologia agil.
+  
+  ---
+  
+  **La gestion de proyectos dentro de la organizacion**
+  
+  **Direccion estrategica**, Es el proceso en el cual busca **mejorar** la empresa tomando como base los objetivos estrategicos de la empresa alineados al trabajo de los proyectos.
+  
+  - La mision: NEgocio en el cual se dedica la organizacion
+  - La vision: Define y describa la situacion futura de la empresa
+  - Valores: Define el conjunto de principios, creencias, reglas que regulan la organizacion.
+  
+  - Proyectos: Implica gestionar los procesos, aplicar las tecnicas y herramientas para llevar a cabo todas las actividades del proyecto.
+  - Programa: Son el grupo de proyectos que se gestionan entre si y buscan implementar las mismas tecnicas de una manera coordinada para lograr sinergias.
+  - Cartera de proyectos: Grupo de proyectos que apoyan un objetivo determinado.
+  
+  La **oficina de direccion de proyectos**, tiene como funciones:
+  
+  - Seguimiento al avance de los proyectos
+  - Evaluacion y priorizacion de los mismos
+  - Gestion de los programas del proyecto
+  - Servicios a la direccion
+  
+  ---
+  
+  **El metodo del PMI**
+  
+  El PMBOK (Project Management Body of Knowledged). Es un libro el cual tiene como finalidad facilitar a traves de directrices y reglas mejorar los procesos dentro de los proyectos. Esto ayuda a la gestion eficaz de los procesos dentro del proyecto. Los contenidos expuestos deben ser implementados tomando como base las pecularidades de cada proyecto. Segun el PMBOK, los proyectos se componen de una serie de procesos que deben ser seleccionados previamente a traves de un estudio en el area del conocimiento del proyecto.
+  
+  **Procesos**
+  
+  Un proceso esta compuesto por todas aquellas actividades interralacionadas que se deben ejecutar para obtener el resultado final del proyecto.
+  
+  **Procesos de la direccion de la empresa**
+  
+  Aseguran el progreso adecuado del proyecto a lo largo de su ciclo de vida
+  
+  - proceso de inicializacion
+  - proceso de planificacion
+  - proceso de ejecucion
+  - proceso de supervision y control
+  - proceso de cierre
+  
+  En el proceso de ejecucion, a lo largo se vayan ejecutando las actividades, el proceso de supervision analiza (retroalimentacion entre los dos) todas las actividades, en el caso haber encontrado una falla que solucionar, las actividades se replanifican (se regresa al proceso de planificacion) para su posterior ejecucion. De ser necesario, tambien se puede reconsiderar la viabilidad de las actividades, de modo que de ser necesario, regresarnos a la etapa de inicializacion.
+  
+  ---
+  
+  **Areas de conocimiento**
+  
+  Todo director de proyectos debe dominar una serie de conocimientos basicos, para poder gestionar de manera eficaz los procesos dentro del proyecto. Esta serie se especifica en 9 areas de conocimiento
+  
+  - **Gestion de la integracion**: Tiene como objetivo obtener la aceptacion del proyecto, asi como tambien especificar un alcance pre-liminar y un plam de proyecto. Tiene a su disposicion todas las fases de gestion de los procesos (inicio, planificacion, ejecucion, supervision y control, cierre).
+  - **Gestion del alcance**: Determina todas las actividades a realizar para obtener el resultado final del proyecto y sus objetivos. Su aplicacion esta en los procesos de planificacion y supervision, donde se realizan trabajos de recopilacion de documentos y planificacion de entregables, asi como tambien validar el alcance y controlarlo (fase de supervision y control).
+  
+  - **Gestion del tiempo**: Determina un plazo viable para la finalizacion del proyecto. Todas las planificaciones que se hacen en la fase de alcance, ahora se documentan en modo de un cronograma de actividades, identificando todas sus relaciones y dependencias con los demas procesos.
+  - **Gestion de costes**: Determina el coste de todas las actividades del proyecto. Uno de los entregables de la fase es el presupuesto. (Presente en la fase de planificacion)
+  - **Gestion de calidad**: Determina todas las caracteristicas y propiedades que estaran presentes en el resultado final del proyecto, asi como tambien planifica todas las actividades y procesos necesarios para garantizar la calidad del resultado final. (Fase de planificacion, ejecucion y seguimiento). En esta fase se debe tener tacto con el cliente de modo que podamos asegurar el producto final que espera el cliente en su entrega.
+  - **Gestion de RH**: Define todo el proceso de gestion de personas, su reclutamiento, integracion y responsabilidade dentro de los procesos del proyecto. El director del proyecto en esta fase debe asegurarse que los participantes cumplan con sus responsabilidades dentro de las actividades del proyecto.(Fase de planificacion y ejecucion, "Desarrollar el equipo del proyecto").
+  - **Gestion de comunicaciones**: `punto mas importante`. ES la fase que mas problemas generar pero tambien el mas importante. Es gestionar la comunicacion de todos los entregables, actividades, cambios que se generan asi como tambien definir las personas a las cuales se les debe entregar la informacion y en que momento especifico (Fases de palnificacion, ejecucion y seguimiento).
+  - **Gestion del riesgo**: El objetivo es aumentar la probabilidad y impacto de las contingencias positivas y disminuir las negativas. Este proceso se ejecuta en todo el ciclo de vida del proyecto. (Se especifica en proceso de planificacion y control de seguimiento)
+  - **Gestion de las adquisiciones**: Se identifican y adquieren todas las herramientas necesarias para la realizacion del proyecto, asi como tambien los contratos de todos las entidades necesarias.(Participa en todos los procesos de planificacion).
+  
+  -----
+  
+  **Habilidad de los PM**
+  
+  - conocimiento: Conocer las metodologias del PMBOK, asi como tambien saber cuando aplicar las tecnicas.
+  - Desempeno: Entregar el resultado esperado por el cliente, asi como tambien cumplir con las expectativas de todos los departamentos relaciones en el proyecto.
+  - Habilidades personales: Liderar el equipo a lo largo del ciclo de vida del proyecto por lo que requiere manejo de gestion en el equipo.
+  - Comunicacion: Habilidad clave del PM. Es la segunda causa de fracaso dentro del proyecto.
+  - ORganizacion y planificacion: Generar toda la documentacion necesaria para el proyecto. Controlar el tiempo de los entregables, asi como tambien gestionar el equipo y prioritizar el trabajo.
+  
+  
+'''
+tags: [
+  "Build_Big_Data_Project"
+  "big_data_theory"
+]
+isStarred: false
+isTrashed: true

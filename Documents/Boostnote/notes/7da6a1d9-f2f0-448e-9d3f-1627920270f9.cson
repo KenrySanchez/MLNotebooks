@@ -1,0 +1,207 @@
+createdAt: "2019-04-24T03:46:24.196Z"
+updatedAt: "2019-04-30T01:42:52.298Z"
+type: "MARKDOWN_NOTE"
+folder: "7b6dd385ab806689b09e"
+title: "Data Visualization with python"
+content: '''
+  ## Data Visualization with python
+  
+  **Best Practices**
+  
+  When creating a visual, always remember:
+  
+  - Less is more effective.
+  - Less is more attractive.
+  - Less is more impactive.
+  
+  Any feature or design you incorporate in your plot to make it more attractive or pleasing should support the message that the plot is meant to get across and not distract from it.
+  
+  ### Matplotlib Architecture
+  
+  **Backend Layer**
+  
+  Figure Canvas
+  - matplotlib.backend_bases.FigureCanvas: Encompasses the area onto which the figure is drawn.
+  
+  Renderer
+  - matplotlib.backend_bases.Renderer: Knows how to draw on the FigureCanvas.
+  
+  Event
+  - matplotlib.backend_bases.Event: Handles user inputs such as keyboard strokes and mouse clicks.
+  
+  **Artist Layer**
+  
+  Comprised of one main object - Artist.
+  - know how to use the renderer to draw images on the canvas.
+  
+  Two types of Artist Object:
+  
+  1. Primitive: Line2D, Rectangle, Circle and Text.
+  2. Composite: Axis, Tick, Axes and Figures. Each composite artist may contain other composite artist as well as primitive artist.
+  
+  ```python
+  ## import figure canvas
+  from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+  ## import Figure Artist
+  from matplotlib.figure import Figure
+  
+  fig = Figure()
+  canvas = FigureCanvas(fig)
+  
+  import numpy as np
+  ## create 1000 random numbers using numpy
+  
+  x = np.random.randn(1000)
+  
+  ## create an axis artist; from the MATLAB convention so it creates a grid with one row and one column and uses the first cell in that grid for the location of the new axes
+  ax = fig.add_subplot(111)
+  
+  ## create histogram with 1000 numbers; 100 means 100 bins
+  ax.hist(x, 100)
+  
+  ax.set_title("Normal distribution with $\\mu=0, \\sigma=1$")
+  ```
+  
+  **same example using pyplot interface by scripting layer**
+  
+  ```python
+  import matplotlib.pyplot as plt
+  import numpy as np
+  
+  x = np.random.randn(1000)
+  plt.hist(x, 100)
+  plt.title("")
+  plt.savefig("name of file")
+  plt.show()
+  ```
+  
+  **Plot some visualization inside the pandas library**
+  
+  ```python
+  df.plot(kind="line")
+  ```
+  
+  ### Line Plots
+  
+  A line plot is a type of plot which displays information as a series of data poins called "markers" connected by straight line segments.
+  
+  When to use it? R: The best use case for a line plot is when you have a continuous dataset and you're interested in visualizing the data over a period of time.
+  
+  ```python
+  import matplotlib as mpl
+  import matplotlib.pyplot as plt
+  
+  years = list(map(str, range(1980, 2014)))
+  
+  df_canada.loc["Haiti", years].plot(kind = "line")
+  plt.title()
+  plt.ylabel()
+  plt.xlabel()
+  
+  plt.show()
+  ```
+  
+  ### Area plots
+  
+  Commonly used to represent cumulated totals using numbers or percentage over time, comparing two or more quantities.
+  
+  ```python
+  import matplotlib as mpl
+  import matplotlib.pyplot as plt
+  
+  df.plot(kind = "area")
+  
+  plt.title("")
+  plt.ylabel("")
+  plt.xlabel("")
+  
+  plt.show()
+  ```
+  
+  ### Histograms
+  
+  It's a way of representing the frequency distribution of a variable.
+  
+  ```python
+  import matplotlib as mpl
+  import matplotlib.pyplot as ply
+  import numpy as np
+  
+  count, bin_edges = np.histogram(df["variable to histogram"])
+  
+  df["variable"].plot(kind = "hist", xtics = bin_edges)
+  plt.show()
+  ```
+  
+  ### Bar Charts
+  
+  Unlike a histogram, a bar chart is commonly used to compare the values of a variable at a given point in time.
+  
+  ```python
+  import matplotlib as mpl
+  import matplotlib.python as plt
+  
+  years = list(map(str, range(1980, 2014)))
+  
+  df_iceland = df.loc["iceland", years]
+  
+  df_iceland.plt(kind="bar")
+  plt.show()
+  ```
+  
+  ### Box Plot
+  
+  ```python
+  df_japan = df_canada.loc[['Japan'], years].transpose()
+  
+  df_japan.plot(kind="box")
+  plt.show()
+  ```
+  
+  ### Scatter Plot
+  
+  ```python
+  df_total.plot(kind="scatter", x= "x label", y="y label")
+  plt.show()
+  ```
+  
+  ### Waffle chart
+  
+  It's a great way to visualize data in relation to a whole or highlight progress against a given threshold.
+  
+  ### Word Clouds
+  
+  The more a specific words appears in a source of textual data the bigger and bolder it appears in the word cloud.
+  
+  ### Folium
+  
+  Folium is a powerful data visualization library in Python that was built primarily to help people visualize geospatial data. With Folium, you can create a map of any location in the world as long as you know its latitude and longitude values. You can also create a map and superimpose markers as well as clusters of markers on top of the map for cool and very interesting visualizations. You can also create maps of different styles such as street level map, stamen map and, a couple others which we will look into in just a moment
+  
+  **Add Markers**
+  
+  ```python
+  ##generate map
+  canada_map = folium.Map(location = [location_space], zoom_start = 4)
+  
+  ##create a feature group
+  ontario = folium.map.FeatureGroup()
+  
+  ##style the feature group
+  ontario.add_child(folium.features.CircleMarker([location_child], radius = 5, color = "red", fill_color= "Red"))
+  
+  canada_map.add_child(ontario)
+  
+  folium.Marker([location_child_ontario], popup = "Ontario").add_to(canada_map)
+  
+  canada_map
+  ```
+  
+  ### Choropleth Maps
+  
+  A choropleth map is a thematic map in which areas are shaded or patterned in proportion to the measurement of the statistical variable being displayed on the map, such as population density or per capita income. The higher the measurement the darker the color.
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

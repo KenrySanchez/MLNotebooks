@@ -1,0 +1,57 @@
+createdAt: "2020-03-10T19:28:57.761Z"
+updatedAt: "2020-03-16T02:58:46.507Z"
+type: "MARKDOWN_NOTE"
+folder: "28ee488a0fecd6ba780c"
+title: "Tools for Cluser Management"
+content: '''
+  ## Tools for Cluser Management
+  
+  #### Apache Ambari
+  
+  Simplify the task of managing clusters in Hadoop. Apache ambari supports the basic components of Hadoop, HDFS and MapReduce.
+  
+  - Provide a simple installation wizard to install hadoop services.
+  - Provide simple dashboards to monitor the status and health of clusters.
+  - Use Ganglia - a scalable monitoring tool for distributed systems - to monitor clusters.
+  - Use Nagios - a tool used to monitor an IT Infrastructure - to send automatic notifications and emails.
+  
+  #### Apache Mesos
+  
+  Mesos allows administrators to run and monitor a number of Hadoop jobs within the same cluster. It uses techniques of sharing and isolation in a distributed envrioment. It uses a shared pool of nodes to run their applications.
+  
+  - Employs fault tolerant by utilizing ZooKeeper functionalities.
+  - Supports multiresource scheduling for memory space and processing units.
+  
+  **Others Management**
+  
+  - Zettaset Orchestor: End to end Management for Hadoop Cluster. The use of this tool also eliminates the requeriment of removing datasets from the Hadoop cluster before applying analytical operations.
+  
+  #### Introduction to Scribe
+  
+  The aim of developing scribe was to offer realibility without using extensive, complex protocols and high disk space usage.
+  
+  **Scribe server**
+  
+  It offers great scalability and extensibility without any client-side modification. The scribe services are organized in directed graph, where reach server contains the information about the next server. In addition, the scribe server topology also batches messages before broadcasting them to data centers without using any complex code that need to be interpreted by the recipient data center. Instead a code snippet, `scribe servers use a simple configuration to broadcast messages between data centers`.
+  
+  Scribe server can handle discontinuos failures for nodes by winding the data to a disk on any available node across the network.
+  
+  **Reliability**
+  
+  if a Scribe server is not able to send a message to a central server, the sender stores the message on the local disk and resends it when the network recovers. In cases where the central server has reached the maximum capacity, it returns the `TRY_LATER` message, so the senders do not keep resending the message.
+  
+  **Configuration**
+  
+  Configuration scribe server:
+  
+  - Command line option to manage configuration setting.
+  - write `scribe.conf` file that is available at the `/usr/local/scribe` directory.
+  
+  In the configuration file, you will find two sections: a `global section` and a `section for a particular store`. You can define the listening port and the maximum number of messages that a server can handle per second in the global section of configuration file.
+  
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

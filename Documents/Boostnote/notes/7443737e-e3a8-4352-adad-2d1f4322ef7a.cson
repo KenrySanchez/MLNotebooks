@@ -1,0 +1,49 @@
+createdAt: "2018-08-31T02:22:29.653Z"
+updatedAt: "2020-10-15T04:29:33.348Z"
+type: "MARKDOWN_NOTE"
+folder: "6ce8e9fa5ab8d660e1a1"
+title: "Introduccion al metodo, Rigor, Validez y Fiabilidad"
+content: '''
+  ## Introduccion al metodo, Rigor, Validez y Fiabilidad
+  
+  ####  Cross industry process for data mining
+  
+  SE trata de un modelo de procesos en la mineria de datos. Describe el enfoque comun de tecnicas que realizan los expertos al momento de realizar mineria de datos.
+  
+  ---
+  
+  #### Pasos para realizar un experimento, se empieza desde:
+  
+  *Usaremos metodos de desing thinking cuando tenemos el problema pero no tenemos muy claro cual es la pregunta*
+  
+  0. Acercate al problema - haz un Mapa Mental.
+  1. Empatiza - Mapa de Empatia.
+  2. Define - Define el problema para mejorar experiencia de una persona.
+  3. Idea - Soluciones con tecnicas de creatividad.
+  4. Prototipo - Esencia mas que detalle, averigua si los supuestos que estan en el nucleo de la idea son correctos.
+  5. Test - Testear el producto (data sciencies, la hipotesis) debemos hacerlo como si supieramos que estamos equivocados o como si hubiera algun error.
+  ---
+  
+  #### Design thinking vs proceso clasico
+  
+  ---
+  
+  #### Correlacion no es casualidad
+  
+  ---
+  
+  #### Estadistica Parametrics vs no Parametrica
+  
+  ---
+  
+  #### Guia para realizar un informe
+  
+  ¿Cómo normalizarias y centrarias entorno a cero una variable?
+  
+   Se refiere a la creación de versiones de los datos cambiadas y escaladas para permitir comparaciones independientes de la unidad de medida. Una normalización típica consiste en centrar y reducir Centrar una variable consiste en restar su media a cada uno de sus valores iniciales. Reducir una variable consiste en dividir todos sus valores por su desviación típica.
+'''
+tags: [
+  "BD_-_Research"
+]
+isStarred: false
+isTrashed: true

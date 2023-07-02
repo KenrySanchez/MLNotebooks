@@ -1,0 +1,76 @@
+createdAt: "2019-03-17T23:27:34.849Z"
+updatedAt: "2019-04-13T17:27:53.376Z"
+type: "MARKDOWN_NOTE"
+folder: "7b6dd385ab806689b09e"
+title: "Python for DataBases (IBM db2)"
+content: '''
+  ## Python for DataBases (IBM db2)
+  
+  ### How to access databases using python
+  
+  Basic operations, you should do:
+  
+  - connect(db, user, passw)
+  - send(task: string)
+  - execute()
+  - status(ok || error)
+  - disconnect()
+  
+  ### Concepts of the python DB API
+  
+  **Conection objects**
+  
+  - Database connections
+  - Manage Transactions
+  
+  **Cursor Objects**
+  - Database Queries
+  
+  ### Connections methods
+  
+  - cursor(): start a new cursor object.
+  - commit(): commit any pending transaction.
+  - close(): close a database connection.
+  
+  ### Cursor methods
+  
+  - callproc()
+  - execute()
+  - executemany()
+  - fetchone()
+  - fetchmany()
+  - fetchall()
+  - nextset()
+  - arraysize()
+  - close()
+  
+  ```python
+  from dbmodule import connect
+  
+  ##Create connection object
+  connection = connect('dbname', 'user', 'password')
+  
+  ##Create cursor object
+  cursor = connection.cursor()
+  
+  ##Run queries
+  cursor.execute("select * from table")
+  results = cursor.fetchall()
+  
+  ##Free resources
+  cursor.close()
+  connection.close()
+  ```
+  ### Analyzing data using db2 warehouse and extract  data
+  
+  1. Load csv file into DB2 warehouse on cloud
+  
+  - source
+  - target
+  - define
+  - finalize
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

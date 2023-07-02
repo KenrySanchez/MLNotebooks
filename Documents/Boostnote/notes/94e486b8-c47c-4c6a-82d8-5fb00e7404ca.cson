@@ -1,0 +1,87 @@
+createdAt: "2018-06-21T02:50:42.577Z"
+updatedAt: "2020-10-08T00:25:12.035Z"
+type: "MARKDOWN_NOTE"
+folder: "4a17dc80ccbb28b98a68"
+title: "Convertir los datos en Información y la información en Conocimiento"
+content: '''
+  ## Convertir los datos en Información y la información en Conocimiento
+  
+  *Convertir los datos en informacion, y este en conocimiento es el objetivo principal* 
+  
+  La DLM (Data Life Cycle Management) consiste en la realizacion de una base de datos y/o mejora de los datos desde un enfoque empresarial y tecnico, de forma que se pueden tratar y gestionar los datos de una forma determinada, dandoles valor y utilidad de modo que pueda ser aplicado en la organizacion.
+  
+  **Datos Objetivos**: Son los datos los cuales pueden ser tratados como los indicadores los cuales nos ayudan a tomar decisiones y controlar cualquier tipo de accion dentro de la organizacion.
+  
+  #### Fases en el ciclo de vida de los datos
+  
+  **1. Creacion y captura**
+  
+  Crearemos y capturaremos aquellos datos existentes dentro de la organizacion.
+  
+  Tipos:
+  
+  - Conseguir datos existentes que han sido creados externamente a la organizacion
+  - Creacion de datos internamente desde la organizacion'
+  - Obtencion de datos a traves de sensores (IoE, dispositvos, canales, etc.)
+  
+  **2. Transmision almacenamiento y seguridad**
+  
+  En los negocios hablar de la velocidad de transmision es hablar de dinero. De modo que los datos que se obtienen de terceros, instituciones, empresas, etc, deben integrarse a nuestras bases de datos en velocidad y forma de nuestros modelos de datos.
+  
+  Asegurar el almacenamiento y la seguridad de nuestros datos es un reto que la mayoria de las empresas intentan conseguir. Nuestos datos contienen informacion basica para la viabilidad de la empresa.
+  
+  **3. Gestion de acceso y trabajo**
+  
+  La gestion contempla el ciclo de vida de los datos y asi poder determinar los accesos a los mismos. Se debem analizar la gestion de acceso no solo desde un punto de vista de seguridad, sino de tambien, como modelo productivo dentro de la organizacion.
+  
+  **4. Analisis y explotacion de los datos aplicados al negocio**
+  
+  Una correcta gestion del ciclo de vida de los datos tiene presente que los datos deben de poder ser tratados o refinados con la intencion de transformar la informacion en conocimiento util y valioso para las empresas. Estos procesos de tratamiento de los datos son vitales el análisis y segmentación.
+  
+  Fases en el analisis de los datos:
+  
+  - Integracion de datos
+  - Analisis de datos
+  - Evaluacion de calidad de los datos para su uso
+  - Servicios posibles de datos
+  
+  #### Inteligencia de negocio
+  
+  La informacion son datos analizados que tienen un significado dentro de un contexto particular.
+  
+  Los datos sin analizar no tienen significado alguno. De modo que el analisis y el sentido de los negocios se lo colocamos nosotros por medio de los datos objetivos. Estas se aplican por medio de practicas, estrategias, herramientas, etc.
+  
+  *Para obtener la respuesta de los datos se deben hacer las preguntas correctas*
+  
+  Las disciplinas de visualizacion y ciencia de datos son los encargados en realizar el analisis y procesamiento de los datos para poder crear el valor de la informacion.
+  
+  Existen 3 niveles de analisis de datos a nivel de negocio:
+  
+  - Analisis Descrptivo
+  - Analisis Predictivo (orientado a la toma de decisiones)
+  - Analisis Prescriptivo (orientado a la accion)
+  
+  En base a nuestro conocimiento creamos datos predictivos o prescrptivos en nuestra empresa.
+  
+  Se deben realizar para ello tareas de planificar o programar acciones correctivas con el menor impacto para la empresa, poder planificar y testear con tiempo cualquier tipo de accion de marketing, poder planificar o preveer las necesidades de producto por parte de nuestros clientes.
+  
+  #### Marketing inteligente y nuestros datos
+  
+  La gran cantidad de informacion es la causa de que la interpretacion de los datos, junto con la velocidad, sea uno de los mayores retos a los que nos enfretamos desde las empresas.
+  
+  *Cuando se habla de Big Data, se piensa en empresas grandes*
+  
+  Marketing intelligence es una filosofia empresarial el cual hace enfasis en el analisis de los datos para poder comprender el entorno, los clientes, la competencia, el sector, el mercado y la toma de decisiones.
+  
+  -----
+  
+  Los datos se degradan, eso quiere decir que las fuentes de datos no son estaticas, los datos se degradan y cambian su valor y significado.
+  
+  
+  
+'''
+tags: [
+  "Gestion_del_cliente_Big_Data"
+]
+isStarred: false
+isTrashed: false

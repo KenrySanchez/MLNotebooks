@@ -1,0 +1,84 @@
+createdAt: "2019-10-22T04:47:51.361Z"
+updatedAt: "2020-05-17T23:52:23.360Z"
+type: "MARKDOWN_NOTE"
+folder: "7b6dd385ab806689b09e"
+title: "Graphic Modeling and Bayesian Network"
+content: '''
+  
+  ## Graphic Modeling and Bayesian Network
+  
+  A `graphical model` refers to a graph to represent relationships among a set of variables. Graphical models are designed by a set of nodes (vertices) and edges to connect those nodes. Mathematically, a graph is represented by using the following formula:
+  
+  ```
+  G = (V, E)
+  
+  V --> finite set of vertices.
+  E --> finite set of edges, links, or arcs.
+  ```
+  
+  There are two types of graphial models:
+  
+  - Undirected graphical models (Markov random fields).
+  - Directed graphical models (Bayesian network).
+  
+  In  comparison  to  undirected  graphical  models,  directed  graphical  models  are  represented  by  using  slightly  complicated notations. While representing a directed graph, you must have to show directionality of edges.
+  
+  The  most  important  difference  between  undirected  and  directed  graphs  is  the  use  of  arcs.  For  example,  in  Figure, you can consider an arc from 1 to 5 that indicates some action at 1 can cause 5. By considering such types of conditions, the structure of the graph can be created.
+  
+  ![Screen Shot 2020-05-16 at 7.00.35 PM.png](:storage/80edfde9-a843-4f66-acde-a8178b88bd25/dc6d8cc5.png)
+  
+  **Conditional Independence in Graphs**
+  
+  In a conditional independence graph, each vertex or node represents an attribute to describe the domain in study and each connecting edge is used to depict a dependency between two attributes. A graphical model extracts conditional independence relationships between variables from their parametric forms.
+  
+  Conditional independence of attributes is characterized by two types of axioms:
+  
+  - Semi-graphoid axioms.
+  - Graphoid axioms.
+  
+  #### Bayesian Network
+  
+  It  concerns  the  inversion  of probabilities and relates, for two events A and B, the conditional probability of A given B to the conditional probability of B given A:
+  
+  ```
+  P(A/B) = P(B/A) * P(A)/P(B)
+  ```
+  
+  By using the Bayes’ theorem, you can construct a `Directed Acyclic graph`, relating the dependent variable to the (discrete) independent variables. This graph is also known as `bayesian network`.
+  
+  Such a network represents the `dependencies between the variables, where an arrow between a variable A and a variable b` (we say that A is the parent of B) indicates that the conditional probability.
+  
+  Bayesian inference is based on the data that already occurred, and not on the data that could have occurred but did not.
+  
+  ```
+  p(B|A) is different from p(B). B depends on A. 
+  ```
+  
+  A Bayesian network is also defined by the set of conditional probabilities. It therefore consists of two elements: a `qualitative` element, which is the representation of the dependencies, and a `quantitative` element, which is the measurement of these dependencies.
+  
+  Before you learn about Bayesian methods, it is important to understand some characteristics associated with BNs. They include the following:
+  
+  - Explaning away: Let’s take an example, grass is wet at a point of time and at the same time it is raining too. In this case, the posterior probability is reduced, (Pr (S=1|W=1|R=1) = 0.1945), This phenomenon is called explaining away because either cause is sufficient to explain the fact on W.
+  - Bottom up and Top down reasoning: Its the name of studying cause and effect relationship. In a BN graph, for a node Xi, you can perform the bottom-up reasoning by going through evidence nodes connected through its descendant nodes. for a node Xi, you can perform the bottom-up reasoning by going through evidence nodes connected through its ancestor nodes.
+  - Casualty: you can use BNs to give a  solid  mathematical  foundation  to  casualty  discussions  without  an  experiment.
+  - Conditional independence in BNs: (See explanation with `bayes ball algorithm`).
+  - Discrete and Continuous Nodes (Gaussian).
+  - Temporal models.
+  - Hidden Markov Models (HMMs).
+  - Linear Dynamic Systems (LDSs) and  Kalman filters.
+  
+  Given a hypothesis, BNs are used to estimate the probability that the hypothesis is true based on evidence. There are three main inference tasks for BNs:
+  
+  - Deducing unobserved variables.
+  - Parameter learning.
+  - Structure learning.
+  
+  The most common Bayesian methods are as follows:
+  
+  - Variable elimination.
+  - Dynamic programming.
+  - Approximation algorithms.
+'''
+tags: []
+isStarred: false
+isTrashed: false

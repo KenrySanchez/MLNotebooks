@@ -1,0 +1,89 @@
+createdAt: "2019-10-17T03:22:48.128Z"
+updatedAt: "2019-10-18T05:51:01.895Z"
+type: "MARKDOWN_NOTE"
+folder: "8af9713f3b0695b046b9"
+title: "Cloud SQL"
+content: '''
+  ## Cloud SQL
+  
+  [Cloud SQL - MySQL & PostgreSQL Relational Database Service  |  Cloud SQL  |  Google Cloud](https://cloud.google.com/sql/) is a fully managed `database service` that makes easy to set up maintain, manage, and administer your relational PostgreSQL and MySQL databases in the cloud. There are two formats of data accepted by Cloud SQL `dump files (.sql)` or `CSV Files (.csv)`.
+  
+  CREATING SQL INSTANCE
+  
+  ```
+  gcloud sql instances create flights \\
+      --tier=db-n1-standard-1 --activation-policy=ALWAYS
+  ```
+  
+  SET ROOT PASSWORD
+  
+  ```
+  gcloud sql users set-password root --host % --instance <sql_instance_name> \\
+   --password Passw0rd
+  ```
+  
+  CREATE SECURITY FOR CLOUD SQL
+  
+  create an environment variable with the IP address of the Cloud Shell:
+  
+  ```
+  export ADDRESS=$(wget -qO - http://ipecho.net/plain)/32
+  ```
+  
+  Whitelist the Cloud Shell instance for management access to your SQL instance.
+  
+  ```
+  gcloud sql instances patch <INSTANCE_NAME> --authorized-networks $ADDRESS
+  ```
+  
+  Get the IP address of your Cloud SQL instance by running:
+  
+  ```
+  MYSQLIP=$(gcloud sql instances describe \\
+  <instance_name> --format="value(ipAddresses.ipAddress)")
+  ```
+  
+  Connect to an instance
+  
+  ```
+  gcloud sql connect <instance_name> --user=root
+  
+  ##Extra command, search for what is useful
+  
+  for month in `seq -w 1 12`; do
+     unzip 2015$month.zip
+     mv *ONTIME.csv 2015$month.csv
+     rm 2015$month.zip
+  done
+  ```
+  
+  EXTRA COMMANDS LINE
+  
+  ```
+  ## Count the number of data fields in one of the files:
+  head -2 201503.csv  | tail -1 | sed 's/,/ /g' | wc -w
+  ```
+  
+  ```
+  ## Count the number of records by using wc to count the number of lines in all of the files:
+  wc -l *.csv
+  ```
+  
+  ```
+  ## Clean up the data by removing the trailing comma and quotation marks using sed:
+  for month in `seq -w 1 12`; do
+      sed 's/,$//g' 2015$month.csv | sed 's/"//g' > tmp
+      mv tmp 2015$month.csv
+  done
+  ```
+  
+  IMPORT DATA USING MYSQL
+  
+  ```
+  mysqlimport --local --host=<host_ip> --user=root --password \\
+  --ignore-lines=1 --fields-terminated-by=<format file, I.e : ','> <table_name> <input_file_direction> -*
+  ```
+'''
+tags: []
+isStarred: false
+isTrashed: false

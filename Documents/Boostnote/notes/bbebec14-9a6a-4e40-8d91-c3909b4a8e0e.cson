@@ -1,0 +1,188 @@
+createdAt: "2018-06-21T02:41:24.947Z"
+updatedAt: "2021-04-19T04:57:23.309Z"
+type: "MARKDOWN_NOTE"
+folder: "24cb38cf2bc84305c3de"
+title: "Big Data y Data Management"
+content: '''
+  ## Big Data y Data Management
+  
+  **Business Intelligence** (by Hans Peter Luhn): La capacidad de comprender las interrelaciones de los hechos presentados de tal forma que consiga orientar la acción hacia una meta deseada.
+  
+  *El termino Business Intelligence está totalmente unido y relacionado al de Cuadro de Mando Integral.*
+  
+  El concepto de Cuadro de mando Integral – CMI (Balanced Scorecard – BSC) Se presentó en el número de enero/febrero de 1992 de la revista Harvard Business Review. Sus autores, Robert Kaplan y David Norton, plantean el CMI como un sistema de administración o sistema administrativo (management system), que va más allá de la perspectiva financiera con la que los gerentes acostumbran en esa época a evaluar la marcha de una empresa.
+  
+  Según estos dos consultores, gestionar una empresa requería tener una **visión global de la estrategia corporativa**, así como ayudar a la compañía a expresar los objetivos e iniciativas necesarias para cumplir con la ruta marcada. Lo que incluye tener una visión:
+  
+  ***Ayuda a soportar las decisiones a traves del analisis de la informacion, asi como tambien analizar las variables globales - KPIs en nuestro cuadro de mando. Busqueda del resultado ideal o producto concreto***
+  
+  La vision es comprender cuatro componentes esenciales:
+  
+  - **Perspectiva financiera**: abarca el area de las necesidades de los accionistas. se analiza desde el punto de vista de un accionista. ¿cómo nos vemos a los ojos de los accionistas?. Los factores que pudieran buscar en BI serian: predicciones de ventas, prediciones de costos, todo ello en base a los clientes que tienen actualmente. ¿Podrian obtener nuevos clientes?. Responder a sus necesidades
+  
+  - **Perspectiva interna**: abarca un analisis a los procesos internos de negocio y procesos claves.  ¿en qué debemos sobresalir?
+  
+  - **Perspectiva de clientes**: abarca un analisis desde el punto de vista de los compradores, de modo que puedas identificar cuales propiedades (precios, calidad del producto, servicio, tiempo, etc.) se deben mejorar para ofrecer una mejor experiencia en servicio. ¿cómo nos ven los clientes?
+  x
+  - **Perspectiva de innovacion y aprendisaje**: abarca el uso del termino `mejora` en todos los sentidos de la organizacion. Basicamente, saber si la empresa puede seguir creciendo, mejorando sus servicios y aprender de los errores cometidos y saber aprender nuevas cualidades. ¿podemos continuar mejorando y creando valor?
+  
+  
+  A partir de ahí la evolución ha sido muy rápida, llegando a los sistemas actuales de Big Data que aprovechan todos los sistemas tradicionales aportando las capacidades necesarias para la captura, procesamiento y almacenamiento de datos, además de toda la potencia de analítica descriptiva, predictiva y prospectiva.
+  
+  ----
+  
+  #### Definicion
+  
+  **Business Intelligence** es el conjunto de metodologías, herramientas y capacidades enfocadas a la creación y administración de conocimiento mediante el análisis de datos existentes en la organización, dando soporte a la toma de decisiones del negocio.
+  
+  ```
+  LET INFORMACION = DATOS(la unidad minima semantica) + CONTEXTO (se añade el valor a los datos, para que y donde) + UTILIDAD (saber para que se usaran)
+  ```
+  
+  ```
+  //nota de kenry
+  
+  De la informacion al conocimiento, existe un puente que se llama aprendisaje.
+  
+  Los metodos de aprendisaje que usan las empresas es usar el business intelligent
+  ```
+  
+  Los **datos** son la minima unidad semantica y se corresponde con elementos primarios de la informacion. Por si solos son irrelevantes para el apoyo en toma de decisiones. Los datos pueden llegar de fuentes internas o externas.
+  
+  La **información** se puede definir como un conjunto de datos procesados y que tienen un significado (relevancia, propósito y contexto), y que por lo tanto son de utilidad para quién debe tomar decisiones. Los datos se pueden transforman en información añadiéndoles valor:
+  
+  - Contextualizando: se sabe en qué contexto y para qué propósito se generaron.
+  - Categorizando: se conocen las unidades de medida que ayudan a interpretarlos.
+  - Calculando: los datos pueden haber sido procesados matemática o estadísticamente.
+  - Corrigiendo: se han eliminado errores e inconsistencias de los datos.
+  - Condensando: los datos se han podido resumir de forma más concisa
+  (agregación).
+  
+  **El conocimiento** es una mezcla de experiencia, valores, información y know-how que sirve como marco para la incorporación de nuevas experiencias e información, y es útil para la acción. Se origina y aplica en la mente de los conocedores. En las organizaciones con frecuencia no sólo se encuentra dentro de documentos o almacenes de datos, sino que también está en rutinas organizativas, procesos, prácticas, y normas.
+  
+  ***Datos ---> Informacion ---> Aprendisaje (analisis) ---> Conocimiento*** Esto es una cadena que hace como ciclo.
+  
+  Por tanto, las organizaciones necesitan analizar los datos que se generan desde fuentes internas o externas.
+  
+  En definitiva, una **solución BI permite**:
+  
+  Observar, Comprender, Predecir, Colaborar (¿qué debería hacer el equipo?), Decidir.
+  
+  En las empresas existen dos grandes categorías de sistemas de información: Sistemas operacionales (Aplicaciones propias, CRM, ERP, HIS --> hospital system information). Sistemas que buscan satisfacer las necesidades de información.
+  
+  Y no podemos dejar de hablar de los sistemas externos a la organización y que generan datos importantes, como por ejemplo las redes sociales, los sistemas de meteorología, sociodemografía, etc.
+  
+  ----
+  
+  #### Características de los sistemas de Business Intelligence
+  
+  - Accesibilidad a los datos: deben garantizar el acceso a los datos.
+  - Apoyo en la toma de decisiones: debe tener acceso a la herramienta de analisis que permita seleccionar y manipular solo los datos que sean interesados
+  - Orientacion al usuario final: capacidad para utilizar la herramienta.
+  
+  #### Beneficios del Business Intelligence
+  
+     - genera una fuente unica da datos de facil acceso y calidad.
+     - reduce el tiempo minimo requerido para recoger informacion relevante
+     - ayuda comprender las tendencias desde el analisis de perspectivas
+     - identifica problemas de negocios y oportunidades. Ayuda a predecir eventos.
+     - da una fuenta extra a los datos sin tener que solicitarlos al departamento de TI.
+  
+  ----
+  
+  #### Arquitectura de una solución de Business Intelligence
+  
+  En la arquitectura de la solucion se aplica, una fase de extraccion, transformacion y carga (ETL). Esta etapa suele apoyarse en un almacén intermedio, llamado **ODS**, que actúa como pasarela entre los sistemas fuente y los sistemas destino (generalmente un datawarehouse), y cuyo principal objetivo consiste en evitar la saturación de los servidores funcionales de la organización.
+  
+  La información resultante, ya unificada, depurada y consolidada, se almacena en un datawarehouse corporativo, que puede servir como base para la construcción de distintos datamarts departamentales. Estos datamarts se caracterizan por poseer la estructura óptima para el análisis de los datos de esa área de la empresa, ya sea mediante bases de datos transaccionales (OLTP) o mediante bases de datos analíticas (OLAP).
+  
+  **Fuentes de datos**
+  
+  sistemas propias de la empresa o desde aplicaciones o servicios externos, como por ejemplo las redes sociales, google analytics, etc. y que aportan datos e información importantísima para la generación de conocimiento y toma de decisiones.
+  
+  Reto en la fase:
+  
+  - identificsr las fuentes y detectar cuales generan datos importantes para la toma de decisiones
+  - conocer el modelo de datos de cada sistema y su significado
+  
+  **ETL**
+  
+  - extraccion: es la primera fase del proceso, extrae todos los datos obtenidos del proceso anterior y los valida para asegurarse que la calidad del datos es correcta.
+  
+  - transformacion: aplica las reglas de negocio para asegurar la calidad del dato. Si por ejemplo tenemos como origen “número de clientes” y “número de mujeres”, y necesitamos saber el porcentaje de mujeres que son clientes, se necesita un cálculo para obtener la métrica deseada. Si necesitamos adecuar el formato de un campo para su posterior explotación, también se realiza aquí.
+  
+  - Carga: se vuelcan los datos ya transformados del proceso anterior al sistema destino (warehouse o DataMart). En este punto se puede hacer una carga inicial o incremental.
+  
+  **Almacenamiento de datos**
+  
+    **Data Warehouse** es un repositorio unificado de datos que se caracteriza por integrar y depurar información de una o más fuentes distintas, para luego procesarla permitiendo su análisis desde infinidad de perspectivas y con grandes velocidades de respuesta.
+  
+  Se caracteriza por ser:
+  
+  - integrado: los datos deben integrarse a una estructura consistente (todos deben tener la misma estructura de datos), por lo que se eliminan las inconsistencias. La informacion suele estructurarse tambien en distintos niveles de detalle para adecuarse a las distintas necesidades de los clientes.
+  
+  - tematico: solo los datos necesarios para el proceso de generacion de conocimiento se integran desde el entorno operacional. Los datos se organizan por temas para facilitar su acceso y entendimiento por parte de los usuarios finales. Por ejemplo, todos los datos sobre clientes pueden ser consolidados en una única tabla del datawarehouse
+  
+  - historico: En los sistemas operacionales, los datos siempre reflejan el estado de la actividad del negocio en el momento presente. Por el contrario, la información almacenada en el datawarehouse sirve, entre otras cosas, para realizar análisis de tendencias. Por lo tanto, el datawarehouse se carga con los distintos valores que toma una variable en el tiempo para permitir comparaciones.
+  
+  - no volatil: el almacén de información de un datawarehouse existe para ser leído, pero no modificado. La información es por tanto permanente.
+  
+  **Data Mart** es una base de datos departamental, especializada en el almacenamiento de los datos de un área de negocio específica. Se caracteriza por disponer la estructura óptima de datos para analizar la información al detalle desde todas las perspectivas que afecten a los procesos de dicho departamento. Un DataMart puede ser alimentado desde los datos de un datawarehouse, o integrar por sí mismo un compendio de distintas fuentes de información.
+  
+  ----
+  
+  #### Explotación de datos
+  
+  - reporting: generar reportes en base a la informacion obtenida. Una de las herramientas más usada es Jet reports.
+  - Cuadro de mando: Orientados al seguimiento de indicadores, mas que al analisis de informacion.
+  
+  **Tipos de cuadro de mandos**
+  
+  - Cuadro de mano operativo:  es una herramienta de control enfocada al seguimiento de variables operativas, es decir, variables pertenecientes a áreas o departamentos específicos de la empresa. está centrada en indicadores que generalmente representan procesos, por lo que su implantación y puesta en marcha es más sencilla y rápida.  Un CMO debería estar siempre ligado a un DSS (Sistema de Soporte a Decisiones) para indagar en profundidad sobre los datos. **Operaciones**
+  
+  - Cuadro de mano integral: representa la ejecución de la estrategia de una compañía desde el punto de vista de la Dirección General (lo que hace que ésta deba estar plenamente involucrada en todas sus fases, desde la definición a la implantación).  Existen diferentes tipos de cuadros de mando integral, si bien los más utilizados son los que se basan en la metodología de Kaplan & Norton. Las principales características de esta metodología son que utilizan tanto indicadores financieros como no financieros, y que los objetivos estratégicos se organizan como hemos visto en la introducción, en cuatro áreas o perspectivas: financiera, cliente, interna y aprendizaje/crecimiento. **Estrategias de mercado**
+  
+  
+  - OLAP: Acronimo ingles Online Analitica Processing. Esto agiliza la consulta y procesamiento de datos. Para ello la informacion a consultar esta contenido en cubos estructurales de datos resumidos de grandes bases de datos o Sistemas Transaccionales. Se usa en informes de negocios de ventas, marketing, informes de dirección, minería de datos y áreas similares.
+  
+  - Data mining: es el conjunto de tecnicas y tecnologias que permiten explorar grandes bases de datos, de manera automatica o semiautomatica, con el objetivo de encontrar patrones repetitivos, tendencias o reglas que expliquen el comportamiento de los datos en un determinado contexto. Con este fin, hace uso de practicas de estadisticas y en algunos casos, de algoritmos de busqueda o redes neuronales.
+  
+  -----
+  
+  Los indicadores (KPI) deben cumplir siempre las características SMART:
+  
+  KPI: Key Performance Indicator. Son metricas que ayudan a identificar el rendimiento de determinada accion o estrategia. 
+  
+  - Específicos
+  - Medibles
+  - Alcanzables
+  - Relevantes
+  - Temporales
+  
+  ----
+  
+  El reto tecnológico en el Big Data está resuelto gracias a:
+  
+  - Los sistemas distribuidos, que permiten crear clúster de ordenadores o servidores para incrementar casi sin límite las capacidades de proceso y almacenamiento. Para que estos sistemas fueran viables surge la tecnología MapReduce que permite justo este paradigma de la computación distribuida, es decir, poder repartir tanto el proceso como el almacenamiento entre muchos nodos.
+  
+  - Las bases de datos NoSQL están diseñadas para superar desafíos específicos como las redes sociales y su necesidad de escribir y acceder a gran cantidad de datos y no tener dependencias de relaciones que obliguen a mantener un modelo de datos.
+  
+  - Los servicios en la nube (Cloud) han permitido acceder a todas las organizaciones a esta tecnología, ya que permite subcontratar tanto el hardware, como el software y pagar en función del uso.
+  
+  La otra columna del Big Data es la analítica, conocida también como Data Science y que tiene como objetivo extraer la información de valor mediante el análisis de grandes volúmenes de datos. Existen tres tipos de analística:
+  
+  - Descriptiva: analizar lo que esta ocurriendo en el momento.
+  - Predictiva: prendecir lo que va a ocurrir, utilizando para ello modelos matematicos y estadisticos.
+  - prescriptiva: permite realizar recomendaciones automaticas.
+  
+  Big Data no es una moda tecnológica, sino una solución para un problema concreta que es poder analizar grandes volúmenes de datos, que se generan a gran velocidad y con distintos formatos (variedad). Estas son las v del Big Data, a las que añadimos la necesidad de identificar que datos generan valor y la veracidad en cuanto a cuáles de los datos son correctos y cuáles no.
+  
+  
+'''
+tags: [
+  "big_data_theory"
+  "Data_orientada_a_negocio"
+  "DW"
+]
+isStarred: false
+isTrashed: false

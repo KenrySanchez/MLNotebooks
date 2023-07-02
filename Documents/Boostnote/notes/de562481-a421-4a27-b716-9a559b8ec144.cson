@@ -1,0 +1,282 @@
+createdAt: "2019-04-11T01:46:29.022Z"
+updatedAt: "2020-11-15T23:12:45.311Z"
+type: "MARKDOWN_NOTE"
+folder: "7b6dd385ab806689b09e"
+title: "Data Analytics Practice"
+content: '''
+  ## Data Analytics Practice
+  
+  ### python packages for datas science
+  
+  Scientifics Computing Libraries
+  
+  - Pandas: Data Structures and tools.
+  - NumPy: Arrays and matrices.
+  - SciPy: Integrals, solvinf differential equations, optimization.
+  
+  Visualization Libraries
+  
+  - Matplotlib: plots and graphs, most popular.
+  - Seaborn: plots: heat maps, time series, violin plots.
+  
+  Algorithmic Libraries
+  
+  - Scikit-learn: ML Models
+  - Statsmodels: Explore data, estimate statiscal models and perform statistical tests.
+  
+  To tell Pandas that there is not header, you must.
+  
+  ```python
+  import pandas as pd
+  df = pd.read_csv(path, header = None)
+  
+  ##Adding headers to pandas dataFrame
+  header = [....]
+  df.columns = header
+  pd.head()
+  
+  ##Provides full summary stadistics
+  dataframe.describe(include="all")
+  
+  ##Provides a concise summary of your DataFrame
+  dataframe.info()
+  
+  ##we can drop missing values along the column "price" as follows  
+  df.dropna(subset=["price"], axis=0)
+  ```
+  
+  ## Dealing with missing values in python
+  
+  **Evaluating for Missing data**
+  
+  The missing values are converted to Python's default. We use Python's built-in functions to identify these missing values. There are two methods to detect missing data:
+  
+  ```python
+  missing_data = df.isnull()
+  missing_data.head(5)
+  ```
+  
+  Using a for loop in Python, we can quickly figure out the number of missing values in each column. As mentioned above, "True" represents a missing value, "False"  means the value is present in the dataset.  In the body of the for loop the method  ".value_counts()"  counts the number of "True" values. 
+  
+  ```python
+  for column in missing_data.columns.values.tolist():
+      print(column)
+      print (missing_data[column].value_counts())
+      print("")    
+  ```
+  
+  Options to solve when you have a problem like this:
+  
+  1. Check with the data collection source and put the value which should be in the feauture.
+  
+  2. Drop the missing Values
+    - drop the variable
+    - drop the data entry
+  
+  If you don't have a lot of observations with missing data, usually dropping the particular entry is the best. If you're removing data, you want to look to do something that has the least amount of impact.
+  
+  3. Replacing the missing values
+    - replace it with an average (of similar datapoints)
+  
+   As an example, suppose we have some entries that have missing values for the normalized losses column and the column average for entries with data is 4500. While there is no way for us to get an accurate guess of what the missing value is under the normalized losses column should have been, you can approximate their values using the average value of the column 4500
+   
+    - replace it by frequency when the variable is categorical
+  
+  For a variable like fuel type, there isn't an average fuel type since the variable values are not numbers. In this case, one possibility is to try using the mode, the most common like gasoline
+  
+    - replace it based on other functions
+  
+   sometimes we may find another way to guess the missing data. This is usually because the data gathered knows something additional about the missing data. For example, he may know that the missing values tend to be old cars and the normalized losses of old cars are significantly higher than the average vehicle
+   
+   - Last Option, leave it as missing data
+  
+  **How to drop missing values**
+  
+  ```python
+  ## axis = 0, represent rows
+  ## axis = 1, represent columns
+  dataframes.dropna(axis = <0, 1>)
+  
+  ## example
+  df.dropna(subset=["price"], axis=0, inplace = True)
+  
+  # reset index, because we droped rows
+  df.reset_index(drop=True, inplace=True)
+  ```
+  
+  **How to replace missing values**
+  
+  ```python
+  dataframe.replace(missing_value, new_value)
+  
+  ##example
+  import pandas as pd
+  import numpy as np
+  
+  mean = df["price"].mean()
+  df["price"].replace(np.nan, mean)
+  ```
+  
+  ## Data Formatting
+  
+  to identify data types, remember:
+  
+  ```python
+  df.dtypes()
+  ```
+  
+  to convert data types:
+  
+  ```python
+  df.astype(<name type>)
+  
+  ##example
+  df["name"].astype("object")
+  ```
+  
+  ## Data Normalization
+  
+  It's an important technique to undestand in data pre-processing. It is a standard approach is to scale the inputs to have zero mean unit variance. 
+  
+  `The black box answer is you can’t train models when your features have different ranges (1-5 vs 1-5000).`
+  
+  Mathematically: if you have some observed data (your training examples), called the empirical distribution, which is a proxy for the true data distribution that is generated from the unknown data distribution.
+  you could assume that your input features, each dimension is drawn from a uni-variate Gaussian distribution, which you could estimate using maximum likelihood estimation in closed form solution see MLE for Gaussian and you could obtain unbiased mean and biased variance could be fixed to be unbiased. following that, it's straightforward to just subtract all your data points from the original mean, you end up with zero mean, and scale the variance to be one by dividing by the fixed unbiased variance.
+  
+  **Technique by normalization**
+  
+  - **Simple feature scaling**: Get every feature into a approximately a -1 <= x <= 1 range. The first method called simple feature scaling just divides each value by the maximum value for that feature. This makes the new values range between zero and one
+  
+  ```python
+  df["name"] = df["name"]/df["name"].max()
+  ```
+  
+  - **Mean feature scaling**: Get every feature into a approximately a -0.5 <= x <= 0.5 range.
+  
+  ```python
+  df["name"] = df["name"] - df["name"].avg()/ df["name"].max() - df["name"].min()
+  ```
+  
+  - **Min-Max**: takes each value X_old subtract it from the minimum value of that feature, then divides by the range of that feature. Again, the resulting new values range between zero and one.
+  
+  ```python
+  df["name"] = (df["name"] - df["name"].min())/(df["name"].max() - df["name"].min())
+  ```
+  
+  ```
+  range = Xmax - Xmin
+  ```
+  - **Z-Score**: In this formula for each value you subtract the mu which is the average of the feature, and then divide by the standard deviation sigma. The resulting values hover around zero, and typically range between negative three and positive three but can be higher or lower.
+  
+  ```python
+  df["name"] = (df["name"] - df["name"].mean())/df["name"].std()
+  ```
+  
+  ### Binning in Python
+  
+  Binning is when you group values together into "bins". For example, you can bin “age” into [0 to 5], [6 to 10], [11 to 15] and so on. Sometimes, binning can improve accuracy of the predictive models. In addition, sometimes we use data binning to group a set of numerical values into a smaller number of bins to have a better understanding of the data distribution.
+  
+  Using binning, we categorize the price into three bins: low price, medium price, and high prices. In the actual car dataset, ”price" is a numerical variable ranging from 5188 to 45400, it has 201 unique values. We can categorize them into 3 bins: low, medium, and high-priced cars. In Python we can easily implement the binning: We would like 3 bins of equal binwidth, so we need 4 numbers as dividers that are equal distance apart.
+  
+  ```python
+  
+  bins = np.linspace(min(df["price"]), max(df["price"]), 4)
+  group_names = ["low", "median", "hight"]
+  df["price_binned"] = pd.cut(df["price"], bins, labels=group_names, include_lowerest= True)
+  ```
+  
+  ### Turning categorical variables into quantitave variables
+  
+  - Add dummy variable for each unique category
+  - Assign 0 or 1 in each category
+  
+  [What is One Hot Encoding? Why And When do you have to use it?](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f)
+  
+  ```python
+  pd_dummies = pd.get_dummies(df["category"])
+  ```
+  ### Features in Location Data
+  
+   Location data providers will differ in a number of features:
+   
+   - **rates**: essentially means how many API calls you can make in a defined time frame such as calls per hour or calls per day.
+   - **coverage**:  how many countries or geographical locations the location data set covers.
+   - **accuracy**:  so how accurate is the location data provided by each provider? Especially those that crowdsource their data.
+   - **cost**: how much it would cost you to use their API to fetch location data.
+   - **Frequency**: Time in update the data location.
+  
+  ### Concepts for Sentimental Analysis
+  
+  **Tokenization, extraction data as a feature**
+  
+  We use this technique when the data is text plain. The text content is pulled and tokens or words are extracted from it. The token can be a single word or a group of words. The techniques are:
+  
+  - using regular expression: Regular expression can be applied to textual content to extract words or tokens from it.
+  - using pre-trained model.
+  
+  **Stop words removal**
+  
+  Not all the words present in the text are important. Some words are common words used in the english language that are important for the purpose of maintaining the grammar correctly. Words like "is, was, were, they, so", etc. To remove these words there are again some commons techniques that you can use from natural language processing:
+  
+  - Store stop words in a file or dictionary and compare your extracted tokens with the words that are stored.
+  - Use a pre-trained model to classify the words and remove it if are matched.
+  
+  **Lemmatization**
+  
+  Lemmatization, on the other hand, takes into consideration the morphological analysis of the words. To do so, it is necessary to have detailed dictionaries which the algorithm can look through to link the form back to its lemma. Again, you can see how it works with the same example words.
+  
+  **Stemming**
+  
+  Stemming is the process of reducing a word to its base or root form. For example, look at the set of words shown here:
+  
+  car, cars, car's, cars'
+  
+  From our perspective of sentimental analysis, we're only interested in the main words of the main word that it refers to. The reason for this is that the underlying meaning of the word in any case is the same. In our example, the main word is car.
+  
+  **N-grams**
+  
+  You can have `n-word` per token, it all depends upon which token set trains our model well and improves its predictive results accuracy.
+  
+  ### Measure for sentimental analysis
+  
+  **Term presence**
+  
+  Just means that id the term is present, we mark the value as 1 or else 0. Later we build a matrix out of it where the rows represent the words and columns represent each sentence. The matrix is later used to do analysis by feeding its content to a classifier.
+  
+  **Term frequency**
+  
+  Just depicts the count or occurrences of the word or tokens within the documents.
+  
+  Bland term frequency is not a precise approach for the following reasons:
+  
+  - There could be some redundant irrelevant words, for example, the, it, and they that might have a big frequency or count and they might impact the training of the model.
+  - There could be some important rare words that could convey the sentiment regarding the document yet their frequency might be low and hence they might not be inclusive for greater impact on the training model.
+  
+  **TF-IDF**
+  
+  Stands for ***Term Frequency*** and ***Inverse Document Frequency***, it means the importance of a term in a document.
+  
+  - It counts the number of terms in the document, so the higher the number of terms the greater importance of this term to the document.
+  - Counting just the frequency of words in a document is not very precise way to find the importance of the words. The simple reason for this is there could be so many stop words and their count is high so their importance might get elevated above the importance of real good words. To fix this, TF-IDF checks fot the availibility of these stop words in other documents as well. If the words appear in other documents as well in large numbers that means these words could be grammatical words as "they, for, is", and so on, and TF-IDF decreases the importance or weight of such stop words.
+  
+  - Inverse Document Frequency: This is the measure of how much information the word provides. It scales up the weight of the words that are rare and scales down the weight of highly ocurring words.
+  
+  ```
+  IDF = Log(Total number of documents/Number of documents containing the term)
+  ```
+  
+  TF-IDF is a simple multiplication of the term frequency and the inverse document frequency
+  
+  ```
+  TF-IDF = TF*IDF
+  ```
+  
+  ------
+  
+  ***Predictive Analysis can not predict the future, but can influence the future of the company***
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

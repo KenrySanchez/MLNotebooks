@@ -1,0 +1,126 @@
+createdAt: "2018-07-08T23:01:06.133Z"
+updatedAt: "2018-07-09T01:39:07.902Z"
+type: "MARKDOWN_NOTE"
+folder: "684eca6ee5c27e941bf4"
+title: "Gestion correcta en las implicaciones legales del uso de datos"
+content: '''
+  ## Gestion correcta en las implicaciones legales del uso de datos
+  
+  *La ley organica "LOPD" tiene como objetivo garantizar y proteger las libertades en referente al tratamiento de los datos personales. Espeficamente el honor, la intimidad personal y la familia*
+  
+  Se regirán por la LOPD los tratamientos efectuados en territorio español, o cuando al responsable del tratamiento no establecido en territorio español, le sea de aplicación la legislación española o cuando el responsable del tratamiento no esté establecido en territorio de la Unión Europea y utilice en el tratamiento de datos medios situados en territorio español.
+  
+  Segun la LOPD existen dos clasificatorias primordiales:
+  
+  - Los datos de caracter personal, el cual su concepto hace mencion a cualquier formato de dato que pertenezca o que tenga como fuenta una persona identificada o identificable.
+  
+  - Fichero de datos: conjunto organizado de datos de caracter personal, que permite el acceso a los datos con arreglo a criterios determinados, cualquiera que fuera la forma o modalidad de su creacion, almacenamiento, organizacion y acceso.
+  
+  Conforme al proceso de almacenamiento elegido, los ficheros pueden ser:
+  
+  - **Automatizados**: Soportes informaticos organizados de tal manera que se pueda acceder a la informacion que contiene mediante aplicaciones o procedimientos informaticos.
+  - **No automatizados**: archivadores que almacenan expedientes clasificados mediante criterios identificados
+  
+  **tratamiento de datos**: cualquier operación o procedimiento técnico, sea o no automatizado, que permita la recogida, grabación, conservación, elaboración, modificación, consulta, utilización, modificación, cancelación, bloqueo o supresión, así como las cesiones de datos que resulten de comunicaciones, consultas, interconexiones y transferencias.
+  
+  La LOPD regula el tratamiento de cualquier tipo de dato personal con independencia de que éste pertenezca o no a la vida privada del titular
+  
+  El consentimiento del interesado se describe como toda manifestación de voluntad, libre (salvo que la ley lo disponga no podemos ser obligados a facilitar nuestros datos), inequívoca, específica (no se consiente para cualquier tratamiento ni de manera general) e informada, mediante la que el interesado consienta el tratamiento de datos personales que le conciernen.
+  
+  El responsable del tratamiento: Es el ente que directa o indirectamente (a traves de un encargado del tratamiento) realiza analisis o tratamiento de datos.
+  
+  El responsable del tratamiento de datos debera tener en cuenta los siguientes principios:
+  
+  - Deberan ser tratados de forma leal y ilicita.
+  - no podran recogerse por medios fraudulentos, desleales o ilicitos.
+  - Sólo podrán ser recogidos para el cumplimiento de finalidades determinadas, explícitas y legítimas del responsable del tratamiento.
+  - No podrán usarse para finalidades incompatibles con aquellas para las que hubieran sido recogidos. A estos efectos no se considerará incompatible, el tratamiento de los datos de carácter personal con fines históricos, estadísticos o científicos.
+  
+  **Datos especialmente protegidos**
+  
+  En términos previstos en los artículos 7 y 8 de la LOPD. El interesado no debe prestar su consentimiento para los datos que revelen ideologia, afiliacion sindical, religion y creencias.
+  
+  PAra el tratamiento o cesion de datos relativos a origen racial, salud o vida sexual se necesitara el consentimiento expreso o que asi lo disponga una ley.
+  
+  Se podrán tratar, no obstante, los datos anteriores, si resulta necesario para el diagnóstico médico o la gestión de un profesional sanitario sujeto al secreto profesional o por otra persona sujeta asimismo a una obligación equivalente de secreto
+  
+  **Seguridad de los datos**
+  
+  Conforme al articulo 9 de la LOPD. El responsable del fichero, o en el caso el encargado del tratamiento, deberan implementar medidas tecnicas y organizativas que garanticen la seguridad de los datosde caracter personal y eviten su alteracion, perdida, tratamiento o acceso no autorizado. Disponer de politicas de seguridad garantiza la integridad, disponibilidad y confidencialidad de los datos.
+  
+  **Deber de guardar secreto**
+  
+  regulada en el artículo 10 de la LOPD. Consiste en la confidencialidad profesional que han de respetar, sobre los datos de carácter personal a los que tengan acceso, todos los que intervengan en cualquier fase del tratamiento. Obligación que subsistirá aún después de finalizar su relación con el responsable del fichero.
+  
+  **Derechos de las personas**
+  
+  los derechos de las personas vienen regulados en los artículos 13 al 19 de la LOPD y 23 al 36 del RLOPD, siendo los más destacables los denominados derechos ARCO (Acceso, Rectificación, Cancelación y Oposición).
+  
+  - Son derechos personalísimos: sólo pueden ejercercitarse por el propio afectado, acreditando su identidad; por su representante legal acreditado, cuando el afectado se encuentre en situación de incapacidad o minoría de edad o bien por su representante voluntario, expresamente designado para el ejercicio del derecho.
+  - Se trata de derechos independientes, por lo que el ejercicio de ninguno de ellos será requisito previo para el ejercicio de otro tipo de derecho.
+  - Al titular de los datos se le deberá facilitar un medio sencillo y gratuito para el ejercicio de los derechos ARCO.
+  - El ejercicio por el afectado de sus derechos será gratuito y en ningún caso podrá suponer un ingreso adicional para el responsable del tratamiento ante el que se ejerciten.
+  - El ejercicio por el afectado de sus derechos será gratuito y en ningún caso podrá suponer un ingreso adicional para el responsable del tratamiento ante el que se ejerciten.
+  
+  **Derecho de información**
+  
+  Los interesados a los que se soliciten datos personales deberán ser previamente informados de modo expreso, preciso e inequívoco:
+  
+  - La existencia de un fichero de datos, su recogida y los destinatarios de la informacion.
+  - caracter obligatorio o facultativo de su respuesta a las preguntas que les sean planteadas.
+  - las consecuencias de la obtencion de los datos o de la negativa de suministrarlos.
+  - posibilidad de ejercer los derechos ARCO
+  - identidad y direccion del responsable del tratamiento o su representante.
+  
+  **Derecho de Acceso**
+  
+  regulado en el artículo 15 de la LOPD y 27 al 30 del RLOPD consiste en solicitar y obtener información sobre datos de carácter personal (origen, cesiones, usos y finalidades) que pudieran tener los responsables de ficheros o tratamientos.
+  
+  **Derechos de rectificación y cancelación**
+  
+  Conforme al artículo 16 de la LOPD y 31 al 33 del RLOPD este derecho habilita al afectado para solicitar que se modifiquen los datos personales que resulten ser inexactos o incompletos.
+  
+  **Derecho de oposición**
+  
+  Este derecho viene regulado en el artículo 6.4, 17 y 30.4 de la LOPD y 34 a 36 del RLOPD y consiste en la potestad que tiene el afectado a que no se lleve a cabo el tratamiento de sus datos de carácter personal o se cese en el mismo:
+  
+  - Cuando no sea necesario su consentimiento para el tratamiento.
+  - Cuando se trate de ficheros que tengan por finalidad la realización de
+  actividades de publicidad y prospección comercial.
+  - Cuando el tratamiento tenga por finalidad la adopción de una decisión con
+  efectos jurídicos sobre el interesado o que le afecte de manera significativa, referida a un tratamiento automatizado de datos destinado a evaluar determinados aspectos de su personalidad (rendimiento laboral, crédito, fiabilidad o conducta).
+  
+  **Obligaciones del responsable del fichero**
+  
+  - Creación, modificación y supresión de ficheros: con identificación del responsable, del fichero, finalidades y usos previstos, sistema de tratamiento empleado, tipología de datos, medidas de seguridad, el encargado del tratamiento y los destinatarios de cesiones y transferencias internacionales.
+  - Notificación e Inscripción de ficheros ante el RGPD.
+  - Informar a los titulares previamente a la recogida de sus datos (art. 5 LOPD) y recabar su consentimiento.
+  - Implementación de medidas de seguridad técnicas y organizativas (por niveles según tipo de datos). Recogidas en el Documento de seguridad.
+  - Asegurarse de que los datos sean adecuados, veraces, obtenidos lícita y legítimamente y tratados de modo proporcional a la finalidad que justificó su recogida.
+  - Garantizar el cumplimiento de los deberes de confidencialidad y seguridad.
+  - Facilitar y garantizar el ejercicio de los derechos ARCO.
+  - Asegurar que en sus relaciones con terceros (prestadores de servicios), cumplan con la LOPD.
+  
+  **II. RD 1720/2007 Reglamento desarrollo RLOPD**
+  
+  Deroga alReal Decreto 994/1999, de medidas de seguridad de los ficheros automatizados que contengan datos personales. el anterior reglamento constaba de 29 artículos, el actual consta de 158. a diferencia del anterior, regula también las medidas de seguridad aplicables a los tratamientos no automatizados (papel).
+  
+  **III. Reglamento General de protección de datos (RGPD)**
+  
+  Es el reglamento relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos. Es una normativa a nivel europeo, por lo que cualquier empresa europea o aquellas empresas que tengan negocios en la Unión Europea que manejen información personal de cualquier tipo deberán acogerse a la misma.
+  
+  El nuevo régimen de protección de datos de la UE amplía el alcance de la ley de protección de datos de la UE a todas las compañías extranjeras que tratan datos de residentes de la UE. Para cumplir con estas regulaciones, sin embargo, esto implica el costo de un estricto régimen de cumplimiento de protección de datos con penalizaciones severas.
+  
+  El RGPD también ofrece un nuevo conjunto de "derechos digitales" para los ciudadanos de la UE en una época en la que el valor económico de los datos personales está aumentando en la economía digital.
+  
+  **Conjunto único de reglas y ventanilla única**
+  
+  Un único conjunto de reglas se aplicará a todos los estados miembros de la UE. Cada estado miembro establecerá una Autoridad de Supervisión (SA) independiente para escuchar e investigar denuncias, sancionar infracciones administrativas, etc.
+  
+  
+'''
+tags: [
+  "Gestion_del_cliente_Big_Data"
+]
+isStarred: false
+isTrashed: false

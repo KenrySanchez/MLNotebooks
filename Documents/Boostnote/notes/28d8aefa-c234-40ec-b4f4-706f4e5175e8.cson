@@ -1,0 +1,120 @@
+createdAt: "2018-09-27T03:05:18.931Z"
+updatedAt: "2019-11-03T18:05:20.992Z"
+type: "MARKDOWN_NOTE"
+folder: "a41d44d96fbd153c28c9"
+title: "Vision Analitica  - Data Sciencies"
+content: '''
+  ## Vision Analitica  - Data Sciencies
+  
+  LAs empresas deben entender que ellos mismos son fuentes generadores de datos y que esos datos en si mismo forman la base de su **ventaja competitiva**.
+  
+  ----
+  
+  #### Data Science
+  
+  La ciencia de datos es un campo multidisciplinario que combina metodos cientificos, procesos, algoritmos y sistemas para extraer conocimiento y nueva informacion de los datos (estructurados y no estructurados). El objetivo es entender y analizar un fenomeno concreto a partir de ciertos datos relacionados al mismo.
+  
+  A traves del Data Sciencie se busca encontrar nuevos descubrimientos de los sets de datos. Intentar encontrar patrones ocultos que puedan ayudar a las compañias a tomar decisiones estrategicas que les permitan contar con una ventaja competitiva
+  
+  **¿Cómo son capaces los científicos de datos de realizar estos hallazgos?**
+  
+  Lo mas importante, **explotacion del dato**. La idea es seguir indicios con el fin de intentar entender los patrones o caracteristicas especficias que contengan los datos (corelacion). Se debe tener **creatividad**.
+  
+  Con el objetivo de obtener un mayor nivel de detalle, los data scientis aplican tecnicas cuantitativas.
+  
+  Tecnicas cuantitativas pueden ser:
+  
+  - modelos inferenciales
+  - analisis de segmentacion
+  - analisis de series temporales
+  - experimentos de control sintetico
+  
+  Luego de poder obtener un resultado fiable y concreto, la idea es presentarlo para luego poder tomar decisiones ventajosas. En este sentido, los cientificos de datos actuan como consultores para la junta directiva.
+  
+  -----
+  
+  #### Data Products
+  
+  Un data product es un producto tenico que:
+  
+  1. Utilza datos como fuente de entrada.
+  2. Procesa los datos y devuelve generados algoritmicamente.
+  
+  Un data product es una funcion F(X) en matematicas.
+  
+  Ejemplo clasico: Motor de recomendaciones, el cual recibe datos del usuario y luego de analizar realiza recomendaciones personalizadas.
+  
+  Otros Ejemplos:
+  
+  - Amazon usa motor de recomendaciones para hacer sugerencias a los usuarios. Lo mismo hace netflox, spotify y Booking.
+  - El filtro no deseado de Gmail. Analiza el contenido de los correos para poder definir si es o no un correo no deseado.
+  - ML aplicado a los vehiculos.
+  
+  ***Data product es un desarrollo tecnico que encapsula un algoritmo y que se diseña para entegrarlo directamente a una aplicacion***
+  
+  Los cientificos de datos actuan como desarrolladores cuando los data products que crean son usados dentro de aplicaciones como componentes o modulos de la arquitectura.
+  
+  ----
+  
+  #### Habilidades claves en data science
+  
+  - Conocimientos matematicos (Analitica clasica y analitica bayesiana)
+  - Conocimientos tecnologicos
+  - Vision de negocio
+  
+  ----
+  
+  #### Proceso de analisis en data science
+  
+  **Definir el problema**
+  
+  Antes de resolver el problema, debemos **definir exactamente lo que queremos resolver**. Es importante que se disponga de toda la información de contexto necesaria para poder plantear la resolución del problema. Se debe tomar en cuanta tambien saber identificar cual sera la precision del analisis luego de la definicion del problema.
+  
+  **Recoger todos los datos en bruto necesarios para poder resolver el problema**
+  
+  Una vez definido el problema, debemos pensar en todos los datos que seran necesarios para poder solver nuestro problema. En esta fase, tambien debemos preguntarnos como haremos para poder recolectar esos datos necesarios.
+  
+  **Procesar/Limpiar los datos para hacer analisis**
+  
+  Ya con todos los datos, antes de realizar el analisis los datos deben ser debidamente procesados (implica darles un orden y estructura en cuanto a la manera o modelo en como queramos representar nuestros datos).
+  
+  Algunos errores que podemos encontrar son:
+  
+  - Valores desaparecidos.
+  - Valores corruptos (caracteres en campos numericos por ejemplo).
+  - Zonas horarias diferentes (las bases de datos con zonas horarias diferentes).
+  - Valores fuera de rango (fechas que no tienen sentido).
+  
+  **Exploracion de datos - Analisis**
+  
+  Se aplica todo el conocimiento estadistico, matematico y tecnologico. así como poner en valor todas las herramientas analíticas de las que se disponga a fin de procesar los datos y poder extraer cualquier hallazgo importante que puedan contener.
+  
+  Mas procesos en Data Mining -----> [DataMining - Teoria](:note:730901e2-314e-4e79-9e3e-39c07f74caf3)
+  
+  Modelado de datos ---> [Modelacion sin KErnel](:note:b2d35ecb-2678-4702-9e4b-a43424dfb5e6)
+  
+  **Comunicar los resultados del analisis**
+  
+  Por tanto, una buena comunicación de los resultados puede ser la diferencia entre un trabajo que desemboque en un cambio de estrategia corporativo o un trabajo que pase desapercibido.
+  
+  
+  En este paso es clave que se pueda construir una historia que despierte el interés de la audiencia. Especialmente interesante será enlazar los hallazgos con toda la información de contexto inicial que se recabó en el paso inicial.
+  
+  -----
+  
+  #### Big data analytics
+  
+  El objetivo del analisis Big Data es de poder descubrir patrones ocultos, correlaciones desconocidas, tendencias de mercado, preferencias de clientes o cualquier otra informacion que pueda ayudar a las organizaciones a tomar decisiones estrategicas.
+  
+  El BI da respuestas a las preguntas basicas sobre las operaciones y desempeños de las empresas, mientras que el big data es una forma analitica avanzada que combina complejos aplicaciones con tecnicas y herramientas analiticas.
+  
+  
+  
+'''
+tags: [
+  "big_data_theory"
+  "casos_big_data"
+]
+isStarred: false
+isTrashed: false
+isPinned: true

@@ -1,0 +1,58 @@
+createdAt: "2019-10-04T04:38:33.325Z"
+updatedAt: "2019-10-18T06:00:25.531Z"
+type: "MARKDOWN_NOTE"
+folder: "8af9713f3b0695b046b9"
+title: "DataFlow"
+content: '''
+  ## DataFlow
+  
+  Dataflow is a unified programming model and a managed service for developing and executing a wide range of data processing patterns including ETL, batch computation, and continuous computation. Because Dataflow is a managed service, it can allocate resources on demand to minimize latency while maintaining high utilization efficiency.
+  
+  The Dataflow model combines batch and stream processing so developers don't have to make tradeoffs between correctness, cost, and processing time.
+  
+  ### Steps to develop a flow data process
+  
+  1. Create a mvn project.
+  
+  ```
+  mvn archetype:generate \\
+        -DarchetypeGroupId=org.apache.beam \\
+        -DarchetypeArtifactId=beam-sdks-java-maven-archetypes-examples \\
+        -DarchetypeVersion=2.8.0 \\
+        -DgroupId=org.example \\
+        -DartifactId=first-dataflow \\
+        -Dversion="0.1" \\
+        -Dpackage=org.apache.beam.examples \\
+        -DinteractiveMode=false
+  ```
+  
+  Now you should see a new directory called first-dataflow under your current directory. first-dataflow contains a Maven project that includes the Cloud Dataflow SDK for Java and example pipelines.
+  
+  2. Start pipeline
+  
+  Start the pipeline by running mvn `-Pdataflow-runner compile exec:java`. For the `--project`, `--stagingLocation`, and `--output` arguments, the command below references the environment variables you just set up.
+  
+  ```
+   mvn -Pdataflow-runner compile exec:java \\
+        -Dexec.mainClass=org.apache.beam.examples.WordCount \\
+        -Dexec.args="--project=${PROJECT_ID} \\
+        --stagingLocation=gs://${BUCKET_NAME}/staging/ \\
+        --output=gs://${BUCKET_NAME}/output \\
+        --runner=DataflowRunner"
+  ```
+  
+  -----------
+  
+  Creating isolate python virtual env:
+  
+  `virtualenv data-sci-env -p python3`
+  
+  Activate isolated Python environment:
+  
+  `source data-sci-env/bin/activate`
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

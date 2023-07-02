@@ -1,0 +1,422 @@
+createdAt: "2020-11-12T07:20:30.913Z"
+updatedAt: "2020-11-21T22:00:44.212Z"
+type: "MARKDOWN_NOTE"
+folder: "d95c9bc9473d8dba8318"
+title: "Machine Learning, Visual Recognition and NLP"
+content: '''
+  ## Machine Learning, Visual Recognition and NLP
+  
+  ### Evaluation metrics
+  
+  During the `Ideate and Prototype stages` of the design thinking process, you’ll need to communicate to your team and to business stakeholders how different models are performing, and what the tradeoffs are for choosing different models. Your ability to clearly articulate these facts in a way that others can follow begins with your understanding and use of appropriate evaluation metrics. Your understanding and use of evaluation metrics, combined with your data visualization skills and good communication skills, are essential to helping your team `select the best machine learning models`.
+  
+  Remember that the entire design thinking process is user centric. You’re building solutions to solve the specific needs and wants of a user or class of users. As a data scientist this means you will be required to clearly demonstrate and explain how your solutions are meeting those needs and wants.
+  
+  The operating principles in any design thinking project are `observe, reflect, and make`. This attitude of “restless re-invention” means that you have to be very precise and efficient in your ability to evaluate the performance of your models.
+  
+  Providing valid and reliable evaluation metrics to your team and the team at large will be most important to you during the Prototype phase of the design thinking process. It is during this phase that the restless re-invention cycle of `Observe, Reflect, and Make comes alive`, requiring you to provide metrics that the team may observe and reflect on, and use to build the next iteration of models.
+  
+  ![Screen Shot 2020-11-12 at 2.25.16 AM.png](:storage/f29c1749-3933-45d5-8298-c477e086928e/79c26b47.png)
+  
+  `Semi-supervised learning` combines some amount of labeled data with mostly unlabeled data to carry out learning tasks. `Reinforcement learning` learns the appropriate actions to take in a given situation in order to maximize a specific reward.
+  
+  __Common evaluation metrics__
+  
+  - Accuracy.
+  - F1.
+  - RMSE.
+  
+  __Others metrics__
+  
+  K-fold cross validation
+  
+  - stratification.
+  - randomized shuffle and split approach.
+  - time series.
+  
+  __Facts__
+  
+  - Over-fitting, becomes magnified with increased model flexibility.
+  - Cross-validation, grid searching and train test split are commonly used procedure to help mitigate the risk of over-fitting.
+  - data transformation should not be carry out before the train test split, only apply to training data. It's a common mistake.
+  
+  ### Regression metrics
+  
+  When the target is of a continuous type a natural way to evaluate model performance is root mean square error (RMSE). The differences between predicted and observed values are called `residuals`.
+  
+  The Mean Absolute Error (MAE) is another commonly used metric in regression problems. A major advantage of RMSE and MAE is that the values are interpreted in the same units as the original data.
+  
+  MAE is the average of the absolute difference between the predicted values and observed value. Unlike RMSE all of the individual scores are weighted equally during the averaging.
+  
+  Many models will use RMSE to define a loss function because it is [Smoothness](https://en.wikipedia.org/wiki/Smoothness) differentiable, but for model comparison purposes the choice should be made based on the following statement.
+  
+  __IMPORTANT__: The squaring of the error term in RMSE results in a higher penalty on larger differences when compared to MAE.
+  
+  The coefficient of determination also known as R^2R along with it more useful version, the adjusted R^2R, represent the proportion of the variance for a target variable that is explained by the feature in a regression model.
+  
+  __WARNING__: The unadjusted R^2R increases with the addition of features, even ones that do not improve the model so it should be avoided.
+  R^2
+  
+  R2 is appropriate when you wish to quantify how well your features explain the target, given your data. If the primary focus of your model is prediction, then RMSE or MAE are going to be the best metrics to rely on in most case
+  
+  __TIP__: When use MAE instaed of RMSE? R: When for example, like predicting time to failure for a machine where we expect a long tailed distribution of values.
+  
+  ### Classification metrics
+  
+  There are many ways to evaluate the `confusion matrix`:
+  
+  Accuracy = (TN + TP)/(FP + FN + TP + TN) overral proportion correct.
+  
+  Precision = TP/(TP + FP) proportion called true that are correct.
+  
+  Recall = TP/(TP + FN) proportion of true that are called correctly.
+  
+  The F1_score is the `harmonic mean` of precision and recall.
+  
+  The F1_score is actually a special case of the Fbeta score, where the weight of recall and precision is evenly balanced. The F-score can also be written as:
+  
+  F = (1+β^2) * (precision*recall)/(β^2 * precision) + recall.
+  
+  If we set, for example, β=2 then the metric `weighs recall higher than precision`. Conversely, with `β = 0.5 precision is given more importance than recall`. The customization of the F_score is an important tool that can be used to align the model with the needs of a business opportunity. We would consider increasing β in a situation where `false negatives are more important`. For example, if your model was used to screen X-Ray images of airport luggage for manual inspection, a false positive is not as potentially costly as a false negative. Using scikit-learn, it would be implemented as follows:
+  
+  The F1_score also has the important `parameter average`. This parameter is directly related to how you would like to summarize your scores across classes.
+  
+  __warning__: The average parameter can significantly change the behavior and performance of your model, especially when the classes are imbalanced.
+  
+  There are a number of other metrics:
+  
+  - hamming_loss.
+  - hinge_loss.
+  - matthews_corrcoef.
+  - cohen_kappa_score.
+  - brier_score_loss.
+  - jaccard_similarity.
+  
+  As a general rule for both regression and classification problems, if the function name ends in _score, it is a value we are trying to maximize. If the function name ends in _error or _loss then lower values are the target.
+  
+  ### Multiclass and Multilabels
+  
+  __Multiclass classification__
+  
+  Multiclass classification works under the assumption that each sample is assigned to only a single label.
+  
+  __Multilabel classification__
+  
+  Multilabel classification uses a set of possible labels and allows multiple labels to be assigned to each sample. The labels are not mutually exclusive.
+  
+  When moving from a binary to a multi-class setting the `average parameter can be used to customize the summary F1_score`. For example, if you want to assume that `all classes are equally important`, it can be `set to macro`. The `micro and weighted setting` are important when macro is undesired, but the `best approach is to use the full classification report` to see the individual scores whenever possible.
+  
+  __TIP__: All classifiers in scikit-learn do multi-class classification out-of-the-box.
+  
+  Some classification models are inherently multi-class like the `naïve Bayes`. Some classifiers default to a `one-vs-one`, where a different classifier is trained for all pairwise model comparisons. Other classifiers use a `one-vs-all` approach where there is a classifier for each label. For multi-class and multi-label classifiers there are a number of nuances to consider when constructing your pipelines. The following links can provide guidance in these problem scenarios.
+  
+  [3.3. Metrics and scoring: quantifying the quality of predictions — scikit-learn 0.23.2 documentation](https://scikit-learn.org/stable/modules/model_evaluation.html)
+  
+  [1.12. Multiclass and multilabel algorithms — scikit-learn 0.23.2 documentation](https://scikit-learn.org/stable/modules/multiclass.html)
+  
+  ### Generalizing Well to Unseen Data
+  
+  Train-test splits, cross-validation and grid-searching are techniques used to ensure that models are tuned in a way that they generalize well to unseen data.
+  
+  The most commonly used form of cross-validation is `KFold`. If more control is needed with respect to the number of iterations and the proportion of the sample, `the shuffle and split approach may be appropriate`. There are two variants on KFold that are frequently encountered.
+  
+  [Stratified KFold](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html) each set contains approximately the same percentage of samples of each target class as the complete set.
+  
+  Shuffle and split cross-validation, The [ShuffleSplit](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.ShuffleSplit.html) iterator will generate a user-defined number of `independent train / test dataset splits`. Samples are first shuffled and then split into a pair of train and test sets.
+  
+  The [GridSearch](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) uses a `stratified KFold cross-validation` by default. It's possible to perform a [randomized grid search](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html). Grid-searching is among the most time-consuming parts of the AI workflow. The parameters selected for both variants of grid-search are those that maximize the score of the held-out data, according to the scoring function. In terms of efficiency the n_jobs argument can be set to -1 to use all available CPUs. Also, there are model specific versions of cross-validation, like [ElasticNetCV](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNetCV.html) that can grid search more effectively than the exhaustive version.
+  
+  ### Model evaluation plots
+  
+  They are generally used to summarize `how well your model generalized to unseen data`. Two commonly used variants are `learning curves` and `validation curves`.
+  
+  How well a model performs can be decomposed as `bias, variance and noise`. The `bias of a model` is its average error when a model is subjected to different training sets and it comes from the underlying model assumptions. The `variance of a model` is reflective of how sensitive it is to variations in the training data.
+  
+  - `Linear Regression and Logistic Regression` are models that make strong assumptions about the target function, which `implies high bias`.
+  - `Decision trees and KNNs` are examples of `high variance models`.
+  
+  __TIP__: One tip to over-fitting is to use more training examples.
+  
+  ### Relating the Evaluation Metric to a Business Metric
+  
+  Ideally the target variable that corresponds to your feature matrix is a meaningful business metric.
+  
+  __Important__: A business metric is a quantifiable event that is directly used to measure the success or failure of a business opportunity.
+  
+  If the relationship between target variables and the business opportunity is direct, then measuring the business value is simply a matter of being specific about how you define the business metric. With enough data you could begin to make predictions about the effect of a new model on the rate of churn, based on the observed improvement in evaluation metric.
+  
+  There are several reasons why it is challenging to accurately and easily describe the relationship between evaluation metrics and business metrics. The first is the presence of `confounding factors`.
+  
+  scatter plot with the `evaluation metric on one axis` and the `business metric on the other axis` could contain additional data as well.
+  
+  Even after a model is tuned and working, there is an additional investigative step that is essential. If we create a model without attempting to uncover the relationship between the evaluation metric and the business metric, we are leaving the modeling part of the workflow unfinished. Additional investigative steps may include:
+  
+  - correlation approaches.
+  - more complex custom models.
+  
+  __Questions__
+  
+  If you have data with a large number of features and you are sure that it will take some time to train and tune the model, which approach is LEAST likely to result in a speed improvement during grid-searching?: R: Use the `Shuffle and split form of cross-validatinon`.
+  
+  ### Linear model facts
+  
+  If we compare a given model’s performance to random guessing then we have a baseline, a way to calibrate our understanding of the numbers. `Linear models are often used as baseline models`, because they are interpretable, simple to implement, and non-technical stakeholders often have some knowledge of them.
+  
+  If a more sophisticated model does not outperform a linear model baseline then best practices tell us that we should always default to the simple model.
+  
+  ### Generalized Linear Models
+  
+  General linear models include:
+  
+  - Linear Regresion.
+  - ANOVA.
+  - Analysis of covariance (ANCOVA).
+  - Multivariate Analysis of variance.
+  - Multivariate Analysis of covariance.
+  - t-test.
+  - f-test.
+  
+  The general linear model assumes that the residuals are Gaussian distributed.
+  
+  generalized linear models include:
+  
+  - Logistic Regression.
+  - Poisson Regression.
+  - Negative Binomial Regression.
+  
+  The residuals in this family of methods can come from any distribution in the exponential family. The linear model is related to the target variable using a link function.
+  
+  General linear models are often `fit with ordinary least squares approaches`, while generalized linear models need to use more sophisticated methods like `maximum likelihood estimation or Bayesian approaches`.
+  
+  When there are more than two classes it is common practice to use `linear discriminant analysis` instead of multi-class logistic regression.
+  
+  Simple linear models tend to have high bias because they make strong assumptions about the function of the data. Kernels may be applied to linear models like `kernel ridges regression` as a way to help relax some of the assumptions.
+  
+  One extension further from GLMs brings us into another family of models known as `generalized linear mixture models or GLMMs`.
+  
+  Models in the generalized linear mixture model (GLMM) family like multilevel models are generally optimized using sophisticated techniques like `MCMC sampling`.
+  
+  `Hierarchical linear models or multilevel models` are a very powerful example of these GLMMs and they're a useful form of linear model. The linear regression class uses ordinary least Squares or OLS for inference. `RidgeCV, LassoCV and ElasticNetCV` implement penalized regression with built-in cross validation of the alpha parameter. `Recall that the Lasso will effectively reduce the dimensionality of your feature matrix`.
+  
+  ### Regularized Regression
+  
+  `Lasso Regression` is a Powerful technique for regularization. Lasso prefers solutions with fewer non-zeros coefficients, which reduces the number of features. Lasso and its variants have proven useful when working with sensors and there is a need to compress the signals.
+  
+  `Ridge Regression` does not drop features like Lasso as it favors a reduction in size of the coefficients.
+  
+  The `ElasticNet` is a linear regression model that uses both forms of penalty. The elastic-net is useful when there are correlated features and we are not sure which type of penalty is most effective for our data. Lasso usually pick features at random, while elastic-net is likely to pick both. It is more efficient to tune the alpha and l1_ratio parameters of the elastic-net with ElasticNetCV rather than GridSearchCV.
+  
+  `Stochastic gradient descent` is a simple yet very effective approach to `discriminative learning` of linear classifiers under convex loss functions such as support vector machines and logistic regression. The SVMs are assumed, in this case, to use a linear kernel. `SGD regressor` is best used for regression problems with a large number of training samples.
+  
+  In scikit-learn, `stochastic gradient descent or SGD allows mini-batch` learning for both online and out of core learning. These variants are useful for `incremental learning` and for data sets that are too large to fit into memory.
+  
+  ### Watson Natural Language Overview
+  
+  [Natural Language Understanding - IBM Cloud API Docs](https://cloud.ibm.com/apidocs/natural-language-understanding)
+  
+  [IBM Cloud Docs](https://cloud.ibm.com/docs/natural-language-understanding?topic=natural-language-understanding-getting-started)
+  
+  There are other transformations or representations of text that have proven useful in NLP with the [word2vec](https://en.wikipedia.org/wiki/Word2vec) group of models being among the most widely used. The model takes a corpus of text and produces a [word embedding](https://en.wikipedia.org/wiki/Word_embedding), which is essentially a projection into a vector space that generally has a few hundred dimensions.
+  
+  `Naive Bayes approaches` are a commonly used base model for text classification.
+  
+  There are several types of Naive Bayes model.
+  
+  * Gaussian: It is used in classification and it assumes that features follow a normal distribution.
+  * Multinomial: It is used for discrete counts.
+  * Bernoulli: The binomial model is useful if your feature vectors are binary (i.e. zeros and ones).
+  * Complement: CNB is an adaptation of the standard multinomial naive Bayes (MNB) algorithm that is particularly suited for imbalanced data sets.
+  
+  __Question__
+  
+  What important feature of the Watson NLU API do we have to ensure so that we can repeat an experiment in the future in a reproducible way? R: Passing a version argument with each request.
+  
+  ------
+  
+  ### Tree-based Methods
+  
+  `Random forests are essentially decision trees applied in bulk`—or as an `ensemble`—with bagging. Recall that `bootstraping` is generally used to estimate the confidence around an estimate (or really any statistic).
+  
+  ```python
+  import numpy as np
+  x = np.random.normal(loc=50.0, scale=10.0, size=100)
+  nsamples = 500
+  bs_samples = np.random.choice(x, (nsamples, x.size), replace=True)
+  bs_distn = np.mean(bs_samples, axis=1)
+  print("Bootstrap CI: (%.4f, %.4f)"%(bs_distn[int(0.025*nsamples)], bs_distn[int(0.975*nsamples)]))
+  ```
+  
+  Bootstraping can also be used to help make the estimate, which is exactly what was proposed in the context of decision trees.
+  
+  The individual trees, each with its own bootstrap sample, are grown large. Because `decision trees` are naturally `high variance models`, the `ensemble itself` also has high variance. That variance is then reduced by an averaging step. The trees `themselves are correlated`, and because each `bootstrap sample is a subsample of the original data`, these correlations contribute to the variance component of error. The random forest method was then proposed, which includes the `additional mechanic of randomly subsetting the features to choose from at each decision to split`. This helps decorrelate the trees and accordingly reduce the variance.
+  
+  Since `bagging is a family of methods` there are a number of options to tweak this ensemble approach. In particular, there are several ways to change the sampling strategy.
+  
+  [sklearn.ensemble.BaggingClassifier — scikit-learn 0.23.2 documentation](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.BaggingClassifier.html)
+  
+  __Boosting__
+  
+  Gradient boosting, also referred to simply as boosting, is a family of ensemble methods for classification and regression. There exist a number of [Boosting](https://en.wikipedia.org/wiki/Boosting_(machine_learning)) variants with many of the popular ones employing `gradient descent` as the optimizer. The central idea in boosting starts with a consistent weak learner. Boosting seeks to use ensembles of weak learners to create a single strong learner. Essentially you are boosting the performance of any weak learners through an ensemble approach.
+  
+  If we use decision trees as our base model in boosting, they tend to be very simple with very few splits. This is in contrast to random forests, which tend to have fully grown trees as base models. The other important distinction between random forests and boosting approaches is that `boosting builds its ensembles sequentially, where random forests can train the base models in parallel`. This means that random forests are often faster to train.
+  
+  __Ensemble Learning__
+  
+  - Committees: train some models and use, for example, the average of the predictions.
+  - Bagging: a variant on committees where models are created from boostrapped samples then averaged.
+  - Boosting: a variant on committees, where models are trained in sequence and the error function for a given model depends on the previous one.
+  - Mixture of experts: instead of hard partitioning of the input space we can move to a probabilistic framework for partitioning.
+  - Stacking: a method to combine models of different types that uses the prediction of the base models as features.
+  - Blending: a method to combine models of different types that uses an algorithm to figure out how to mix the predictions.
+  
+  Although several approaches fall under the term model stacking one commonly used method is to start with a `model that generates predictions`. The second model in the stack then uses the original features and the first model’s predictions to make its set of predictions and this continues until the end of the model stack.
+  
+  Ensemble learning through `model averaging, Bayesian model averaging, model stacking, majority vote and other methods are among the best performing methods known in machine learning`. Large ensembles with sophisticated component models tend to have practical limitations like time to train and time to predict, but many of these limitations will be overcome as CPUs and GPUs become more powerful.
+  
+  [Model averaging — PyMC3 3.9.3 documentation](https://docs.pymc.io/notebooks/model_averaging.html)
+  
+  [Averaging Study](https://arxiv.org/pdf/1509.08864.pdf) 
+  
+  ### ANN
+  
+  `Neural networks` will affect your work as a data scientist from the very start of a design thinking project. During the Empathize phase of a project, when information is being gathered to help define a solution, you will be asked about neural networks. That's because for too many people, machine learning equals neural networks. For those use cases where neural networks may or may not work, it is important for you to know that part of your job will be to educate people about the potential use of other algorithms, and the trade-offs for each.
+  
+  __MultiLayer Perceptron__
+  
+  Also known as `vanilla neural network` because it is the core example of an architecture. The vanilla neural networks often only `have a single hidden layer`, but a MLP can have many more.
+  
+  `Feedforward` networks can be seen as efficient nonlinear function approximators. `additional layers allow` the networks to learn more complex patterns.
+  
+  To train most neural networks an important algorithm called backpropagation is used. The term back-propagation is often thought of as the learning algorithm by itself, but it actually refers to method for computing the gradient
+  
+  __Neural network architectures__
+  
+  - Multi-layer perceptron: Feed-forward neural network used for supervised learning. Often uses multiple layers and non-linear activation functions. Can be applied to most supervised learning tasks.
+  - Autoencoders: It is a feed forward neural network that can be used to predict the feature matrix. Autoencoders may be thought of as being a special case of feedforward network used for unsupervised learning tasks. Example applications include dimension reduction and de-noising.
+  - Convolutional neural network: A convolutional neural network (CNN, or ConvNet) uses image filters or kernels to learn patterns in a feature matrix. Commonly used to detect patterns in images and video.
+  - Recurrent neural network: In RNNs connections between nodes can be cyclical, giving the network memory. Used for sequences: handwriting, speech recognition, time series. One commonly used RNN architecture is the [Long Short time memory](https://en.wikipedia.org/wiki/Long_short-term_memory).
+  
+  `Transfer Learning` is one where you can leverage vetted neural network architectures and pre-trained weights to get good performance on limited data.
+  
+  In the last ten years there has been an explosive growth of compute power availability, principally through graphics processing units or GPUs and it has fueled much of the the research and development of deep-learning models. There has also been progress on both the tooling and models side of Bayesian neural networks and other deep-learning architectures that are difficult to carry out inference for using gradient based methods.
+  
+  __Tunable Parameters__
+  
+  - Structure: the number of hidden layers, the number of nodes in each layer.
+  - Activation functions.
+  - Weight and bias initialization.
+  - Traning method: Loss function, Learning rate, batch size, number of epochs.
+  - Regularization: weight decay, early stopping, dropout.
+  - Random seed
+  
+  __NOTE__: There is a function in keras that enables the use of scikit-learn's `GridSearchCV` and `StratifiedKfold`. (import KerasClassifier).
+  
+  It is often assumed that most neural networks are difficult or nearly impossible to interpret, which has given them a common branding as `black-box models`.
+  
+  [Creating AI glass boxes – Open sourcing a library to enable intelligibility in machine learning - Microsoft Research](https://www.microsoft.com/en-us/research/blog/creating-ai-glass-boxes-open-sourcing-a-library-to-enable-intelligibility-in-machine-learning/)
+  
+  [GitHub - amiratag/ACE: Towards Automatic Concept-based Explanations](https://github.com/amiratag/ACE)
+  
+  [GitHub - Trusted-AI/AIX360: Interpretability and explainability of data and machine learning models](https://github.com/Trusted-AI/AIX360)
+  
+  [Introducing AI Explainability 360 | IBM Research Blog](https://www.ibm.com/blogs/research/2019/08/ai-explainability-360/)
+  
+  ### Watson Visual Recognition
+  
+  When we train a custom classifier using the Watson Visual Recognition service a best practice is to include both positive and negative examples. Crucially, to increase the accuracy of the classifier, the negative examples should be as visually similar to the positive examples as possible. Please review the Watson Visual Recognition tutorial for more details.
+  
+  Image composition is more generally called photography composition and it deals with arranging the elements in an image to suit an idea or accomplish a goal. All of the other applications were mentioned as practical applications of CNNs.
+  
+  
+  
+  ```python
+  #!/usr/bin/env python
+  
+  """
+  Example to showcase how to use the Watson NLU service
+  
+  to store you API key
+  
+  ~$ mkdir ~/.ibm
+  ~$ touch ~/.ibm/ibmauth.py
+  
+  then edit the file to contain
+  
+  ibmauth_key = "your api key"
+  
+  """
+  
+  import sys
+  import os
+  import json
+  from ibm_watson import VisualRecognitionV3
+  from ibm_watson.visual_recognition_v4 import FileWithMetadata, TrainingDataObject, Location, AnalyzeEnums
+  from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
+  
+  ### import API key
+  apikey_dir = os.path.join(os.path.expanduser("~"),".ibm")
+  sys.path.append(apikey_dir)
+  
+  if not os.path.exists(apikey_dir):
+      raise Exception("please store you API key in file within 'apikey_dir' before proceeding")
+  
+  from ibmauth import VR_KEY, VR_URL, VR_VERSION
+  
+  def connect_watson_vr():
+      """
+      establish a connection to watson vr service
+      """
+      
+      authenticator = IAMAuthenticator(VR_KEY)
+      service = VisualRecognitionV3(version=VR_VERSION,
+                                    authenticator=authenticator)
+  
+      service.set_service_url(VR_URL)
+  
+      print("\\nConnection established.\\n")
+      return(service)
+  
+  if __name__ == "__main__":
+      
+      service = connect_watson_vr()
+  
+      ## classify an image from a URL
+      image_url = "https://watson-developer-cloud.github.io/doc-tutorial-downloads/visual-recognition/fruitbowl.jpg"
+      fruitbowl_results = service.classify(url=image_url,
+                                           threshold='0.1',
+                                           classifier_ids=['food']).get_result()
+      print(json.dumps(fruitbowl_results, indent=2))
+  
+  ```
+  
+  ### Convolutional Neural Networks and TensorFlow (Hands-on)
+  
+  Convolutional neural networks differ from multilayer perceptron networks, at a minimum, by the addition of a `convolutional layer`. These layers are very useful for the `detection of patterns`, which is often the goal when working with images.
+  
+  [Image classification  |  TensorFlow Core](https://www.tensorflow.org/tutorials/images/classification)
+  
+  [Convolutional Neural Network (CNN)  |  TensorFlow Core](https://www.tensorflow.org/tutorials/images/cnn)
+  
+  `The Keras Sequential API` features from the interface are:
+  
+  - model.summary(): is important for understanding the shape of tensors as they are passed between layers.
+  - model.sequential(): object that provides an intuitive and readable way to build the network.
+  - model.compile(): needed before training the model.
+  - model.fit(): works like a scikit-learn estimator.
+  
+  [Article on large scale video classification with CNNs](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/42455.pdf)
+  
+  [Convolutional Neural Network (CNN)  |  TensorFlow Core](https://www.tensorflow.org/tutorials/images/cnn)
+  
+  [GPU support  |  TensorFlow](https://www.tensorflow.org/install/gpu)
+  
+  [Save and load models  |  TensorFlow Core](https://www.tensorflow.org/tutorials/keras/save_and_load)
+  
+  __Question__
+  
+  By adding `3 convolution layers and 2 pooling layers followed by dense layers` the solution obtains an accuracy of `0.9088`. This can be improved on but it is an improvement over the base model.
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false

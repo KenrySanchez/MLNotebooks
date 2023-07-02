@@ -1,0 +1,140 @@
+createdAt: "2018-08-26T23:47:31.811Z"
+updatedAt: "2019-11-03T17:22:28.595Z"
+type: "MARKDOWN_NOTE"
+folder: "a41d44d96fbd153c28c9"
+title: "Vision Analitica in Big Data - Teorica y Introudccion"
+content: '''
+  ## Vision Analitica in Big Data - Teorica y Introudccion
+  
+  ## Explotacion del dato
+  
+  La cadena de valor del big data es la estructura que nos permite representar la manera en como se explotan los datos dentro de los procesos de big data.
+  
+  **Procesos dentro del Big Data**
+  
+  - Data Adquisition
+  - Data Analysis
+  - Data curation
+  - Data Storage
+  - Data Usage
+  
+  #### Data Adquisition
+  
+  - Opinion: Etapa mas importante del proceso. Al menos que quieras recuperar el 100% global de todos los datos en el mundo. (Demasiado costoso)
+  
+  Las actividades de adquisicion son aquellos que van relacionados a la extraccion, limpieza y filtrado de datos antes de su almacenamiento.
+  
+  Para las 5 V's del big data: Volumen, Variedad, Velocidad, Veracidad y Valor, la parte de adquisicion juega un papel importante al momento de extraer informacion. Se debe tener cuidado al momento de elegir la arquitectura y los productos a formar en el proceso de ETL, asi como tambien la manera de escalabilidad de nuestros cluster.
+  
+  Hoy en dia los datos pueden ser potencialmente de alto valor. De modo que la adquisicion se vuelve una etapa muy importante a la hora de definir cuales son los datos que quiero y cuales seran los canales que usaremos para poder recopilarlos.
+  
+  En este punto tambien es bueno pensar en como obtener los datos a traves de un sistema omnicanal. Usando un sistema omnicanal podemos definir y hasta predecir cuales seran los tipos de datos o informacion que vayamos a recopilar. Los sistemas omnicanales son puentes de comunicacion en feed-back. Por lo que los datos a recopilar son datos originados de estimulos de informacion enviados en funcion de nuestra estrategia de negocio. Eventos, formularios, datos-cruzados (datos originados de una fuenta que fue estimulada por otra), etc.
+  
+  ***La adquisicion de datos se encargara de recopilar dichos datos desde las fuentes distribuidas de informacion con el objetivo de consolidarlos en un almacen altamente escalable***
+  
+  #### Data Analysis
+  
+  El analisis de datos, dentro de la cadena de valor del big data, hace referencia asi a las tareas orientadas en dotar de estructura a los datos, con el objetivo de dar soporte a los procesos de toma de decisiones.
+  
+  Los datos de origen (llegan en muchos formatos) son transformados a fin de estar listos para su posterior preparacion, almacenamiento y explotacion. Por esta razon, sin esta fase previa de analisis y validacion, la mayoria de los datos adquiridos serian inservibles.
+  
+  Dentro de esta fase es donde se aplican las tecnicas de analisis y extraccion de conocimiento, usando las tecnicas conocidas:
+  
+  - Stream processing
+  - procesamiento semantico: extraccion del significado
+  - data mining
+  - machine learning
+  - data descovery: business user oriented process for detecting patterns and outliers by visually navigation data or appying guided advanced analytics. it's a BI trends.
+  
+  ***La variedad como V del big data nos puede definir la semantica del dato, ejemplo: “Santiago” como una ciudad o como una persona. Desde una perspectiva amplia, el mayor reto al que se enfrentan las distintas industrias y compañías es la de incorporar las técnicas de análisis de big data en sus procesos e infraestructuras.***
+  
+  #### Data Curation
+  
+  ***La calidad del Analisis depende de la calidad de la informacion analizada***.
+  Gartner estima que en base a este sentido, mas del 25% de los datos **criticos** de las empresas lideres en el mundo en cada sector son erroneos.
+  
+  El **Data Curation** representa las tareas o acciones a ejecutar para combatir La V del Big Data, **Variedad (Enfasis al reto de la informacion dispersa)**. A traves de los procesos de preparacion de datos (Data Curation), se puede generar un soporte metodologico y tecnologico para solventar los problemas de calidad, maximizando asi el valor que se puede llegar a extraer de los datos.
+  
+  Un **data preparador** colecta los datos desde diferentes fuentes y los integra dentro de un almacen de datos el cual puede servir de fuente de datos y que tiene mas valor que separando las fuentes anteriormente explicadas.
+  
+  El principal proposito de esta fase es asegurarnos de que la data sea reutilizable para las investigaciones futuras.
+  navegacion
+  #### Data Storage
+  
+  Son aquellos procesos relacionados con el almacenamiento y la gestion de datos de una forma escalable y satisfaciendo las necesidades de las aplicaciones que requieren datos. LAs caracteristicas son:
+  
+  - Una alta velocidad de lectura/escritura de datos
+  - La capacidad de manejar de una manera flexible y eficiente un amplio rango de modelos de datos
+  - La opcion de trabajar unicamente cna forma de on datos encriptados
+  
+  Una forma de apoyar el almacenamiento es a traves de sistemas de escalabilidad horizontal, esto permite solucionar problemas con el volumen de datos
+  
+  sugerir: BD orientados a grafos. Solventan problemas como la variedad.
+  
+  #### Data Usage
+  
+  dar soporte a la toma de decisiones de negocio a través del acceso a la información relevante, su análisis y las herramientas necesarias para integrar dicho análisis en los procesos de toma de decisión.
+  
+  Maneras de poder explotar los datos:
+  
+  - informes (reporting)
+  - exploracion de datos (navegacion)
+  - busqueda exploratoria (descubrimiento de correlaciones, comparaciones, simulacion de escenarios)
+  
+  **smart data**: Es big data en ejecucion en tiempo real. No se refiere al valor de los datos sino a las acciones que se toman en base a la data que se recoge.
+  
+  ------
+  
+  #### Big Data y Experiencia de usuario
+  
+  ***Un 76% de usuarios cambian de compañia tras una mala experiencia, las compañias que no enfoquen la experiencia de usuario como un eje fundamental de su estrategia digital, estara probablemente de camino al fracaso***
+  
+  **Aspectos de una experiencia de usuario basado en datos**
+  
+  - **Personalizacion**: Que sepa reconocer sus intereses y preferencias, ahorrar tiempo y que lo haga de manera transparente.
+  
+  - **Identificacion de lo que funciona y no funciona**: Se puede usar Big Data para reconocer cuales funcionalidades de una aplicacion no funciona o son menos usadas, de modo que se puedan mejorar o simplemente salir del sistema.
+  
+  - **Tiempo de respuesta**: Analizar respuestas de los usuarios en cuanto a fallos de la aplicacion en tiempo real.
+  
+  - **Maximo Aprovechamiento de los datos**
+  
+  - **Hoja de ruta y adaptacion de los cambios**: Usar big data para que la experiencia de compra de los usuarios sea gratificante. Esto implica poder reconocer sus gustos y cuales campañas seran mas compatibles con los intereses de los usuarios.
+  
+  -----
+  
+  #### Analitica Predictiva
+  
+  Es el uso de datos, algoritmos y tecnicas de ML que permitan identificar que pasara en el futuro a traves de datos historicos.
+  
+  La idea es, a traves de una data historica poder crear una funcion o modelo **F(X)** y luego usar ese modelo con datos nuevos de modo que pueda generar un producto/resultado predictivo.
+  
+  Funciona de la siguiente manera:
+  
+  - usa variables que pueden ser medidas y analizadas para predecir la probabilidad de los comportamientos futuros de individuos, maquinas o cualquier otra entidad.
+  - multiples variables se pueden combinar para crear un modelo predictivo
+  - Es importante destacar que el proceso no siempre es lineal y en ocasiones las correlaciones se presentan entre aquellas variables que menos se esperan
+  
+  Para apoyarse en los informes de analitica predictiva, se pueden usar:
+  
+  - CM (Cuadros de MAndo)
+  - informes que destaquen la oportunidad de negocio futuras basadas en los hallazgos que arrojan los analisis predictivos.
+  
+  Se pueden usar tambien:
+  
+  - Analisis de texto para extraer informacion.
+  - Modelos de clasificacion para organizar los datos en categorias que hagan mas sencillas las busquedas y el acceso a la informacion.
+  - Redes neuronales que permiten profundisar el aprendisaje y automatizar la analitica predictiva.
+  
+  **Aplicaciones**
+  
+  - Identificar tendencias en base al historial de navegacion de un visitante en la pagina web para personalizar anuncios.
+  - í capturar una gran cantidad de datos que pueden ser usados para prever posibles roturas o determinar el momento en el que un mantenimiento o un trabajo de reparación debe ser abordado para evitar problemas
+'''
+tags: [
+  "BIG_DATA_MODELATION"
+  "Machine_Learning"
+]
+isStarred: false
+isTrashed: false
+isPinned: true

@@ -1,0 +1,45 @@
+createdAt: "2020-05-14T01:09:10.458Z"
+updatedAt: "2020-09-12T06:22:03.624Z"
+type: "MARKDOWN_NOTE"
+folder: "7b6dd385ab806689b09e"
+title: "Deep Learning"
+content: '''
+  ## Deep Learning
+  
+  **TIP**: Adding more layers to a neuronal network with high variance is not going to help.
+  
+  Artificial Neural Networks (ANN) are computationally intensive methods for finding patterns in datasets that are so large and contain so many explanatory variables that standard methods such as multiple regression are impractical.
+  
+  The key feature of neural network models is that `they contain a hidden layer`: each node in the hidden layer receives information from each input, sums the inputs, adds a constant `(the bias)`, and then transforms the result using a fixed function.
+  
+  [Estimators, Loss functions, Optimizers - Core of Ml Algortihm](:note:5e58234b-1fc4-42f0-8dd7-f83af8c30a6c)
+  
+  In some cases, when the network is used in a predictive technique, there may be `one or more dependent variables`. In this case, each of them corresponds to `one node at a final level`, called the `output layer`. Predictive networks  are  called `supervised  learning`  networks  and  descriptive  networks  are  called `unsupervised learning` networks.
+  
+  The `output layer` is made up of one or more response variables. There can be some unknown parameters from one node to another. These parameters are `called connection weights (Ws)`. You can understand connection weights by comparing them to the required distance to move from one point to another or by comparing the required amount of work done to move from one state to another state in machine.
+  
+  Connection weights from one node to another node can be calculated by `simply adding weights of visited nodes`.
+  
+  A neural network may contain the following three layers:
+  
+  - Input layer:  Input layers receive as input the values of the explanatory attributes for each observation. Usually, the number of input nodes in an input layer is equal to the number of explanatory variables.
+  - Hidden layer:  Hidden layers apply given transformations to the input values inside the network. In a hidden layer, each node is connected to incoming arcs that go from other hidden nodes or from input nodes, and it is connected with outgoing arcs to output nodes or to other hidden nodes.
+  - Output layer: Output layers receive connections from hidden layers or from input layer and return an output value that corresponds to the prediction of the response variable. In classification problems, there is usually only one output node.
+  
+  Advantages of Neural Network:
+  
+  - Performs well with linear and nonlinear data.
+  - Works even if one or few units fail to respond in the network.
+  - Learns from the analyzed data and does not require reprogramming.
+  
+  Disadvantages of Neural Networks:
+  
+  - Needs training with the sample data to operate.
+  - Requires high processing power.
+  - Refers to "black box" models, and provides very little insights into what these models really do.
+  
+  
+'''
+tags: []
+isStarred: false
+isTrashed: false
